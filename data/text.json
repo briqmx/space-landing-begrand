@@ -1,0 +1,104 @@
+{
+  "hero" : {
+    "title" : "Construye tu patrimonio metro a metro",
+    "description" : "Ahorra en Metros Cuadrados en los mejores edificios de México o compra tu departamento un metro a la vez. Protege el valor de tu dinero y empieza a vivir de tus rentas.",
+    "cta" : {
+      "text" : "Conoce más",
+      "url" : "https://www.metroscubicos.com/ahorro-inmobiliario"
+    },
+    "support" : [
+      "Sin deudas por años",
+      "Sin enganche"
+    ],
+    "image" : {
+      "src": "hero-cover.png",
+      "alt": "Construye tu patrimonio metro a metro"
+    }
+  },
+  "cards" : [
+    {
+      "image" : "https://briq-space-sm.vercel.app/ahorro-inmobiliario.png",
+      "title" : "Sé dueño de m2 y recibe rentas sin preocuparte.",
+      "description" : "Sin lidiar con malos inquilinos, sin periodos sin renta, sin deterioro y sin mantenimiento. Solo preocúpate por tus rendimientos."
+    },
+    {
+      "image" : "https://briq-space-sm.vercel.app/ahorro-inmobiliario.png",
+      "title" : "Compra tu departamento a tu propio ritmo.",
+      "description" : "Comienza comprando desde 1m2 y crece a tu propio hasta completar tu departamento. Sin enganche, sin trámites largos y sin penalizaciones."
+    },
+    {
+      "image" : "https://briq-space-sm.vercel.app/ahorro-inmobiliario.png",
+      "title" : "Tu inversión está respaldada y segura.",
+      "description" : "Compra m2 de manera fácil y segura en los mejores edificios de México, operados por Be Grand® y con el respaldo tecnológico de briq.mx."
+    }
+  ],
+  "properties" : {
+    "title" : "Conoce las propiedades que tenemos disponibles:",
+    "blocks" : [
+      {
+        "icon" : "tabler:lock",
+        "title" : "Plataforma regulada",
+        "description" : "Plataforma con experiencia en el mercado y regulada por la CNBV y autoridades financieras del país."
+      },
+      {
+        "icon" : "tabler:shield-check-filled",
+        "title" : "Experiencia",
+        "description" : "Inmuebles respaldados y operados por Be Grand. Empresa con años de experiencia en el sector residencial de lujo."
+      },
+      {
+        "icon" : "tabler:clipboard-check",
+        "title" : "Constancia de propiedad",
+        "description" : "Recibe una constancia que acredita tu propiedad de metros cuadrados libre de cualquier gravamen"
+      }
+    ]
+  },
+  "comparative": {
+    "title" : "Ventajas de comprar metros cuadrados en Suma Metros",
+    "description" : "Suma Metros está hecho para gente que quiere invertir en departamentos para renta pero no quieren lidiar con los dolores de la cabeza de la operación.Asimismo, también está diseñado para personas que desean comprar un departamento, de forma más sencilla y a su propio ritmo.",
+    "others" : [
+      "Mayores requerimientos de capital",
+      "Mayores requerimientos de capital",
+      "Complejidad operativa tradicional (mantenimiento,cobranza, vacancia, dificultades legales)",
+      "Desocupación por rotación de inquilinos"
+    ],
+    "us" : [
+      "Desde 1 m2 empieza a crear tu patrimonio",
+      "Diversificación a tu alcance y medida",
+      "SumaMetros es una solución llave en mano, con desarrollos respaldados y operados por los expertos de Be Grand®",
+      "Ocupación constante por volumen"
+    ]
+  },
+  "steps" : {
+    "steps": [
+      "Crea tu cuenta y completa tu perfil en briq.mx",
+      "Explora nuestras propiedades y decide en cuál(es) quieres invertir",
+      "Selecciona la cantidad de metros que deseas comprar",
+      "Sigue las instrucciones de transferencia según tu banco y recibe tu certificado de compra",
+      "Empieza a cobrar renta y obtén plusvalía de tus metros."
+    ]
+  },
+  "about" : {
+    "logo" : "logo-begrand.svg",
+    "title" :  "Todas las propiedades de Suma Metros son avaladas y administradas por Be Grand®",
+    "description" : "Una empresa orgullosamente mexicana, con 20 años de experiencia en el desarrollo y comercialización de proyectos inmobiliarios de alta calidad en zonas AAA en México y España.  Una marca líder en el segmento residencial plus y con amplia experiencia en desarrollos residenciales, comerciales y oficinas.",
+    "stats" : [
+      {
+        "title" : "Años de experiencia",
+        "value" : "20"
+      },
+      {
+        "title" : "Proyectos inmobiliarios",
+        "value" : "+30"
+      },
+      {
+        "title" : "Departamentos vendidos",
+        "value" : "+10k"
+      },
+      {
+        "title" : "Plusvalía promedio",
+        "value" : "20%"
+      }
+    ],
+    "image" : "about-bg.jpeg"
+  }
+}
