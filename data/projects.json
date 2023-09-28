@@ -1,0 +1,54 @@
+[
+  {
+    "title" : "Vitant del valle",
+    "description" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quam velit, vulputate eu pharetra nec, mattis ac neque.",
+    "image" : "https://images.unsplash.com/photo-1502736517152-bf3bd00bc61c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2492&q=80",
+    "location" : "Ciudad de México",
+    "isNew" : true,
+    "status" : "active",
+    "unitsTotal" : 1000,
+    "unitsAvailable" : 1000,
+    "price" : 70000,
+    "url" : "https://www.vitant.cl/",
+    "isFeatured" : true
+  },
+  {
+    "title" : "Vitant del valle",
+    "description" : "Vitant del valle",
+    "image" : "https://images.unsplash.com/photo-1502736517152-bf3bd00bc61c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2492&q=80",
+    "location" : "Ciudad de México",
+    "isNew" : true,
+    "status" : "active",
+    "unitsTotal" : 1000,
+    "unitsAvailable" : 1000,
+    "price" : 70000,
+    "url" : "https://www.vitant.cl/",
+    "isFeatured" : false
+  },
+  {
+    "title" : "Vitant del valle",
+    "description" : "Vitant del valle",
+    "image" : "https://images.unsplash.com/photo-1502736517152-bf3bd00bc61c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2492&q=80",
+    "location" : "Ciudad de México",
+    "isNew" : true,
+    "status" : "active",
+    "unitsTotal" : 1000,
+    "unitsAvailable" : 1000,
+    "price" : 70000,
+    "url" : "https://www.vitant.cl/",
+    "isFeatured" : false
+  },
+  {
+    "title" : "Vitant del valle",
+    "description" : "Vitant del valle",
+    "image" : "https://images.unsplash.com/photo-1502736517152-bf3bd00bc61c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2492&q=80",
+    "location" : "Ciudad de México",
+    "isNew" : true,
+    "status" : "active",
+    "unitsTotal" : 1000,
+    "unitsAvailable" : 1000,
+    "price" : 70000,
+    "url" : "https://www.vitant.cl/",
+    "isFeatured" : false
+  }
+]
