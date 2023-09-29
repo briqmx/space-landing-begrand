@@ -117,8 +117,8 @@ import { Icon } from 'astro-icon/components'
 					{
 						text.cards.map((card) => (
 							<article class="flex flex-col justify-between rounded-xl border px-6 py-8 shadow-sm">
-								<div class="mb-4 flex flex-col gap-2">
-									<div class="h-16 w-16 rounded-lg bg-neutral-200" />
+								<div class="mb-4 flex flex-col items-start gap-2">
+									<img src={card.icon} alt={card.title} class="h-12" />
 									<h2 class="font-display font-bold">{card.title}</h2>
 								</div>
 								<p class="text-sm text-zinc-500">{card.description}</p>
