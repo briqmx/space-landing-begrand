@@ -10,30 +10,32 @@ import { Icon } from 'astro-icon/components'
 <Layout title="Inicio | Construye tu patrimonio metro a metro.">
 	<main>
 		<!-- Banner Briq.mx -->
-		<div
+		<!-- <div
 			class="flex items-center justify-center gap-2 bg-navy px-4 py-2 text-sm font-medium text-white"
 		>
 			<img src="logo-emblema-briq-white.svg" class="h-4" />
-			<p>Este es un espacio operando por briq.mx</p>
-		</div>
+			<p>Este es un espacio dedicado para Sumametros en briq.mx</p>
+		</div> -->
 		<!-- Nav -->
 		<nav class="sticky top-0 z-20 border-b bg-white/90 py-3 backdrop-blur-md">
 			<div class="mx-auto w-full max-w-screen-lg px-4">
 				<div class="flex items-center justify-between">
 					<div class="flex-shrink-0">
-						<a href="#" class="inline-block">
+						<a href="/" class="inline-block">
 							<img src="logo-nav.png" alt="Logo Briq" class="h-8" />
 						</a>
 					</div>
 					<div class="flex items-center gap-4 text-sm">
 						<div class="hidden items-center gap-4 md:flex">
-							<a class="hover:text-primary" href="#">Propiedades</a>
+							<a class="hover:text-primary" href="#propiedades">Propiedades</a>
 							<div class="h-4 w-px bg-zinc-200"></div>
-							<a class="hover:text-primary" href="#">Iniciar sesión</a>
+							<a class="hover:text-primary" href="https://www.briq.mx/users/sign_in"
+								>Iniciar sesión</a
+							>
 						</div>
 						<a
 							class="inline-flex items-center justify-center gap-2 rounded-md border px-2 py-1 font-medium shadow-sm hover:bg-primary/10"
-							href="#"
+							href="https://www.briq.mx/users/sign_up"
 						>
 							Registrarse
 							<Icon name="tabler:arrow-right" />
@@ -111,7 +113,7 @@ import { Icon } from 'astro-icon/components'
 				</div>
 			</div>
 		</header>
-		<section class="py-8">
+		<section class="py-8" id="propiedades">
 			<div class="mx-auto w-full max-w-screen-lg px-4">
 				<div class="flex flex-col items-stretch gap-4 md:flex-row">
 					{
@@ -161,9 +163,9 @@ import { Icon } from 'astro-icon/components'
 						</div>
 					</div>
 					<div class="w-full">
-						<div class="flex flex-col divide-x rounded-lg border shadow-sm md:flex-row">
+						<div class="flex flex-row divide-x rounded-lg border shadow-sm">
 							<article class="flex w-full flex-col divide-y">
-								<div class="flex min-h-[100px] items-center justify-center p-4 text-sm font-bold">
+								<div class="flex min-h-[90px] items-center justify-center p-4 text-sm font-bold">
 									<p>Otros</p>
 								</div>
 								{
@@ -175,13 +177,16 @@ import { Icon } from 'astro-icon/components'
 								}
 							</article>
 							<article class="flex w-full flex-col divide-y">
-								<div class="flex min-h-[100px] items-center justify-center p-4">
+								<div class="flex min-h-[90px] items-center justify-center p-4">
 									<img src="logo.png" class="h-12" alt="Logo Sumametros" />
 								</div>
 								{
 									text.comparative.us.map((item) => (
 										<div class="flex min-h-[125px] items-start gap-2 p-3 text-sm even:bg-primary/5">
-											<Icon name="tabler:check" class="h-6 w-6 flex-shrink-0 text-primary" />
+											<Icon
+												name="tabler:check"
+												class="hidden h-6 w-6 flex-shrink-0 text-primary md:inline-block"
+											/>
 											<p>{item}</p>
 										</div>
 									))
@@ -301,14 +306,21 @@ import { Icon } from 'astro-icon/components'
 						</div>
 					</div>
 					<nav class="flex items-center gap-4">
-						<a href="#">
+						<a
+							href={text.social.facebook}
+							target="_blank"
+							class="flex items-center gap-1 text-xs font-medium"
+						>
 							<Icon name="bxl:facebook" class="h-6 w-6" />
+							<span>Be Grand</span>
 						</a>
-						<a href="#">
-							<Icon name="bxl:twitter" class="h-6 w-6" />
-						</a>
-						<a href="#">
+						<a
+							href={text.social.instagram}
+							target="_blank"
+							class="flex items-center gap-1 text-xs font-medium"
+						>
 							<Icon name="bxl:instagram" class="h-6 w-6" />
+							<span>@begrand</span>
 						</a>
 					</nav>
 				</div>
@@ -331,92 +343,171 @@ import { Icon } from 'astro-icon/components'
 			</div>
 		</footer>
 	</main>
+
+	<div
+		class="fixed inset-0 z-20 hidden h-full w-full flex-col items-center justify-start overflow-hidden bg-white/90 px-2 py-8 backdrop-blur-md"
+		id="modal"
+	>
+		<div class="w-full max-w-md rounded-2xl border bg-white shadow-md">
+			<div class="flex items-center justify-between gap-2 px-8 pt-8">
+				<h2 class="font-display text-2xl font-bold">¡Ya estamos muy cerca!</h2>
+				<button
+					id="close-modal"
+					class="flex h-8 w-8 items-center justify-center rounded-full border hover:bg-primary/5"
+				>
+					<Icon name="tabler:x" />
+				</button>
+			</div>
+			<div class="flex flex-col gap-2 p-8">
+				<p>
+					Muy pronto podrás ir sumando metros para hacer tu patrimonio. Si quieres ser de las
+					primeras personas en enterarse y poder adquirir a precio especial, déjanos tus datos.
+				</p>
+				<form class="flex flex-col gap-2 rounded-xl border bg-primary/5 p-4">
+					<h3 class="font-display font-bold">Déjanos tus datos</h3>
+					<div>
+						<label for="name">Nombre completo</label>
+						<input
+							required
+							type="text"
+							name="name"
+							id="name"
+							placeholder="Nombre completo"
+							class="w-full rounded-md border p-2 text-lg"
+						/>
+					</div>
+					<div>
+						<label for="email">Correo electrónico</label>
+						<input
+							required
+							type="email"
+							name="email"
+							id="email"
+							placeholder="Correo electrónico"
+							class="w-full rounded-md border p-2 text-lg"
+						/>
+					</div>
+					<button
+						class="w-full rounded-md bg-primary p-2 text-lg font-semibold text-white"
+						type="submit"
+					>
+						Anotarme en la lista
+					</button>
+				</form>
+			</div>
+		</div>
+	</div>
+
+	<style>
+		.fade-in {
+			animation: fadeIn 0.5s ease-in-out forwards;
+			opacity: 0;
+			transform: translateY(20px);
+		}
+
+		.fade-out {
+			animation: fadeOut 0.5s ease-in-out forwards;
+			opacity: 1;
+			transform: translateY(0);
+		}
+
+		@keyframes fadeIn {
+			0% {
+				opacity: 0;
+				transform: translateY(20px) translateX(-50%);
+			}
+			100% {
+				opacity: 1;
+				transform: translateY(0) translateX(-50%);
+			}
+		}
+
+		@keyframes fadeOut {
+			0% {
+				opacity: 1;
+				transform: translateY(0) translateX(-50%);
+			}
+			100% {
+				opacity: 0;
+				transform: translateY(20px) translateX(-50%);
+			}
+		}
+
+		html {
+			scroll-behavior: smooth;
+			scroll-margin-top: 30px;
+			scroll-padding-top: -100px;
+		}
+	</style>
+
+	<script is:inline>
+		// Get the #notification element
+		const data = [
+			{
+				name: 'Gabriela',
+				amount: '3m2',
+				project: 'BeGrand® Reforma'
+			},
+			{
+				name: 'Eduardo',
+				amount: '2m2',
+				project: 'Vitant® Santa Lucía'
+			},
+			{
+				name: 'Luis',
+				amount: '1m2',
+				project: 'Vitant® Garza Sada'
+			}
+		]
+		let dataIndex = 0
+		const notification = document.getElementById('notification')
+		const notificationAvatar = document.getElementById('notification-avatar')
+		const notificationName = document.getElementById('notification-name')
+		const notificationValue = document.getElementById('notification-value')
+		const notificationProperty = document.getElementById('notification-property')
+
+		// Function to update notification
+		function updateNotification() {
+			// Update notification data
+			notificationName.textContent = data[dataIndex].name
+			notificationValue.textContent = data[dataIndex].amount
+			notificationAvatar.textContent = data[dataIndex].name[0]
+			notificationProperty.textContent = data[dataIndex].project
+
+			// Show the notification
+			notification.classList.add('fade-in')
+			notification.classList.remove('fade-out')
+
+			// Hide the notification after 1.5 seconds
+			setTimeout(() => {
+				notification.classList.remove('fade-in')
+				notification.classList.add('fade-out')
+			}, 1500)
+
+			// Move to the next data item
+			dataIndex = (dataIndex + 1) % data.length
+		}
+
+		// Update notification every 2 seconds
+		setInterval(updateNotification, 2000)
+	</script>
+	<script is:inline>
+		const modal = document.getElementById('modal')
+		// Get all the links with href="#modal"
+		const modalLinks = document.querySelectorAll('a[href="#modal"]')
+
+		// Ad a click event listener to each of them to open the modal
+		modalLinks.forEach((link) => {
+			link.addEventListener('click', (e) => {
+				e.preventDefault()
+				modal.classList.remove('hidden')
+				modal.classList.add('flex')
+			})
+		})
+
+		document.getElementById('close-modal').addEventListener('click', () => {
+			modal.classList.remove('flex')
+			modal.classList.add('hidden')
+		})
+	</script>
 </Layout>
-
-<style>
-	.fade-in {
-		animation: fadeIn 0.5s ease-in-out forwards;
-		opacity: 0;
-		transform: translateY(20px);
-	}
-
-	.fade-out {
-		animation: fadeOut 0.5s ease-in-out forwards;
-		opacity: 1;
-		transform: translateY(0);
-	}
-
-	@keyframes fadeIn {
-		0% {
-			opacity: 0;
-			transform: translateY(20px) translateX(-50%);
-		}
-		100% {
-			opacity: 1;
-			transform: translateY(0) translateX(-50%);
-		}
-	}
-
-	@keyframes fadeOut {
-		0% {
-			opacity: 1;
-			transform: translateY(0) translateX(-50%);
-		}
-		100% {
-			opacity: 0;
-			transform: translateY(20px) translateX(-50%);
-		}
-	}
-</style>
-
-<script is:inline>
-	// Get the #notification element
-	const data = [
-		{
-			name: 'Gabriela',
-			amount: '3m2',
-			project: 'BeGrand® Reforma'
-		},
-		{
-			name: 'Eduardo',
-			amount: '2m2',
-			project: 'Vitant® Santa Lucía'
-		},
-		{
-			name: 'Luis',
-			amount: '1m2',
-			project: 'Vitant® Garza Sada'
-		}
-	]
-	let dataIndex = 0
-	const notification = document.getElementById('notification')
-	const notificationAvatar = document.getElementById('notification-avatar')
-	const notificationName = document.getElementById('notification-name')
-	const notificationValue = document.getElementById('notification-value')
-	const notificationProperty = document.getElementById('notification-property')
-
-	// Function to update notification
-	function updateNotification() {
-		// Update notification data
-		notificationName.textContent = data[dataIndex].name
-		notificationValue.textContent = data[dataIndex].amount
-		notificationAvatar.textContent = data[dataIndex].name[0]
-		notificationProperty.textContent = data[dataIndex].project
-
-		// Show the notification
-		notification.classList.add('fade-in')
-		notification.classList.remove('fade-out')
-
-		// Hide the notification after 1.5 seconds
-		setTimeout(() => {
-			notification.classList.remove('fade-in')
-			notification.classList.add('fade-out')
-		}, 1500)
-
-		// Move to the next data item
-		dataIndex = (dataIndex + 1) % data.length
-	}
-
-	// Update notification every 2 seconds
-	setInterval(updateNotification, 2000)
-</script>
