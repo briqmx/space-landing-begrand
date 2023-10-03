@@ -4,7 +4,7 @@
     "description" : "Ahorra en Metros Cuadrados en los mejores edificios de México o compra tu departamento un metro a la vez. Protege el valor de tu dinero y empieza a vivir de tus rentas.",
     "cta" : {
       "text" : "Conoce más",
-      "url" : "https://www.metroscubicos.com/ahorro-inmobiliario"
+      "url" : "#propiedades"
     },
     "support" : [
       "Sin deudas por años",
@@ -100,5 +100,9 @@
       }
     ],
     "image" : "about-bg.jpeg"
+  },
+  "social" : {
+    "instagram" : "https://www.instagram.com/begrand/",
+    "facebook" : "https://www.facebook.com/begrand/"
   }
 }
