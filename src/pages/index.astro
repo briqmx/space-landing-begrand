@@ -22,7 +22,7 @@ import { Icon } from 'astro-icon/components'
 				<div class="flex items-center justify-between">
 					<div class="flex-shrink-0">
 						<a href="/" class="inline-block">
-							<img src="logo-nav.png" alt="Logo Briq" class="h-8" />
+							<img src="logo-nav.png" alt="Logo Briq" class="h-9" />
 						</a>
 					</div>
 					<div class="flex items-center gap-4 text-sm">
@@ -51,20 +51,29 @@ import { Icon } from 'astro-icon/components'
 					<div class="flex flex-col items-center justify-between gap-4 md:flex-row">
 						<div class="w-full">
 							<div class="flex max-w-md flex-col items-start gap-4">
+								<img src="logo-nav.png" alt="Logo Briq" class="h-10" />
 								<h1 class="font-display text-4xl font-bold">
 									{text.hero.title}
 								</h1>
 								<p class="leading-relaxed">
 									{text.hero.description}
 								</p>
-								<a
-									class="inline-flex items-center gap-2 rounded-md bg-primary px-8 py-4 text-sm font-semibold text-white hover:bg-primary/90"
-									href={text.hero.cta.url}
-								>
-									{text.hero.cta.text}
-									<Icon name="tabler:arrow-right" class="h-5 w-5" />
-								</a>
-								<div class="flex items-center gap-2">
+								<div class="flex w-full flex-col gap-2 md:flex-row">
+									<a
+										class="inline-flex items-center justify-center gap-2 rounded-md bg-primary px-8 py-3 text-sm font-semibold text-white hover:bg-primary/90"
+										href={text.hero.cta.url}
+									>
+										{text.hero.cta.text}
+										<Icon name="tabler:arrow-right" class="h-5 w-5" />
+									</a>
+									<button
+										class="inline-flex items-center justify-center gap-2 rounded-md border border-primary px-8 py-3 text-sm font-semibold text-primary"
+									>
+										Ver video
+										<Icon name="tabler:player-play-filled" class="h-4 w-4" />
+									</button>
+								</div>
+								<div class="flex w-full flex-col gap-2 md:flex-row md:items-center">
 									{
 										text.hero.support.map((item) => (
 											<div class="flex items-center gap-1 text-sm">
@@ -151,38 +160,36 @@ import { Icon } from 'astro-icon/components'
 		</section>
 		<section class="py-16">
 			<div class="mx-auto w-full max-w-screen-lg px-4">
-				<div class="flex flex-col items-start justify-between gap-2 md:flex-row">
-					<div class="flex w-full">
-						<div class="flex max-w-md flex-col gap-4">
-							<h2 class="font-display text-2xl font-bold">
-								{text.comparative.title}
-							</h2>
-							<p>
-								{text.comparative.description}
-							</p>
-						</div>
+				<div class="flex flex-col items-center justify-center gap-8">
+					<div class="flex max-w-2xl flex-col gap-4 text-center">
+						<h2 class="mx-auto max-w-md font-display text-2xl font-bold">
+							{text.comparative.title}
+						</h2>
+						<p>
+							{text.comparative.description}
+						</p>
 					</div>
 					<div class="w-full">
-						<div class="flex flex-row divide-x rounded-lg border shadow-sm">
-							<article class="flex w-full flex-col divide-y">
+						<div class="flex flex-row divide-x rounded-xl border shadow-sm">
+							<article class="flex w-1/2 flex-col divide-y">
 								<div class="flex min-h-[90px] items-center justify-center p-4 text-sm font-bold">
 									<p>Otros</p>
 								</div>
 								{
 									text.comparative.others.map((item) => (
-										<div class="min-h-[125px] p-3 text-sm text-zinc-500 even:bg-primary/5">
+										<div class="min-h-[125px] break-words p-4 text-lg text-zinc-500 even:bg-primary/5">
 											<p>{item}</p>
 										</div>
 									))
 								}
 							</article>
-							<article class="flex w-full flex-col divide-y">
+							<article class="flex w-1/2 flex-col divide-y">
 								<div class="flex min-h-[90px] items-center justify-center p-4">
 									<img src="logo.png" class="h-12" alt="Logo Sumametros" />
 								</div>
 								{
 									text.comparative.us.map((item) => (
-										<div class="flex min-h-[125px] items-start gap-2 p-3 text-sm even:bg-primary/5">
+										<div class="flex min-h-[125px] items-start gap-2 p-4 text-lg even:bg-primary/5">
 											<Icon
 												name="tabler:check"
 												class="hidden h-6 w-6 flex-shrink-0 text-primary md:inline-block"
@@ -482,14 +489,14 @@ import { Icon } from 'astro-icon/components'
 			setTimeout(() => {
 				notification.classList.remove('fade-in')
 				notification.classList.add('fade-out')
-			}, 1500)
+			}, 2500)
 
 			// Move to the next data item
 			dataIndex = (dataIndex + 1) % data.length
 		}
 
 		// Update notification every 2 seconds
-		setInterval(updateNotification, 2000)
+		setInterval(updateNotification, 3000)
 	</script>
 	<script is:inline>
 		const modal = document.getElementById('modal')
