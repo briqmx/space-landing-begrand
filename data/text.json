@@ -1,6 +1,6 @@
 {
   "hero" : {
-    "title" : "Construye tu patrimonio metro a metro",
+    "title" : "Sé dueño de Metros Cuadrados de los mejores edificios",
     "description" : "Ahorra en Metros Cuadrados en los mejores edificios de México o compra tu departamento un metro a la vez. Protege el valor de tu dinero y empieza a vivir de tus rentas.",
     "cta" : {
       "text" : "Conoce más",
@@ -19,12 +19,12 @@
     {
       "icon" : "icono-card-1.svg",
       "title" : "Sé dueño de m2 y recibe rentas sin preocuparte.",
-      "description" : "Sin lidiar con malos inquilinos, sin periodos sin renta, sin deterioro y sin mantenimiento. Solo preocúpate por tus rendimientos."
+      "description" : "Sin lidiar con malos inquilinos, sin periodos sin renta y sin ocuparte de mantenimiento. Solo recibe tus rendimientos."
     },
     {
       "icon" : "icono-card-2.svg",
       "title" : "Compra tu departamento a tu propio ritmo.",
-      "description" : "Comienza comprando desde 1m2 y crece a tu propio hasta completar tu departamento. Sin enganche, sin trámites largos y sin penalizaciones."
+      "description" : "Comienza comprando desde 1m2 y crece a tu propio ritmo hasta completar tu departamento."
     },
     {
       "icon" : "icono-card-3.svg",
@@ -48,13 +48,13 @@
       {
         "icon" : "tabler:clipboard-check",
         "title" : "Constancia de propiedad",
-        "description" : "Recibe una constancia que acredita tu propiedad de metros cuadrados libre de cualquier gravamen"
+        "description" : "Recibe una constancia que acredita tu propiedad de metros cuadrados libre de cualquier gravamen."
       }
     ]
   },
   "comparative": {
     "title" : "Ventajas de comprar metros cuadrados en Suma Metros",
-    "description" : "Suma Metros está hecho para gente que quiere invertir en departamentos para renta pero no quieren lidiar con los dolores de la cabeza de la operación.Asimismo, también está diseñado para personas que desean comprar un departamento, de forma más sencilla y a su propio ritmo.",
+    "description" : "Suma Metros está hecho para gente que quiere invertir en departamentos para renta pero no quieren lidiar con los dolores de la cabeza de la operación. Asimismo, también está diseñado para personas que desean comprar un departamento a su propio ritmo y sin endeudarse.",
     "others" : [
       "Mayores requerimientos de capital",
       "Mayores requerimientos de capital",
@@ -74,7 +74,7 @@
       "Explora nuestras propiedades y decide en cuál(es) quieres invertir",
       "Selecciona la cantidad de metros que deseas comprar",
       "Sigue las instrucciones de transferencia según tu banco y recibe tu certificado de compra",
-      "Empieza a cobrar renta y obtén plusvalía de tus metros."
+      "Empieza a cobrar renta y obtén plusvalía de tus metros"
     ]
   },
   "about" : {
@@ -92,11 +92,11 @@
       },
       {
         "title" : "Departamentos vendidos",
-        "value" : "+10k"
+        "value" : "+5,000"
       },
       {
-        "title" : "Plusvalía promedio",
-        "value" : "20%"
+        "title" : "Plusvalía promedio anual",
+        "value" : "10%"
       }
     ],
     "image" : "about-bg.jpeg"

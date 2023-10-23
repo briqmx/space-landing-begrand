@@ -51,7 +51,7 @@ import { Icon } from 'astro-icon/components'
 					<div class="flex flex-col items-center justify-between gap-4 md:flex-row">
 						<div class="w-full">
 							<div class="flex max-w-md flex-col items-start gap-4">
-								<img src="logo-nav.png" alt="Logo Briq" class="h-10" />
+								<img src="logo-nav.png" alt="Logo Briq" class="h-12" />
 								<h1 class="font-display text-4xl font-bold">
 									{text.hero.title}
 								</h1>
@@ -173,11 +173,11 @@ import { Icon } from 'astro-icon/components'
 						<div class="flex flex-row divide-x rounded-xl border shadow-sm">
 							<article class="flex w-1/2 flex-col divide-y">
 								<div class="flex min-h-[90px] items-center justify-center p-4 text-sm font-bold">
-									<p>Otros</p>
+									<p>OTROS</p>
 								</div>
 								{
 									text.comparative.others.map((item) => (
-										<div class="min-h-[125px] break-words p-4 text-lg text-zinc-500 even:bg-primary/5">
+										<div class="min-h-[125px] break-words p-4 text-zinc-500 even:bg-primary/5">
 											<p>{item}</p>
 										</div>
 									))
@@ -189,7 +189,7 @@ import { Icon } from 'astro-icon/components'
 								</div>
 								{
 									text.comparative.us.map((item) => (
-										<div class="flex min-h-[125px] items-start gap-2 p-4 text-lg even:bg-primary/5">
+										<div class="flex min-h-[125px] items-start gap-2 p-4 even:bg-primary/5">
 											<Icon
 												name="tabler:check"
 												class="hidden h-6 w-6 flex-shrink-0 text-primary md:inline-block"
@@ -214,7 +214,7 @@ import { Icon } from 'astro-icon/components'
 							</h2>
 						</div>
 						<div class="flex w-full flex-col items-start gap-4">
-							<p>Comprar con nosotros es muy sencillo</p>
+							<p>Comprar con nosotros es muy sencillo:</p>
 							<div class="flex-1 flex-col">
 								{
 									text.steps.steps.map((step, index) => (
