@@ -11,25 +11,25 @@
       "Sin enganche"
     ],
     "image" : {
-      "src": "hero-cover.png",
+      "src": "hero-cover.jpg",
       "alt": "Construye tu patrimonio metro a metro"
     }
   },
   "cards" : [
     {
       "icon" : "icono-card-1.svg",
-      "title" : "Sé dueño de m2 y recibe rentas sin preocuparte.",
+      "title" : "Sé dueño de m² y recibe rentas sin preocuparte.",
       "description" : "Sin lidiar con malos inquilinos, sin periodos sin renta y sin ocuparte de mantenimiento. Solo recibe tus rendimientos."
     },
     {
       "icon" : "icono-card-2.svg",
       "title" : "Compra tu departamento a tu propio ritmo.",
-      "description" : "Comienza comprando desde 1m2 y crece a tu propio ritmo hasta completar tu departamento."
+      "description" : "Comienza comprando desde 1m² y crece a tu propio ritmo hasta completar tu departamento."
     },
     {
       "icon" : "icono-card-3.svg",
       "title" : "Tu inversión está respaldada y segura.",
-      "description" : "Compra m2 de manera fácil y segura en los mejores edificios de México, operados por Be Grand® y con el respaldo tecnológico de briq.mx."
+      "description" : "Compra m² de manera fácil y segura en los mejores edificios de México, operados por Be Grand® y con el respaldo tecnológico de briq.mx."
     }
   ],
   "properties" : {
@@ -62,7 +62,7 @@
       "Desocupación por rotación de inquilinos"
     ],
     "us" : [
-      "Desde 1 m2 empieza a crear tu patrimonio",
+      "Desde 1 m² empieza a crear tu patrimonio",
       "Diversificación a tu alcance y medida",
       "SumaMetros es una solución llave en mano, con desarrollos respaldados y operados por los expertos de Be Grand®",
       "Ocupación constante por volumen"
