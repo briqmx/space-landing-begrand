@@ -41,7 +41,7 @@ import Form from '../components/Form'
 				<div class="rounded-2xl border bg-zinc-50 p-8">
 					<div class="flex flex-col items-center justify-between gap-4 md:flex-row">
 						<div class="w-full">
-							<div class="flex max-w-md flex-col items-start gap-4">
+							<div class="flex max-w-lg flex-col items-start gap-4">
 								<img src="logo-nav.png" alt="Logo Briq" class="h-8" />
 								<h1 class="font-display text-4xl font-bold">
 									{text.hero.title}
@@ -51,28 +51,12 @@ import Form from '../components/Form'
 								</p>
 								<div class="flex w-full flex-col gap-2 md:flex-row">
 									<a
-										class="inline-flex items-center justify-center gap-2 rounded-md bg-primary px-8 py-3 text-sm font-semibold text-white hover:bg-primary/90"
+										class="inline-flex items-center justify-center gap-2 rounded-md bg-primary px-8 py-3 font-display text-lg font-bold text-white hover:bg-primary/90"
 										href="#propiedades"
 									>
 										Compra tu primer metro
 									</a>
-									<!-- <button
-										class="inline-flex items-center justify-center gap-2 rounded-md border border-primary px-8 py-3 text-sm font-semibold text-primary"
-									>
-										Ver video
-										<Icon name="tabler:player-play-filled" class="h-4 w-4" />
-									</button> -->
 								</div>
-								<!-- <div class="flex w-full flex-col gap-2 md:flex-row md:items-center">
-									{
-										text.hero.support.map((item) => (
-											<div class="flex items-center gap-1 text-sm">
-												<Icon name="tabler:check" class="h-5 w-5 text-primary" />
-												<p>{item}</p>
-											</div>
-										))
-									}
-								</div> -->
 							</div>
 						</div>
 						<div class="flex w-full items-center justify-center">
@@ -150,8 +134,8 @@ import Form from '../components/Form'
 		</section>
 		<section class="py-16">
 			<div class="mx-auto w-full max-w-screen-xl px-4">
-				<div class="flex flex-col items-center justify-center gap-8">
-					<div class="flex max-w-2xl flex-col gap-4 text-center">
+				<div class="flex flex-col items-center justify-center">
+					<div class="mb-16 flex max-w-2xl flex-col gap-8 text-center">
 						<h2 class="mx-auto max-w-md font-display text-2xl font-bold">
 							{text.comparative.title}
 						</h2>
@@ -159,8 +143,11 @@ import Form from '../components/Form'
 							{text.comparative.description}
 						</p>
 					</div>
-					<div class="w-full">
-						<div class="flex flex-row divide-x rounded-xl border shadow-2xl">
+					<div class="relative mx-auto flex max-w-[800px]">
+						<div class="absolute inset-0 rotate-2 rounded-2xl bg-primary/20 md:rotate-3"></div>
+						<div
+							class="relative flex w-full flex-row divide-x rounded-xl border border-black/10 bg-white/95 shadow-2xl backdrop-blur-md"
+						>
 							<article class="flex w-1/2 flex-col divide-y">
 								<div class="flex min-h-[90px] items-center justify-center p-4 text-sm font-bold">
 									<p>OTROS</p>
@@ -196,7 +183,7 @@ import Form from '../components/Form'
 		</section>
 		<section class="border-y py-16">
 			<div class="mx-auto w-full max-w-screen-xl px-4">
-				<div class="rounded-2xl bg-navy p-16 text-white">
+				<div class="rounded-2xl bg-navy p-8 text-white md:p-16">
 					<div class="flex flex-col items-stretch gap-4 md:flex-row">
 						<div class="w-full max-w-sm">
 							<h2 class="font-display text-2xl font-bold">
@@ -223,7 +210,7 @@ import Form from '../components/Form'
 								}
 							</div>
 							<a
-								class="inline-flex rounded-md bg-primary px-8 py-4 text-sm font-bold text-white hover:bg-primary/90"
+								class="inline-flex w-full justify-center rounded-md bg-primary px-8 py-4 font-display text-sm font-bold text-white hover:bg-primary/90"
 								href="#">Quiero invertir</a
 							>
 						</div>
@@ -256,7 +243,7 @@ import Form from '../components/Form'
 							<a
 								href="https://begrand.mx"
 								target="_blank"
-								class="inline-flex items-center justify-center gap-2 rounded-md border border-navy/20 px-8 py-3 text-sm font-semibold text-navy"
+								class="inline-flex items-center justify-center gap-2 rounded-md border border-navy/20 px-8 py-3 font-display text-sm font-bold text-navy"
 								>Conocer más</a
 							>
 						</div>
@@ -292,12 +279,12 @@ import Form from '../components/Form'
 		<footer class="border-t py-8">
 			<div class="mx-auto w-full max-w-screen-xl px-4">
 				<div class="mb-8 flex flex-col items-start justify-between gap-4 md:flex-row">
-					<div class="flex flex-col items-center gap-8 md:flex-row">
+					<div class="flex flex-col gap-8 md:flex-row md:items-center">
 						<div>
 							<p class="text-xs text-zinc-500">Con tecnología de</p>
 							<img src="logo-briq.svg" alt="Logo Briq" class="h-8" />
 						</div>
-						<div class="h-8 w-1 bg-navy"></div>
+						<div class="h-1 w-[200px] bg-navy md:h-8 md:w-1"></div>
 						<div>
 							<p class="max-w-md text-sm">
 								Este es un espacio en briq.mx todas tus operaciones son seguras.
@@ -397,57 +384,6 @@ import Form from '../components/Form'
 		}
 	</style>
 
-	<script is:inline>
-		// Get the #notification element
-		const data = [
-			{
-				name: 'Gabriela',
-				amount: '3m²',
-				project: 'BeGrand® Reforma'
-			},
-			{
-				name: 'Eduardo',
-				amount: '2m²',
-				project: 'Vitant® Santa Lucía'
-			},
-			{
-				name: 'Luis',
-				amount: '1m²',
-				project: 'Vitant® Garza Sada'
-			}
-		]
-		let dataIndex = 0
-		const notification = document.getElementById('notification')
-		const notificationAvatar = document.getElementById('notification-avatar')
-		const notificationName = document.getElementById('notification-name')
-		const notificationValue = document.getElementById('notification-value')
-		const notificationProperty = document.getElementById('notification-property')
-
-		// Function to update notification
-		function updateNotification() {
-			// Update notification data
-			notificationName.textContent = data[dataIndex].name
-			notificationValue.textContent = data[dataIndex].amount
-			notificationAvatar.textContent = data[dataIndex].name[0]
-			notificationProperty.textContent = data[dataIndex].project
-
-			// Show the notification
-			notification.classList.add('fade-in')
-			notification.classList.remove('fade-out')
-
-			// Hide the notification after 1.5 seconds
-			setTimeout(() => {
-				notification.classList.remove('fade-in')
-				notification.classList.add('fade-out')
-			}, 2500)
-
-			// Move to the next data item
-			dataIndex = (dataIndex + 1) % data.length
-		}
-
-		// Update notification every 2 seconds
-		setInterval(updateNotification, 3000)
-	</script>
 	<script is:inline>
 		const modal = document.getElementById('modal')
 		// Get all the links with href="#modal"
