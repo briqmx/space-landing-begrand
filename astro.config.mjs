@@ -8,7 +8,7 @@ import icon from "astro-icon";
 export default defineConfig({
   // site: 'https://briqmx.github.io',
   base: '/space-landing-begrand',
-  base: '/',
+  // base: '/',
   integrations: [tailwind(), icon({
     iconDir: "./src/icons",
     include: {
