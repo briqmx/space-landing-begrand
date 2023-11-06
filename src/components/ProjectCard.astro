@@ -18,7 +18,7 @@ const formatNumber = (number) => {
 
 {
 	project.isFeatured ? (
-		<article class="flex flex w-full flex-col gap-4 rounded-xl bg-navy p-4 text-white md:col-span-3 md:flex-row">
+		<article class="flex  w-full flex-col gap-4 rounded-xl bg-navy p-4 text-white md:col-span-3 md:flex-row">
 			<figure class="relative aspect-square h-64 overflow-hidden rounded-lg">
 				<img
 					src={project.image}
@@ -40,15 +40,16 @@ const formatNumber = (number) => {
 				</div>
 				<div class="flex w-full items-center justify-between gap-4">
 					<div class="flex flex-col">
-						<p class="font-display text-2xl font-bold">
-							{currency(project.price)}
-							<small class="font-medium opacity-50">/m2</small>
-						</p>
-						<p class="text-sm opacity-50">
-							{formatNumber(project.unitsAvailable)}
-							de
-							{formatNumber(project.unitsTotal)} m2
-						</p>
+						{project.price === 0 && (
+							<p class="font-display text-2xl font-bold">Precio por definir</p>
+						)}
+						{project.price > 0 && (
+							<p class="font-display text-2xl font-bold">
+								{currency(project.price)}
+								<small class="font-medium opacity-50">/m²</small>
+							</p>
+						)}
+						<p class="text-sm opacity-50">{formatNumber(project.unitsTotal)} m² disponibles</p>
 					</div>
 					<a
 						class="inline-flex items-center justify-center rounded-lg bg-primary px-4 py-2  font-medium shadow-sm"
@@ -61,19 +62,7 @@ const formatNumber = (number) => {
 		</article>
 	) : (
 		<article class="flex w-full flex-col gap-2 rounded-xl border bg-white p-4 shadow-sm">
-			<figure class="relative aspect-video overflow-hidden rounded-lg">
-				<div class="absolute top-0 z-10 flex w-full items-center justify-end gap-2 p-1">
-					{project.isNew ? (
-						<span class="rounded-md border border-black/10 bg-white p-1 text-xs font-medium">
-							Nuevo
-						</span>
-					) : null}
-					{project.status == 'active' ? (
-						<span class="rounded-md border border-black/10 bg-white p-1 text-xs font-medium">
-							Operando
-						</span>
-					) : null}
-				</div>
+			<figure class="relative h-[250px] overflow-hidden rounded-lg">
 				<img
 					src={project.image}
 					alt={project.title}
@@ -94,13 +83,9 @@ const formatNumber = (number) => {
 				<div class="flex flex-col">
 					<p class="font-display font-bold">
 						{currency(project.price)}
-						<small class="font-medium text-zinc-500">/m2</small>
+						<small class="font-medium text-zinc-500">/m²</small>
 					</p>
-					<p class="text-sm text-zinc-500">
-						{formatNumber(project.unitsAvailable)}
-						de
-						{formatNumber(project.unitsTotal)} m2
-					</p>
+					<p class="text-sm text-zinc-500">{formatNumber(project.unitsTotal)} m² disponibles</p>
 				</div>
 				<a
 					class="inline-flex items-center justify-center rounded-lg border bg-white px-4 py-2 text-sm font-medium shadow-sm"
