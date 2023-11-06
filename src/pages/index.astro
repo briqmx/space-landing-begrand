@@ -5,6 +5,7 @@ import projects from '../../data/projects.json'
 import faqs from '../../data/faqs.json'
 import ProjectCard from '../components/ProjectCard.astro'
 import { Icon } from 'astro-icon/components'
+import Form from '../components/Form'
 ---
 
 <Layout title="Inicio | Construye tu patrimonio metro a metro.">
@@ -346,37 +347,10 @@ import { Icon } from 'astro-icon/components'
 					Muy pronto podrás ir sumando metros para hacer tu patrimonio. Si quieres ser de las
 					primeras personas en enterarse, déjanos tus datos.
 				</p>
-				<form class="flex flex-col gap-2 rounded-xl border bg-primary/5 p-4">
+				<div class="flex flex-col gap-2 rounded-xl border bg-primary/5 p-4">
 					<h3 class="font-display font-bold">Déjanos tus datos</h3>
-					<div>
-						<label for="name">Nombre completo</label>
-						<input
-							required
-							type="text"
-							name="name"
-							id="name"
-							placeholder="Nombre completo"
-							class="w-full rounded-md border p-2 text-lg"
-						/>
-					</div>
-					<div>
-						<label for="email">Correo electrónico</label>
-						<input
-							required
-							type="email"
-							name="email"
-							id="email"
-							placeholder="Correo electrónico"
-							class="w-full rounded-md border p-2 text-lg"
-						/>
-					</div>
-					<button
-						class="w-full rounded-md bg-primary p-2 text-lg font-semibold text-white"
-						type="submit"
-					>
-						Anotarme en la lista
-					</button>
-				</form>
+					<Form client:load />
+				</div>
 			</div>
 		</div>
 	</div>
