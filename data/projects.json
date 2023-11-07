@@ -13,19 +13,6 @@
     "isFeatured" : true
   },
   {
-    "title" : "Vitant® Santa Fe",
-    "description" : "Vivir junto al parque La Mexicana, sí se puede. Vitant® Santa Fe te ofrece lo mejor de la naturaleza y la modernidad de uno de los principales centros de negocios de la ciudad. Despeja tu mente con una caminata en el gran parque La Mexicana o relájate dentro de tu increíble alberca o sports bar. Todo lo que buscas, lo encuentras en Vitant® Santa Fe.    ",
-    "image" : "proyectos/santa-fe.jpeg",
-    "location" : "Cuajimalpa, CDMX",
-    "isNew" : true,
-    "status" : "active",
-    "unitsTotal" : 6270,
-    "unitsAvailable" : 6270,
-    "price" : 73853,
-    "url" : "#modal",
-    "isFeatured" : false
-  },
-  {
     "title" : "Vitant® Polanco",
     "description" : "Vivir en una de las zonas más atractivas de Ciudad de México, sí se puede. Vitant® Polanco es el lugar ideal para ti que buscas vivir en uno de los principales centros culturales, gastronómicos y sociales de la ciudad. Además de disfrutar de todo lo que esta zona te ofrece, también podrás compartir grandes momentos con tu familia y amigos en las increíbles amenidades como alberca, sports bar y terraza. Vitant® Polanco tiene todo lo que necesitas y mucho más.",
     "image" : "proyectos/polanco.jpeg",
@@ -39,15 +26,15 @@
     "isFeatured" : false
   },
   {
-    "title" : "Vitant® Santa Lucía",
-    "description" : "Vivir junto al Paseo Santa Lucía, sí se puede. Ubicado en una de las zonas más dinámicas de Benito Juárez, Vitant® Santa Lucía está diseñado para profesionistas y nuevas familias que buscan vivir en un lugar estratégico de la ciudad. Desplázate caminando al Paseo Santa Lucía, Parque Fundidora o al centro de Monterrey; además, sus amenidades como alberca, terraza y salón de eventos, te permitirán disfrutar de momentos inolvidables con amigos y familiaCDMX",
-    "image" : "proyectos/santa-lucia.jpeg",
-    "location" : "Monterrey, N.L.",
+    "title" : "Vitant® Santa Fe",
+    "description" : "Vivir junto al parque La Mexicana, sí se puede. Vitant® Santa Fe te ofrece lo mejor de la naturaleza y la modernidad de uno de los principales centros de negocios de la ciudad. Despeja tu mente con una caminata en el gran parque La Mexicana o relájate dentro de tu increíble alberca o sports bar. Todo lo que buscas, lo encuentras en Vitant® Santa Fe.    ",
+    "image" : "proyectos/santa-fe.jpeg",
+    "location" : "Cuajimalpa, CDMX",
     "isNew" : true,
     "status" : "active",
-    "unitsTotal" : 3025,
-    "unitsAvailable" : 3025,
-    "price" : 56955,
+    "unitsTotal" : 6270,
+    "unitsAvailable" : 6270,
+    "price" : 73853,
     "url" : "#modal",
     "isFeatured" : false
   },
@@ -74,6 +61,19 @@
     "unitsTotal" : 5943,
     "unitsAvailable" : 5943,
     "price" : 76484,
+    "url" : "#modal",
+    "isFeatured" : false
+  },
+  {
+    "title" : "Vitant® Santa Lucía",
+    "description" : "Vivir junto al Paseo Santa Lucía, sí se puede. Ubicado en una de las zonas más dinámicas de Benito Juárez, Vitant® Santa Lucía está diseñado para profesionistas y nuevas familias que buscan vivir en un lugar estratégico de la ciudad. Desplázate caminando al Paseo Santa Lucía, Parque Fundidora o al centro de Monterrey; además, sus amenidades como alberca, terraza y salón de eventos, te permitirán disfrutar de momentos inolvidables con amigos y familiaCDMX",
+    "image" : "proyectos/santa-lucia.jpeg",
+    "location" : "Monterrey, N.L.",
+    "isNew" : true,
+    "status" : "active",
+    "unitsTotal" : 3025,
+    "unitsAvailable" : 3025,
+    "price" : 56955,
     "url" : "#modal",
     "isFeatured" : false
   },
