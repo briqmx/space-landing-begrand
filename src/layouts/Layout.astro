@@ -4,6 +4,15 @@ interface Props {
 }
 
 const { title } = Astro.props
+const site_url = Astro.site
+let base_ulr = ''
+
+// Get the process environment
+if (process.env.NODE_ENV === 'development') {
+	base_ulr = 'http://localhost:4321'
+} else {
+	base_ulr = site_url.href + '/space-landing-begrand'
+}
 ---
 
 <!doctype html>
@@ -22,9 +31,9 @@ const { title } = Astro.props
 			name="og:description"
 			content="Suma Metros | Sé dueño de Metros cuadrados de los mejores edificios"
 		/>
-		<meta name="og:image" content="/og.jpg" />
+		<meta name="og:image" content={base_ulr + '/og.jpg'} />
 		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" href="/favicon.png" type="image/png" />
+		<link rel="icon" href={base_ulr + '/favicon.png'} type="image/png" />
 		<meta name="generator" content={Astro.generator} />
 		<title>Suma metros® | {title}</title>
 	</head>
