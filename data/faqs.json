@@ -1,18 +1,18 @@
 [
   {
-    "question": "¿Cuántos m² puedo comprar?",
-    "answer": "Mínimo uno y máximo los que quieras, tenemos m² disponibles en varios edificios. Por ahora no se pueden comprar fracciones de m²."
+    "question": "¿Cuántos m2 puedo comprar?",
+    "answer": "Mínimo uno y máximo los que quieras, tenemos m2 disponibles en varios edificios. Por ahora no se pueden comprar fracciones de m2."
   },
   {
-    "question": "¿Tengo que elegir algún m² específico de un departamento?",
-    "answer": "No, realmente adquieres una participación de un grupo de departamentos. Así no te tienes que preocupar si el tuyo es el que no se renta. Cada grupo de departamentos tiene un número determinado de m² y a todas las personas que compren esos m2 se les reparten las ganancias proporcionalmente."
+    "question": "¿Tengo que elegir algún m2 específico de un departamento?",
+    "answer": "No, realmente adquieres una participación de un grupo de departamentos. Así no te tienes que preocupar si el tuyo es el que no se renta. Cada grupo de departamentos tiene un número determinado de m2 y a todas las personas que compren esos m2 se les reparten las ganancias proporcionalmente."
   },
   {
     "question": "¿Qué respalda legalmente mi compra?",
     "answer": "Cada metro es una participación en un fideicomiso que es propietario de un grupo de departamentos. Al comprar, adquieres una participación en ese fideicomiso a través de briq.mx, que te representa como inversionista en el mismo. "
   },
   {
-    "question": "¿Puedo vender mis m²?",
-    "answer": "Sí, dentro de briq.mx cuentas con un mercado secundario en donde puedes poner a la venta tus metros. Desde el momento en el que los adquieres puedes venderlos, el precio lo decides tú."
+    "question" : "¿Puedo vender mis m2?",
+    "answer" : "Sí, dentro de briq.mx cuentas con un mercado secundario en donde puedes poner a la venta tus metros. Desde el momento en el que los adquieres puedes venderlos, el precio lo decides tú."
   }
 ]
