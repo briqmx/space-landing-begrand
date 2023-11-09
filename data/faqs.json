@@ -1,27 +1,18 @@
 [
   {
-    "question": "¿Lorem ipsum dolor sit amet, consectetur adipiscing elit?",
-    "answer": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec auctor, nisl eget ultricies ultricies, nunc nisl ultricies nunc, quis ultricies nisl nisl eget nisl. Donec auctor, nisl eget ultricies ultricies, nunc nisl ultricies nunc, quis ultricies nisl nisl eget nisl."
+    "question": "¿Cuántos m² puedo comprar?",
+    "answer": "Mínimo uno y máximo los que quieras, tenemos m2 disponibles en varios edificios. Por ahora no se pueden comprar fracciones de m²."
   },
   {
-    "question": "¿Lorem ipsum dolor sit amet, consectetur adipiscing elit?",
-    "answer": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec auctor, nisl eget ultricies ultricies, nunc nisl ultricies nunc, quis ultricies nisl nisl eget nisl. Donec auctor, nisl eget ultricies ultricies, nunc nisl ultricies nunc, quis ultricies nisl nisl eget nisl."
+    "question": "¿Tengo que elegir algún m² específico de un departamento?",
+    "answer": "No, realmente adquieres una participación de un grupo de departamentos. Así no te tienes que preocupar si el tuyo es el que no se renta. Cada grupo de departamentos tiene un número determinado de m² y a todas las personas que compren esos m2 se les reparten las ganancias proporcionalmente."
   },
   {
-    "question": "¿Lorem ipsum dolor sit amet, consectetur adipiscing elit?",
-    "answer": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec auctor, nisl eget ultricies ultricies, nunc nisl ultricies nunc, quis ultricies nisl nisl eget nisl. Donec auctor, nisl eget ultricies ultricies, nunc nisl ultricies nunc, quis ultricies nisl nisl eget nisl."
+    "question": "¿Qué respalda legalmente mi compra?",
+    "answer": "Cada metro es una participación en un fideicomiso que es propietario de un grupo de departamentos. Al comprar, adquieres una participación en ese fideicomiso a través de briq.mx, que te representa como inversionista en el mismo. "
   },
   {
-    "question": "¿Lorem ipsum dolor sit amet, consectetur adipiscing elit?",
-    "answer": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec auctor, nisl eget ultricies ultricies, nunc nisl ultricies nunc, quis ultricies nisl nisl eget nisl. Donec auctor, nisl eget ultricies ultricies, nunc nisl ultricies nunc, quis ultricies nisl nisl eget nisl."
+    "question": "¿Puedo vender mis m²?",
+    "answer": "Sí, dentro de briq.mx cuentas con un mercado secundario en donde puedes poner a la venta tus metros. Desde el momento en el que los adquieres puedes venderlos, el precio lo decides tú."
   },
-  {
-    "question": "¿Lorem ipsum dolor sit amet, consectetur adipiscing elit?",
-    "answer": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec auctor, nisl eget ultricies ultricies, nunc nisl ultricies nunc, quis ultricies nisl nisl eget nisl. Donec auctor, nisl eget ultricies ultricies, nunc nisl ultricies nunc, quis ultricies nisl nisl eget nisl."
-  },
-  {
-    "question": "¿Lorem ipsum dolor sit amet, consectetur adipiscing elit?",
-    "answer": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec auctor, nisl eget ultricies ultricies, nunc nisl ultricies nunc, quis ultricies nisl nisl eget nisl. Donec auctor, nisl eget ultricies ultricies, nunc nisl ultricies nunc, quis ultricies nisl nisl eget nisl."
-  }
-  
 ]
