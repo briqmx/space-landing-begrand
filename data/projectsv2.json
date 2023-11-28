@@ -2,7 +2,7 @@
   {
     "title" : "Be Grand® Reforma",
     "description" : "Ubicado en la avenida más importante de la CDMX, Be Grand Reforma® es un desarrollo de usos mixtos que cuenta con amenidades únicas en la zona, a tan solo pasos del Monumento a La Revolución, este desarrollo cuenta con vistas inigualables. Con más de 40 pisos, Be Grand Reforma es el nuevo ícono del corredor financiero más importante del país.",
-    "image" : "/proyectos/reforma.jpeg",
+    "image" : "../proyectos/reforma.jpeg",
     "location" : "Cuauhtémoc, CDMX",
     "isNew" : true,
     "status" : "active",
@@ -15,7 +15,7 @@
   {
     "title" : "Vitant® Del Valle",
     "description" : "Vivir en la colonia Del Valle, sí se puede. Localizado en una de las zonas más céntricas y de mayor crecimiento en la Ciudad de México, Vitant® Del Valle cuenta con una ubicación sin igual. Nuestro desarrollo se encuentra dentro del complejo residencial Mitikah; lo que te permitirá disfrutar de restaurantes, cafeterías, cine y mucho más… todo a un lado de tu depa.",
-    "image" : "/proyectos/del-valle.jpeg",
+    "image" : "../proyectos/del-valle.jpeg",
     "location" : "Benito Juárez, CDMX",
     "isNew" : true,
     "status" : "active",
@@ -28,7 +28,7 @@
   {
     "title" : "Vitant® Garza Sada",
     "description" : "Invertir en un desarrollo para estudiantes del Tec, sí se puede. Por su ubicación estratégica (a tan solo 5 minutos del Tec de Monterrey) y su concepto diseñado específicamente para satisfacer las necesidades del mercado estudiantil, Vitant® Garza Sada es una gran oportunidad de inversión para ti. Nuestro edificio cuenta con amplias áreas de estudio, gimnasio, cancha de pádel y otras increíbles amenidades que los estudiantes podrán disfrutar al máximo.",
-    "image" : "/proyectos/garza-sada.jpeg",
+    "image" : "../proyectos/garza-sada.jpeg",
     "location" : "Monterrey, N.L.",
     "isNew" : true,
     "status" : "active",
