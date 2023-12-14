@@ -11,5 +11,31 @@
     "price" : 68615,
     "url" : "https://briq.mx/suma_metros/proyectos/vitant-del-valle",
     "isFeatured" : false
+  },
+  {
+    "title" : "Vitant® San Pedro",
+    "description" : "El lugar donde la comodidad y una ubicación sin igual se fusionan. Nuestro edificio, en la exclusiva zona de Valle Oriente, te ofrece un estilo de vida incomparable; con impresionantes vistas, interiores modernos y amenidades únicas diseñadas para tu confort.",
+    "image" : "../proyectos/san-pedro.jpeg",
+    "location" : "Monterrey, Nuevo León",
+    "isNew" : true,
+    "status" : "active",
+    "unitsTotal" : 9153,
+    "unitsAvailable" : 1000,
+    "price" : 76484,
+    "url" : "https://briq.mx/suma_metros/proyectos/vitant-san-pedro",
+    "isFeatured" : false
+  },
+  {
+    "title" : "Vitant® Polanco",
+    "description" : "Vitant® Polanco es el lugar ideal para ti que buscas vivir en uno de los principales centros culturales, gastronómicos y sociales de la ciudad.",
+    "image" : "../proyectos/polanco.jpeg",
+    "location" : "Miguel Hidalgo, CDMX",
+    "isNew" : true,
+    "status" : "active",
+    "unitsTotal" : 5153,
+    "unitsAvailable" : 1120,
+    "price" : 67448,
+    "url" : "https://briq.mx/suma_metros/proyectos/vitant-polanco",
+    "isFeatured" : false
   }
 ]
