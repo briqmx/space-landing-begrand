@@ -33,7 +33,7 @@ const numberToCurrency = (number) => {
 				</div>
 			</div>
 		</nav>
-		<header class="bg-beige-dark border-b">
+		<header class="border-b bg-beige-dark">
 			<div class="flex flex-col items-stretch justify-between md:min-h-[75vh] md:flex-row">
 				<div class="flex w-full items-center justify-center px-4 py-8">
 					<div class="flex max-w-lg flex-col items-start gap-4">
@@ -68,7 +68,7 @@ const numberToCurrency = (number) => {
 		<section class="py-8">
 			<div class="mx-auto w-full max-w-screen-lg px-4">
 				<div class="grid grid-cols-1 gap-8 md:grid-cols-3">
-					<article class="bg-beige flex flex-col items-start gap-4 rounded-lg border p-8">
+					<article class="flex flex-col items-start gap-4 rounded-lg border bg-beige p-8">
 						<img src="../icono-card-1.svg" class="mb-8 h-12" />
 						<h2 class="font-display font-bold">Sé dueño de m² y recibe rentas sin preocuparte.</h2>
 						<p>
@@ -76,7 +76,7 @@ const numberToCurrency = (number) => {
 							mantenimiento. Solo recibe tus rendimientos.
 						</p>
 					</article>
-					<article class="bg-beige flex flex-col items-start gap-4 rounded-lg border p-8">
+					<article class="flex flex-col items-start gap-4 rounded-lg border bg-beige p-8">
 						<img src="../icono-card-2.svg" class="mb-8 h-12" />
 						<h2 class="font-display font-bold">Compra tu departamento a tu propio ritmo.</h2>
 						<p>
@@ -84,7 +84,7 @@ const numberToCurrency = (number) => {
 							departamento.
 						</p>
 					</article>
-					<article class="bg-beige flex flex-col items-start gap-4 rounded-lg border p-8">
+					<article class="flex flex-col items-start gap-4 rounded-lg border bg-beige p-8">
 						<img src="../icono-card-3.svg" class="mb-8 h-12" />
 						<h2 class="font-display font-bold">Tu inversión está respaldada y segura.</h2>
 						<p>
@@ -95,7 +95,7 @@ const numberToCurrency = (number) => {
 				</div>
 			</div>
 		</section>
-		<section class="bg-beige border-y py-24">
+		<section class="border-y bg-beige py-24">
 			<div class="mx-auto w-full max-w-screen-lg px-4">
 				<div class="flex flex-col gap-2">
 					<p class="font-display text-sm font-semibold text-primary">Propiedades disponibles:</p>
@@ -148,7 +148,8 @@ const numberToCurrency = (number) => {
 											</div>
 											<a
 												class="inline-flex justify-center bg-navy px-6 py-4 text-center font-display font-bold text-white"
-												href="#"
+												href={project.url}
+												target="_blank"
 											>
 												Comprar ahora
 											</a>
@@ -197,7 +198,7 @@ const numberToCurrency = (number) => {
 					¿Cuáles son las ventajas de comprar metros cuadrados en Suma Metros?
 				</h2>
 				<div class="grid grid-cols-1 gap-8 md:grid-cols-2">
-					<article class="bg-beige flex flex-col justify-between rounded-lg border p-8">
+					<article class="flex flex-col justify-between rounded-lg border bg-beige p-8">
 						<div>
 							<h2 class="font-display font-bold text-primary">Capital</h2>
 							<p class="mb-16 font-display text-2xl font-bold">
@@ -210,7 +211,7 @@ const numberToCurrency = (number) => {
 							rente la propiedad para recibir ganancias.
 						</p>
 					</article>
-					<article class="bg-beige flex flex-col justify-between rounded-lg border p-8">
+					<article class="flex flex-col justify-between rounded-lg border bg-beige p-8">
 						<div>
 							<h2 class="font-display font-bold text-primary">Inversión</h2>
 							<p class="mb-16 font-display text-2xl font-bold">
@@ -221,7 +222,7 @@ const numberToCurrency = (number) => {
 							Con los otros, solo puedes invertir en un solo inmueble debido a los altos costos.
 						</p>
 					</article>
-					<article class="bg-beige flex flex-col justify-between rounded-lg border p-8">
+					<article class="flex flex-col justify-between rounded-lg border bg-beige p-8">
 						<div>
 							<h2 class="font-display font-bold text-primary">Rentas</h2>
 							<p class="mb-16 font-display text-2xl font-bold">
@@ -234,7 +235,7 @@ const numberToCurrency = (number) => {
 							asesoría legal.
 						</p>
 					</article>
-					<article class="bg-beige flex flex-col justify-between rounded-lg border p-8">
+					<article class="flex flex-col justify-between rounded-lg border bg-beige p-8">
 						<div>
 							<h2 class="font-display font-bold text-primary">Ocupación</h2>
 							<p class="mb-16 font-display text-2xl font-bold">
@@ -289,7 +290,7 @@ const numberToCurrency = (number) => {
 		<section class="py-24">
 			<div class="mx-auto w-full max-w-screen-lg px-4">
 				<div class="grid grid-cols-1 gap-8 p-8 md:grid-cols-3">
-					<figure class="bg-beige flex items-center justify-center">
+					<figure class="flex items-center justify-center bg-beige">
 						<img src="../logo-begrand.svg" alt="Logo" class="w-32 mix-blend-multiply" />
 					</figure>
 					<div class="col-span-2 flex flex-col items-start gap-8">
@@ -329,7 +330,7 @@ const numberToCurrency = (number) => {
 				</div>
 			</div>
 		</section>
-		<section class="bg-beige border-t py-16">
+		<section class="border-t bg-beige py-16">
 			<div class="mx-auto w-full max-w-screen-lg px-4">
 				<h2 class="mb-16 font-display text-4xl font-bold">Preguntas frecuentes</h2>
 				<div class="grid grid-cols-1 gap-4">
