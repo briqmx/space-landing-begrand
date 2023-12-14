@@ -28,8 +28,11 @@ const numberToCurrency = (number) => {
 					<img src="../logo-nav.png" alt="Logo" class="w-32" />
 					<a
 						class="inline-flex border bg-white px-3 py-3 font-display text-sm font-bold text-navy"
-						href="#">Iniciar sesión</a
+						href="https://www.briq.mx/users/sign_in"
+						target="_blank"
 					>
+						Iniciar sesión
+					</a>
 				</div>
 			</div>
 		</nav>
@@ -49,9 +52,13 @@ const numberToCurrency = (number) => {
 							Compra desde 1m² en los mejores edificios, obten rentas y plusvalia, sigue comprando y
 							obten tu departamento.
 						</p>
-						<a class="inline-flex bg-navy px-6 py-4 font-display font-bold text-white" href="#"
-							>¿Como funciona?</a
+						<button
+							class="video-button inline-flex items-center gap-4 bg-navy px-6 py-4 font-display font-bold text-white"
+							data-video="video-general.mp4"
 						>
+							<span>¿Como funciona?</span>
+							<Icon name="tabler:player-play-filled" class="opacity-90" />
+						</button>
 					</div>
 				</div>
 				<div class="h-[420px] w-full md:h-auto">
@@ -68,29 +75,68 @@ const numberToCurrency = (number) => {
 		<section class="py-8">
 			<div class="mx-auto w-full max-w-screen-lg px-4">
 				<div class="grid grid-cols-1 gap-8 md:grid-cols-3">
-					<article class="flex flex-col items-start gap-4 rounded-lg border bg-beige p-8">
-						<img src="../icono-card-1.svg" class="mb-8 h-12" />
-						<h2 class="font-display font-bold">Sé dueño de m² y recibe rentas sin preocuparte.</h2>
-						<p>
-							Sin lidiar con malos inquilinos, sin periodos sin renta y sin ocuparte de
-							mantenimiento. Solo recibe tus rendimientos.
-						</p>
+					<article
+						class="flex flex-col items-start justify-between gap-4 rounded-lg border bg-beige p-8"
+					>
+						<div>
+							<img src="../icono-card-1.svg" class="mb-8 h-12" />
+							<h2 class="font-display font-bold">
+								Sé dueño de m² y recibe rentas sin preocuparte.
+							</h2>
+							<p>
+								Sin lidiar con malos inquilinos, sin periodos sin renta y sin ocuparte de
+								mantenimiento. Solo recibe tus rendimientos.
+							</p>
+						</div>
+						<button
+							class="video-button flex items-center justify-center gap-2 bg-navy px-3 py-2 font-display text-sm font-medium text-white"
+							data-video="video-1.mp4"
+						>
+							<span>Ver video</span>
+							<Icon name="tabler:player-play-filled" />
+						</button>
 					</article>
-					<article class="flex flex-col items-start gap-4 rounded-lg border bg-beige p-8">
-						<img src="../icono-card-2.svg" class="mb-8 h-12" />
-						<h2 class="font-display font-bold">Compra tu departamento a tu propio ritmo.</h2>
-						<p>
-							Comienza comprando desde 1m² y crece a tu propio ritmo hasta completar tu
-							departamento.
-						</p>
+					<article
+						class="flex flex-col items-start justify-between gap-4 rounded-lg border bg-beige p-8"
+					>
+						<div>
+							<img src="../icono-card-2.svg" class="mb-8 h-12" />
+							<h2 class="font-display font-bold">Compra tu departamento a tu propio ritmo.</h2>
+							<p>
+								Comienza comprando desde 1m² y crece a tu propio ritmo hasta completar tu
+								departamento.
+							</p>
+						</div>
+						<div>
+							<button
+								class="video-button flex items-center justify-center gap-2 bg-navy px-3 py-2 font-display text-sm font-medium text-white"
+								data-video="video-2.mp4"
+							>
+								<span>Ver video</span>
+								<Icon name="tabler:player-play-filled" />
+							</button>
+						</div>
 					</article>
-					<article class="flex flex-col items-start gap-4 rounded-lg border bg-beige p-8">
-						<img src="../icono-card-3.svg" class="mb-8 h-12" />
-						<h2 class="font-display font-bold">Tu inversión está respaldada y segura.</h2>
-						<p>
-							Compra m² de manera fácil y segura en los mejores edificios de México, operados por Be
-							Grand® y con el respaldo tecnológico de briq.mx.
-						</p>
+					<article
+						class="flex flex-col items-start justify-between gap-4 rounded-lg border bg-beige p-8"
+					>
+						<div>
+							<img src="../icono-card-3.svg" class="mb-8 h-12" />
+							<h2 class="font-display font-bold">Tu inversión está respaldada y segura.</h2>
+							<p>
+								Compra m² de manera fácil y segura en los mejores edificios de México, operados por
+								Be Grand® y con el respaldo tecnológico de briq.mx.
+							</p>
+						</div>
+						<div>
+							<button
+								class="video-button flex items-center justify-center gap-2 bg-navy px-3 py-2 font-display text-sm font-medium text-white"
+								data-video="video-3.mp4"
+							>
+								<span>Ver video</span>
+								<Icon name="tabler:player-play-filled" />
+							</button>
+						</div>
 					</article>
 				</div>
 			</div>
@@ -173,7 +219,7 @@ const numberToCurrency = (number) => {
 						</p>
 					</article>
 					<article class="flex flex-col items-center gap-2 py-4 text-center">
-						<Icon name="tabler:building-skyscraper" class="text-2xl text-navy" />
+						<Icon name="tabler:shield-lock" class="text-2xl text-navy" />
 						<h2 class="font-display font-bold">Empresas con experiencia</h2>
 						<p>
 							Inmuebles respaldados y operados por Be Grand. Empresa con años de experiencia en el
@@ -181,7 +227,7 @@ const numberToCurrency = (number) => {
 						</p>
 					</article>
 					<article class="flex flex-col items-center gap-2 py-4 text-center">
-						<Icon name="tabler:building-skyscraper" class="text-2xl text-navy" />
+						<Icon name="tabler:home-ribbon" class="text-2xl text-navy" />
 						<h2 class="font-display font-bold">Constancia de propiedad</h2>
 						<p>
 							Recibe una constancia que acredita tu propiedad de metros cuadrados libre de cualquier
@@ -388,5 +434,62 @@ const numberToCurrency = (number) => {
 				</div>
 			</div>
 		</footer>
+		<div class="fixed inset-0 z-20 hidden items-center justify-center bg-black/90" id="video-modal">
+			<div
+				class="relative aspect-video w-full bg-white shadow-xl md:h-[80vh] md:w-auto"
+				id="video-container"
+			>
+				<video controls class="absolute inset-0 h-full w-full" id="video">
+					<source src="../video-general.mp4" type="video/mp4" />
+				</video>
+				<button class="absolute right-0 top-0 bg-white p-4 text-black" id="close-video">
+					Cerrar
+				</button>
+			</div>
+		</div>
 	</main>
 </Layout>
+
+<script is:inline>
+	const playVideoButtons = document.querySelectorAll('.video-button')
+	const videoModal = document.getElementById('video-modal')
+	const closeVideo = document.getElementById('close-video')
+	const videoContainer = document.getElementById('video-container')
+
+	// Detect a click on any of the play buttons
+	playVideoButtons.forEach((button) => {
+		button.addEventListener('click', (event) => {
+			const video = document.getElementById('video')
+			const videoSrc = event.currentTarget.dataset.video // Use currentTarget instead of target
+
+			// Set the video source
+			video.src = `../${videoSrc}`
+			console.log(videoSrc)
+
+			// Show the modal
+			videoModal.classList.remove('hidden')
+			videoModal.classList.add('flex')
+
+			// Play the video
+			video.play()
+		})
+	})
+
+	// Close the modal
+	closeVideo.addEventListener('click', () => {
+		const video = document.getElementById('video')
+
+		videoModal.classList.remove('flex')
+		videoModal.classList.add('hidden')
+		video.pause()
+	})
+
+	//If I click outside the video-container, close the modal
+	videoModal.addEventListener('click', (event) => {
+		if (event.target.id === 'video-modal') {
+			videoModal.classList.remove('flex')
+			videoModal.classList.add('hidden')
+			video.pause()
+		}
+	})
+</script>
