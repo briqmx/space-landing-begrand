@@ -1,0 +1,412 @@
+---
+import Layout from '../layouts/Layout.astro'
+import text from '../../data/text.json'
+import projects from '../../data/projectsv2.json'
+import faqs from '../../data/faqs.json'
+import ProjectCard from '../components/ProjectCard.astro'
+import { Icon } from 'astro-icon/components'
+---
+
+<Layout title="Inicio | Construye tu patrimonio metro a metro.">
+	<main>
+		<nav class="bg-white-beige sticky top-0 z-20 border-b py-2 backdrop-blur-md">
+			<div class="mx-auto w-full max-w-screen-xl px-4">
+				<div class="flex items-center justify-between">
+					<div class="flex-shrink-0">
+						<a href="/" class="inline-block">
+							<img src="logo-nav.png" alt="Logo Briq" class="h-9" />
+						</a>
+					</div>
+					<div class="flex items-center gap-4 text-sm">
+						<div class="hidden items-center gap-4 md:flex">
+							<a class="hover:text-primary" href="#propiedades">Propiedades</a>
+							<div class="h-4 w-px bg-zinc-200"></div>
+							<a class="hover:text-primary" href="https://www.briq.mx/users/sign_in" target="_blank"
+								>Iniciar sesión</a
+							>
+						</div>
+						<a
+							class="inline-flex items-center justify-center gap-2 rounded-md border px-2 py-1 font-medium shadow-sm hover:bg-primary/10"
+							href="https://www.briq.mx/users/sign_up"
+							target="_blank"
+						>
+							Registrarse
+							<Icon name="tabler:arrow-right" />
+						</a>
+					</div>
+				</div>
+			</div>
+		</nav>
+		<!-- Hero Section -->
+		<header class="py-8">
+			<div class="mx-auto w-full max-w-screen-xl px-4">
+				<div class="rounded-2xl border bg-zinc-50 p-8">
+					<div class="flex flex-col items-center justify-between gap-4 md:flex-row">
+						<div class="w-full">
+							<div class="flex max-w-lg flex-col items-start gap-4">
+								<img src="logo-nav.png" alt="Logo Briq" class="h-8" />
+								<h1 class="font-display text-4xl font-bold">
+									{text.hero.title}
+								</h1>
+								<p class="leading-relaxed">
+									{text.hero.description}
+								</p>
+								<div class="flex w-full flex-col gap-2 md:flex-row">
+									<button
+										class="video-button inline-flex items-center justify-center gap-2 rounded-md bg-primary px-8 py-3 font-display text-lg font-bold text-white hover:bg-primary/90"
+										data-video="video-1.mp4"
+									>
+										<Icon name="tabler:player-play-filled" class="opacity-90" />
+										<span>¿Cómo funciona?</span>
+									</button>
+								</div>
+							</div>
+						</div>
+						<div class="flex w-full items-center justify-center">
+							<figure class="relative h-full w-full overflow-hidden rounded-xl border shadow-xl">
+								<img src={text.hero.image.src} alt={text.hero.image.alt} />
+							</figure>
+						</div>
+					</div>
+				</div>
+			</div>
+		</header>
+		<section class="py-8" id="propiedades">
+			<div class="mx-auto w-full max-w-screen-xl px-4">
+				<div class="grid grid-cols-1 gap-2 md:grid-cols-3">
+					{
+						text.cards.map((card, index) => (
+							<article class="flex flex-col items-start justify-between rounded-xl border px-6 py-8 shadow-sm">
+								<div class="mb-4 flex flex-col items-start gap-2">
+									<img src={card.icon} alt={card.title} class="h-12" />
+									<h2 class="font-display font-bold">{card.title}</h2>
+								</div>
+								<p class="mb-2 text-sm text-zinc-500">{card.description}</p>
+								<button
+									class="video-button textr-primary inline-flex cursor-pointer items-center justify-center gap-2 rounded-lg border bg-white px-4 py-2 font-display text-sm font-bold shadow-sm"
+									data-video={`video-${index + 1}.mp4`}
+								>
+									<span>Ver video</span>
+									<Icon name="tabler:player-play-filled" />
+								</button>
+							</article>
+						))
+					}
+				</div>
+			</div>
+		</section>
+		<section class="border-y bg-zinc-50 py-16">
+			<div class="mx-auto w-full max-w-screen-xl px-4">
+				<h2 class="max-w-md font-display text-3xl font-bold">{text.properties.title}</h2>
+				<div class="grid grid-cols-1 gap-8 py-16 md:grid-cols-3">
+					{projects.map((project) => <ProjectCard project={project} />)}
+				</div>
+				<div class="flex flex-col gap-4 md:flex-row">
+					{
+						text.properties.blocks.map((block) => (
+							<aritcle class="flex flex-col items-center gap-2 text-center">
+								<Icon name={block.icon} class="h-6 w-6 text-primary" />
+								<h3 class="font-display text-sm font-bold">{block.title}</h3>
+								<p class="text-sm leading-relaxed">{block.description}</p>
+							</aritcle>
+						))
+					}
+				</div>
+			</div>
+		</section>
+		<section class="py-16">
+			<div class="mx-auto w-full max-w-screen-xl px-4">
+				<div class="flex flex-col items-center justify-center">
+					<div class="mb-16 flex max-w-2xl flex-col gap-8 text-center">
+						<h2 class="mx-auto max-w-md font-display text-2xl font-bold">
+							{text.comparative.title}
+						</h2>
+						<p>
+							{text.comparative.description}
+						</p>
+					</div>
+					<div class="relative mx-auto flex max-w-[800px]">
+						<div class="absolute inset-0 rotate-2 rounded-2xl bg-primary/20 md:rotate-3"></div>
+						<div
+							class="relative flex w-full flex-row divide-x rounded-xl border border-black/10 bg-white/95 shadow-2xl backdrop-blur-md"
+						>
+							<article class="flex w-1/2 flex-col divide-y">
+								<div class="flex min-h-[90px] items-center justify-center p-4 text-sm font-bold">
+									<p>OTROS</p>
+								</div>
+								{
+									text.comparative.others.map((item) => (
+										<div class="min-h-[125px] break-words p-4 text-zinc-500 even:bg-primary/5">
+											<p>{item}</p>
+										</div>
+									))
+								}
+							</article>
+							<article class="flex w-1/2 flex-col divide-y">
+								<div class="flex min-h-[90px] items-center justify-center p-4">
+									<img src="logo-nav.png" class="h-8" alt="Logo Sumametros" />
+								</div>
+								{
+									text.comparative.us.map((item) => (
+										<div class="flex min-h-[125px] items-start gap-2 p-4 even:bg-primary/5">
+											<Icon
+												name="tabler:check"
+												class="hidden h-6 w-6 flex-shrink-0 text-primary md:inline-block"
+											/>
+											<p>{item}</p>
+										</div>
+									))
+								}
+							</article>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section class="border-y py-16">
+			<div class="mx-auto w-full max-w-screen-xl px-4">
+				<div class="rounded-2xl bg-navy p-8 text-white md:p-16">
+					<div class="flex flex-col items-stretch gap-4 md:flex-row">
+						<div class="w-full max-w-sm">
+							<h2 class="font-display text-2xl font-bold">
+								¿Cómo funciona comprar en Suma Metros?
+							</h2>
+						</div>
+						<div class="flex w-full flex-col items-start gap-4">
+							<p>Comprar con nosotros es muy sencillo:</p>
+							<div class="flex-1 flex-col">
+								{
+									text.steps.steps.map((step, index) => (
+										<article class="flex items-stretch gap-4">
+											<div class="flex flex-col items-center">
+												<div class="flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-full bg-white font-bold text-navy">
+													{index + 1}
+												</div>
+												{index !== text.steps.steps.length - 1 && (
+													<div class="h-full  w-px bg-white" />
+												)}
+											</div>
+											<p class="min-h-[80px] pb-4">{step}</p>
+										</article>
+									))
+								}
+							</div>
+							<a
+								class="inline-flex justify-center rounded-md bg-primary px-16 py-4 font-display text-sm font-bold text-white hover:bg-primary/90"
+								href="#">Quiero invertir</a
+							>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section class="border-b py-16">
+			<div class="mx-auto w-full max-w-screen-xl px-4">
+				<div class="rounded-3xl bg-navy bg-cover p-4 md:p-8">
+					<div class="rounded-2xl border bg-white p-8 text-center md:p-16">
+						<div class="mx-auto flex flex-col items-center gap-8">
+							<img src={text.about.logo} alt="Logo Suma Metros" class="h-16" />
+							<h2 class="font-display text-xl font-bold md:text-2xl">
+								{text.about.title}
+							</h2>
+							<p>
+								{text.about.description}
+							</p>
+							<div class="flex flex-wrap gap-4 md:flex-nowrap">
+								{
+									text.about.stats.map((item) => (
+										<dl class="flex w-full flex-col items-center justify-between text-center">
+											<dt class="text-xs font-medium">{item.title}</dt>
+											<dd class="font-display text-2xl font-bold">{item.value}</dd>
+										</dl>
+									))
+								}
+							</div>
+							<a
+								href="https://begrand.mx"
+								target="_blank"
+								class="inline-flex justify-center rounded-md bg-primary px-8 py-4 font-display text-sm font-bold text-white hover:bg-primary/90"
+								>Conoce Be Grand</a
+							>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section class="bg-zinc-50 py-16">
+			<div class="mx-auto w-full max-w-screen-xl px-4">
+				<div class="flex flex-col gap-2 text-center">
+					<h2 class="font-display text-2xl font-bold">Preguntas frecuentes</h2>
+					<p>
+						Sabemos que tienes algunas dudas, por eso estamos aquí para responder todas tus
+						preguntas.
+					</p>
+				</div>
+				<div class="mx-auto w-full max-w-2xl py-8">
+					<div class="flex w-full flex-col gap-4">
+						{
+							faqs.map((faq) => (
+								<details class="w-full cursor-pointer rounded-lg border bg-white shadow-sm">
+									<summary class="p-4 font-bold">{faq.question}</summary>
+									<div class="px-4 pb-4">
+										<p>{faq.answer}</p>
+									</div>
+								</details>
+							))
+						}
+					</div>
+				</div>
+			</div>
+		</section>
+		<footer class="border-t py-8">
+			<div class="mx-auto w-full max-w-screen-xl px-4">
+				<div class="mb-8 flex flex-col items-start justify-between gap-4 md:flex-row">
+					<div class="flex flex-col gap-8 md:flex-row md:items-center">
+						<div>
+							<p class="text-xs text-zinc-500">Con tecnología de</p>
+							<img src="logo-briq.svg" alt="Logo Briq" class="h-8" />
+						</div>
+						<div class="h-1 w-[200px] bg-navy md:h-8 md:w-1"></div>
+						<div class="flex flex-col gap-4 md:gap-0">
+							<p class="max-w-3xl text-sm">
+								Las operaciones en Sumametros se realizan a través de briq.mx, una plataforma de
+								fondeo colectivo regulada por las autoridades finacieras (CNBV, CONDUSEF, Banco de
+								México y SHCP). <a
+									href="https://www.briq.mx/regulacion?referral_code=sumametros&utm_source=sumametros&utm_medium=referral&utm_campaign=traffic_sumametros"
+									target="_blank"
+									class="text-primary
+									underline">Conocer más</a
+								>
+							</p>
+							<p class="text-sm">
+								Para poder adquirir m² deberás tener cuenta en <a
+									href="https://briq.mx?referral_code=sumametros&utm_source=sumametros&utm_medium=referral&utm_campaign=traffic_sumametros"
+									target="_blank"
+									class="text-primary
+									underline">briq.mx</a
+								>.
+							</p>
+						</div>
+					</div>
+					<nav class="flex items-center gap-4">
+						<a
+							href={text.social.facebook}
+							target="_blank"
+							class="flex items-center gap-1 text-xs font-medium"
+						>
+							<Icon name="bxl:facebook" class="h-6 w-6" />
+							<span>Be Grand</span>
+						</a>
+						<a
+							href={text.social.instagram}
+							target="_blank"
+							class="flex items-center gap-1 text-xs font-medium"
+						>
+							<Icon name="bxl:instagram" class="h-6 w-6" />
+							<span>@begrand</span>
+						</a>
+					</nav>
+				</div>
+			</div>
+		</footer>
+		<div class="fixed inset-0 z-20 hidden items-center justify-center bg-black/90" id="video-modal">
+			<div
+				class="relative aspect-video w-full bg-white shadow-xl md:h-[80vh] md:w-auto"
+				id="video-container"
+			>
+				<video controls class="absolute inset-0 h-full w-full" id="video">
+					<source src="../video-general.mp4" type="video/mp4" />
+				</video>
+				<button class="absolute right-0 top-0 bg-white p-4 text-black" id="close-video">
+					Cerrar
+				</button>
+			</div>
+		</div>
+	</main>
+
+	<style>
+		.fade-in {
+			animation: fadeIn 0.5s ease-in-out forwards;
+			opacity: 0;
+			transform: translateY(20px);
+		}
+
+		.fade-out {
+			animation: fadeOut 0.5s ease-in-out forwards;
+			opacity: 1;
+			transform: translateY(0);
+		}
+
+		@keyframes fadeIn {
+			0% {
+				opacity: 0;
+				transform: translateY(20px) translateX(-50%);
+			}
+			100% {
+				opacity: 1;
+				transform: translateY(0) translateX(-50%);
+			}
+		}
+
+		@keyframes fadeOut {
+			0% {
+				opacity: 1;
+				transform: translateY(0) translateX(-50%);
+			}
+			100% {
+				opacity: 0;
+				transform: translateY(20px) translateX(-50%);
+			}
+		}
+
+		html {
+			scroll-behavior: smooth;
+			scroll-margin-top: 30px;
+			scroll-padding-top: -100px;
+		}
+	</style>
+
+	<script is:inline>
+		const playVideoButtons = document.querySelectorAll('.video-button')
+		const videoModal = document.getElementById('video-modal')
+		const closeVideo = document.getElementById('close-video')
+		const videoContainer = document.getElementById('video-container')
+
+		// Detect a click on any of the play buttons
+		playVideoButtons.forEach((button) => {
+			button.addEventListener('click', (event) => {
+				const video = document.getElementById('video')
+				const videoSrc = event.currentTarget.dataset.video // Use currentTarget instead of target
+
+				// Set the video source
+				video.src = `../${videoSrc}`
+				console.log(videoSrc)
+
+				// Show the modal
+				videoModal.classList.remove('hidden')
+				videoModal.classList.add('flex')
+
+				// Play the video
+				video.play()
+			})
+		})
+
+		// Close the modal
+		closeVideo.addEventListener('click', () => {
+			const video = document.getElementById('video')
+
+			videoModal.classList.remove('flex')
+			videoModal.classList.add('hidden')
+			video.pause()
+		})
+
+		//If I click outside the video-container, close the modal
+		videoModal.addEventListener('click', (event) => {
+			if (event.target.id === 'video-modal') {
+				videoModal.classList.remove('flex')
+				videoModal.classList.add('hidden')
+				video.pause()
+			}
+		})
+	</script>
+</Layout>
