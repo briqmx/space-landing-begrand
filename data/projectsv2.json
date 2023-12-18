@@ -2,7 +2,7 @@
   {
     "title" : "Vitant® Del Valle",
     "description" : "Vivir en la colonia Del Valle, sí se puede. Localizado en una de las zonas más céntricas y de mayor crecimiento en la Ciudad de México, Vitant® Del Valle cuenta con una ubicación sin igual. Nuestro desarrollo se encuentra dentro del complejo residencial Mitikah; lo que te permitirá disfrutar de restaurantes, cafeterías, cine y mucho más… todo a un lado de tu depa.",
-    "image" : "/proyectos/del-valle.jpeg",
+    "image" : "proyectos/del-valle.jpeg",
     "location" : "Benito Juárez, CDMX",
     "isNew" : true,
     "status" : "active",
@@ -15,7 +15,7 @@
   {
     "title" : "Vitant® San Pedro",
     "description" : "El lugar donde la comodidad y una ubicación sin igual se fusionan. Nuestro edificio, en la exclusiva zona de Valle Oriente, te ofrece un estilo de vida incomparable; con impresionantes vistas, interiores modernos y amenidades únicas diseñadas para tu confort.",
-    "image" : "/proyectos/san-pedro.jpeg",
+    "image" : "proyectos/san-pedro.jpeg",
     "location" : "Monterrey, Nuevo León",
     "isNew" : true,
     "status" : "active",
@@ -28,7 +28,7 @@
   {
     "title" : "Vitant® Polanco",
     "description" : "Vitant® Polanco es el lugar ideal para ti que buscas vivir en uno de los principales centros culturales, gastronómicos y sociales de la ciudad.",
-    "image" : "/proyectos/polanco.jpeg",
+    "image" : "proyectos/polanco.jpeg",
     "location" : "Miguel Hidalgo, CDMX",
     "isNew" : true,
     "status" : "active",
