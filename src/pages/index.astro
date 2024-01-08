@@ -167,9 +167,11 @@ const numberToCurrency = (number) => {
 									</div>
 									<div class="col-span-2 flex flex-col justify-between gap-8 p-8">
 										<div>
-											<span class="mb-2 inline-block bg-yellow-200 p-1 text-sm font-medium text-navy">
-												Destacado
-											</span>
+											{project.isFeatured && (
+												<span class="mb-2 inline-block bg-yellow-200 p-1 text-sm font-medium text-navy">
+													Destacado
+												</span>
+											)}
 											<h2 class="font-display text-3xl font-bold">{project.title}</h2>
 											<div class="flex items-center gap-1">
 												<Icon name="tabler:map-pin" class="text-navy" />
