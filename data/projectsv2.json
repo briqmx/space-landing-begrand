@@ -1,5 +1,18 @@
 [
   {
+    "title" : "Be Grand Reforma",
+    "description" : "Be Grand® Reforma es un desarrollo ubicado en la zona más reconocida y emblemática de la ciudad, donde se encuentran los mejores restaurantes, edificios, museos, hoteles y monumentos históricos que representan internacionalmente a México.",
+    "image" : "https://www.briq.mx/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBbWtDIiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--17db7a09254a39deeea35ef48ce3f08d7254b5e6/cover.jpeg",
+    "location" : " Alcaldía Cuauhtémoc, Ciudad de México",
+    "isNew" : true,
+    "status" : "active",
+    "unitsTotal" : 2085,
+    "unitsAvailable" : 2085,
+    "price" : 80000,
+    "url" : "https://www.briq.mx/suma_metros/proyectos/be-grand-reforma",
+    "isFeatured" : true
+  },
+  {
     "title" : "Vitant® Del Valle",
     "description" : "Vivir en la colonia Del Valle, sí se puede. Localizado en una de las zonas más céntricas y de mayor crecimiento en la Ciudad de México, Vitant® Del Valle cuenta con una ubicación sin igual. Nuestro desarrollo se encuentra dentro del complejo residencial Mitikah; lo que te permitirá disfrutar de restaurantes, cafeterías, cine y mucho más… todo a un lado de tu depa.",
     "image" : "proyectos/del-valle.jpeg",
@@ -36,6 +49,32 @@
     "unitsAvailable" : 1120,
     "price" : 67448,
     "url" : "https://briq.mx/suma_metros/proyectos/vitant-polanco",
+    "isFeatured" : false
+  },
+  {
+    "title" : "Vitant® Santa Lucía",
+    "description" : "Vivir junto al Paseo Santa Lucía, sí se puede. Ubicado en una de las zonas más dinámicas de Monterrey, Vitant® Santa Lucía está diseñado para profesionistas y nuevas familias que buscan vivir en un lugar estratégico de la ciudad. Desplázate caminando al Paseo Santa Lucía, Parque Fundidora o al centro de Monterrey; además, sus amenidades como alberca, terraza y salón de eventos, te permitirán disfrutar de momentos inolvidables con amigos y familiares.",
+    "image" : "https://www.briq.mx/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBbDhDIiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--e1bb51bccb33a57827c6238c1fe534c71828ceed/cover.jpeg",
+    "location" : "Monterrey, Nuevo León",
+    "isNew" : true,
+    "status" : "active",
+    "unitsTotal" : 57,
+    "unitsAvailable" : 57,
+    "price" : 56955,
+    "url" : "https://www.briq.mx/suma_metros/proyectos/vitant-santa-lucia",
+    "isFeatured" : false
+  },
+  {
+    "title" : "Vitant® Santa Fe",
+    "description" : "Santa Fe te ofrece lo mejor de la naturaleza y la modernidad de uno de los principales centros de negocios de la ciudad. Despeja tu mente con una caminata en el gran Parque La Mexicana o relájate dentro de tu increíble alberca o sports bar. Todo lo que buscas, lo encuentras en Vitant®",
+    "image" : "https://www.briq.mx/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBbGtDIiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--0f7cc7191b5ed16eb0d139302a4c74097fd14378/cover.jpeg",
+    "location" : "Alcaldía Cuajimalpa, Ciudad de México.",
+    "isNew" : true,
+    "status" : "active",
+    "unitsTotal" : 108,
+    "unitsAvailable" : 108,
+    "price" : 73853,
+    "url" : "https://www.briq.mx/suma_metros/proyectos/vitant-santa-fe",
     "isFeatured" : false
   }
 ]
