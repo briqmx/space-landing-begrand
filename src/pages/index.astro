@@ -18,6 +18,9 @@ const numberToCurrency = (number) => {
 		currency: 'MXN'
 	}).format(number)
 }
+
+const nonFeaturedProjects = projects.filter((project) => !project.isFeatured)
+const featuredProjects = projects.filter((project) => project.isFeatured)
 ---
 
 <Layout title="Inicio | Construye tu patrimonio metro a metro.">
@@ -26,31 +29,41 @@ const numberToCurrency = (number) => {
 			<div class="mx-auto w-full max-w-screen-2xl px-4">
 				<div class="flex items-center justify-between">
 					<img src="logo-nav.png" alt="Logo" class="w-32" />
-					<a
-						class="inline-flex border bg-white px-3 py-3 font-display text-sm font-bold text-navy"
-						href="https://www.briq.mx/users/sign_in"
-						target="_blank"
-					>
-						Iniciar sesión
-					</a>
+					<div class="flex gap-2">
+						<a
+							class="inline-flex border border-white bg-white px-3 py-3 font-display text-sm font-bold text-navy"
+							href="#propiedades"
+						>
+							Ver propiedades
+						</a>
+						<a
+							class="inline-flex border bg-white px-3 py-3 font-display text-sm font-bold text-navy"
+							href="https://www.briq.mx/users/sign_in"
+							target="_blank"
+						>
+							Iniciar sesión
+						</a>
+					</div>
 				</div>
 			</div>
 		</nav>
 		<header class="border-b bg-beige-dark">
-			<div class="flex flex-col items-stretch justify-between md:min-h-[75vh] md:flex-row">
+			<div
+				class="flex flex-col items-stretch justify-between md:min-h-[85vh] md:flex-row xl:min-h-[75vh]"
+			>
 				<div class="flex w-full items-center justify-center px-4 py-8">
 					<div class="flex max-w-lg flex-col items-start gap-4">
 						<div>
 							<p class="font-display text-sm font-semibold text-primary">
-								Las ventajas de comprar, pero sin las molestias de hacerlo.
+								Las ventajas de ser dueño, sin las molestias de administrar.
 							</p>
 							<h1 class="font-display text-4xl font-bold md:text-5xl">
 								Construye tu patrimonio un metro a la vez
 							</h1>
 						</div>
 						<p class="leading-relaxed">
-							Compra desde 1m² en los mejores edificios, obten rentas y plusvalia, sigue comprando y
-							obten tu departamento.
+							Compra desde 1m² en los mejores edificios, obtén rentas y plusvalía, o adquiere tu
+							departamento un metro a la vez
 						</p>
 						<button
 							class="video-button inline-flex items-center gap-4 bg-navy px-6 py-4 font-display font-bold text-white"
@@ -64,7 +77,7 @@ const numberToCurrency = (number) => {
 				<div class="h-[420px] w-full md:h-auto">
 					<figure class="relative h-full w-full">
 						<img
-							src="hero-cover-2.jpeg"
+							src="hero-cover-2.jpg"
 							alt="Hero"
 							class="absolute inset-0 z-10 h-full w-full object-cover"
 						/>
@@ -125,7 +138,7 @@ const numberToCurrency = (number) => {
 							<h2 class="font-display font-bold">Tu inversión está respaldada y segura.</h2>
 							<p>
 								Compra m² de manera fácil y segura en los mejores edificios de México, operados por
-								Be Grand® y con el respaldo tecnológico de briq.mx.
+								Be Grand<sup>&reg;</sup> y con el respaldo tecnológico de briq.mx.
 							</p>
 						</div>
 						<div>
@@ -145,13 +158,13 @@ const numberToCurrency = (number) => {
 			<div class="mx-auto w-full max-w-screen-lg px-4">
 				<div class="flex flex-col gap-2">
 					<p class="font-display text-sm font-semibold text-primary">Propiedades disponibles:</p>
-					<h2 class="max-w-xl font-display text-4xl font-bold">
+					<h2 class="mb-16 max-w-xl font-display text-4xl font-bold">
 						Sé dueño de una parte de los mejores edificios de México
 					</h2>
 				</div>
-				<div class="flex flex-col gap-8 py-16">
+				<div class="mb-4 flex flex-col gap-8">
 					{
-						projects.map((project, index) => (
+						featuredProjects.map((project, index) => (
 							<article class="relative rounded-lg border bg-white shadow-sm">
 								<div class="grid grid-cols-1 md:grid-cols-3">
 									<div class="col-span-1 p-8">
@@ -178,20 +191,73 @@ const numberToCurrency = (number) => {
 												<span class="text-sm font-medium">{project.location}</span>
 											</div>
 										</div>
-										<p class="line-clamp-3 text-sm leading-relaxed text-navy/80">
-											{project.description}
-										</p>
+										<p
+											class="line-clamp-3 text-sm leading-relaxed text-navy/80"
+											set:html={project.description}
+										/>
 										<div class="flex flex-col justify-between gap-4 md:flex-row md:items-center">
 											<div class="flex gap-4">
 												<dl class="flex flex-col gap-2">
-													<dt class="text-sm font-medium">Precio de tu m2</dt>
+													<dt class="text-sm font-medium">Precio de tu m²</dt>
 													<dl class="font-display text-2xl font-bold">
 														{numberToCurrency(project.price)}
 													</dl>
 												</dl>
+											</div>
+											<a
+												class="inline-flex justify-center bg-navy px-6 py-4 text-center font-display font-bold text-white"
+												href={project.url}
+												target="_blank"
+											>
+												Comprar ahora
+											</a>
+										</div>
+									</div>
+								</div>
+							</article>
+						))
+					}
+				</div>
+				<div class="mb-16 grid grid-cols-1 gap-8 md:grid-cols-3">
+					{
+						nonFeaturedProjects.map((project, index) => (
+							<article class="relative flex flex-col rounded-lg border bg-white shadow-sm">
+								<div class="flex grid flex-1 grid-cols-1 flex-col">
+									<div class="col-span-1 p-4">
+										<figure class="relative aspect-square h-full w-full bg-navy">
+											<img
+												src={project.image}
+												alt="Proyecto"
+												class="absolute inset-0 h-full w-full object-cover"
+											/>
+											<div class="absolute bottom-0 right-0 h-10 w-10 bg-white" />
+											<div class="absolute left-0 top-0 h-10 w-10 bg-white" />
+										</figure>
+									</div>
+									<div class="col-span-2 flex flex-1 flex-col justify-between gap-8 p-4">
+										<div>
+											{project.isFeatured && (
+												<span class="mb-2 inline-block bg-yellow-200 p-1 text-sm font-medium text-navy">
+													Destacado
+												</span>
+											)}
+											<h2 class="font-display text-3xl font-bold">{project.title}</h2>
+											<div class="flex items-center gap-1">
+												<Icon name="tabler:map-pin" class="text-navy" />
+												<span class="text-sm font-medium">{project.location}</span>
+											</div>
+										</div>
+										<p
+											class="line-clamp-3 text-sm leading-relaxed text-navy/80"
+											set:html={project.description}
+										/>
+										<div class="flex flex-col justify-between gap-4">
+											<div class="flex gap-4">
 												<dl class="flex flex-col gap-2">
-													<dt class="text-sm font-medium">Tendencia de crecimiento</dt>
-													<img src="chart.svg" alt="Chart" class="h-6" />
+													<dt class="text-sm font-medium">Precio de tu m²</dt>
+													<dl class="font-display text-2xl font-bold">
+														{numberToCurrency(project.price)}
+													</dl>
 												</dl>
 											</div>
 											<a
@@ -209,12 +275,12 @@ const numberToCurrency = (number) => {
 					}
 				</div>
 				<p class="mb-8 py-2 text-center">
-					Además de ser dueño de una parte de la propiedad, en sumametros compras
+					Además de volverte dueño de m² de grandes propiedades, con Sumametros cuentas con
 				</p>
 				<div class="grid grid-cols-1 gap-8 md:grid-cols-3">
 					<article class="flex flex-col items-center gap-2 py-4 text-center">
 						<Icon name="tabler:building-skyscraper" class="text-2xl text-navy" />
-						<h2 class="font-display font-bold">A través de plataforma regulada</h2>
+						<h2 class="font-display font-bold">Una plataforma regulada</h2>
 						<p>
 							Las operaciones se realizan a través de briq.mx, líder en el mercado y regulada por
 							las autoridades financieras.
@@ -222,10 +288,10 @@ const numberToCurrency = (number) => {
 					</article>
 					<article class="flex flex-col items-center gap-2 py-4 text-center">
 						<Icon name="tabler:shield-lock" class="text-2xl text-navy" />
-						<h2 class="font-display font-bold">Empresas con experiencia</h2>
+						<h2 class="font-display font-bold">Respaldo de empresas reconocidas</h2>
 						<p>
-							Inmuebles respaldados y operados por Be Grand. Empresa con años de experiencia en el
-							sector residencial de lujo.
+							Inmuebles respaldados y operados por Be Grand<sup>&reg;</sup>. Empresa con años de
+							experiencia en el sector residencial de lujo.
 						</p>
 					</article>
 					<article class="flex flex-col items-center gap-2 py-4 text-center">
@@ -243,57 +309,60 @@ const numberToCurrency = (number) => {
 			<div class="mx-auto w-full max-w-screen-lg px-4">
 				<p class="font-display text-sm font-semibold text-primary">Ventajas</p>
 				<h2 class="mb-24 font-display text-4xl font-bold">
-					¿Cuáles son las ventajas de comprar metros cuadrados en Suma Metros?
+					¿Cuáles son las ventajas de comprar metros cuadrados en Sumametros?
 				</h2>
 				<div class="grid grid-cols-1 gap-8 md:grid-cols-2">
 					<article class="flex flex-col justify-between rounded-lg border bg-beige p-8">
 						<div>
-							<h2 class="font-display font-bold text-primary">Capital</h2>
-							<p class="mb-16 font-display text-2xl font-bold">
-								Puedes comprar desde 1 m², empieza a crear tu patrimonio y recibir ganancias de las
-								rentas.
-							</p>
-						</div>
-						<p class="text-lg font-semibold opacity-50">
-							Con los otros, necesitas mayores requerimientos de capital además de esperar que se
-							rente la propiedad para recibir ganancias.
-						</p>
-					</article>
-					<article class="flex flex-col justify-between rounded-lg border bg-beige p-8">
-						<div>
 							<h2 class="font-display font-bold text-primary">Inversión</h2>
 							<p class="mb-16 font-display text-2xl font-bold">
-								Con nosotros puedes diversificar tu inversión en diferentes propiedades.
+								Puedes comprar desde 1m² , comenzar a crecer tu patrimonio y recibir rentas
+								mensuales
 							</p>
 						</div>
 						<p class="text-lg font-semibold opacity-50">
-							Con los otros, solo puedes invertir en un solo inmueble debido a los altos costos.
+							Con Sumametros no necesitas desembolsar grandes cantidades ni endeudarte para ser
+							dueño. Además, olvídate de tener que esperar a que tu propiedad se rente para recibir
+							ganancias
 						</p>
 					</article>
 					<article class="flex flex-col justify-between rounded-lg border bg-beige p-8">
 						<div>
-							<h2 class="font-display font-bold text-primary">Rentas</h2>
+							<h2 class="font-display font-bold text-primary">Diversificación</h2>
 							<p class="mb-16 font-display text-2xl font-bold">
-								Con Suma Metros no tienes que preocuparte por nada ya que las propiedades son
-								operadas por los expertos de Be Grand®.
+								Puedes invertir en diferentes propiedades.
 							</p>
 						</div>
 						<p class="text-lg font-semibold opacity-50">
-							Con otros necesitas contratar o hacer tu labor de mantenimiento,cobranza, vacancia, y
-							asesoría legal.
+							Con Sumametros podrás diversificar tu inversión de manera sencilla, comprando metros
+							cuadrados en diferentes desarrollos
+						</p>
+					</article>
+					<article class="flex flex-col justify-between rounded-lg border bg-beige p-8">
+						<div>
+							<h2 class="font-display font-bold text-primary">Operación</h2>
+							<p class="mb-16 font-display text-2xl font-bold">
+								No tienes que preocuparte por nada ya que las propiedades son operadas por Be Grand<sup
+									>&reg;</sup
+								>
+							</p>
+						</div>
+						<p class="text-lg font-semibold opacity-50">
+							Con Sumametros no tendrás que preocuparte por tareas de mantenimiento, cobranza, o
+							malos inquilinos; ya que todas las propiedades son operadas por los expertos de Be
+							Grand®
 						</p>
 					</article>
 					<article class="flex flex-col justify-between rounded-lg border bg-beige p-8">
 						<div>
 							<h2 class="font-display font-bold text-primary">Ocupación</h2>
 							<p class="mb-16 font-display text-2xl font-bold">
-								Con nosotros tienes ocupación constante por volumen debido a nuestra plataforma de
-								rentas.
+								Ocupación y rendimientos constantes por volumen
 							</p>
 						</div>
 						<p class="text-lg font-semibold opacity-50">
-							Con otros siempre debes buscar y esperar nuevos inquilinos debido a la rotación
-							constante.
+							Con Sumametros recibe ganancias constantemente y olvídate de buscar nuevos inquilinos
+							o perder dinero por periodos sin renta
 						</p>
 					</article>
 				</div>
@@ -303,7 +372,7 @@ const numberToCurrency = (number) => {
 			<div class="mx-auto w-full max-w-screen-lg px-4">
 				<div class="grid grid-cols-1 gap-4 md:grid-cols-2">
 					<h2 class="mb-24 font-display text-4xl font-bold">
-						¿Cómo funciona comprar en Suma Metros? <br /> Es fácil y seguro
+						¿Cómo funciona comprar en Sumametros? <br /> Es fácil y seguro
 					</h2>
 					<article class="max-w-md">
 						<div class="flex flex-col items-start">
@@ -344,7 +413,9 @@ const numberToCurrency = (number) => {
 					<div class="col-span-2 flex flex-col items-start gap-8">
 						<p class="font-display font-bold text-primary">Respaldo</p>
 						<h2 class="max-w-xl font-display text-4xl font-bold">
-							Todas las propiedade son avaladas y administradas por Be Grand®
+							Todas las propiedades de Sumametros están respaldadas y son administradas por Be Grand<sup
+								>&reg;</sup
+							>
 						</h2>
 						<p>
 							Una empresa orgullosamente mexicana, con 20 años de experiencia en el desarrollo y
@@ -407,7 +478,7 @@ const numberToCurrency = (number) => {
 								Las operaciones en Sumametros se llevan a través en briq.mx, una plataforma de
 								fondeo colectivo regulada por las autoridades finacieras (CNBV, CONDUSEF, Banco de
 								México y SHCP). <a
-									href="https://www.briq.mx/regulacion?utm_source=sumametros&utm_medium=referral"
+									href="https://www.briq.mx/regulacion?utm_source=Sumametros&utm_medium=referral"
 									target="_blank"
 									class="text-primary
 									underline">Conocer más</a
@@ -415,7 +486,7 @@ const numberToCurrency = (number) => {
 							</p>
 							<p class="text-sm">
 								Para poder adquirir m² deberás tener cuenta en <a
-									href="https://briq.mx?utm_source=sumametros&utm_medium=referral"
+									href="https://briq.mx?utm_source=Sumametros&utm_medium=referral"
 									target="_blank"
 									class="text-primary
 									underline">briq.mx</a

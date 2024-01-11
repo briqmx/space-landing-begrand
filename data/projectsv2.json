@@ -1,7 +1,7 @@
 [
   {
     "title" : "Be Grand Reforma",
-    "description" : "Be Grand® Reforma es un desarrollo ubicado en la zona más reconocida y emblemática de la ciudad, donde se encuentran los mejores restaurantes, edificios, museos, hoteles y monumentos históricos que representan internacionalmente a México.",
+    "description" : "Be Grand<sup>&reg;</sup> Reforma es un desarrollo ubicado en la zona más reconocida y emblemática de la ciudad, donde se encuentran los mejores restaurantes, edificios, museos, hoteles y monumentos históricos que representan internacionalmente a México.",
     "image" : "https://www.briq.mx/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBbWtDIiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--17db7a09254a39deeea35ef48ce3f08d7254b5e6/cover.jpeg",
     "location" : " Alcaldía Cuauhtémoc, Ciudad de México",
     "isNew" : true,
@@ -13,8 +13,8 @@
     "isFeatured" : true
   },
   {
-    "title" : "Vitant® Del Valle",
-    "description" : "Vivir en la colonia Del Valle, sí se puede. Localizado en una de las zonas más céntricas y de mayor crecimiento en la Ciudad de México, Vitant® Del Valle cuenta con una ubicación sin igual. Nuestro desarrollo se encuentra dentro del complejo residencial Mitikah; lo que te permitirá disfrutar de restaurantes, cafeterías, cine y mucho más… todo a un lado de tu depa.",
+    "title" : "Vitant Del Valle",
+    "description" : "Vivir en la colonia Del Valle, sí se puede. Localizado en una de las zonas más céntricas y de mayor crecimiento en la Ciudad de México, Vitant<sup>&reg;</sup> Del Valle cuenta con una ubicación sin igual. Nuestro desarrollo se encuentra dentro del complejo residencial Mitikah; lo que te permitirá disfrutar de restaurantes, cafeterías, cine y mucho más… todo a un lado de tu depa.",
     "image" : "proyectos/del-valle.jpeg",
     "location" : "Benito Juárez, CDMX",
     "isNew" : true,
@@ -26,7 +26,7 @@
     "isFeatured" : false
   },
   {
-    "title" : "Vitant® San Pedro",
+    "title" : "Vitant San Pedro",
     "description" : "El lugar donde la comodidad y una ubicación sin igual se fusionan. Nuestro edificio, en la exclusiva zona de Valle Oriente, te ofrece un estilo de vida incomparable; con impresionantes vistas, interiores modernos y amenidades únicas diseñadas para tu confort.",
     "image" : "proyectos/san-pedro.jpeg",
     "location" : "Monterrey, Nuevo León",
@@ -39,8 +39,8 @@
     "isFeatured" : false
   },
   {
-    "title" : "Vitant® Polanco",
-    "description" : "Vitant® Polanco es el lugar ideal para ti que buscas vivir en uno de los principales centros culturales, gastronómicos y sociales de la ciudad.",
+    "title" : "Vitant Polanco",
+    "description" : "Vitant<sup>&reg;</sup> Polanco es el lugar ideal para ti que buscas vivir en uno de los principales centros culturales, gastronómicos y sociales de la ciudad.",
     "image" : "proyectos/polanco.jpeg",
     "location" : "Miguel Hidalgo, CDMX",
     "isNew" : true,
@@ -52,8 +52,8 @@
     "isFeatured" : false
   },
   {
-    "title" : "Vitant® Santa Lucía",
-    "description" : "Vivir junto al Paseo Santa Lucía, sí se puede. Ubicado en una de las zonas más dinámicas de Monterrey, Vitant® Santa Lucía está diseñado para profesionistas y nuevas familias que buscan vivir en un lugar estratégico de la ciudad. Desplázate caminando al Paseo Santa Lucía, Parque Fundidora o al centro de Monterrey; además, sus amenidades como alberca, terraza y salón de eventos, te permitirán disfrutar de momentos inolvidables con amigos y familiares.",
+    "title" : "Vitant Santa Lucía",
+    "description" : "Vivir junto al Paseo Santa Lucía, sí se puede. Ubicado en una de las zonas más dinámicas de Monterrey, Vitant<sup>&reg;</sup> Santa Lucía está diseñado para profesionistas y nuevas familias que buscan vivir en un lugar estratégico de la ciudad. Desplázate caminando al Paseo Santa Lucía, Parque Fundidora o al centro de Monterrey; además, sus amenidades como alberca, terraza y salón de eventos, te permitirán disfrutar de momentos inolvidables con amigos y familiares.",
     "image" : "https://www.briq.mx/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBbDhDIiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--e1bb51bccb33a57827c6238c1fe534c71828ceed/cover.jpeg",
     "location" : "Monterrey, Nuevo León",
     "isNew" : true,
@@ -65,8 +65,8 @@
     "isFeatured" : false
   },
   {
-    "title" : "Vitant® Santa Fe",
-    "description" : "Santa Fe te ofrece lo mejor de la naturaleza y la modernidad de uno de los principales centros de negocios de la ciudad. Despeja tu mente con una caminata en el gran Parque La Mexicana o relájate dentro de tu increíble alberca o sports bar. Todo lo que buscas, lo encuentras en Vitant®",
+    "title" : "Vitant Santa Fe",
+    "description" : "Santa Fe te ofrece lo mejor de la naturaleza y la modernidad de uno de los principales centros de negocios de la ciudad. Despeja tu mente con una caminata en el gran Parque La Mexicana o relájate dentro de tu increíble alberca o sports bar. Todo lo que buscas, lo encuentras en Vitant<sup>&reg;</sup>",
     "image" : "https://www.briq.mx/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBbGtDIiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--0f7cc7191b5ed16eb0d139302a4c74097fd14378/cover.jpeg",
     "location" : "Alcaldía Cuajimalpa, Ciudad de México.",
     "isNew" : true,
