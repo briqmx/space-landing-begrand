@@ -25,13 +25,19 @@ const featuredProjects = projects.filter((project) => project.isFeatured)
 
 <Layout title="Inicio | Construye tu patrimonio metro a metro.">
 	<main class="font-body text-lg text-navy antialiased">
+		<div
+			class="flex items-center justify-center gap-2 bg-navy py-2 text-center font-display text-sm font-semibold text-white"
+		>
+			<i class="fa-kit fa-briq-logo"></i>
+			<p>Este es un espacio operado por briq.mx</p>
+		</div>
 		<nav class="sticky top-0 z-20 border-b bg-white py-4">
 			<div class="mx-auto w-full max-w-screen-2xl px-4">
 				<div class="flex items-center justify-between">
 					<img src="logo-nav.png" alt="Logo" class="w-32" />
 					<div class="flex gap-2">
 						<a
-							class="inline-flex border border-white bg-white px-3 py-3 font-display text-sm font-bold text-navy"
+							class="hidden border border-white bg-white px-3 py-3 font-display text-sm font-bold text-navy md:inline-flex"
 							href="#propiedades"
 						>
 							Ver propiedades
@@ -158,7 +164,7 @@ const featuredProjects = projects.filter((project) => project.isFeatured)
 			<div class="mx-auto w-full max-w-screen-lg px-4">
 				<div class="flex flex-col gap-2">
 					<p class="font-display text-sm font-semibold text-primary">Propiedades disponibles:</p>
-					<h2 class="mb-16 max-w-xl font-display text-4xl font-bold">
+					<h2 class="mb-16 max-w-xl font-display text-2xl font-bold md:text-4xl">
 						Sé dueño de una parte de los mejores edificios de México
 					</h2>
 				</div>
@@ -412,7 +418,7 @@ const featuredProjects = projects.filter((project) => project.isFeatured)
 					</figure>
 					<div class="col-span-2 flex flex-col items-start gap-8">
 						<p class="font-display font-bold text-primary">Respaldo</p>
-						<h2 class="max-w-xl font-display text-4xl font-bold">
+						<h2 class="max-w-xl font-display text-2xl font-bold md:text-4xl">
 							Todas las propiedades de Sumametros están respaldadas y son administradas por Be Grand<sup
 								>&reg;</sup
 							>
@@ -450,6 +456,31 @@ const featuredProjects = projects.filter((project) => project.isFeatured)
 				</div>
 			</div>
 		</section>
+		<section class="border-t py-24">
+			<div class="mx-auto w-full max-w-screen-lg px-4">
+				<article class="flex flex-col items-start gap-8 bg-navy p-8 text-white">
+					<img src="logo-emblema-briq-white.svg" alt="Logo" class="w-32" />
+					<h2 class="max-w-xl font-display text-2xl font-bold md:text-4xl">
+						Espacio operado con la tecnología de briq.mx
+					</h2>
+					<p>
+						briq.mx es una plataforma de fondeo colectivo que permite a cualquier persona invertir
+						en proyectos inmobiliarios en México de manera fácil, segura y transparente.
+					</p>
+					<p>
+						Contamos con la autorización de la CNBV para operar como Institución de Fondeo Colectivo
+						asi como los estándares de seguridad y tecnología más altos del mercado para proteger tu
+						inversión.
+					</p>
+					<a
+						href="https://briq.mx"
+						class="inline-flex justify-center bg-white px-6 py-4 text-center font-display font-bold text-navy"
+					>
+						Conoce más</a
+					>
+				</article>
+			</div>
+		</section>
 		<section class="border-t bg-beige py-16">
 			<div class="mx-auto w-full max-w-screen-lg px-4">
 				<h2 class="mb-16 font-display text-4xl font-bold">Preguntas frecuentes</h2>
@@ -465,105 +496,158 @@ const featuredProjects = projects.filter((project) => project.isFeatured)
 				</div>
 			</div>
 		</section>
-		<footer class="border-t py-8">
+		<footer class="border-y py-4">
 			<div class="mx-auto w-full max-w-screen-lg px-4">
-				<div class="mb-8 flex flex-col items-start justify-between gap-4 md:flex-row">
-					<div class="flex flex-col gap-8 md:flex-row md:items-center">
-						<div class="flex-shrink-0">
-							<p class="text-xs text-zinc-500">Con tecnología de</p>
-							<img src="logo-briq.svg" alt="Logo Briq" class="h-8" />
-						</div>
-						<div class="h-1 w-[200px] bg-navy md:h-8 md:w-1"></div>
-						<div class="flex flex-col gap-4 md:gap-0">
-							<p class="max-w-3xl text-sm">
-								Las operaciones en Sumametros se llevan a través en briq.mx, una plataforma de
-								fondeo colectivo regulada por las autoridades finacieras (CNBV, CONDUSEF, Banco de
-								México y SHCP). <a
-									href="https://www.briq.mx/regulacion?utm_source=Sumametros&utm_medium=referral"
-									target="_blank"
-									class="text-primary
-									underline">Conocer más</a
-								>
-							</p>
-							<p class="text-sm">
-								Para poder adquirir m² deberás tener cuenta en <a
-									href="https://briq.mx?utm_source=Sumametros&utm_medium=referral"
-									target="_blank"
-									class="text-primary
-									underline">briq.mx</a
-								>.
-							</p>
-						</div>
-					</div>
-					<nav class="flex flex-col gap-4">
-						<a href="#" target="_blank" class="flex items-center gap-1 text-xs font-medium">
-							<Icon name="bxl:facebook" class="h-6 w-6" />
-							<span>Be Grand</span>
-						</a>
-						<a href="#" target="_blank" class="flex items-center gap-1 text-xs font-medium">
-							<Icon name="bxl:instagram" class="h-6 w-6" />
-							<span>@begrand</span>
-						</a>
-					</nav>
+				<div class="flex items-center justify-center gap-4">
+					<span class="text-sm">Síguenos en:</span>
+					<a
+						href="#"
+						class="flex items-center gap-1 border p-2 font-display text-sm font-bold md:p-3"
+					>
+						<Icon name="bxl:instagram" class="h-6 w-6 text-navy opacity-50" />
+						<span>@begrand</span>
+					</a>
+					<a
+						href="#"
+						class="flex items-center gap-1 border p-2 font-display text-sm font-bold md:p-3"
+					>
+						<Icon name="bxl:facebook" class="h-6 w-6 text-navy opacity-50" />
+						<span>Be Grand</span>
+					</a>
 				</div>
 			</div>
 		</footer>
-		<div class="fixed inset-0 z-20 hidden items-center justify-center bg-black/90" id="video-modal">
-			<div
-				class="relative aspect-video w-full bg-white shadow-xl md:h-[80vh] md:w-auto"
-				id="video-container"
-			>
-				<video controls class="absolute inset-0 h-full w-full" id="video">
-					<source src="video-general.mp4" type="video/mp4" />
-				</video>
-				<button class="absolute right-0 top-0 bg-white p-4 text-black" id="close-video">
-					Cerrar
-				</button>
+		<footer class="bg-navy py-12 text-sm text-white">
+			<div class="mx-auto flex w-full max-w-screen-lg flex-col gap-8 px-4">
+				<div class="grid grid-cols-1 gap-2 md:grid-cols-4">
+					<div class="col-span-2 flex flex-col items-start gap-4">
+						<img src="logo-emblema-briq-white.svg" alt="Logo" class="w-32" />
+						<p class="inline-block rounded-md border border-white/5 bg-white/10 px-2 py-1 text-sm">
+							Empresa regulada por la CNBV
+						</p>
+						<nav class="flex gap-2">
+							<a
+								class="flex h-8 w-8 items-center justify-center rounded-full border border-white"
+								href="#"><i class="fa-brands fa-facebook-f"></i></a
+							>
+							<a
+								class="flex h-8 w-8 items-center justify-center rounded-full border border-white"
+								href="#"><i class="fa-brands fa-x-twitter"></i></a
+							>
+							<a
+								class="flex h-8 w-8 items-center justify-center rounded-full border border-white"
+								href="#"><i class="fa-brands fa-youtube"></i></a
+							>
+							<a
+								class="flex h-8 w-8 items-center justify-center rounded-full border border-white"
+								href="#"><i class="fa-brands fa-linkedin-in"></i></a
+							>
+							<a
+								class="flex h-8 w-8 items-center justify-center rounded-full border border-white"
+								href="#"><i class="fa-brands fa-instagram"></i></a
+							>
+							<a
+								class="flex h-8 w-8 items-center justify-center rounded-full border border-white"
+								href="#"><i class="fa-brands fa-tiktok"></i></a
+							>
+						</nav>
+						<div></div>
+					</div>
+					<div class="flex flex-col gap-2 text-white/80">
+						<h3 class="mb-4 font-bold uppercase text-white">¿Quíenes somos?</h3>
+						<a href="#">Sobre nosotros</a>
+						<a href="#">Medios y prensa</a>
+						<a href="#">Sostenibilidad</a>
+						<a href="#">Regulación</a>
+						<a href="#">Aviso de privacidad</a>
+						<a href="#">Términos y condiciones</a>
+					</div>
+					<div class="flex flex-col gap-2 text-white/80">
+						<h3 class="mb-4 font-bold uppercase text-white">Más información</h3>
+						<a href="#">Contacto y ayuda</a>
+						<a href="#">Glosario de términos</a>
+						<a href="#">Unidad especializada (UNE)</a>
+						<a href="#">Cambios y mejoras</a>
+						<a href="#">Recursos</a>
+						<a href="#">Resultados</a>
+					</div>
+				</div>
+				<div class="flex flex-col gap-2 text-white/50">
+					<p>
+						BRIQ FUND, S.A.P.I. de C.V., Institución de Financiamiento Colectivo, en términos de la
+						Ley para Regular las Instituciones de Tecnología Financiera, es una sociedad autorizada,
+						regulada y supervisada por las autoridades financieras. Autorización P116/2021
+					</p>
+					<p>
+						Ni el Gobierno Federal ni las entidades de la administración pública paraestatal podrán
+						responsabilizarse o garantizar los recursos de los Clientes que sean utilizados en las
+						Operaciones que celebren con las ITF (en este caso briq.mx) o frente a otros, así como
+						tampoco asumir alguna responsabilidad por las obligaciones contraídas por las ITF (en
+						este caso briq.mx) o por algún Cliente frente a otro, en virtud de las Operaciones que
+						celebren.
+					</p>
+				</div>
 			</div>
-		</div>
+			<div
+				class="fixed inset-0 z-20 hidden items-center justify-center bg-black/90"
+				id="video-modal"
+			>
+				<div
+					class="relative aspect-video w-full bg-white shadow-xl md:h-[80vh] md:w-auto"
+					id="video-container"
+				>
+					<video controls class="absolute inset-0 h-full w-full" id="video">
+						<source src="video-general.mp4" type="video/mp4" />
+					</video>
+					<button class="absolute right-0 top-0 bg-white p-4 text-black" id="close-video">
+						Cerrar
+					</button>
+				</div>
+			</div>
+		</footer>
 	</main>
-</Layout>
 
-<script is:inline>
-	const playVideoButtons = document.querySelectorAll('.video-button')
-	const videoModal = document.getElementById('video-modal')
-	const closeVideo = document.getElementById('close-video')
-	const videoContainer = document.getElementById('video-container')
+	<script is:inline>
+		const playVideoButtons = document.querySelectorAll('.video-button')
+		const videoModal = document.getElementById('video-modal')
+		const closeVideo = document.getElementById('close-video')
+		const videoContainer = document.getElementById('video-container')
 
-	// Detect a click on any of the play buttons
-	playVideoButtons.forEach((button) => {
-		button.addEventListener('click', (event) => {
-			const video = document.getElementById('video')
-			const videoSrc = event.currentTarget.dataset.video // Use currentTarget instead of target
+		// Detect a click on any of the play buttons
+		playVideoButtons.forEach((button) => {
+			button.addEventListener('click', (event) => {
+				const video = document.getElementById('video')
+				const videoSrc = event.currentTarget.dataset.video // Use currentTarget instead of target
 
-			// Set the video source
-			video.src = `${videoSrc}`
-			console.log(videoSrc)
+				// Set the video source
+				video.src = `${videoSrc}`
+				console.log(videoSrc)
 
-			// Show the modal
-			videoModal.classList.remove('hidden')
-			videoModal.classList.add('flex')
+				// Show the modal
+				videoModal.classList.remove('hidden')
+				videoModal.classList.add('flex')
 
-			// Play the video
-			video.play()
+				// Play the video
+				video.play()
+			})
 		})
-	})
 
-	// Close the modal
-	closeVideo.addEventListener('click', () => {
-		const video = document.getElementById('video')
+		// Close the modal
+		closeVideo.addEventListener('click', () => {
+			const video = document.getElementById('video')
 
-		videoModal.classList.remove('flex')
-		videoModal.classList.add('hidden')
-		video.pause()
-	})
-
-	//If I click outside the video-container, close the modal
-	videoModal.addEventListener('click', (event) => {
-		if (event.target.id === 'video-modal') {
 			videoModal.classList.remove('flex')
 			videoModal.classList.add('hidden')
 			video.pause()
-		}
-	})
-</script>
+		})
+
+		//If I click outside the video-container, close the modal
+		videoModal.addEventListener('click', (event) => {
+			if (event.target.id === 'video-modal') {
+				videoModal.classList.remove('flex')
+				videoModal.classList.add('hidden')
+				video.pause()
+			}
+		})
+	</script>
+</Layout>
