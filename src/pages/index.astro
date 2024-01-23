@@ -26,7 +26,7 @@ const featuredProjects = projects.filter((project) => project.isFeatured)
 <Layout title="Inicio | Construye tu patrimonio metro a metro.">
 	<main class="font-body text-lg text-navy antialiased">
 		<div
-			class="flex items-center justify-center gap-2 bg-navy py-2 text-center font-display text-sm font-semibold text-white"
+			class="flex items-center justify-center gap-2 bg-navy py-2 text-center font-display text-base font-semibold text-white"
 		>
 			<i class="fa-kit fa-briq-logo"></i>
 			<p>Este es un espacio operado por briq.mx</p>
@@ -34,26 +34,27 @@ const featuredProjects = projects.filter((project) => project.isFeatured)
 		<nav class="sticky top-0 z-20 border-b bg-white py-4">
 			<div class="mx-auto w-full max-w-screen-2xl px-4">
 				<div class="flex items-center justify-between">
-					<img src="logo-nav.png" alt="Logo" class="w-32" />
-					<div class="flex gap-2">
+					<img src="logo-nav.png" alt="Logo" class="h-8" />
+					<div class="flex gap-2 items-center">
 						<a
-							class="hidden border border-white bg-white px-3 py-3 font-display text-sm font-bold text-navy md:inline-flex"
+							class="hidden border border-white bg-white px-3 py-3 font-display text-xs font-medium text-navy md:inline-flex"
 							href="#propiedades"
 						>
 							Ver propiedades
 						</a>
 						<a
-							class="inline-flex border bg-white px-3 py-3 font-display text-sm font-bold text-navy"
+							class="inline-flex border bg-white px-3 py-2 font-display text-xs font-medium text-navy items-center gap-1"
 							href="https://www.briq.mx/users/sign_in"
 							target="_blank"
 						>
-							Iniciar sesión
+							<i class="fa-kit fa-briq-logo"></i>
+							Iniciar sesión con briq.mx
 						</a>
 					</div>
 				</div>
 			</div>
 		</nav>
-		<header class="border-b bg-beige-dark">
+		<header class="border-b bg-[#f9f9f6]">
 			<div
 				class="flex flex-col items-stretch justify-between md:min-h-[85vh] md:flex-row xl:min-h-[75vh]"
 			>
@@ -459,7 +460,13 @@ const featuredProjects = projects.filter((project) => project.isFeatured)
 		<section class="border-t py-24">
 			<div class="mx-auto w-full max-w-screen-lg px-4">
 				<article class="flex flex-col items-start gap-8 bg-navy p-8 text-white">
-					<img src="logo-emblema-briq-white.svg" alt="Logo" class="w-32" />
+					<div class="flex items-center gap-4">
+						<img src="logo-emblema-briq-white.svg" alt="Logo" class="w-24" />
+						<div class="w-6 h-6 border rounded-lg border-white/20 flex items-center justify-center">
+							<i class="fas fa-xmark text-xs"></i>
+						</div>
+						<img src="logo-nav-white.png" alt="Logo" class="h-8" />
+					</div>
 					<h2 class="max-w-xl font-display text-2xl font-bold md:text-4xl">
 						Sumametros es un espacio dedicado dentro de briq.mx.
 					</h2>
@@ -472,12 +479,6 @@ const featuredProjects = projects.filter((project) => project.isFeatured)
 						Los espacios dedicados son secciones dentro de briq.mx en donde encontrarás proyectos y
 						oportunidades para invertir promovidos por una empresa o grupo específico.
 					</p>
-					<a
-						href="https://briq.mx"
-						class="inline-flex justify-center bg-white px-6 py-4 text-center font-display font-bold text-navy"
-					>
-						Conoce más</a
-					>
 				</article>
 			</div>
 		</section>
@@ -501,14 +502,14 @@ const featuredProjects = projects.filter((project) => project.isFeatured)
 				<div class="flex items-center justify-center gap-4">
 					<span class="text-sm">Para conocer más sobre Sumametros</span>
 					<a
-						href="#"
+						href="https://www.instagram.com/begrand/"
 						class="flex items-center gap-1 border p-2 font-display text-sm font-bold md:p-3"
 					>
 						<Icon name="bxl:instagram" class="h-6 w-6 text-navy opacity-50" />
 						<span>@begrand</span>
 					</a>
 					<a
-						href="#"
+						href="https://www.facebook.com/begrand/"
 						class="flex items-center gap-1 border p-2 font-display text-sm font-bold md:p-3"
 					>
 						<Icon name="bxl:facebook" class="h-6 w-6 text-navy opacity-50" />
@@ -528,55 +529,55 @@ const featuredProjects = projects.filter((project) => project.isFeatured)
 						<nav class="flex gap-2">
 							<a
 								class="flex h-8 w-8 items-center justify-center rounded-full border border-white"
-								href="#"><i class="fa-brands fa-facebook-f"></i></a
+								href="https://www.facebook.com/briqmx">
+								<i class="fa-brands fa-facebook-f"></i>
+							</a>
+							<a
+								class="flex h-8 w-8 items-center justify-center rounded-full border border-white"
+								href="https://twitter.com/BriqMx"><i class="fa-brands fa-x-twitter"></i></a
 							>
 							<a
 								class="flex h-8 w-8 items-center justify-center rounded-full border border-white"
-								href="#"><i class="fa-brands fa-x-twitter"></i></a
+								href="https://www.youtube.com/channel/UC5gSLYFILbOPSXDd9Oax4AA"><i class="fa-brands fa-youtube"></i></a
 							>
 							<a
 								class="flex h-8 w-8 items-center justify-center rounded-full border border-white"
-								href="#"><i class="fa-brands fa-youtube"></i></a
+								href="https://www.linkedin.com/company/briq-mx"><i class="fa-brands fa-linkedin-in"></i></a
 							>
 							<a
 								class="flex h-8 w-8 items-center justify-center rounded-full border border-white"
-								href="#"><i class="fa-brands fa-linkedin-in"></i></a
+								href="https://www.instagram.com/briqmx"><i class="fa-brands fa-instagram"></i></a
 							>
 							<a
 								class="flex h-8 w-8 items-center justify-center rounded-full border border-white"
-								href="#"><i class="fa-brands fa-instagram"></i></a
-							>
-							<a
-								class="flex h-8 w-8 items-center justify-center rounded-full border border-white"
-								href="#"><i class="fa-brands fa-tiktok"></i></a
+								href="https://www.tiktok.com/@briqmx"><i class="fa-brands fa-tiktok"></i></a
 							>
 						</nav>
 						<div></div>
 					</div>
 					<div class="flex flex-col gap-2 text-white/80">
 						<h3 class="mb-4 font-bold uppercase text-white">¿Quíenes somos?</h3>
-						<a href="#">Sobre nosotros</a>
-						<a href="#">Medios y prensa</a>
-						<a href="#">Sostenibilidad</a>
-						<a href="#">Regulación</a>
-						<a href="#">Aviso de privacidad</a>
-						<a href="#">Términos y condiciones</a>
+						<a href="https://www.briq.mx/nosotros">Sobre nosotros</a>
+						<a href="https://www.briq.mx/medios">Medios y prensa</a>
+						<a href="https://www.briq.mx/sostenibilidad">Sostenibilidad</a>
+						<a href="https://www.briq.mx/regulacion">Regulación</a>
+						<a href="https://www.briq.mx/avisoprivacidad">Aviso de privacidad</a>
+						<a href="https://www.briq.mx/tyc">Términos y condiciones</a>
 					</div>
 					<div class="flex flex-col gap-2 text-white/80">
 						<h3 class="mb-4 font-bold uppercase text-white">Más información</h3>
-						<a href="#">Contacto y ayuda</a>
-						<a href="#">Glosario de términos</a>
-						<a href="#">Unidad especializada (UNE)</a>
-						<a href="#">Cambios y mejoras</a>
-						<a href="#">Recursos</a>
-						<a href="#">Resultados</a>
+						<a href="https://ayuda.briq.mx/">Contacto y ayuda</a>
+						<a href="https://www.briq.mx/glosario">Glosario de términos</a>
+						<a href="https://www.briq.mx/regulacion/une">Unidad especializada (UNE)</a>
+						<a href="https://novedades.briq.mx/">Cambios y mejoras</a>
+						<a href="https://www.briq.mx/recursos">Recursos</a>
 					</div>
 				</div>
 				<div class="flex flex-col gap-2 text-white/50">
 					<p>
 						BRIQ FUND, S.A.P.I. de C.V., Institución de Financiamiento Colectivo, en términos de la
 						Ley para Regular las Instituciones de Tecnología Financiera, es una sociedad autorizada,
-						regulada y supervisada por las autoridades financieras. Autorización P116/2021
+						regulada y supervisada por las autoridades financieras. <a class="text-white underline" href="https://www.dof.gob.mx/nota_detalle.php?codigo=5712432&fecha=26/12/2023#gsc.tab=0">Autorización P116/2021</a>
 					</p>
 					<p>
 						Ni el Gobierno Federal ni las entidades de la administración pública paraestatal podrán
