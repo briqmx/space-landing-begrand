@@ -12,7 +12,7 @@ export default defineConfig({
   site: 'https://sumametros.briq.mx',
   // base: '/space-landing-begrand',
   // base: '/',
-  base: isDevelopment ? '/' : '/space-landing-begrand/',
+  base: isDevelopment ? '/' : '/',
   integrations: [tailwind(), icon({
     iconDir: "./src/icons",
     include: {
