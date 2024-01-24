@@ -45,7 +45,6 @@ const featuredProjects = projects.filter((project) => project.isFeatured)
 						<a
 							class="inline-flex border bg-white px-3 py-2 font-display text-xs font-medium text-navy items-center gap-1"
 							href="https://www.briq.mx/users/sign_in"
-							target="_blank"
 						>
 							<i class="fa-kit fa-briq-logo"></i>
 							Iniciar sesión con briq.mx
@@ -73,7 +72,7 @@ const featuredProjects = projects.filter((project) => project.isFeatured)
 							departamento un metro a la vez
 						</p>
 						<button
-							class="video-button inline-flex items-center gap-4 bg-navy px-6 py-4 font-display font-bold text-white"
+							class="video-button bg-primary text-white inline-flex items-center gap-2 text-base font-display px-8 py-3 rounded-sm font-semibold"
 							data-video="video-general.mp4"
 						>
 							<span>¿Como funciona?</span>
@@ -84,7 +83,7 @@ const featuredProjects = projects.filter((project) => project.isFeatured)
 				<div class="h-[420px] w-full md:h-auto">
 					<figure class="relative h-full w-full">
 						<img
-							src="hero-cover-2.jpg"
+							src="hero-cover.jpeg"
 							alt="Hero"
 							class="absolute inset-0 z-10 h-full w-full object-cover"
 						/>
@@ -109,7 +108,7 @@ const featuredProjects = projects.filter((project) => project.isFeatured)
 							</p>
 						</div>
 						<button
-							class="video-button flex items-center justify-center gap-2 bg-navy px-3 py-2 font-display text-sm font-medium text-white"
+							class="video-button inline-flex border bg-white px-3 py-2 font-display text-xs font-medium text-navy items-center gap-1"
 							data-video="video-1.mp4"
 						>
 							<span>Ver video</span>
@@ -129,7 +128,7 @@ const featuredProjects = projects.filter((project) => project.isFeatured)
 						</div>
 						<div>
 							<button
-								class="video-button flex items-center justify-center gap-2 bg-navy px-3 py-2 font-display text-sm font-medium text-white"
+              class="video-button inline-flex border bg-white px-3 py-2 font-display text-xs font-medium text-navy items-center gap-1"
 								data-video="video-2.mp4"
 							>
 								<span>Ver video</span>
@@ -150,7 +149,7 @@ const featuredProjects = projects.filter((project) => project.isFeatured)
 						</div>
 						<div>
 							<button
-								class="video-button flex items-center justify-center gap-2 bg-navy px-3 py-2 font-display text-sm font-medium text-white"
+                class="video-button inline-flex border bg-white px-3 py-2 font-display text-xs font-medium text-navy items-center gap-1"
 								data-video="video-3.mp4"
 							>
 								<span>Ver video</span>
@@ -212,9 +211,8 @@ const featuredProjects = projects.filter((project) => project.isFeatured)
 												</dl>
 											</div>
 											<a
-												class="inline-flex justify-center bg-navy px-6 py-4 text-center font-display font-bold text-white"
+												class="btn"
 												href={project.url}
-												target="_blank"
 											>
 												Comprar ahora
 											</a>
@@ -229,7 +227,7 @@ const featuredProjects = projects.filter((project) => project.isFeatured)
 					{
 						nonFeaturedProjects.map((project, index) => (
 							<article class="relative flex flex-col rounded-lg border bg-white shadow-sm">
-								<div class="flex grid flex-1 grid-cols-1 flex-col">
+								<div class="grid flex-1 grid-cols-1 flex-col">
 									<div class="col-span-1 p-4">
 										<figure class="relative aspect-square h-full w-full bg-navy">
 											<img
@@ -268,9 +266,8 @@ const featuredProjects = projects.filter((project) => project.isFeatured)
 												</dl>
 											</div>
 											<a
-												class="inline-flex justify-center bg-navy px-6 py-4 text-center font-display font-bold text-white"
+												class="btn"
 												href={project.url}
-												target="_blank"
 											>
 												Comprar ahora
 											</a>
@@ -327,7 +324,7 @@ const featuredProjects = projects.filter((project) => project.isFeatured)
 								mensuales
 							</p>
 						</div>
-						<p class="text-lg font-semibold opacity-50">
+						<p class="text-lg font-medium opacity-50">
 							Con Sumametros no necesitas desembolsar grandes cantidades ni endeudarte para ser
 							dueño. Además, olvídate de tener que esperar a que tu propiedad se rente para recibir
 							ganancias
@@ -340,7 +337,7 @@ const featuredProjects = projects.filter((project) => project.isFeatured)
 								Puedes invertir en diferentes propiedades.
 							</p>
 						</div>
-						<p class="text-lg font-semibold opacity-50">
+						<p class="text-lg font-medium opacity-50">
 							Con Sumametros podrás diversificar tu inversión de manera sencilla, comprando metros
 							cuadrados en diferentes desarrollos
 						</p>
@@ -354,7 +351,7 @@ const featuredProjects = projects.filter((project) => project.isFeatured)
 								>
 							</p>
 						</div>
-						<p class="text-lg font-semibold opacity-50">
+						<p class="text-lg font-medium opacity-50">
 							Con Sumametros no tendrás que preocuparte por tareas de mantenimiento, cobranza, o
 							malos inquilinos; ya que todas las propiedades son operadas por los expertos de Be
 							Grand®
@@ -367,7 +364,7 @@ const featuredProjects = projects.filter((project) => project.isFeatured)
 								Ocupación y rendimientos constantes por volumen
 							</p>
 						</div>
-						<p class="text-lg font-semibold opacity-50">
+						<p class="text-lg font-medium opacity-50">
 							Con Sumametros recibe ganancias constantemente y olvídate de buscar nuevos inquilinos
 							o perder dinero por periodos sin renta
 						</p>
@@ -396,8 +393,8 @@ const featuredProjects = projects.filter((project) => project.isFeatured)
 											<p class="font-display text-xl font-semibold">{step}</p>
 											{index == STEPS.length - 1 && (
 												<a
-													href="#"
-													class="inline-flex justify-center bg-navy px-6 py-4 text-center font-display font-bold text-white"
+													href="#propiedades"
+													class="btn"
 												>
 													Comprar ahora
 												</a>
@@ -449,9 +446,9 @@ const featuredProjects = projects.filter((project) => project.isFeatured)
 							</dl>
 						</div>
 						<a
-							class="inline-flex justify-center bg-navy px-6 py-4 text-center font-display font-bold text-white"
+							class="btn"
 							href="begrand.mx"
-							target="_blank">Conoce más</a
+							>Conoce más</a
 						>
 					</div>
 				</div>
@@ -652,3 +649,9 @@ const featuredProjects = projects.filter((project) => project.isFeatured)
 		})
 	</script>
 </Layout>
+
+<style>
+  .btn {
+    @apply bg-primary text-white inline-flex items-center justify-center text-center gap-2 text-base font-display px-8 py-3 rounded-sm font-semibold;
+  }
+</style>
