@@ -9,7 +9,7 @@
     "unitsTotal" : 2085,
     "unitsAvailable" : 2085,
     "price" : 112500,
-    "url" : "https://www.briq.mx/suma_metros/proyectos/be-grand-reforma",
+    "url" : "https://www.briq.mx/sumametros/proyectos/be-grand-reforma",
     "isFeatured" : true
   },
   {
@@ -22,7 +22,7 @@
     "unitsTotal" : 9153,
     "unitsAvailable" : 9153,
     "price" : 71250,
-    "url" : "https://briq.mx/suma_metros/proyectos/vitant-del-valle",
+    "url" : "https://briq.mx/sumametros/proyectos/vitant-del-valle",
     "isFeatured" : false
   },
   {
@@ -35,7 +35,7 @@
     "unitsTotal" : 6860,
     "unitsAvailable" : 6860,
     "price" : 72250,
-    "url" : "https://briq.mx/suma_metros/proyectos/vitant-polanco",
+    "url" : "https://briq.mx/sumametros/proyectos/vitant-polanco",
     "isFeatured" : false
   },
   {
@@ -48,7 +48,7 @@
     "unitsTotal" : 6276,
     "unitsAvailable" : 6276,
     "price" : 81750,
-    "url" : "https://www.briq.mx/suma_metros/proyectos/vitant-santa-fe",
+    "url" : "https://www.briq.mx/sumametros/proyectos/vitant-santa-fe",
     "isFeatured" : false
   },
   {
@@ -61,7 +61,7 @@
     "unitsTotal" : 5944,
     "unitsAvailable" : 5944,
     "price" : 78750,
-    "url" : "https://briq.mx/suma_metros/proyectos/vitant-san-pedro",
+    "url" : "https://briq.mx/sumametros/proyectos/vitant-san-pedro",
     "isFeatured" : false
   },
   {
@@ -74,7 +74,7 @@
     "unitsTotal" : 3024,
     "unitsAvailable" : 3024,
     "price" : 62500,
-    "url" : "https://www.briq.mx/suma_metros/proyectos/vitant-santa-lucia",
+    "url" : "https://www.briq.mx/sumametros/proyectos/vitant-santa-lucia",
     "isFeatured" : false
   }
 ]
