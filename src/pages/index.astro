@@ -71,12 +71,15 @@ const featuredProjects = projects.filter((project) => project.isFeatured)
 							Compra desde 1m² en los mejores edificios, obtén rentas y plusvalía, o adquiere tu
 							departamento un metro a la vez
 						</p>
-						<button
-							class="video-button bg-primary text-white inline-flex items-center gap-2 text-base font-display px-8 py-3 rounded-sm font-semibold"
-							data-video="video-general.mp4"
-						>
-							<span>¿Como funciona?</span>
-							<Icon name="tabler:player-play-filled" class="opacity-90" />
+						<button class="flex items-center gap-2 p-2 border rounded-md md:rounded-lg bg-primary/5 border-primary w-full video-button" data-video="video-general.mp4">
+							<figure class="aspect-video h-10 md:h-16 rounded-md md:rounded-lg bg-primary relative overflow-hidden flex-shrink-0 border border-blue-600 flex items-center justify-center">
+								<img src="video-cover-2.png" alt="Video" class="absolute inset-0 h-full w-full object-contain" />
+								<Icon name="tabler:player-play-filled" class="opacity-80 relative z-10 text-white" />
+							</figure>
+							<div class="flex items-center text-sm md:text-base gap-4 px-4 rounded-md font-semibold font-display text-primary w-full justify-between">
+								<span class="">Conoce como funciona</span>
+								<Icon name="tabler:chevron-right" class="opacity-80 relative z-10" />
+							</div>
 						</button>
 					</div>
 				</div>
