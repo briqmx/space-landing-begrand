@@ -34,7 +34,9 @@ const featuredProjects = projects.filter((project) => project.isFeatured)
 		<nav class="sticky top-0 z-20 border-b bg-white py-4">
 			<div class="mx-auto w-full max-w-screen-2xl px-4">
 				<div class="flex items-center justify-between">
-					<img src="logo-nav.png" alt="Logo" class="h-8" />
+					<a href="/">
+						<img src="logo-nav.png" alt="Logo" class="h-8" />
+					</a>
 					<div class="flex gap-2 items-center">
 						<a
 							class="hidden border border-white bg-white px-3 py-3 font-display text-xs font-medium text-navy md:inline-flex"
@@ -47,7 +49,7 @@ const featuredProjects = projects.filter((project) => project.isFeatured)
 							href="https://www.briq.mx/users/sign_in"
 						>
 							<i class="fa-kit fa-briq-logo"></i>
-							Iniciar sesión con briq.mx
+							Iniciar sesión <span class="hidden sm:inline-block">con briq.mx</span>
 						</a>
 					</div>
 				</div>
@@ -445,7 +447,8 @@ const featuredProjects = projects.filter((project) => project.isFeatured)
 						</div>
 						<a
 							class="btn"
-							href="begrand.mx"
+							href="https://begrand.mx"
+							target="_blank"
 							>Conoce más</a
 						>
 					</div>
@@ -499,6 +502,7 @@ const featuredProjects = projects.filter((project) => project.isFeatured)
 					<a
 						href="https://www.instagram.com/begrand/"
 						class="flex items-center gap-1 border p-2 font-display text-sm font-bold md:p-3"
+						target="_blank"
 					>
 						<Icon name="bxl:instagram" class="h-6 w-6 text-navy opacity-50" />
 						<span>@begrand</span>
@@ -506,6 +510,7 @@ const featuredProjects = projects.filter((project) => project.isFeatured)
 					<a
 						href="https://www.facebook.com/begrand/"
 						class="flex items-center gap-1 border p-2 font-display text-sm font-bold md:p-3"
+						target="_blank"
 					>
 						<Icon name="bxl:facebook" class="h-6 w-6 text-navy opacity-50" />
 						<span>Be Grand</span>
@@ -524,31 +529,47 @@ const featuredProjects = projects.filter((project) => project.isFeatured)
 						<nav class="flex gap-2">
 							<a
 								class="flex h-8 w-8 items-center justify-center rounded-full border border-white"
-								href="https://www.facebook.com/briqmx">
+								href="https://www.facebook.com/briqmx"
+								target="_blank"
+							>
 								<i class="fa-brands fa-facebook-f"></i>
 							</a>
 							<a
 								class="flex h-8 w-8 items-center justify-center rounded-full border border-white"
-								href="https://twitter.com/BriqMx"><i class="fa-brands fa-x-twitter"></i></a
+								href="https://twitter.com/BriqMx"
+								target="_blank"
 							>
+								<i class="fa-brands fa-x-twitter"></i>
+							</a>
 							<a
 								class="flex h-8 w-8 items-center justify-center rounded-full border border-white"
-								href="https://www.youtube.com/channel/UC5gSLYFILbOPSXDd9Oax4AA"><i class="fa-brands fa-youtube"></i></a
+								href="https://www.youtube.com/channel/UC5gSLYFILbOPSXDd9Oax4AA"
+								target="_blank"
 							>
+								<i class="fa-brands fa-youtube"></i>
+							</a>
 							<a
 								class="flex h-8 w-8 items-center justify-center rounded-full border border-white"
-								href="https://www.linkedin.com/company/briq-mx"><i class="fa-brands fa-linkedin-in"></i></a
+								href="https://www.linkedin.com/company/briq-mx"
+								target="_blank"
 							>
+								<i class="fa-brands fa-linkedin-in"></i>
+							</a>
 							<a
 								class="flex h-8 w-8 items-center justify-center rounded-full border border-white"
-								href="https://www.instagram.com/briqmx"><i class="fa-brands fa-instagram"></i></a
+								href="https://www.instagram.com/briqmx"
+								target="_blank"
 							>
+								<i class="fa-brands fa-instagram"></i>
+								</a>
 							<a
 								class="flex h-8 w-8 items-center justify-center rounded-full border border-white"
-								href="https://www.tiktok.com/@briqmx"><i class="fa-brands fa-tiktok"></i></a
+								href="https://www.tiktok.com/@briqmx"
+								target="_blank"
 							>
+								<i class="fa-brands fa-tiktok"></i>
+							</a>
 						</nav>
-						<div></div>
 					</div>
 					<div class="flex flex-col gap-2 text-white/80">
 						<h3 class="mb-4 font-bold uppercase text-white">¿Quíenes somos?</h3>
@@ -572,7 +593,7 @@ const featuredProjects = projects.filter((project) => project.isFeatured)
 					<p>
 						BRIQ FUND, S.A.P.I. de C.V., Institución de Financiamiento Colectivo, en términos de la
 						Ley para Regular las Instituciones de Tecnología Financiera, es una sociedad autorizada,
-						regulada y supervisada por las autoridades financieras. <a class="text-white underline" href="https://www.dof.gob.mx/nota_detalle.php?codigo=5712432&fecha=26/12/2023#gsc.tab=0">Autorización P116/2021</a>
+						regulada y supervisada por las autoridades financieras. <a target="_blank" class="text-white underline" href="https://www.dof.gob.mx/nota_detalle.php?codigo=5712432&fecha=26/12/2023#gsc.tab=0">Autorización P116/2021</a>
 					</p>
 					<p>
 						Ni el Gobierno Federal ni las entidades de la administración pública paraestatal podrán
