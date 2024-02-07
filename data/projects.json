@@ -14,7 +14,7 @@
   {
     "title" : "Vitant® Del Valle",
     "description" : "Localizado dentro del complejo Mitikah, con acceso directo a uno de los mayores centros comerciales de México, Vitant ® Del Valle permite disfrutar de restaurantes, cine, cafeterías e increíbles amenidades a tan solo unos pasos de distancia.",
-    "image" : "proyectos/del-valle.jpeg",
+    "image" : "/proyectos/del-valle.jpeg",
     "location" : "Ciudad de México, México",
     "isNew" : true,
     "status" : "active",
@@ -30,7 +30,7 @@
   {
     "title" : "Vitant® Polanco",
     "description" : "A tan solo unos minutos de una de las zonas más dinámicas de la Ciudad de México, Vitant ® Polanco está rodeado de los principales centros culturales, gastronómicos y sociales de la ciudad. Además, cuenta con increíbles amenidades diseñadas por Be Grand ®, como alberca, sports bar, terraza y muchas más.",
-    "image" : "proyectos/polanco.jpeg",
+    "image" : "/proyectos/polanco.jpeg",
     "location" : "Ciudad de México, México",
     "isNew" : true,
     "status" : "active",
@@ -62,7 +62,7 @@
   {
     "title" : "Vitant® San Pedro",
     "description" : "Ubicado en la exclusiva zona de Valle Oriente (en San Pedro Garza García), Vitant® San Pedro se encuentra rodeado de centros comerciales, parques y los mejores restaurantes. Este desarrollo cuenta con impresionantes vistas, interiores modernos y amenidades únicas, como sports bar, alberca, gimnasio, lounge, entre otras.",
-    "image" : "proyectos/san-pedro.jpeg",
+    "image" : "/proyectos/san-pedro.jpeg",
     "location" : "San Pedro Garza García, Nuevo León",
     "isNew" : true,
     "status" : "active",
