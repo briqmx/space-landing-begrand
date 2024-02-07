@@ -3,13 +3,13 @@ import Layout from '../layouts/Layout.astro'
 import { Icon } from 'astro-icon/components'
 import faqs from '../../data/faqs.json'
 import projects from '../../data/projects.json'
+import Project from '../components/Project.astro'
 
 const STEPS = [
 	'Crea tu cuenta y completa tu perfil en la plataforma de briq.mx',
-	'Explora nuestras propiedades y decide en cuál(es) quieres invertir',
-	'Selecciona la cantidad de metros que deseas comprar desde 1 m²',
-	'Sigue las instrucciones de transferencia según tu banco y recibe tu certificado de compra',
-	'Empieza a recibir ganancias por la renta y obtén plusvalía de tus metros'
+	'Compra metros cuadrados en el proyecto de tu elección y recibe tu certificado de compra',
+	'Empieza a recibir ganancias por la renta y obtén plusvalía de tus metros',
+	'Compra más metros, canjea tus metros por un departamento o vende tus metros cuando quieras'
 ]
 
 const numberToCurrency = (number) => {
@@ -26,13 +26,13 @@ const featuredProjects = projects.filter((project) => project.isFeatured)
 <Layout title="Inicio | Construye tu patrimonio metro a metro.">
 	<main class="font-body text-lg text-navy antialiased">
 		<div
-			class="flex items-center justify-center gap-2 bg-navy py-2 text-center font-display text-base font-semibold text-white"
+			class="flex items-center justify-center gap-2 bg-navy py-2 text-center font-display text-sm font-semibold text-white"
 		>
 			<i class="fa-kit fa-briq-logo"></i>
 			<p>Este es un espacio operado por briq.mx</p>
 		</div>
 		<nav class="sticky top-0 z-20 border-b bg-white py-4">
-			<div class="mx-auto w-full max-w-screen-2xl px-4">
+			<div class="mx-auto w-full max-w-screen-lg px-4">
 				<div class="flex items-center justify-between">
 					<a href="/">
 						<img src="logo-nav.png" alt="Logo" class="h-8" />
@@ -55,52 +55,34 @@ const featuredProjects = projects.filter((project) => project.isFeatured)
 				</div>
 			</div>
 		</nav>
-		<header class="border-b bg-[#f9f9f6]">
-			<div
-				class="flex flex-col items-stretch justify-between md:min-h-[85vh] md:flex-row xl:min-h-[75vh]"
-			>
-				<div class="flex w-full items-center justify-center px-4 py-8">
-					<div class="flex max-w-lg flex-col items-start gap-4">
-						<div>
-							<span class="text-sm bg-primary/20 py-1 px-3 rounded-full text-primary mb-1">Nuevo concepto</span>
-							<h1 class="font-display text-4xl font-bold md:text-5xl">
-								Construye tu patrimonio un metro a la vez
-							</h1>
-						</div>
-						<p class="leading-relaxed">
-							Compra <span class="bg-blue-100 px-1 inline-block text-blue-900">desde 1m²</span> en los mejores edificios, obtén rentas y plusvalía, o adquiere tu
-							departamento un metro a la vez
-						</p>
-						<button class="flex items-center gap-2 p-2 border rounded-md md:rounded-lg bg-primary/5 border-primary w-full video-button" data-video="video-general.mp4">
-							<figure class="aspect-video h-10 md:h-16 rounded-md md:rounded-lg bg-primary relative overflow-hidden flex-shrink-0 border border-blue-600 flex items-center justify-center">
-								<img src="video-cover-2.png" alt="Video" class="absolute inset-0 h-full w-full object-contain" />
-								<Icon name="tabler:player-play-filled" class="opacity-80 relative z-10 text-white" />
-							</figure>
-							<div class="flex items-center text-sm md:text-base gap-4 px-4 rounded-md font-semibold font-display text-primary w-full justify-between">
-								<span class="">Conoce cómo funciona</span>
-								<Icon name="tabler:chevron-right" class="opacity-80 relative z-10" />
-							</div>
-						</button>
+		<header class="border-b bg-[#f9f9f6] py-16 bg-[center_bottom_-1rem] bg-repeat-x" style="background-image: url('city.svg')">
+			<div class="mx-auto w-full max-w-screen-lg px-4">
+				<div class="text-balance w-full flex flex-col items-center text-center mx-auto max-w-3xl gap-4 mb-8">
+					<h1 class="text-3xl md:text-4xl font-display font-bold text-pretty">Compra metros cuadrados, hazte de tu departamento y recibe rentas mensuales</h1>
+					<p class="leading-relaxed">
+						Compra desde 1m² en los mejores edificios, obtén rentas y plusvalía, o adquiere tu
+						departamento un metro a la vez
+					</p>
+					<div class="flex gap-2 items-center justify-center">
+						<a href="#propiedades" class=" bg-primary text-white border border-blue-600 py-3 px-6 rounded-sm font-semibold font-display text-lg">Ver mi próxima propiedad</a>
 					</div>
 				</div>
-				<div class="h-[420px] w-full md:h-auto">
-					<figure class="relative h-full w-full">
-						<img
-							src="hero-cover.jpeg"
-							alt="Hero"
-							class="absolute inset-0 z-10 h-full w-full object-cover"
-						/>
-					</figure>
-				</div>
+				<figure class="aspect-video bg-black rounded-2xl relative">
+					<video
+						class="absolute inset-0 h-full w-full object-cover rounded-2xl"
+						controls
+						src="video-general.mp4"
+					/>
+				</figure>
 			</div>
 		</header>
 		<section class="py-12">
-			<div class="mx-auto w-full max-w-screen-xl px-4">
-				<h2 class="mb-8 font-display text-4xl font-bold max-w-md">¿Qué puedo hacer con mis metros cuadrados?</h2>
-				<div class="grid grid-cols-3 gap-3">
-					<article class="bg-green-100/20 p-8 rounded-lg border flex flex-col gap-4 items-start justify-between">
+			<div class="mx-auto w-full max-w-screen-lg px-4">
+				<h2 class="mb-8 font-display text-3xl md:text-4xl font-bold max-w-md text-center md:text-left">¿Qué puedo hacer con mis metros cuadrados?</h2>
+				<div class="grid grid-cols-1 md:grid-cols-3 gap-3">
+					<article class="bg-beige p-8 rounded-lg border flex flex-col gap-4 items-start justify-between">
 						<div class="flex flex-col gap-4 items-start">
-							<img src="icono-card-1.svg" class="mb-8 h-12" />
+							<img src="v2/icon-1.svg" class="h-32" />
 							<h3 class="text-2xl font-display font-bold text-balance">Compra más metros, y hazte de tu departamento</h3>
 							<p class="leading-relaxed text-pretty">Compra a tu ritmo más metros cuadrados, una vez que completes los metros necesarios, canjea tus metros por un departamento.</p>
 						</div>
@@ -111,9 +93,9 @@ const featuredProjects = projects.filter((project) => project.isFeatured)
 							<Icon name="tabler:player-play-filled" />
 						</button>
 					</article>
-					<article class="bg-blue-100/20 p-8 rounded-lg border flex flex-col gap-4 items-start justify-between">
+					<article class="bg-beige p-8 rounded-lg border flex flex-col gap-4 items-start justify-between">
 						<div class="flex flex-col gap-4 items-start">
-							<img src="icono-card-2.svg" class="mb-8 h-12" />
+							<img src="icon-2.svg" class="h-32" />
 							<h3 class="text-2xl font-display font-bold text-balance">Guarda tus metros y recibe rentas mensuales</h3>
 							<p class="leading-relaxed text-pretty">Conserva tus metros y recibe rentas mensuales por ellos, sin preocuparte por la administración de tu propiedad.</p>
 						</div>
@@ -124,9 +106,9 @@ const featuredProjects = projects.filter((project) => project.isFeatured)
 							<Icon name="tabler:player-play-filled" />
 						</button>
 					</article>
-					<article class="bg-red-100/20 p-8 rounded-lg border flex flex-col gap-4 items-start justify-between">
+					<article class="bg-beige p-8 rounded-lg border flex flex-col gap-4 items-start justify-between">
 						<div class="flex flex-col gap-4 items-start">
-							<img src="icono-card-3.svg" class="mb-8 h-12" />
+							<img src="icon-3.svg" class="h-32" />
 							<h3 class="text-2xl font-display font-bold text-balance">Vende tus metros y obtén plusvalía</h3>
 							<p class="leading-relaxed text-pretty">Vende tus metros cuando quieras y obtén plusvalía generada por el aumento del valor de la propiedad.</p>
 						</div>
@@ -142,120 +124,25 @@ const featuredProjects = projects.filter((project) => project.isFeatured)
 		</section>
 		
 		<section class="border-y bg-beige py-24" id="propiedades">
-			<div class="mx-auto w-full max-w-screen-xl px-4">
+			<div class="mx-auto w-full max-w-screen-lg px-4">
 				<div class="flex flex-col gap-2">
 					<p class="font-display text-sm font-semibold text-primary">Propiedades disponibles:</p>
 					<h2 class="mb-16 max-w-xl font-display text-2xl font-bold md:text-4xl">
-						Sé dueño de una parte de los mejores edificios de México
+						Elige tu próxima propiedad y comienza a recibir rentas
 					</h2>
 				</div>
-				<div class="mb-4 flex flex-col gap-8">
+				<div class="mb-6 flex flex-col gap-8">
 					{
 						featuredProjects.map((project, index) => (
-							<article class="relative rounded-lg border bg-white shadow-sm">
-								<div class="grid grid-cols-1 md:grid-cols-3">
-									<div class="col-span-1 p-8">
-										<figure class="relative aspect-square h-full w-full bg-navy">
-											<img
-												src={project.image}
-												alt="Proyecto"
-												class="absolute inset-0 h-full w-full object-cover"
-											/>
-											<div class="absolute bottom-0 right-0 h-10 w-10 bg-white" />
-											<div class="absolute left-0 top-0 h-10 w-10 bg-white" />
-										</figure>
-									</div>
-									<div class="col-span-2 flex flex-col justify-between gap-8 p-8">
-										<div>
-											{project.isFeatured && (
-												<span class="mb-2 inline-block bg-yellow-200 p-1 text-sm font-medium text-navy">
-													Destacado
-												</span>
-											)}
-											<h2 class="font-display text-3xl font-bold">{project.title}</h2>
-											<div class="flex items-center gap-1">
-												<Icon name="tabler:map-pin" class="text-navy" />
-												<span class="text-sm font-medium">{project.location}</span>
-											</div>
-										</div>
-										<p
-											class="line-clamp-3 text-sm leading-relaxed text-navy/80"
-											set:html={project.description}
-										/>
-										<div class="flex flex-col justify-between gap-4 md:flex-row md:items-center">
-											<div class="flex gap-4">
-												<dl class="flex flex-col gap-2">
-													<dt class="text-sm font-medium">Precio de tu m²</dt>
-													<dl class="font-display text-2xl font-bold">
-														{numberToCurrency(project.price)}
-													</dl>
-												</dl>
-											</div>
-											<a
-												class="btn"
-												href={project.url}
-											>
-												Comprar ahora
-											</a>
-										</div>
-									</div>
-								</div>
-							</article>
+						<Project project={project} />
 						))
 					}
 				</div>
-				<div class="mb-16 grid grid-cols-1 gap-8 md:grid-cols-3">
+				<div class="h-px w-full bg-black/10 mb-6"></div>
+				<div class="mb-16 grid grid-cols-1 gap-6 md:grid-cols-3">
 					{
 						nonFeaturedProjects.map((project, index) => (
-							<article class="relative flex flex-col rounded-lg border bg-white shadow-sm">
-								<div class="grid flex-1 grid-cols-1 flex-col">
-									<div class="col-span-1 p-4">
-										<figure class="relative aspect-square h-full w-full bg-navy">
-											<img
-												src={project.image}
-												alt="Proyecto"
-												class="absolute inset-0 h-full w-full object-cover"
-											/>
-											<div class="absolute bottom-0 right-0 h-10 w-10 bg-white" />
-											<div class="absolute left-0 top-0 h-10 w-10 bg-white" />
-										</figure>
-									</div>
-									<div class="col-span-2 flex flex-1 flex-col justify-between gap-8 p-4">
-										<div>
-											{project.isFeatured && (
-												<span class="mb-2 inline-block bg-yellow-200 p-1 text-sm font-medium text-navy">
-													Destacado
-												</span>
-											)}
-											<h2 class="font-display text-3xl font-bold">{project.title}</h2>
-											<div class="flex items-center gap-1">
-												<Icon name="tabler:map-pin" class="text-navy" />
-												<span class="text-sm font-medium">{project.location}</span>
-											</div>
-										</div>
-										<p
-											class="line-clamp-3 text-sm leading-relaxed text-navy/80"
-											set:html={project.description}
-										/>
-										<div class="flex flex-col justify-between gap-4">
-											<div class="flex gap-4">
-												<dl class="flex flex-col gap-2">
-													<dt class="text-sm font-medium">Precio de tu m²</dt>
-													<dl class="font-display text-2xl font-bold">
-														{numberToCurrency(project.price)}
-													</dl>
-												</dl>
-											</div>
-											<a
-												class="btn"
-												href={project.url}
-											>
-												Comprar ahora
-											</a>
-										</div>
-									</div>
-								</div>
-							</article>
+							<Project project={project} />
 						))
 					}
 				</div>
@@ -290,7 +177,7 @@ const featuredProjects = projects.filter((project) => project.isFeatured)
 				</div>
 			</div>
 		</section>
-		<section class="py-16">
+		<section class="py-16 border-b">
 			<div class="mx-auto w-full max-w-screen-xl px-4">
 				<p class="font-display text-sm font-semibold text-primary">Ventajas</p>
 				<h2 class="mb-24 font-display text-4xl font-bold">
@@ -351,13 +238,19 @@ const featuredProjects = projects.filter((project) => project.isFeatured)
 				</div>
 			</div>
 		</section>
-		<section class="bg-beige pb-16 pt-24">
+		<section class="bg-beige pb-16 pt-24 border-b">
 			<div class="mx-auto w-full max-w-screen-xl px-4">
-				<div class="grid grid-cols-1 gap-4 md:grid-cols-2">
-					<h2 class="mb-24 font-display text-4xl font-bold">
-						¿Cómo funciona comprar en Sumametros? <br /> Es fácil y seguro
-					</h2>
-					<article class="max-w-md">
+				<div class="flex items-stretch gap-6">
+					<div class="w-full flex flex-col justify-between items-start">
+						<div>
+							<p class="font-display font-bold text-primary">¿Cómo funciona?</p>
+							<h2 class="font-display text-2xl md:text-4xl font-bold max-w-lg text-pretty">
+								Comienza poco a poco y hazte de tu departamento
+							</h2>
+						</div>
+						<img src="icon-4.svg" class="h-64" />
+					</div>
+					<article class="w-full">
 						<div class="flex flex-col items-start">
 							{
 								STEPS.map((step, index) => (
@@ -394,17 +287,19 @@ const featuredProjects = projects.filter((project) => project.isFeatured)
 						<img src="logo-begrand.svg" alt="Logo" class="w-32 mix-blend-multiply" />
 					</figure>
 					<div class="col-span-2 flex flex-col items-start gap-8">
-						<p class="font-display font-bold text-primary">Respaldo</p>
-						<h2 class="max-w-2xl text-pretty font-display text-2xl font-bold md:text-4xl">
-							Todas las propiedades de Sumametros están respaldadas y son administradas por Be Grand<sup>&reg;</sup>
-						</h2>
+						<div>
+							<p class="font-display font-bold text-primary">Respaldo</p>
+							<h2 class="max-w-2xl text-pretty font-display text-2xl font-bold md:text-4xl">
+								Todas las propiedades son respaldadas y administradas por Be Grand<sup>&reg;</sup>
+							</h2>
+						</div>
 						<p class="leading-relaxed text-pretty">
-							Una empresa orgullosamente mexicana, con 20 años de experiencia en el desarrollo y
+							Empresa mexicana, con 20 años de experiencia en el desarrollo y
 							comercialización de proyectos inmobiliarios de alta calidad en zonas AAA en México y
-							España. Una marca líder en el segmento residencial plus y con amplia experiencia en
+							España. Líder en el segmento residencial plus y con amplia experiencia en
 							desarrollos residenciales, comerciales y oficinas.
 						</p>
-						<div class="flex flex-wrap gap-4 md:flex-nowrap">
+						<div class="flex flex-wrap gap-8 md:flex-nowrap">
 							<dl>
 								<dt class="text-sm">Años de experiencia</dt>
 								<dd class="font-display text-2xl font-bold">20</dd>
@@ -416,10 +311,6 @@ const featuredProjects = projects.filter((project) => project.isFeatured)
 							<dl>
 								<dt class="text-sm">Departamentos vendidos</dt>
 								<dd class="font-display text-2xl font-bold">+5,000</dd>
-							</dl>
-							<dl>
-								<dt class="text-sm">Plusvalía promedio anual</dt>
-								<dd class="font-display text-2xl font-bold">10%</dd>
 							</dl>
 						</div>
 						<a
