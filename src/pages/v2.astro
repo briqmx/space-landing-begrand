@@ -4,6 +4,7 @@ import { Icon } from 'astro-icon/components'
 import faqs from '../../data/faqs.json'
 import projects from '../../data/projects.json'
 import Project from '../components/Project.astro'
+import Features from '../components/Features.astro'
 
 const STEPS = [
 	'Crea tu cuenta y completa tu perfil en la plataforma de briq.mx',
@@ -58,13 +59,13 @@ const featuredProjects = projects.filter((project) => project.isFeatured)
 		<header class="border-b bg-[#f9f9f6] py-16 bg-[center_bottom_-1rem] bg-repeat-x" style="background-image: url('city.svg')">
 			<div class="mx-auto w-full max-w-screen-lg px-4">
 				<div class="text-balance w-full flex flex-col items-center text-center mx-auto max-w-3xl gap-4 mb-8">
-					<h1 class="text-3xl md:text-4xl font-display font-bold text-pretty">Compra metros cuadrados, hazte de tu departamento y recibe rentas mensuales</h1>
+					<!-- <h1 class="text-3xl md:text-4xl font-display font-bold text-pretty">Compra metros cuadrados, hazte de tu departamento y recibe rentas mensuales</h1> -->
+					<h1 class="text-3xl md:text-4xl font-display font-bold text-balance">La nueva forma de adquirir tu departamento un metro a la vez</h1>
 					<p class="leading-relaxed">
-						Compra desde 1m² en los mejores edificios, obtén rentas y plusvalía, o adquiere tu
-						departamento un metro a la vez
+						Compra desde 1m² en los mejores edificios, obtén rentas y plusvalía, junta metros suficientes y cambialos por un departamento.
 					</p>
 					<div class="flex gap-2 items-center justify-center">
-						<a href="#propiedades" class=" bg-primary text-white border border-blue-600 py-3 px-6 rounded-sm font-semibold font-display text-lg">Ver mi próxima propiedad</a>
+						<a href="#propiedades" class=" btn">Ver mi próxima propiedad</a>
 					</div>
 				</div>
 				<figure class="aspect-video bg-black rounded-2xl relative">
@@ -76,53 +77,7 @@ const featuredProjects = projects.filter((project) => project.isFeatured)
 				</figure>
 			</div>
 		</header>
-		<section class="py-12">
-			<div class="mx-auto w-full max-w-screen-lg px-4">
-				<h2 class="mb-8 font-display text-3xl md:text-4xl font-bold max-w-md text-center md:text-left">¿Qué puedo hacer con mis metros cuadrados?</h2>
-				<div class="grid grid-cols-1 md:grid-cols-3 gap-3">
-					<article class="bg-beige p-8 rounded-lg border flex flex-col gap-4 items-start justify-between">
-						<div class="flex flex-col gap-4 items-start">
-							<img src="/icon-1.svg" class="h-32" />
-							<h3 class="text-2xl font-display font-bold text-balance">Compra más metros, y hazte de tu departamento</h3>
-							<p class="leading-relaxed text-pretty">Compra a tu ritmo más metros cuadrados, una vez que completes los metros necesarios, canjea tus metros por un departamento.</p>
-						</div>
-						<button
-							class="video-button inline-flex border bg-primary px-5 py-2 font-display border-black/10 text-base font-semibold text-white items-center gap-1 rounded-md"
-							data-video="video-1.mp4"
-							<span>Ver video</span>
-							<Icon name="tabler:player-play-filled" />
-						</button>
-					</article>
-					<article class="bg-beige p-8 rounded-lg border flex flex-col gap-4 items-start justify-between">
-						<div class="flex flex-col gap-4 items-start">
-							<img src="/icon-2.svg" class="h-32" />
-							<h3 class="text-2xl font-display font-bold text-balance">Guarda tus metros y recibe rentas mensuales</h3>
-							<p class="leading-relaxed text-pretty">Conserva tus metros y recibe rentas mensuales por ellos, sin preocuparte por la administración de tu propiedad.</p>
-						</div>
-						<button
-						class="video-button inline-flex border bg-primary px-5 py-2 font-display border-black/10 text-base font-semibold text-white items-center gap-1 rounded-md"
-							data-video="video-2.mp4"
-							<span>Ver video</span>
-							<Icon name="tabler:player-play-filled" />
-						</button>
-					</article>
-					<article class="bg-beige p-8 rounded-lg border flex flex-col gap-4 items-start justify-between">
-						<div class="flex flex-col gap-4 items-start">
-							<img src="/icon-3.svg" class="h-32" />
-							<h3 class="text-2xl font-display font-bold text-balance">Vende tus metros y obtén plusvalía</h3>
-							<p class="leading-relaxed text-pretty">Vende tus metros cuando quieras y obtén plusvalía generada por el aumento del valor de la propiedad.</p>
-						</div>
-						<button
-						class="video-button inline-flex border bg-primary px-5 py-2 font-display border-black/10 text-base font-semibold text-white items-center gap-1 rounded-md"
-							data-video="video-3.mp4"
-							<span>Ver video</span>
-							<Icon name="tabler:player-play-filled" />
-						</button>
-					</article>
-				</div>
-			</div>
-		</section>
-		
+		<Features />
 		<section class="border-y bg-beige py-24" id="propiedades">
 			<div class="mx-auto w-full max-w-screen-lg px-4">
 				<div class="flex flex-col gap-2">
@@ -146,7 +101,7 @@ const featuredProjects = projects.filter((project) => project.isFeatured)
 						))
 					}
 				</div>
-				<p class="mb-8 py-2 text-center">
+				<p class="mb-8 py-2 text-center line">
 					Además de volverte dueño de m² de grandes propiedades, con Sumametros cuentas con
 				</p>
 				<div class="grid grid-cols-1 gap-8 md:grid-cols-3">
@@ -178,6 +133,55 @@ const featuredProjects = projects.filter((project) => project.isFeatured)
 			</div>
 		</section>
 		<section class="py-16 border-b">
+			<div class="mx-auto w-full max-w-screen-lg px-4">
+				<p class="font-display text-sm font-semibold text-primary">¿Por qué Sumametros?</p>
+				<h2 class="font-display text-4xl font-bold">
+					Conoce más sobre Sumametros
+				</h2>
+				<p class="mb-6">
+					Escucha del experto por qué Sumametros es la mejor opción para comenzar a invertir en
+				</p>
+				<div class="grid grid-cols-3 gap-4">
+					<button class="video-button flex flex-col gap-2 border p-4 rounded-xl" data-video="/video-1.mp4">
+						<figure class="aspect-video relative rounded-md overflow-hidden w-full">
+							<video
+								class="absolute inset-0 h-full w-full object-cover"
+								src="/video-1.mp4"
+							/>
+							<div class="absolute inset-0 bg-black/20 flex items-center justify-center">
+								<Icon name="tabler:play" class="text-white text-4xl" />
+							</div>
+						</figure>
+						<h3 class="font-display font-bold highlight">¿Por qué Sumametros?</h3>
+					</button>
+					<button class="video-button flex flex-col gap-2 border p-4 rounded-xl" data-video="/video-2.mp4">
+						<figure class="aspect-video relative rounded-md overflow-hidden w-full">
+							<video
+								class="absolute inset-0 h-full w-full object-cover"
+								src="/video-2.mp4"
+							/>
+							<div class="absolute inset-0 bg-black/20 flex items-center justify-center">
+								<Icon name="tabler:play" class="text-white text-4xl" />
+							</div>
+						</figure>
+						<h3 class="font-display font-bold highlight">¿Por qué Sumametros?</h3>
+					</button>
+					<button class="video-button flex flex-col gap-2 border p-4 rounded-xl" data-video="/video-3.mp4">
+						<figure class="aspect-video relative rounded-md overflow-hidden w-full">
+							<video
+								class="absolute inset-0 h-full w-full object-cover"
+								src="/video-3.mp4"
+							/>
+							<div class="absolute inset-0 bg-black/20 flex items-center justify-center">
+								<Icon name="tabler:play" class="text-white text-4xl" />
+							</div>
+						</figure>
+						<h3 class="font-display font-bold highlight">¿Por qué Sumametros?</h3>
+					</button>
+				</div>
+			</div>
+		</section>
+		<!-- <section class="py-16 border-b">
 			<div class="mx-auto w-full max-w-screen-lg px-4">
 				<p class="font-display text-sm font-semibold text-primary">Ventajas</p>
 				<h2 class="mb-24 font-display text-4xl font-bold">
@@ -236,10 +240,10 @@ const featuredProjects = projects.filter((project) => project.isFeatured)
 					</article>
 				</div>
 			</div>
-		</section>
+		</section> -->
 		<section class="bg-beige pb-16 pt-24 border-b">
 			<div class="mx-auto w-full max-w-screen-lg px-4">
-				<div class="flex items-stretch gap-6">
+				<div class="flex flex-col md:flex-row items-stretch gap-6">
 					<div class="w-full flex flex-col justify-between items-start">
 						<div>
 							<p class="font-display font-bold text-primary">¿Cómo funciona?</p>
@@ -536,8 +540,21 @@ const featuredProjects = projects.filter((project) => project.isFeatured)
 	</script>
 </Layout>
 
-<style>
+<style is:global>
   .btn {
     @apply bg-primary text-white inline-flex items-center justify-center text-center gap-2 text-base font-display px-8 py-3 rounded-sm font-semibold;
   }
+
+	.highlight {
+		background-image: url('/highlight.svg');
+		background-repeat: no-repeat;
+	}
+
+	.line {
+		background-image: url('/line.svg');
+		background-position: bottom 0.12em center;
+    background-repeat: no-repeat;
+    background-size: 50% 0.2em;
+	}
+
 </style>
