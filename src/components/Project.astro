@@ -61,7 +61,7 @@ const formatNumber = (number) => {
         </p>
         <p class="text-sm mb-4 text-black/60 flex items-center gap-1">
           <Icon name="tabler:home-move" class="text-navy" />
-          Obtén tu depa juntando { project.goal } m²
+          Plusvalía histórica equivalente al { project.appreciation }% anual
         </p>
         <p class="text-sm text-black/60">
           <strong class="text-black text-lg">{ numberToCurrency(project.price) }</strong> / m2
@@ -73,7 +73,7 @@ const formatNumber = (number) => {
 
 {project.isFeatured && (
   <a href={project.url} target="_blank" class="group">
-    <article class="grid grid-cols-1 md:grid-cols-3 gap-6 cursor-pointer">
+    <article class="grid grid-cols-1 md:grid-cols-3 gap-6 cursor-pointer hover:bg-beige">
       <figure class="relative rounded-lg overflow-hidden col-span-2 h-64">
         <img class="object-cover w-full h-full absolute inset-0" src={ project.image } alt={ project.title } />
         <div class="flex items-center gap-1 absolute top-2 left-2 bg-white py-1 px-2 rounded-md border border-black/20">
