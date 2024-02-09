@@ -15,39 +15,11 @@ const formatNumber = (number) => {
 	return new Intl.NumberFormat('es-MX').format(number)
 }
 ---
-
-<!-- <article class="relative flex flex-col rounded-lg p-3 border border-black/10 cursor-pointer bg-white">
-  <figure class="aspect-video relative border border-black/20 overflow-hidden rounded-lg">
-    <img class="object-cover w-full h-full absolute inset-0" src={ project.image } alt={ project.title } />
-    <div class="flex items-center gap-1 absolute top-2 left-2 bg-white py-1 px-2 rounded-md border border-black/20">
-      <Icon name="tabler:map-pin" class="text-navy" />
-      <span class="text-sm font-medium">{project.location}</span>
-    </div>
-  </figure>
-  <div class="py-2">
-    <h2 class="text-2xl font-display font-bold">{ project.title }</h2>
-    <div class="flex gap-2 py-4">
-      <div class="flex flex-col w-full">
-        <p class="text-xs">Plusvalia anual</p>
-        <p class="font-bold font-display">{ numberToCurrency(project.appreciation) }%</p>
-      </div>
-      <div class="flex flex-col w-full">
-        <p class="text-xs">Rendimiento por m2</p>
-        <p class="font-bold font-display">{ numberToCurrency(project.rentPerMeter) } al mes</p>
-      </div>
-    </div>
-    <div>
-      <p class="text-xs">Precio de m2</p>
-      <p class="text-lg font-bold font-display">{ numberToCurrency(project.price) }</p>
-    </div>
-  </div>
-</article> -->
-
 {!project.isFeatured && (
   <a href={project.url} target="_blank" class="group">
     <article class="flex flex-col gap-2 cursor-pointer">
       <figure class="aspect-video md:aspect-square relative rounded-lg overflow-hidden">
-        <img class="object-cover w-full h-full absolute inset-0" src={ project.image } alt={ project.title } />
+        <img class="object-cover w-full h-full absolute inset-0 group-hover:scale-110 transition-all" src={ project.image } alt={ project.title } />
         <div class="flex items-center gap-1 absolute top-2 left-2 bg-white py-1 px-2 rounded-md border border-black/20">
           <Icon name="tabler:map-pin" class="text-navy" />
           <span class="text-sm font-medium">{project.location}</span>
@@ -57,7 +29,7 @@ const formatNumber = (number) => {
         <h2 class="text-xl font-display font-bold">{ project.title }</h2>
         <p class="text-sm text-black/60 flex items-center gap-1">
           <Icon name="tabler:trending-up" class="text-navy" />
-          Recibe un rendimiento anual del { project.appreciation }%
+          { numberToCurrency(project.rentPerMeter) } mxn de renta estimada al mes/m2
         </p>
         <p class="text-sm mb-4 text-black/60 flex items-center gap-1">
           <Icon name="tabler:home-move" class="text-navy" />
@@ -67,15 +39,16 @@ const formatNumber = (number) => {
           <strong class="text-black text-lg">{ numberToCurrency(project.price) }</strong> / m2
         </p>
       </div>
+      <div class="btn">Conocer más</div>
     </article>
   </a>
 )}
 
 {project.isFeatured && (
   <a href={project.url} target="_blank" class="group">
-    <article class="grid grid-cols-1 md:grid-cols-3 gap-6 cursor-pointer hover:bg-beige">
+    <article class="grid grid-cols-1 md:grid-cols-3 gap-6 cursor-pointer hover:bg-beige group">
       <figure class="relative rounded-lg overflow-hidden col-span-2 h-64">
-        <img class="object-cover w-full h-full absolute inset-0" src={ project.image } alt={ project.title } />
+        <img class="object-cover w-full h-full absolute inset-0 group-hover:scale-110 transition-all" src={ project.image } alt={ project.title } />
         <div class="flex items-center gap-1 absolute top-2 left-2 bg-white py-1 px-2 rounded-md border border-black/20">
           <Icon name="tabler:map-pin" class="text-navy" />
           <span class="text-sm font-medium">{project.location}</span>
@@ -87,19 +60,20 @@ const formatNumber = (number) => {
             Destacado
           </span>
           <h2 class="text-3xl font-display font-bold">{ project.title }</h2>
-          <p class=" text-black/60 flex items-center gap-1 text-sm">
+          <p class="text-sm text-black/60 flex items-center gap-1">
             <Icon name="tabler:trending-up" class="text-navy" />
+            { numberToCurrency(project.rentPerMeter) } mxn de renta estimada al mes/m2
+          </p>
+          <p class="text-sm mb-4 text-black/60 flex items-center gap-1">
+            <Icon name="tabler:home-move" class="text-navy" />
             Plusvalía histórica equivalente al { project.appreciation }% anual
           </p>
-          <p class="mb-4 text-black/60 flex items-center gap-1 text-sm">
-            <Icon name="tabler:home-move" class="text-navy" />
-            {numberToCurrency(project.rentPerMeter)} mxn de renta estimada al mes/m²
-          </p>
-          <div class="h-16 line-clamp-3 ellipsis overflow-hidden">
+          <div class="line-clamp-2 ellipsis overflow-hidden">
             <p class="text-black/60 text-sm" set:html={project.description} />
           </div>
         </div>
         <p class="text-black/60"><strong class="text-black text-lg">{ numberToCurrency(project.price) }</strong> / m2</p>
+        <div class="btn">Conocer más</div>
       </div>
     </article>
   </a>
