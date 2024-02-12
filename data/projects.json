@@ -8,7 +8,7 @@
     "url" : "https://www.briq.mx/sumametros/proyectos/be-grand-reforma",
     "isFeatured" : true,
     "goal": 60,
-    "rentPerMeter": 200,
+    "rentPerMeter": 260,
     "appreciation" : 12
   },
   {
@@ -24,7 +24,7 @@
     "url" : "https://briq.mx/sumametros/proyectos/vitant-del-valle",
     "isFeatured" : false,
     "goal": 60,
-    "rentPerMeter": 200,
+    "rentPerMeter": 223,
     "appreciation" : 8
   },
   {
@@ -40,7 +40,7 @@
     "url" : "https://briq.mx/sumametros/proyectos/vitant-polanco",
     "isFeatured" : false,
     "goal": 60,
-    "rentPerMeter": 200,
+    "rentPerMeter": 211,
     "appreciation" : 3
   },
   {
@@ -56,7 +56,7 @@
     "url" : "https://www.briq.mx/sumametros/proyectos/vitant-santa-fe",
     "isFeatured" : false,
     "goal": 60,
-    "rentPerMeter": 200,
+    "rentPerMeter": 220,
     "appreciation" : 7
   },
   {
@@ -72,7 +72,7 @@
     "url" : "https://briq.mx/sumametros/proyectos/vitant-san-pedro",
     "isFeatured" : false,
     "goal": 60,
-    "rentPerMeter": 200,
+    "rentPerMeter": 226,
     "appreciation" : 7
   },
   {
@@ -88,7 +88,7 @@
     "url" : "https://www.briq.mx/sumametros/proyectos/vitant-santa-lucia",
     "isFeatured" : false,
     "goal": 60,
-    "rentPerMeter": 200,
+    "rentPerMeter": 240,
     "appreciation" : 8
   }
 ]
