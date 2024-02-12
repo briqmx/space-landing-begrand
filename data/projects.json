@@ -25,7 +25,7 @@
     "isFeatured" : false,
     "goal": 60,
     "rentPerMeter": 200,
-    "appreciation" : 12
+    "appreciation" : 8
   },
   {
     "title" : "Vitant® Polanco",
@@ -41,7 +41,7 @@
     "isFeatured" : false,
     "goal": 60,
     "rentPerMeter": 200,
-    "appreciation" : 12
+    "appreciation" : 3
   },
   {
     "title" : "Vitant® Santa Fe",
@@ -57,7 +57,7 @@
     "isFeatured" : false,
     "goal": 60,
     "rentPerMeter": 200,
-    "appreciation" : 12
+    "appreciation" : 7
   },
   {
     "title" : "Vitant® San Pedro",
@@ -73,7 +73,7 @@
     "isFeatured" : false,
     "goal": 60,
     "rentPerMeter": 200,
-    "appreciation" : 12
+    "appreciation" : 7
   },
   {
     "title" : "Vitant® Santa Lucía",
@@ -89,6 +89,6 @@
     "isFeatured" : false,
     "goal": 60,
     "rentPerMeter": 200,
-    "appreciation" : 12
+    "appreciation" : 8
   }
 ]
