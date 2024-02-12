@@ -13,6 +13,9 @@ export default defineConfig({
   // base: '/space-landing-begrand',
   // base: '/',
   base: isDevelopment ? '/' : '/',
+  redirects: {
+    '/v2': '/',
+  },
   integrations: [tailwind(), icon({
     iconDir: "./src/icons",
     include: {
