@@ -13,78 +13,139 @@ const STEPS = [
 	'Compra más metros, canjea tus metros por un departamento o vende tus metros cuando quieras'
 ]
 
-const numberToCurrency = (number) => {
-	return new Intl.NumberFormat('es-MX', {
-		style: 'currency',
-		currency: 'MXN'
-	}).format(number)
-}
 
 const nonFeaturedProjects = projects.filter((project) => !project.isFeatured)
 const featuredProjects = projects.filter((project) => project.isFeatured)
 ---
 
 <Layout title="Inicio | Construye tu patrimonio metro a metro.">
-	<main class="font-body text-lg text-navy antialiased">
-		<div
-			class="flex items-center justify-center gap-2 bg-navy py-2 text-center font-display text-sm font-semibold text-white"
-		>
-			<i class="fa-kit fa-briq-logo"></i>
-			<p>Este es un espacio operado por briq.mx</p>
-		</div>
-		<nav class="sticky top-0 z-20 border-b bg-white py-4">
-			<div class="mx-auto w-full max-w-screen-lg px-4">
-				<div class="flex items-center justify-between">
-					<a href="/">
-						<img src="/logo-nav.png" alt="Logo" class="h-8" />
-					</a>
-					<div class="flex gap-2 items-center">
-						<a
-							class="hidden border border-white bg-white px-3 py-3 font-display text-xs font-medium text-navy md:inline-flex"
-							href="#propiedades"
-						>
-							Ver propiedades
+	<main class="font-body text-lg text-navy antialiased bg-navy">
+		<div class="sticky top-0 z-20 max-w-screen-lg px-4 py-2 mx-auto">
+			<nav class="border shadow-sm bg-white p-2 rounded-full">
+				<div class="mx-auto w-full max-w-screen-lg px-4">
+					<div class="flex items-center justify-between">
+						<a href="/v2">
+							<img src="/logo-nav.png" alt="Logo" class="h-5 md:h-8" />
 						</a>
-						<a
-							class="inline-flex border bg-white px-3 py-2 font-display text-xs font-medium text-navy items-center gap-1"
-							href="https://www.briq.mx/users/sign_in"
-						>
-							<i class="fa-kit fa-briq-logo"></i>
-							Iniciar sesión <span class="hidden sm:inline-block">con briq.mx</span>
-						</a>
+						<div class="flex gap-2 items-center">
+							<a
+								class="hidden border border-white bg-white px-3 py-3 font-display text-xs font-medium text-navy md:inline-flex"
+								href="#propiedades"
+							>
+								Ver propiedades
+							</a>
+							<a
+								href="#faqs"
+								class="hidden border border-white bg-white px-3 py-3 font-display text-xs font-medium text-navy md:inline-flex"
+							>
+								Preguntas frecuentes
+							</a>
+							<a
+								class="inline-flex border bg-white px-3 py-2 font-display text-xs font-medium text-navy items-center gap-1 rounded-full"
+								href="https://www.briq.mx/users/sign_in"
+							>
+								<i class="fa-kit fa-briq-logo"></i>
+								Iniciar sesión <span class="hidden sm:inline-block">con briq.mx</span>
+							</a>
+						</div>
 					</div>
 				</div>
-			</div>
-		</nav>
-		<header class="border-b bg-[#f9f9f6] py-16 bg-[center_bottom_-1rem] bg-repeat-x" style="background-image: url('city.svg')">
-			<div class="mx-auto w-full max-w-screen-lg px-4">
-				<div class="text-balance w-full flex flex-col items-center text-center mx-auto max-w-3xl gap-4 mb-8">
-					<!-- <h1 class="text-3xl md:text-4xl font-display font-bold text-pretty">Compra metros cuadrados, hazte de tu departamento y recibe rentas mensuales</h1> -->
-					<h1 class="text-3xl md:text-4xl font-display font-bold text-balance">La nueva forma de adquirir tu departamento un metro a la vez</h1>
-					<p class="leading-relaxed">
+			</nav>
+		</div>
+		<header class="border-b bg-navy py-16">
+			<div class="mx-auto w-full max-w-screen-lg px-4 grid grid-cols-1 md:grid-cols-2 items-center gap-4">
+				<div class="w-full max-w-lg flex flex-col gap-4 items-center md:items-start text-center md:text-left">
+					<span class="bg-white/10 text-white text-sm rounded-full px-3 py-1">Respaldado por la CNBV</span>
+					<h1 class="text-3xl md:text-4xl font-display font-bold text-balance text-white">Compra tu departamento poco a poco.</h1>
+					<p class="text-white/70 md:text-2xl">
 						Compra desde 1m² en los mejores edificios, obtén rentas y plusvalía, junta metros suficientes y cambialos por un departamento.
 					</p>
-					<div class="flex gap-2 items-center justify-center">
-						<a href="#propiedades" class=" btn">Ver mi próxima propiedad</a>
+					<a href="#propiedades" class="bg-blue-500 px-6 py-3 rounded-full text-white font-semibold border-white/5 border font-display text-xl">¡Quiero más información!</a>
+					<div>
+						<span class="text-xs text-white mb-2">Con el respaldo de</span>
+						<div class="flex items-center gap-4">
+							<img src="/logo-nav-white.png" alt="Logo" class="h-6" />
+							<img src="/logo-emblema-briq-white.svg" alt="Logo" class="w-24" />
+						</div>
 					</div>
 				</div>
-				<figure class="aspect-video bg-black rounded-2xl relative">
-					<video
-						class="absolute inset-0 h-full w-full object-cover rounded-2xl"
-						controls
-						src="/video-general.mp4"
-					/>
-				</figure>
+				<div class="w-full flex items-center justify-center">
+					<img src="/hero-cover.png" class="w-full" />
+				</div>
 			</div>
 		</header>
-		<Features />
+		<section class="py-12 bg-white">
+			<div class="mx-auto w-full max-w-screen-lg px-4">
+				<div class="grid grid-cols-1 md:grid-cols-2 gap-4 bg-beige border rounded-2xl">
+					<div class="flex flex-col gap-4 p-8">
+						<h2 class="font-display text-3xl md:text-4xl font-bold max-w-md">¿Qué es Sumametros?</h2>
+						<p class="text-pretty">
+							Sumametros es la nueva forma de comprar tu departamento desde 1m² en los mejores edificios, obtén rentas en el proceso, junta metros suficientes y cámbialos por un departamento.
+						</p>
+						<p>Al mismo tiempo, puedes vender tus metros en el mercado secundario y ganar la plusvalía acumulada desde que compraste.</p>
+					</div>
+					<div>
+						<figure class="w-full h-64 md:h-full relative rounded-2xl overflow-hidden">
+							<img src="/mobile.png" class="absolute inset-0 w-full h-full object-contain" />
+						</figure>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section class="py-12 bg-white">
+			<div class="mx-auto w-full max-w-screen-lg px-4">
+				<h2 class="mb-8 font-display text-3xl md:text-4xl font-bold max-w-md text-center md:text-left">¿Cómo puedes utilizar tus metros?</h2>
+				<div>
+					<div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+						<article class="bg-beige p-8 rounded-lg border snap-start">
+							<div class="w-full mb-2">
+								<figure class="aspect-square relative h-16">
+									<img src="/icono-card-1.svg" class="h-full w-full absolute inset-0 object-cover" />
+								</figure>
+							</div>
+							<div class="flex flex-col gap-4 items-start w-full">
+								<h3 class="text-lg md:text-2xl font-display font-bold text-balance">Compra más metros, y <span class="highlight">hazte de tu departamento</span></h3>
+								<p class="leading-relaxed text-pretty">Sigue comprando metros, una vez que completes los necesarios cámbialos por un departamento disponible de Be Grand®.</p>
+							</div>
+						</article>
+						<article class="bg-beige p-8 rounded-lg border snap-start">
+							<div class="w-full">
+								<div class="w-full mb-2">
+									<figure class="aspect-square relative h-16">
+										<img src="/icono-card-2.svg" class="h-full w-full absolute inset-0 object-cover" />
+									</figure>
+								</div>
+							</div>
+							<div class="flex flex-col gap-4 items-start w-full">
+								<h3 class="text-lg md:text-2xl font-display font-bold text-balance">Conserva tus metros y <span class="highlight">recibe rentas mensuales</span></h3>
+								<p class="leading-relaxed text-pretty">Recibe rentas mensuales por cada metro que tengas, sin preocuparte por la administración de tu propiedad.</p>
+							</div>
+						</article>
+						<article class="bg-beige p-8 rounded-lg border snap-start relative">
+							<span class="bg-black/10 px-4 py-1 inline-block rounded-full text-sm absolute right-2 top-2">Próximamente</span>
+							<div class="w-full mb-2">
+								<figure class="aspect-square relative h-16">
+									<img src="/icono-card-3.svg" class="h-full w-full absolute inset-0 object-cover" />
+								</figure>
+							</div>
+							<div class="flex flex-col gap-4 items-start w-full">
+								<h3 class="text-lg md:text-2xl font-display font-bold text-balance">Vende tus metros y <br/><span class="highlight">obtén plusvalía</span></h3>
+								<p class="leading-relaxed text-pretty">Vente tus metros en el mercado secundario (próximamente) y captura la plusvalía acumulada desde que compraste.</p>
+							</div>
+						</article>
+					</div>
+				</div>
+			</div>
+		</section>
+		
 		<section class="border-y bg-beige py-24" id="propiedades">
 			<div class="mx-auto w-full max-w-screen-lg px-4">
 				<div class="flex flex-col gap-2">
 					<p class="font-display text-sm font-semibold text-primary">Propiedades disponibles:</p>
-					<h2 class="mb-16 max-w-xl font-display text-2xl font-bold md:text-4xl">
-						Elige tu próxima propiedad y comienza a recibir rentas
+					<h2 class="max-w-xl font-display text-2xl font-bold md:text-4xl">
+						Elige entre cualquiera de nuestras propiedades
 					</h2>
+					<p class="mb-16 max-w-2xl">Puedes comprar los metros que quieras y juntarlos para obtener un departamento en cualquiera de los siguientes proyectos:</p>
 				</div>
 				<div class="mb-6 flex flex-col gap-8">
 					{
@@ -101,7 +162,7 @@ const featuredProjects = projects.filter((project) => project.isFeatured)
 						))
 					}
 				</div>
-				<p class="mb-8 py-2 text-center line">
+				<p class="mb-8 py-2 text-center">
 					Además de volverte dueño de m² de grandes propiedades, con Sumametros cuentas con
 				</p>
 				<div class="grid grid-cols-1 gap-8 md:grid-cols-3">
@@ -115,7 +176,7 @@ const featuredProjects = projects.filter((project) => project.isFeatured)
 					</article>
 					<article class="flex flex-col items-center gap-2 py-4 text-center">
 						<Icon name="tabler:shield-lock" class="text-2xl text-navy" />
-						<h2 class="font-display font-bold">Respaldo de empresas reconocidas</h2>
+						<h2 class="font-display font-bold">Respaldo de Be Grand<sup>&reg;</sup></h2>
 						<p>
 							Inmuebles respaldados y operados por Be Grand<sup>&reg;</sup>. Empresa con años de
 							experiencia en el sector residencial de lujo.
@@ -132,114 +193,55 @@ const featuredProjects = projects.filter((project) => project.isFeatured)
 				</div>
 			</div>
 		</section>
-		<section class="py-16 border-b">
+		<section class="py-16 border-b bg-white">
 			<div class="mx-auto w-full max-w-screen-lg px-4">
 				<p class="font-display text-sm font-semibold text-primary">¿Por qué Sumametros?</p>
 				<h2 class="font-display text-4xl font-bold">
 					Conoce más sobre Sumametros
 				</h2>
 				<p class="mb-6">
-					Escucha del experto por qué Sumametros es la mejor opción para comenzar a invertir en
+					Moris Dieck te explica por qué Sumametros es la mejor opción para crecer tu patrimonio
 				</p>
-				<div class="grid grid-cols-3 gap-4">
+				<div class="grid grid-cols-1 md:grid-cols-3 gap-4">
 					<button class="video-button flex flex-col gap-2 border p-4 rounded-xl" data-video="/video-1.mp4">
 						<figure class="aspect-video relative rounded-md overflow-hidden w-full">
 							<video
 								class="absolute inset-0 h-full w-full object-cover"
-								src="/video-1.mp4"
+								src="/video-2.mp4#t=0.001"
 							/>
 							<div class="absolute inset-0 bg-black/20 flex items-center justify-center">
 								<Icon name="tabler:play" class="text-white text-4xl" />
 							</div>
 						</figure>
-						<h3 class="font-display font-bold highlight">¿Por qué Sumametros?</h3>
+						<h3 class="font-display font-bold">Sé dueño de m² y <span class="highlight">recibe rentas</span> sin preocuparte.</h3>
 					</button>
 					<button class="video-button flex flex-col gap-2 border p-4 rounded-xl" data-video="/video-2.mp4">
 						<figure class="aspect-video relative rounded-md overflow-hidden w-full">
 							<video
 								class="absolute inset-0 h-full w-full object-cover"
-								src="/video-2.mp4"
+								src="/video-1.mp4#t=0.001"
 							/>
 							<div class="absolute inset-0 bg-black/20 flex items-center justify-center">
 								<Icon name="tabler:play" class="text-white text-4xl" />
 							</div>
 						</figure>
-						<h3 class="font-display font-bold highlight">¿Por qué Sumametros?</h3>
+						<h3 class="font-display font-bold">Compra tu departamento <span class="highlight">a tu propio ritmo</span>.</h3>
 					</button>
 					<button class="video-button flex flex-col gap-2 border p-4 rounded-xl" data-video="/video-3.mp4">
 						<figure class="aspect-video relative rounded-md overflow-hidden w-full">
 							<video
 								class="absolute inset-0 h-full w-full object-cover"
-								src="/video-3.mp4"
+								src="/video-3.mp4#t=0.001"
 							/>
 							<div class="absolute inset-0 bg-black/20 flex items-center justify-center">
 								<Icon name="tabler:play" class="text-white text-4xl" />
 							</div>
 						</figure>
-						<h3 class="font-display font-bold highlight">¿Por qué Sumametros?</h3>
+						<h3 class="font-display font-bold">Tu inversión está <span class="highlight">respaldada y segura</span>.</h3>
 					</button>
 				</div>
 			</div>
 		</section>
-			<div class="mx-auto w-full max-w-screen-lg px-4">
-				<p class="font-display text-sm font-semibold text-primary">Ventajas</p>
-				<h2 class="mb-24 font-display text-4xl font-bold">
-					¿Cuáles son las ventajas de comprar metros cuadrados en Sumametros?
-				</h2>
-				<div class="grid grid-cols-1 gap-8 md:grid-cols-2">
-					<article class="flex flex-col justify-between rounded-lg border bg-beige p-8">
-						<div>
-							<h2 class="font-display font-bold text-primary">A tu ritmo</h2>
-							<p class="mb-16 font-display text-2xl font-bold">
-								Puedes comprar desde 1m², comenzar a crecer tu patrimonio y recibir rentas
-								mensuales
-							</p>
-						</div>
-						<p class="text-lg font-medium opacity-50">
-							Con Sumametros no necesitas desembolsar grandes cantidades ni endeudarte para ser
-							dueño. Además, olvídate de tener que esperar a que tu propiedad se rente para recibir
-							ganancias
-						</p>
-					</article>
-					<article class="flex flex-col justify-between rounded-lg border bg-beige p-8">
-						<div>
-							<h2 class="font-display font-bold text-primary">Diversificación</h2>
-							<p class="mb-16 font-display text-2xl font-bold">
-								Puedes invertir en diferentes propiedades.
-							</p>
-						</div>
-						<p class="text-lg font-medium opacity-50">
-							Con Sumametros podrás diversificar tu inversión de manera sencilla, comprando metros
-							cuadrados en diferentes desarrollos
-						</p>
-					</article>
-					<article class="flex flex-col justify-between rounded-lg border bg-beige p-8">
-						<div>
-							<h2 class="font-display font-bold text-primary">Operación</h2>
-							<p class="mb-16 font-display text-2xl font-bold">
-								No tienes que preocuparte por nada ya que las propiedades son operadas por Be Grand<sup>&reg;</sup>
-							</p>
-						</div>
-						<p class="text-lg font-medium opacity-50">
-							Con Sumametros no tendrás que preocuparte por tareas de mantenimiento, cobranza, o
-							malos inquilinos; ya que todas las propiedades son operadas por los expertos de Be
-							Grand<sup>&reg;</sup>
-						</p>
-					</article>
-					<article class="flex flex-col justify-between rounded-lg border bg-beige p-8">
-						<div>
-							<h2 class="font-display font-bold text-primary">Liquidez para emergencias</h2>
-							<p class="mb-16 font-display text-2xl font-bold">
-								Vender tus metros cuadrados en el mercado secundario, o pide un préstamos hipotecándolos (próximamente).
-							</p>
-						</div>
-						<p class="text-lg font-medium opacity-50">
-							Si llegaras a necesitar liquidez, puedes vender tus metros más fácil que vender un departamento; o incluso puedes ponerlos como garantía y te conseguimos quién te preste por ellos (próximamente).
-						</p>
-					</article>
-				</div>
-			</div>
-		</section> -->
 		<section class="bg-beige pb-16 pt-24 border-b">
 			<div class="mx-auto w-full max-w-screen-lg px-4">
 				<div class="flex flex-col md:flex-row items-stretch gap-6">
@@ -250,7 +252,7 @@ const featuredProjects = projects.filter((project) => project.isFeatured)
 								Comienza poco a poco y hazte de tu departamento
 							</h2>
 						</div>
-						<img src="/icon-4.svg" class="h-64" />
+						<img src="/hero-cover.png" class="h-0 md:h-64" />
 					</div>
 					<article class="w-full">
 						<div class="flex flex-col items-start">
@@ -268,9 +270,9 @@ const featuredProjects = projects.filter((project) => project.isFeatured)
 											{index == STEPS.length - 1 && (
 												<a
 													href="#propiedades"
-													class="btn"
+													class="btn rounded-full"
 												>
-													Comprar ahora
+													Registrate en 5 minutos
 												</a>
 											)}
 										</div>
@@ -282,7 +284,7 @@ const featuredProjects = projects.filter((project) => project.isFeatured)
 				</div>
 			</div>
 		</section>
-		<section class="py-24">
+		<section class="py-24 bg-white">
 			<div class="mx-auto w-full max-w-screen-lg px-4">
 				<div class="grid grid-cols-1 gap-8 p-8 md:grid-cols-3">
 					<figure class="flex items-center justify-center bg-beige">
@@ -350,7 +352,7 @@ const featuredProjects = projects.filter((project) => project.isFeatured)
 				</article>
 			</div>
 		</section>
-		<section class="border-t bg-beige py-16">
+		<section class="border-t bg-beige py-16" id="faqs">
 			<div class="mx-auto w-full max-w-screen-lg px-4">
 				<h2 class="mb-16 font-display text-4xl font-bold">Preguntas frecuentes</h2>
 				<div class="grid grid-cols-1 gap-4">
@@ -376,7 +378,7 @@ const featuredProjects = projects.filter((project) => project.isFeatured)
 				</div>
 			</div>
 		</section>
-		<footer class="border-y py-4">
+		<footer class="border-y py-4 bg-white">
 			<div class="mx-auto w-full max-w-screen-lg px-4">
 				<div class="flex items-center justify-center gap-4">
 					<span class="text-sm">Para conocer más sobre Sumametros</span>
@@ -504,6 +506,50 @@ const featuredProjects = projects.filter((project) => project.isFeatured)
 			</div>
 		</footer>
 	</main>
+
+	<script is:inline>
+		const playVideoButtons = document.querySelectorAll('.video-button')
+		const videoModal = document.getElementById('video-modal')
+		const closeVideo = document.getElementById('close-video')
+		const videoContainer = document.getElementById('video-container')
+
+		// Detect a click on any of the play buttons
+		playVideoButtons.forEach((button) => {
+			button.addEventListener('click', (event) => {
+				const video = document.getElementById('video')
+				const videoSrc = event.currentTarget.dataset.video // Use currentTarget instead of target
+
+				// Set the video source
+				video.src = `${videoSrc}`
+				console.log(videoSrc)
+
+				// Show the modal
+				videoModal.classList.remove('hidden')
+				videoModal.classList.add('flex')
+
+				// Play the video
+				video.play()
+			})
+		})
+
+		// Close the modal
+		closeVideo.addEventListener('click', () => {
+			const video = document.getElementById('video')
+
+			videoModal.classList.remove('flex')
+			videoModal.classList.add('hidden')
+			video.pause()
+		})
+
+		//If I click outside the video-container, close the modal
+		videoModal.addEventListener('click', (event) => {
+			if (event.target.id === 'video-modal') {
+				videoModal.classList.remove('flex')
+				videoModal.classList.add('hidden')
+				video.pause()
+			}
+		})
+	</script>
 </Layout>
 
 <style is:global>
