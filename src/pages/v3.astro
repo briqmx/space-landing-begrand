@@ -4,7 +4,6 @@ import { Icon } from 'astro-icon/components'
 import faqs from '../../data/faqs.json'
 import projects from '../../data/projects.json'
 import Project from '../components/Project.astro'
-import Features from '../components/Features.astro'
 
 const STEPS = [
 	'Crea tu cuenta y completa tu perfil en la plataforma de briq.mx',
@@ -155,89 +154,19 @@ const featuredProjects = projects.filter((project) => project.isFeatured)
 					}
 				</div>
 				<div class="h-px w-full bg-black/10 mb-6"></div>
-				<div class="mb-16 grid grid-cols-1 gap-6 md:grid-cols-3">
+				<div class="mb-4 grid grid-cols-1 gap-6 md:grid-cols-3" id="propertyLists">
 					{
 						nonFeaturedProjects.map((project, index) => (
 							<Project project={project} />
 						))
 					}
 				</div>
-				<p class="mb-8 py-2 text-center">
-					Además de volverte dueño de m² de grandes propiedades, con Sumametros cuentas con
-				</p>
-				<div class="grid grid-cols-1 gap-8 md:grid-cols-3">
-					<article class="flex flex-col items-center gap-2 py-4 text-center">
-						<Icon name="tabler:building-skyscraper" class="text-2xl text-navy" />
-						<h2 class="font-display font-bold">Una plataforma regulada</h2>
-						<p>
-							Las operaciones se realizan a través de briq.mx, líder en el mercado y regulada por
-							las autoridades financieras.
-						</p>
-					</article>
-					<article class="flex flex-col items-center gap-2 py-4 text-center">
-						<Icon name="tabler:shield-lock" class="text-2xl text-navy" />
-						<h2 class="font-display font-bold">Respaldo de Be Grand<sup>&reg;</sup></h2>
-						<p>
-							Inmuebles respaldados y operados por Be Grand<sup>&reg;</sup>. Empresa con años de
-							experiencia en el sector residencial de lujo.
-						</p>
-					</article>
-					<article class="flex flex-col items-center gap-2 py-4 text-center">
-						<Icon name="tabler:home-ribbon" class="text-2xl text-navy" />
-						<h2 class="font-display font-bold">Constancia de propiedad</h2>
-						<p>
-							Recibe una constancia que acredita tu propiedad de metros cuadrados libre de cualquier
-							gravamen.
-						</p>
-					</article>
-				</div>
-			</div>
-		</section>
-		<section class="py-16 border-b bg-white">
-			<div class="mx-auto w-full max-w-screen-lg px-4">
-				<p class="font-display text-sm font-semibold text-primary">¿Por qué Sumametros?</p>
-				<h2 class="font-display text-4xl font-bold">
-					Conoce más sobre Sumametros
-				</h2>
-				<p class="mb-6">
-					Moris Dieck te explica por qué Sumametros es la mejor opción para crecer tu patrimonio
-				</p>
-				<div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-					<button class="video-button flex flex-col gap-2 border p-4 rounded-xl" data-video="/video-1.mp4">
-						<figure class="aspect-video relative rounded-md overflow-hidden w-full">
-							<video
-								class="absolute inset-0 h-full w-full object-cover"
-								src="/video-2.mp4#t=0.001"
-							/>
-							<div class="absolute inset-0 bg-black/20 flex items-center justify-center">
-								<Icon name="tabler:play" class="text-white text-4xl" />
-							</div>
-						</figure>
-						<h3 class="font-display font-bold">Sé dueño de m² y <span class="highlight">recibe rentas</span> sin preocuparte.</h3>
-					</button>
-					<button class="video-button flex flex-col gap-2 border p-4 rounded-xl" data-video="/video-2.mp4">
-						<figure class="aspect-video relative rounded-md overflow-hidden w-full">
-							<video
-								class="absolute inset-0 h-full w-full object-cover"
-								src="/video-1.mp4#t=0.001"
-							/>
-							<div class="absolute inset-0 bg-black/20 flex items-center justify-center">
-								<Icon name="tabler:play" class="text-white text-4xl" />
-							</div>
-						</figure>
-						<h3 class="font-display font-bold">Compra tu departamento <span class="highlight">a tu propio ritmo</span>.</h3>
-					</button>
-					<button class="video-button flex flex-col gap-2 border p-4 rounded-xl" data-video="/video-3.mp4">
-						<figure class="aspect-video relative rounded-md overflow-hidden w-full">
-							<video
-								class="absolute inset-0 h-full w-full object-cover"
-								src="/video-3.mp4#t=0.001"
-							/>
-							<div class="absolute inset-0 bg-black/20 flex items-center justify-center">
-								<Icon name="tabler:play" class="text-white text-4xl" />
-							</div>
-						</figure>
-						<h3 class="font-display font-bold">Tu inversión está <span class="highlight">respaldada y segura</span>.</h3>
+				<div class="flex items-center justify-center mb-4">
+					<button
+						class="btn rounded-full"
+						id="viewMoreButton"
+					>
+						Ver más propiedades
 					</button>
 				</div>
 			</div>
@@ -284,73 +213,31 @@ const featuredProjects = projects.filter((project) => project.isFeatured)
 				</div>
 			</div>
 		</section>
-		<section class="py-24 bg-white">
+		<section class="py-16 bg-white">
 			<div class="mx-auto w-full max-w-screen-lg px-4">
-				<div class="grid grid-cols-1 gap-8 p-8 md:grid-cols-3">
-					<figure class="flex items-center justify-center bg-beige">
-						<img src="/logo-begrand.svg" alt="Logo" class="w-32 mix-blend-multiply" />
-					</figure>
-					<div class="col-span-2 flex flex-col items-start gap-8">
-						<div>
-							<p class="font-display font-bold text-primary">Respaldo</p>
-							<h2 class="max-w-2xl text-pretty font-display text-2xl font-bold md:text-4xl">
-								Todas las propiedades son respaldadas y administradas por Be Grand<sup>&reg;</sup>
-							</h2>
-						</div>
-						<p class="leading-relaxed text-pretty">
-							Empresa mexicana, con 20 años de experiencia en el desarrollo y
+				<p class="font-display font-bold text-primary">Puedes confiar en nosotros</p>
+				<h2 class="mb-16 font-display text-4xl font-bold max-w-xl">Con el respaldo de empresas líderes en la industria</h2>
+				<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+					<div class="flex flex-col gap-4 items-start justify-between p-4 border rounded-xl bg-beige">
+						<img src="/logo-begrand.svg" class="h-24 mix-blend-multiply" />
+						<h3 class="text-xl font-display font-bold">Operado por Be Grand®</h3>
+						<p>Empresa mexicana, con 20 años de experiencia en el desarrollo y
 							comercialización de proyectos inmobiliarios de alta calidad en zonas AAA en México y
-							España. Líder en el segmento residencial plus y con amplia experiencia en
-							desarrollos residenciales, comerciales y oficinas.
-						</p>
-						<div class="flex flex-wrap gap-8 md:flex-nowrap">
-							<dl>
-								<dt class="text-sm">Años de experiencia</dt>
-								<dd class="font-display text-2xl font-bold">20</dd>
-							</dl>
-							<dl>
-								<dt class="text-sm">Proyectos inmobiliarios</dt>
-								<dd class="font-display text-2xl font-bold">+30</dd>
-							</dl>
-							<dl>
-								<dt class="text-sm">Departamentos vendidos</dt>
-								<dd class="font-display text-2xl font-bold">+5,000</dd>
-							</dl>
-						</div>
-						<a
-							class="btn"
-							href="https://begrand.mx"
-							target="_blank"
-							>Conoce más</a
-						>
+							España.</p>
+							<p>Líder en el segmento residencial plus y con amplia experiencia en
+								desarrollos residenciales, comerciales y oficinas.</p>
+							<a href="https://www.begrand.mx" class="btn rounded-full">Conoce más</a>
 					</div>
+					<div class="flex flex-col gap-4 items-start justify-between p-4 border rounded-xl bg-beige">
+							<img src="/logo-briq.svg" class="h-10 mb-11" />
+							<h3 class="text-xl font-display font-bold">Con la tecnología de briq.mx</h3>
+							<p>Empresa regulada por la CNBV, que ofrece una plataforma de inversión
+							inmobiliaria que permite a cualquier persona invertir en desarrollos inmobiliarios de
+							alta calidad.</p>
+							<p>briq.mx se encarga de la tecnología y operación de la plataforma.</p>
+							<a href="https://www.briq.mx" class="btn rounded-full">Conoce más</a>
+						</div>
 				</div>
-			</div>
-		</section>
-		<section class="border-t py-24">
-			<div class="mx-auto w-full max-w-screen-lg px-4">
-				<article class="flex flex-col items-start gap-8 bg-navy p-4 md:p-16 text-white">
-					<div class="flex items-center gap-4">
-						<img src="/logo-emblema-briq-white.svg" alt="Logo" class="w-24" />
-						<div class="w-6 h-6 border rounded-lg border-white/20 flex items-center justify-center">
-							<i class="fas fa-xmark text-xs"></i>
-						</div>
-						<img src="/logo-nav-white.png" alt="Logo" class="h-8" />
-					</div>
-					<h2 class="max-w-xl font-display text-2xl font-bold md:text-4xl">
-						Sumametros es un espacio dedicado dentro de briq.mx.
-					</h2>
-					<p class="leading-relaxed text-pretty text-xl">
-						briq.mx es una plataforma de financiamiento colectivo, regulada por las autoridades
-						financieras, que permite a cualquier persona invertir en proyectos inmobiliarios en
-						México de manera fácil, segura y transparente.
-					</p>
-					<p class="leading-relaxed text-pretty text-xl">
-						Los espacios dedicados son secciones dentro de briq.mx en donde encontrarás proyectos y
-						oportunidades para invertir promovidos por una empresa o grupo específico.
-					</p>
-				</article>
-			</div>
 		</section>
 		<section class="border-t bg-beige py-16" id="faqs">
 			<div class="mx-auto w-full max-w-screen-lg px-4">
@@ -570,3 +457,23 @@ const featuredProjects = projects.filter((project) => project.isFeatured)
 	}
 
 </style>
+
+<script is:inline>
+	// Gett all the articles inside the #propertyLists
+	const propertyLists = document.querySelectorAll('#propertyLists article')
+	const viewMoreButton = document.querySelector('#viewMoreButton')
+	// Hide the last two articles
+	propertyLists.forEach((article, index) => {
+		if (index > 2) {
+			article.classList.add('hidden')
+		}
+	})
+
+	// If I click the view more button, show the hidden articles
+	viewMoreButton.addEventListener('click', () => {
+		propertyLists.forEach((article, index) => {
+			article.classList.remove('hidden')
+		})
+		viewMoreButton.classList.add('hidden')
+	})
+</script>
