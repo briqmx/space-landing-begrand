@@ -31,6 +31,12 @@ const featuredProjects = projects.filter((project) => project.isFeatured)
 								class="hidden border border-white bg-white px-3 py-3 font-display text-xs font-medium text-navy md:inline-flex"
 								href="#propiedades"
 							>
+								¿Cómo funciona?
+							</a>
+							<a
+								class="hidden border border-white bg-white px-3 py-3 font-display text-xs font-medium text-navy md:inline-flex"
+								href="#propiedades"
+							>
 								Ver propiedades
 							</a>
 							<a
@@ -44,7 +50,7 @@ const featuredProjects = projects.filter((project) => project.isFeatured)
 								href="https://www.briq.mx/users/sign_in"
 							>
 								<i class="fa-kit fa-briq-logo"></i>
-								Iniciar sesión <span class="hidden sm:inline-block">con briq.mx</span>
+								Iniciar sesión
 							</a>
 						</div>
 					</div>
@@ -91,52 +97,48 @@ const featuredProjects = projects.filter((project) => project.isFeatured)
 				</div>
 			</div>
 		</section>
-		<section class="py-12 bg-white">
+		<section class="bg-white pb-16 pt-24 border-b">
 			<div class="mx-auto w-full max-w-screen-lg px-4">
-				<h2 class="mb-8 font-display text-3xl md:text-4xl font-bold max-w-md text-center md:text-left">¿Cómo puedes utilizar tus metros?</h2>
-				<div>
-					<div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-						<article class="bg-beige p-8 rounded-lg border snap-start">
-							<div class="w-full mb-2">
-								<figure class="aspect-square relative h-16">
-									<img src="/icono-card-1.svg" class="h-full w-full absolute inset-0 object-cover" />
-								</figure>
-							</div>
-							<div class="flex flex-col gap-4 items-start w-full">
-								<h3 class="text-lg md:text-2xl font-display font-bold text-balance">Compra más metros, y <span class="highlight">hazte de tu departamento</span></h3>
-								<p class="leading-relaxed text-pretty">Sigue comprando metros, una vez que completes los necesarios cámbialos por un departamento disponible de Be Grand®.</p>
-							</div>
-						</article>
-						<article class="bg-beige p-8 rounded-lg border snap-start">
-							<div class="w-full">
-								<div class="w-full mb-2">
-									<figure class="aspect-square relative h-16">
-										<img src="/icono-card-2.svg" class="h-full w-full absolute inset-0 object-cover" />
-									</figure>
-								</div>
-							</div>
-							<div class="flex flex-col gap-4 items-start w-full">
-								<h3 class="text-lg md:text-2xl font-display font-bold text-balance">Conserva tus metros y <span class="highlight">recibe rentas mensuales</span></h3>
-								<p class="leading-relaxed text-pretty">Recibe rentas mensuales por cada metro que tengas, sin preocuparte por la administración de tu propiedad.</p>
-							</div>
-						</article>
-						<article class="bg-beige p-8 rounded-lg border snap-start relative">
-							<span class="bg-black/10 px-4 py-1 inline-block rounded-full text-sm absolute right-2 top-2">Próximamente</span>
-							<div class="w-full mb-2">
-								<figure class="aspect-square relative h-16">
-									<img src="/icono-card-3.svg" class="h-full w-full absolute inset-0 object-cover" />
-								</figure>
-							</div>
-							<div class="flex flex-col gap-4 items-start w-full">
-								<h3 class="text-lg md:text-2xl font-display font-bold text-balance">Vende tus metros y <br/><span class="highlight">obtén plusvalía</span></h3>
-								<p class="leading-relaxed text-pretty">Vente tus metros en el mercado secundario (próximamente) y captura la plusvalía acumulada desde que compraste.</p>
-							</div>
-						</article>
+				<div class="flex flex-col md:flex-row items-stretch gap-6">
+					<div class="w-full flex flex-col justify-between items-start">
+						<div>
+							<p class="font-display font-bold text-primary">¿Cómo funciona?</p>
+							<h2 class="font-display text-2xl md:text-4xl font-bold max-w-lg text-pretty">
+								Comienza poco a poco y hazte de tu departamento
+							</h2>
+						</div>
+						<img src="/hero-cover.png" class="h-0 md:h-64" />
 					</div>
+					<article class="w-full">
+						<div class="flex flex-col items-start">
+							{
+								STEPS.map((step, index) => (
+									<article class="flex items-stretch gap-4">
+										<div class="flex flex-col items-center">
+											<div class="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-navy font-display font-bold text-white">
+												{index + 1}
+											</div>
+											{index !== STEPS.length - 1 && <div class="h-full w-1 bg-navy" />}
+										</div>
+										<div class="flex flex-col items-start gap-4 pb-10">
+											<p class="font-display text-xl font-semibold">{step}</p>
+											{index == STEPS.length - 1 && (
+												<a
+													href="#propiedades"
+													class="btn rounded-full"
+												>
+													Registrate y comienza
+												</a>
+											)}
+										</div>
+									</article>
+								))
+							}
+						</div>
+					</article>
 				</div>
 			</div>
 		</section>
-		
 		<section class="border-y bg-beige py-24" id="propiedades">
 			<div class="mx-auto w-full max-w-screen-lg px-4">
 				<div class="flex flex-col gap-2">
@@ -168,48 +170,6 @@ const featuredProjects = projects.filter((project) => project.isFeatured)
 					>
 						Ver más propiedades
 					</button>
-				</div>
-			</div>
-		</section>
-		<section class="bg-beige pb-16 pt-24 border-b">
-			<div class="mx-auto w-full max-w-screen-lg px-4">
-				<div class="flex flex-col md:flex-row items-stretch gap-6">
-					<div class="w-full flex flex-col justify-between items-start">
-						<div>
-							<p class="font-display font-bold text-primary">¿Cómo funciona?</p>
-							<h2 class="font-display text-2xl md:text-4xl font-bold max-w-lg text-pretty">
-								Comienza poco a poco y hazte de tu departamento
-							</h2>
-						</div>
-						<img src="/hero-cover.png" class="h-0 md:h-64" />
-					</div>
-					<article class="w-full">
-						<div class="flex flex-col items-start">
-							{
-								STEPS.map((step, index) => (
-									<article class="flex items-stretch gap-4">
-										<div class="flex flex-col items-center">
-											<div class="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-navy font-display font-bold text-white">
-												{index + 1}
-											</div>
-											{index !== STEPS.length - 1 && <div class="h-full w-1 bg-navy" />}
-										</div>
-										<div class="flex flex-col items-start gap-4 pb-10">
-											<p class="font-display text-xl font-semibold">{step}</p>
-											{index == STEPS.length - 1 && (
-												<a
-													href="#propiedades"
-													class="btn rounded-full"
-												>
-													Registrate en 5 minutos
-												</a>
-											)}
-										</div>
-									</article>
-								))
-							}
-						</div>
-					</article>
 				</div>
 			</div>
 		</section>
