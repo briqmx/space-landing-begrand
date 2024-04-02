@@ -7,9 +7,10 @@ import Project from '../components/Project.astro'
 
 const STEPS = [
 	'Crea tu cuenta y completa tu perfil en la plataforma de briq.mx',
+	'Elige el proyecto en el que deseas invertir, calcula tu inversión y compra metros cuadrados',
 	'Compra metros cuadrados en el proyecto de tu elección y recibe tu certificado de compra',
 	'Empieza a recibir ganancias por la renta y obtén plusvalía de tus metros',
-	'Compra más metros, canjea tus metros por un departamento o vende tus metros cuando quieras'
+	'Compra más metros, canjea tus metros por un departamento o vende tus metros cuando quieras',
 ]
 
 
@@ -27,28 +28,10 @@ const featuredProjects = projects.filter((project) => project.isFeatured)
 							<img src="/logo-nav.png" alt="Logo" class="h-5 md:h-8" />
 						</a>
 						<div class="flex gap-2 items-center">
-							<a
-								class="hidden border border-white bg-white px-3 py-3 font-display text-xs font-medium text-navy md:inline-flex"
-								href="#propiedades"
-							>
-								¿Cómo funciona?
-							</a>
-							<a
-								class="hidden border border-white bg-white px-3 py-3 font-display text-xs font-medium text-navy md:inline-flex"
-								href="#propiedades"
-							>
-								Ver propiedades
-							</a>
-							<a
-								href="#faqs"
-								class="hidden border border-white bg-white px-3 py-3 font-display text-xs font-medium text-navy md:inline-flex"
-							>
-								Preguntas frecuentes
-							</a>
-							<a
-								class="inline-flex border bg-white px-3 py-2 font-display text-xs font-medium text-navy items-center gap-1 rounded-full"
-								href="https://www.briq.mx/users/sign_in"
-							>
+							<a class="hidden border border-white bg-white px-3 py-3 font-display text-xs font-medium text-navy md:inline-flex" href="#propiedades">¿Cómo funciona?</a>
+							<a class="hidden border border-white bg-white px-3 py-3 font-display text-xs font-medium text-navy md:inline-flex" href="#propiedades">Ver propiedades </a>
+							<a href="#faqs" class="hidden border border-white bg-white px-3 py-3 font-display text-xs font-medium text-navy md:inline-flex">Preguntas frecuentes</a>
+							<a class="inline-flex border bg-white px-3 py-2 font-display text-xs font-medium text-navy items-center gap-1 rounded-full" href="https://www.briq.mx/users/sign_in">
 								<i class="fa-kit fa-briq-logo"></i>
 								Iniciar sesión
 							</a>
@@ -58,65 +41,48 @@ const featuredProjects = projects.filter((project) => project.isFeatured)
 			</nav>
 		</div>
 		<header class="border-b bg-navy py-16">
-			<div class="mx-auto w-full max-w-screen-lg px-4 grid grid-cols-1 md:grid-cols-2 items-center gap-4">
-				<div class="w-full max-w-lg flex flex-col gap-4 items-center md:items-start text-center md:text-left">
+			<div class="mx-auto w-full max-w-screen-lg px-4 flex items-center gap-4">
+				<div class="w-full max-w-xl flex flex-col gap-4 items-center md:items-start text-center md:text-left">
 					<span class="bg-white/10 text-white text-sm rounded-full px-3 py-1">Respaldado por la CNBV</span>
 					<h1 class="text-3xl md:text-4xl font-display font-bold text-balance text-white">Compra tu departamento poco a poco.</h1>
-					<p class="text-white/70 md:text-2xl">
+					<p class="text-white/70 md:text-xl">
 						Compra desde 1m² en los mejores edificios, obtén rentas y plusvalía, junta metros suficientes y cambialos por un departamento.
 					</p>
-					<a href="#propiedades" class="bg-blue-500 px-6 py-3 rounded-full text-white font-semibold border-white/5 border font-display text-xl">¡Quiero más información!</a>
-					<div>
-						<span class="text-xs text-white mb-2">Con el respaldo de</span>
-						<div class="flex items-center gap-4">
-							<img src="/begrand-logo-white.png" alt="Logo" class="h-20" />
-							<img src="/logo-emblema-briq-white.svg" alt="Logo" class="w-24" />
+					<a href="#propiedades" class="bg-blue-500 px-6 py-3 rounded-full text-white font-semibold border-white/20 border font-display text-xl flex items-center justify-center gap-2">
+						<figure class="w-6 h-6 rounded-full overflow-hidden relative border border-white/10">
+							<img src="/avatar.png" alt="Logo" class="object-cover w-full h-full absolute inset-0" />
+						</figure>
+						<span>Habla con un asesor</span>
+					</a>
+
+					<div class="py-4 grid grid-cols-1 gap-2">
+						<div class="flex flex-col gap-4 items-start justify-between border-t border-white/10 text-white text-sm py-4">
+							<div class="flex items-center gap-6">
+								<img src="/begrand-logo-white.png" alt="Logo" class="h-16" />
+								<img src="/logo-emblema-briq-white.svg" alt="Logo" class="w-24" />
+							</div>
+							<h3 class="font-display font-bold">Operado por Be Grand® y briq.mx</h3>
+							<p>Empresa mexicana, con 20 años de experiencia en el desarrollo y
+								comercialización de proyectos inmobiliarios de alta calidad en zonas AAA en México y
+								España.</p>
+								<a href="https://www.begrand.mx" class="underline">Conoce más</a>
 						</div>
 					</div>
+
 				</div>
 				<div class="w-full flex items-center justify-center">
-					<img src="/hero-cover.png" class="w-full" />
+					<img src="/hero-cover.png" class="max-w-[500px] w-full" />
 				</div>
 			</div>
 		</header>
-		<section class="py-12 bg-white">
-			<div class="mx-auto w-full max-w-screen-lg px-4">
-				<div class="grid grid-cols-1 md:grid-cols-2 gap-4 bg-beige border rounded-2xl">
-					<div class="flex flex-col gap-4 p-8">
-						<h2 class="font-display text-3xl md:text-4xl font-bold max-w-md">¿Qué es Sumametros?</h2>
-						<p class="text-pretty">
-							Sumametros es la nueva forma de comprar tu departamento desde 1m² en los mejores edificios, obtén rentas en el proceso, junta metros suficientes y cámbialos por un departamento.
-						</p>
-						<p>Al mismo tiempo, puedes vender tus metros en el mercado secundario y ganar la plusvalía acumulada desde que compraste.</p>
-					</div>
-					<div class="flex items-center justify-center">
-						<button class="video-button flex flex-col gap-2 border p-4 rounded-xl bg-white" data-video="/video-2.mp4">
-							<figure class="aspect-video relative rounded-md overflow-hidden w-full">
-								<video
-									class="absolute inset-0 h-full w-full object-cover"
-									src="/video-1.mp4#t=0.001"
-								/>
-								<div class="absolute inset-0 bg-black/20 flex items-center justify-center">
-									<Icon name="tabler:play" class="text-white text-4xl" />
-								</div>
-							</figure>
-							<h3 class="font-display font-bold text-sm">Aprende con <span class="highlight">Moris Dieck </span> cómo funciona Sumametros</h3>
-						</button>
-					</div>
-				</div>
-			</div>
-		</section>
 		<section class="bg-white pb-16 pt-24 border-b">
 			<div class="mx-auto w-full max-w-screen-lg px-4">
-				<div class="flex flex-col md:flex-row items-stretch gap-6">
-					<div class="w-full flex flex-col justify-between items-start">
-						<div>
-							<p class="font-display font-bold text-primary">¿Cómo funciona?</p>
-							<h2 class="font-display text-2xl md:text-4xl font-bold max-w-lg text-pretty">
-								Comienza poco a poco y hazte de tu departamento
-							</h2>
-						</div>
-						<img src="/hero-cover.png" class="h-0 md:h-64" />
+				<div class="flex flex-col gap-8 items-start">
+					<div>
+						<p class="font-display font-bold text-primary">¿Cómo funciona?</p>
+						<h2 class="font-display text-2xl md:text-4xl font-bold max-w-lg text-pretty">
+							Comienza poco a poco y hazte de tu departamento
+						</h2>
 					</div>
 					<article class="w-full">
 						<div class="flex flex-col items-start">
@@ -129,52 +95,81 @@ const featuredProjects = projects.filter((project) => project.isFeatured)
 											</div>
 											{index !== STEPS.length - 1 && <div class="h-full w-1 bg-navy" />}
 										</div>
-										<div class="flex flex-col items-start gap-4 pb-10">
+										<div class="flex flex-col items-start gap-4" style={ index === STEPS.length - 1 ? '' : 'padding-bottom: 30px;' }>
 											<p class="font-display text-xl font-semibold">{step}</p>
-											{index == STEPS.length - 1 && (
-												<a
-													href="#propiedades"
-													class="btn rounded-full"
-												>
-													Registrate y comienza
-												</a>
-											)}
 										</div>
 									</article>
 								))
 							}
+							
 						</div>
 					</article>
+					<div class="border p-6 rounded-xl w-full flex items-center gap-4 bg-beige">
+						<button class="video-button flex flex-col gap-2 border rounded-xl bg-white" data-video="/video-2.mp4">
+							<figure class="aspect-video relative rounded-md overflow-hidden w-full h-32">
+								<video
+									class="absolute inset-0 h-full w-full object-cover"
+									src="/video-1.mp4#t=0.001"
+								/>
+								<div class="absolute inset-0 bg-black/20 flex items-center justify-center">
+									<Icon name="tabler:play" class="text-white text-4xl" />
+								</div>
+							</figure>
+						</button>
+						<div class="flex flex-col gap-4 items-start">
+							<p>Comienza a invertir y adquirir propiedades 1m² a la vez y únete a la revolución inmobiliaria</p>
+							<a href="#propiedades" class="bg-blue-500 px-6 py-3 rounded-full text-white font-semibold border-white/5 border font-display text-xl">
+								Registrate y comienza
+							</a>
+						</div>
+					</div>
 				</div>
 			</div>
 		</section>
 		<section class="border-y bg-beige py-24" id="propiedades">
 			<div class="mx-auto w-full max-w-screen-lg px-4">
-				<div class="flex flex-col gap-2">
+				<div class="flex flex-col gap-4 mb-16">
 					<p class="font-display text-sm font-semibold text-primary">Propiedades disponibles:</p>
-					<h2 class="max-w-xl font-display text-2xl font-bold md:text-4xl">
-						Elige entre cualquiera de nuestras propiedades
-					</h2>
-					<p class="mb-16 max-w-2xl">Puedes comprar los metros que quieras y juntarlos para obtener un departamento en cualquiera de los siguientes proyectos:</p>
+					<h2 class="font-display text-2xl font-bold md:text-4xl">Conoce una de las propiedades de las cuales puedes ser dueño y generar plusvalía y rentas:</h2>
 				</div>
-				<div class="mb-6 flex flex-col gap-8">
-					{
-						featuredProjects.map((project, index) => (
-						<Project project={project} />
-						))
-					}
-				</div>
-				<div class="h-px w-full bg-black/10 mb-6"></div>
-				<div class="mb-4 grid grid-cols-1 gap-6 md:grid-cols-3" id="propertyLists">
+				<div class="mb-4 grid grid-cols-1 gap-12" id="propertyLists">
 					{
 						nonFeaturedProjects.map((project, index) => (
-							<Project project={project} />
+							<article class="w-full flex items-start border border-black/10 divide-x divide-black/10 bg-white">
+								<figure class="aspect-square relative overflow-hidden h-64 flex-shrink-0">
+									<img src={project.image} alt={project.title} class="object-cover absolute inset-0 w-full h-full" />
+								</figure>
+								<div class="flex flex-col items-start divide-y divide-black/10">
+									<div class="p-4 flex flex-col gap-1">
+										<div class="flex items-center gap-1">
+											<h2 class="font-display text-2xl font-bold">{project.title}</h2>
+											<Icon name="tabler:discount-check-filled" class="mt-1 h-4 w-4 text-primary" />
+										</div>
+										<div class="flex items-center gap-1 text-base">
+											<Icon name="tabler:map-pin" class="opacity-50" />
+											<p>{project.location}</p>
+										</div>
+									</div>
+									<div class="p-4">
+										<p class="text-base line-clamp-2">{project.description}</p>
+									</div>
+									<div class="flex items-center justify-between p-4 w-full">
+										<div>
+											<p class="flex items-center gap-2">
+												<Icon name="tabler:trending-up" class="text-navy" />
+												<strong>6.6%</strong> de plusvalia estimada al año.
+											</p>
+										</div>
+										<a target="_blank" href={project.url} class="bg-blue-500 px-6 py-3 rounded-full text-white font-semibold border-white/5 border font-display">Conoce más</a>
+									</div>
+								</div>
+							</article>
 						))
 					}
 				</div>
 				<div class="flex items-center justify-center mb-4">
 					<button
-						class="btn rounded-full"
+						class="bg-blue-500 px-6 py-3 rounded-full text-white font-semibold border-white/5 border font-display"
 						id="viewMoreButton"
 					>
 						Ver más propiedades
@@ -182,36 +177,65 @@ const featuredProjects = projects.filter((project) => project.isFeatured)
 				</div>
 			</div>
 		</section>
-		<section class="py-16 bg-white">
+		<section class="py-12 bg-white">
 			<div class="mx-auto w-full max-w-screen-lg px-4">
-				<p class="font-display font-bold text-primary">Puedes confiar en nosotros</p>
-				<h2 class="mb-16 font-display text-4xl font-bold max-w-xl">Con el respaldo de empresas líderes en la industria</h2>
-				<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-					<div class="flex flex-col gap-4 items-start justify-between p-4 border rounded-xl bg-beige">
-						<img src="/logo-begrand.svg" class="h-24 mix-blend-multiply" />
-						<h3 class="text-xl font-display font-bold">Operado por Be Grand®</h3>
-						<p>Empresa mexicana, con 20 años de experiencia en el desarrollo y
-							comercialización de proyectos inmobiliarios de alta calidad en zonas AAA en México y
-							España.</p>
-							<p>Líder en el segmento residencial plus y con amplia experiencia en
-								desarrollos residenciales, comerciales y oficinas.</p>
-							<a href="https://www.begrand.mx" class="btn rounded-full">Conoce más</a>
+				<h2 class="mb-8 font-display text-3xl md:text-4xl font-bold text-center md:text-left">¿Cómo puedo utilizar mis metros?</h2>
+				<div>
+					<div class="flex md:grid grid-cols-3 gap-4 overflow-x-scroll md:overflow-auto snap-x">
+						<article class="bg-beige p-8 rounded-lg border snap-start">
+							<div class="flex flex-col gap-4 items-start w-full">
+								<h3 class="text-lg md:text-2xl font-display font-bold text-balance">Compra más metros, y <span class="highlight">hazte de tu departamento</span></h3>
+								<p class="leading-relaxed text-pretty">Sigue comprando metros, una vez que completes los necesarios cámbialos por un departamento disponible de Be Grand®.</p>
+							</div>
+						</article>
+						<article class="bg-beige p-8 rounded-lg border snap-start">
+							<div class="flex flex-col gap-4 items-start w-full">
+								<h3 class="text-lg md:text-2xl font-display font-bold text-balance">Conserva tus metros y <span class="highlight">recibe rentas mensuales</span></h3>
+								<p class="leading-relaxed text-pretty">Recibe rentas mensuales por cada metro que tengas, sin preocuparte por la administración de tu propiedad.</p>
+								
+							</div>
+						</article>
+						<article class="bg-beige p-8 rounded-lg border snap-start relative">
+							<div class="flex flex-col gap-4 items-start w-full">
+								<h3 class="text-lg md:text-2xl font-display font-bold text-balance">Vende tus metros y <br/><span class="highlight">obtén plusvalía</span></h3>
+								<p class="leading-relaxed text-pretty">Vente tus metros en el mercado secundario (próximamente) y captura la plusvalía acumulada desde que compraste.</p>
+							</div>
+						</article>
 					</div>
-					<div class="flex flex-col gap-4 items-start justify-between p-4 border rounded-xl bg-beige">
-							<img src="/logo-briq.svg" class="h-10 mb-11" />
-							<h3 class="text-xl font-display font-bold">Con la tecnología de briq.mx</h3>
-							<p>Empresa regulada por la CNBV, que ofrece una plataforma de inversión
-							inmobiliaria que permite a cualquier persona invertir en desarrollos inmobiliarios de
-							alta calidad.</p>
-							<p>briq.mx se encarga de la tecnología y operación de la plataforma.</p>
-							<a href="https://www.briq.mx" class="btn rounded-full">Conoce más</a>
-						</div>
+					<div class="flex md:hidden items-center justify-center gap-2 pt-4">
+						<div class="size-2 bg-black/30 rounded-full"></div>
+						<div class="size-2 bg-black/20 rounded-full"></div>
+						<div class="size-2 bg-black/20 rounded-full"></div>
+						<div class="size-2 bg-black/20 rounded-full"></div>
+					</div>
 				</div>
+			</div>
 		</section>
+		
 		<section class="border-t bg-beige py-16" id="faqs">
 			<div class="mx-auto w-full max-w-screen-lg px-4">
 				<h2 class="mb-16 font-display text-4xl font-bold">Preguntas frecuentes</h2>
 				<div class="grid grid-cols-1 gap-4">
+					<div class="flex w-full flex-col gap-4 rounded-lg border bg-white p-8">
+						<h2 class="font-display text-2xl font-bold">¿Quién esta detrás del proyecto?</h2>
+						<p>Sumametros es un proyecto operado por Be Grand y Briq.mx, dos empresas mexicanas reconocidas mundialmente.</p>
+						<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+							<div class="flex flex-col gap-2 items-start justify-between text-base">
+								<div>
+									<img src="/begrand-logo-white.png" alt="Logo" class="h-16" />
+									<p>Empresa mexicana, con 20 años de experiencia en el desarrollo y comercialización de proyectos inmobiliarios de alta calidad en zonas AAA en México y España.</p>
+								</div>
+								<a class="underline" href="#">Conoce más</a>
+							</div>
+							<div class="flex flex-col gap-2 items-start justify-between text-base">
+								<div>
+									<img src="/logo-emblema-briq.svg" alt="Logo" class="h-12" />
+									<p>Empresa regulada por la CNBV, en términos de la Ley para Regular las Instituciones de Tecnología Financiera, es una sociedad autorizada, regulada y supervisada por las autoridades financieras.</p>
+								</div>
+								<a class="underline" href="#">Conoce más</a>
+							</div>
+						</div>
+					</div>
 					{
 						faqs.map((faq) => (
 							<div class="flex w-full flex-col gap-4 rounded-lg border bg-white p-8">
