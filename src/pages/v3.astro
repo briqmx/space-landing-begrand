@@ -3,13 +3,11 @@ import Layout from '../layouts/Layout.astro'
 import { Icon } from 'astro-icon/components'
 import faqs from '../../data/faqs.json'
 import projects from '../../data/projects.json'
-import Project from '../components/Project.astro'
 
 const STEPS = [
 	'Crea tu cuenta y completa tu perfil en la plataforma de briq.mx',
 	'Compra metros cuadrados en el proyecto de tu elección y recibe tu certificado de compra',
-	'Empieza a recibir ganancias por la renta y obtén plusvalía de tus metros',
-	'Compra más metros, canjea tus metros por un departamento o vende tus metros cuando quieras'
+	'Empieza a recibir ganancias por la renta y obtén plusvalía de tus metros'
 ]
 
 
@@ -64,9 +62,9 @@ const featuredProjects = projects.filter((project) => project.isFeatured)
 								<img src="/begrand-logo-white.png" alt="Logo" class="h-16" />
 								<img src="/logo-emblema-briq-white.svg" alt="Logo" class="w-24" />
 							</div>
-							<h3 class="font-display font-bold">Operado por Be Grand® y briq.mx</h3>
+							<h3 class="font-display font-bold">Operado por Be Grand<sup>®</sup> y briq.mx</h3>
 							<p class="text-white/70 leading-relaxed">
-								Respaldado por Be Grand® con 20 años de experiencia en proyectos inmobiliarios en México y España; y briq.mx plataforma regulada y líder en inversiones en bienes raíces.
+								Respaldado por Be Grand<sup>®</sup> con 20 años de experiencia en proyectos inmobiliarios en México y España; y briq.mx plataforma regulada y líder en inversiones en bienes raíces.
 							</p>
 							<a href="#quienes" class="underline">Conoce más</a>
 						</div>
@@ -113,41 +111,55 @@ const featuredProjects = projects.filter((project) => project.isFeatured)
 							
 						</div>
 					</article>
-					<div class="border p-6 rounded-xl w-full flex gap-8 bg-beige flex-col md:flex-row md:items-stretch items-center">
-						<button class="video-button flex flex-col gap-2 border rounded-xl bg-white w-64" data-video="/video-2.mp4">
-							<figure class="aspect-video relative rounded-md overflow-hidden w-full h-full">
+					<a href="#propiedades" class="button button--action w-full md:w-auto">
+						Empieza a invertir
+					</a>
+					<div class="flex gap-4 text-base md:text-lg flex-col md:flex-row">
+						<div class="flex flex-col gap-1">
+							<div class="flex items-center gap-2">
+								<i class="fa-solid fa-circle-check text-primary"></i>
+								<h3 class="font-bold">A tu ritmo</h3>
+							</div>
+							<p class="text-sm">Suma m² conforme vayas pudiendo.</p>
+						</div>
+						<div class="flex flex-col gap-1">
+							<div class="flex items-center gap-2">
+								<i class="fa-solid fa-circle-check text-primary"></i>
+								<h3 class="font-bold">Diversifica</h3>
+							</div>
+							<p class="text-sm">Invierte en diferentes propiedades y ubicaciones.</p>
+						</div>
+						<div class="flex flex-col gap-1">
+							<div class="flex items-center gap-2">
+								<i class="fa-solid fa-circle-check text-primary"></i>
+								<h3 class="font-bold">Sin preocuparte</h3>
+							</div>
+							<p class="text-sm">Sin operar ni buscar inquilinos, nosotros lo hacemos por ti.</p>
+						</div>
+						<div class="flex flex-col gap-1">
+							<div class="flex items-center gap-2">
+								<i class="fa-solid fa-circle-check text-primary"></i>
+								<h3 class="font-bold">Liquidez</h3>
+							</div>
+							<p class="text-sm">Vende tus m² o pide prestamos hipotecándolos</p>
+						</div>
+					</div>
+					<div class="border p-2 rounded-xl w-full flex gap-8 bg-beige flex-col md:flex-row  items-center">
+						<button class="video-button flex flex-col gap-2 border rounded-xl bg-white h-24 aspect-video" data-video="/video-2.mp4">
+							<figure class="relative rounded-md overflow-hidden w-full h-full">
 								<video
 									class="absolute inset-0 h-full w-full object-cover"
 									src="/video-1.mp4#t=0.001"
 								/>
 								<div class="absolute inset-0 bg-black/20 flex items-center justify-center">
-									<Icon name="tabler:play" class="text-white text-4xl" />
+									<div class="bg-primary w-8 h-6 flex items-center justify-center">
+										<i class="fa-solid fa-play text-white text-xs"></i>
+									</div>
 								</div>
 							</figure>
 						</button>
-						<div class="flex flex-col gap-4 items-start">
-							<p class="font-bold text-balance">Moris Dieck te explica cómo funciona y las ventajas de Sumametros</p>
-							<ul class="flex flex-col gap-2 text-base md:text-lg">
-								<li class="flex items-center gap-2">
-									<i class="fa-solid fa-circle-check text-primary"></i>
-									A tu ritmo. Suma m2 conforme vayas pudiendo.
-								</li>
-								<li class="flex items-center gap-2">
-									<i class="fa-solid fa-circle-check text-primary"></i>
-									Diversifica. Invierte en diferentes propiedades y geografías.
-								</li>
-								<li class="flex items-center gap-2">
-									<i class="fa-solid fa-circle-check text-primary"></i>
-									No te preocupes. Las propiedades son operadas por Be Grand®
-								</lu>
-								<li class="flex items-center gap-2">
-									<i class="fa-solid fa-circle-check text-primary"></i>
-									Liquidez. Vende tus m2 o pide un préstamo hipotecándolos (próximamente)
-								</li>
-							</ul>
-							<a href="#propiedades" class="button button--action w-full md:w-auto">
-								Empieza a invertir
-							</a>
+						<div class="flex flex-col gap-2 items-start">
+							<p class="font-bold text-balance text-center md:text-left">Moris Dieck te explica cómo funciona y las ventajas de Sumametros</p>
 						</div>
 					</div>
 				</div>
@@ -156,14 +168,14 @@ const featuredProjects = projects.filter((project) => project.isFeatured)
 		<section class="border-y bg-beige py-24" id="propiedades">
 			<div class="mx-auto w-full max-w-screen-lg px-4">
 				<div class="flex flex-col gap-4 mb-16">
-					<p class="font-display font-bold text-primary">Propiedades disponibles:</p>
+					<p class="font-display font-bold text-primary">Propiedades disponibles</p>
 					<h2 class="font-display text-2xl font-bold md:text-4xl">Conoce las propiedades de las cuales puedes ser dueño y generar plusvalía y rentas</h2>
 				</div>
 				<div class="mb-4 grid grid-cols-1 gap-12" id="propertyLists">
 					{
 						nonFeaturedProjects.map((project, index) => (
-							<article class="w-full flex items-start border border-black/10 divide-x divide-black/10 bg-white flex-col md:flex-row">
-								<figure class="aspect-square relative overflow-hidden h-64 flex-shrink-0 w-full md:w-auto">
+							<article class="w-full flex items-stretch border border-black/10 divide-x divide-black/10 bg-white flex-col md:flex-row">
+								<figure class="aspect-square relative overflow-hidden h-[300px] flex-shrink-0 w-full md:w-auto">
 									<img src={project.image} alt={project.title} class="object-cover absolute inset-0 w-full h-full" />
 								</figure>
 								<div class="flex flex-col items-start divide-y divide-black/10">
@@ -177,10 +189,10 @@ const featuredProjects = projects.filter((project) => project.isFeatured)
 											<p>{project.location}</p>
 										</div>
 									</div>
-									<div class="p-4">
+									<div class="p-4 flex-1">
 										<p class="text-base line-clamp-2">{project.description}</p>
 									</div>
-									<div class="flex items-center justify-between p-4 w-full flex-col md:flex-row gap-2">
+									<div class="flex justify-between p-4 w-full flex-col md:flex-row gap-2 items-center">
 										<div class="flex flex-col text-base md:text-lg gap-3">
 											<p class="flex items-center gap-2">
 												<Icon name="tabler:trending-up" class="text-navy" />
@@ -210,7 +222,7 @@ const featuredProjects = projects.filter((project) => project.isFeatured)
 					<article class="bg-beige p-4 rounded-lg border">
 						<div class="flex flex-col gap-4 items-start w-full">
 							<h3 class="text-lg md:text-2xl font-display font-bold text-balance">Compra más metros, y <span class="highlight">hazte de tu departamento</span></h3>
-							<p class="leading-relaxed text-pretty">Sigue comprando metros, una vez que completes los necesarios cámbialos por un departamento disponible de Be Grand®.</p>
+							<p class="leading-relaxed text-pretty">Sigue comprando metros, una vez que completes los necesarios cámbialos por un departamento disponible de Be Grand<sup>®</sup>.</p>
 						</div>
 					</article>
 					<article class="bg-beige p-4 rounded-lg border">
@@ -236,21 +248,25 @@ const featuredProjects = projects.filter((project) => project.isFeatured)
 				<div class="grid grid-cols-1 gap-4">
 					<div class="flex w-full flex-col gap-4 rounded-lg border bg-white p-8" id="quienes">
 						<h2 class="font-display text-2xl font-bold">¿Quién esta detrás de Sumametros?</h2>
-						<p>Sumametros es un proyecto operado por Be Grand® con la tecnología y respaldo de briq.mx.</p>
+						<p>Sumametros es un proyecto operado por Be Grand<sup>®</sup> con la tecnología y respaldo de briq.mx.</p>
 						<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
 							<div class="flex flex-col gap-2 items-start justify-between text-base">
 								<div>
-									<img src="/begrand-logo-white.png" alt="Logo" class="h-16" />
+									<figure class="h-20 flex items-center">
+										<img src="/begrand-logo-black.png" alt="Logo" class="h-16" />
+									</figure>
 									<p>Empresa mexicana, con 20 años de experiencia en el desarrollo y comercialización de proyectos inmobiliarios de alta calidad en zonas AAA en México y España.</p>
 								</div>
-								<a class="underline" href="#">Conoce más</a>
+								<a class="underline" href="https://begrand.mx" target="_blank">Conoce más</a>
 							</div>
 							<div class="flex flex-col gap-2 items-start justify-between text-base">
 								<div>
-									<img src="/logo-emblema-briq.svg" alt="Logo" class="h-12" />
+									<figure class="h-20 flex items-center">
+										<img src="/logo-briq.svg" alt="Logo" class="h-10" />
+									</figure>
 									<p>Plataforma líder de financiamiento colectivo inmobiliario, regulada por las autoridades financieras (CNBV, CONDUSEF, Banxico y SHCP)</p>
 								</div>
-								<a class="underline" href="#">Conoce más</a>
+								<a class="underline" href="htps://briq.mx" target="_blank">Conoce más</a>
 							</div>
 						</div>
 					</div>
