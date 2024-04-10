@@ -66,7 +66,7 @@ const Calculator = () => {
           <div className="flex flex-col gap-4 w-full">
             <p className="text-balance text-sm md:text-lg">¿Cuántos m² quieres comprar?</p>
             <div className="flex items-center gap-4 w-full">
-              <button className="flex justify-center items-center bg-white border rounded-full size-10" onClick={decrementMeters} disabled={meters <= 0}>
+              <button className="flex justify-center items-center bg-white border rounded-full size-10" onClick={decrementMeters} disabled={meters <= 1}>
                 -
               </button>
               <div className="flex items-center gap-1 text-2xl">
@@ -81,7 +81,7 @@ const Calculator = () => {
           <div className="flex flex-col gap-4 w-full">
             <p className="text-balance text-sm md:text-lg">¿Por cuántos años los quisieras conservar?</p>
             <div className="flex items-center gap-4">
-              <button className="flex justify-center items-center bg-white border rounded-full size-10" onClick={decrementYears} disabled={years <= 0} >
+              <button className="flex justify-center items-center bg-white border rounded-full size-10" onClick={decrementYears} disabled={years <= 1} >
                 -
               </button>
               <div className="flex items-center gap-1 text-2xl">

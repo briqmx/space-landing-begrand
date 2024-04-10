@@ -12,6 +12,9 @@ module.exports = {
 			fontFamily: {
 				display: ['Archia', 'sans-serif'],
 				body: ['Instrument Sans', 'sans-serif'],
+			},
+			screens: {
+				'md': '870px',
 			}
 		},
 	},
