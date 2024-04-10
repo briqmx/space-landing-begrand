@@ -6,11 +6,10 @@ const Calculator = () => {
   const [price, setPrice] = useState(7125000);
   const [appreciation, setAppreciation] = useState(8.0);
   const [inflation, setInflation] = useState(5.0);
-  const [rentPerMonth, setRentPerMonth] = useState(23300);
+  const [rentPerMonth, setRentPerMonth] = useState(22300);
   const [appreciationPerYear, setAppreciationPerYear] = useState([]);
   const [viewDetail, setViewDetail] = useState(false);
 
-  const rentPerTerm = (rentPerMonth * (((Math.pow(1 + inflation / 12 / 100, years * 12) - 1) / (inflation / 12 / 100)) * (1 + inflation / 12 / 100)) * meters);
   const totalEarnings = price * meters * (1 + appreciation / 100) ** years;
 
   const centsToCurrency = (cents) => {
@@ -51,8 +50,25 @@ const Calculator = () => {
     setAppreciationPerYear(appreciationPerYear);
   }
 
+  const calculateRentPerYears = () => {
+    let rentPerYear = [];
+    for (let i = 1; i <= years; i++) {
+      const rent = rentPerMonth * meters * 12 * (1 + inflation / 100) ** i;
+      rentPerYear.push(rent);
+    }
+    
+    
+    return {
+      rentPerYear,
+      totalRent: rentPerYear.reduce((acc, curr) => acc + curr, 0)
+    }
+  }
+
+  const { rentPerYear, totalRent } = calculateRentPerYears();
+
   useEffect(() => {
     calculateAppreciation();
+    calculateRentPerYears();
   }, [years, meters]);
 
   return (
@@ -136,11 +152,11 @@ const Calculator = () => {
           <div className="flex flex-col gap-2">
             <p className="text-base md:text-lg">Y ganarías en rentas en {years} años:</p>
             <div>
-              <p className="font-semibold text-3xl">{centsToCurrency(rentPerTerm)} pesos</p>
-              <p className="text-base text-primary md:text-lg">{centsToCurrency((rentPerTerm/years))} de renta anual.</p>
+              <p className="font-semibold text-3xl">{centsToCurrency(totalRent)} pesos</p>
+              <p className="text-base text-primary md:text-lg">{centsToCurrency(totalRent / years)} pesos anuales</p>
             </div>
           </div>
-          <p className="font-black text-xl">Ganancia total: {centsToCurrency((totalEarnings - price*meters) + rentPerTerm)} pesos</p>
+          <p className="font-black text-xl">Ganancia total: {centsToCurrency((totalEarnings - price*meters) + totalRent)} pesos</p>
           <div className="flex flex-col gap-2text-base">
             <div className='flex items-center gap-2 p-2'>
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" className="flex-shrink-0 text-primary size-4">
