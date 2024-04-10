@@ -140,10 +140,20 @@ const Calculator = () => {
               <p className="text-base text-primary md:text-lg">{centsToCurrency((rentPerTerm/years))} de renta anual.</p>
             </div>
           </div>
-          <div className="flex flex-col gap-2 bg-beige border divide-y text-base">
-            <p className='p-2'>En total ganarias: {centsToCurrency((totalEarnings - price*meters) + rentPerTerm)} pesos</p>
-            <p className='p-2'>en todo momento eres dueño de tus m²</p>
-            <p className='p-2'>Puedes comprar más m² y canjearlos por otros proyectos de BeGrand</p>
+          <p className="font-black text-xl">Ganancia total: {centsToCurrency((totalEarnings - price*meters) + rentPerTerm)} pesos</p>
+          <div className="flex flex-col gap-2text-base">
+            <div className='flex items-center gap-2 p-2'>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" className="flex-shrink-0 text-primary size-4">
+                <path fillRule="evenodd" d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14Zm3.844-8.791a.75.75 0 0 0-1.188-.918l-3.7 4.79-1.649-1.833a.75.75 0 1 0-1.114 1.004l2.25 2.5a.75.75 0 0 0 1.15-.043l4.25-5.5Z" clipRule="evenodd" />
+              </svg>
+              <p>En todo momento eres dueño de tus m²</p>
+            </div>
+            <div className='flex items-center gap-2 p-2'>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" className="flex-shrink-0 text-primary size-4">
+                <path fillRule="evenodd" d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14Zm3.844-8.791a.75.75 0 0 0-1.188-.918l-3.7 4.79-1.649-1.833a.75.75 0 1 0-1.114 1.004l2.25 2.5a.75.75 0 0 0 1.15-.043l4.25-5.5Z" clipRule="evenodd" />
+              </svg>
+              <p>Puedes comprar más m² y canjearlos por otros proyectos de BeGrand®</p>
+            </div>
           </div>
           <div className="flex flex-col gap-4">
             <a className="flex justify-center items-center gap-1 bg-primary p-3 border text-white" href="#">Comenzar a invertir</a>
