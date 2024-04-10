@@ -5,7 +5,7 @@ const Calculator = () => {
   const [years, setYears] = useState(15);
   const [price, setPrice] = useState(7125000);
   const [appreciation, setAppreciation] = useState(8.0);
-  const [inflation, setInflation] = useState(4.0);
+  const [inflation, setInflation] = useState(5.0);
   const [rentPerMonth, setRentPerMonth] = useState(23300);
   const [appreciationPerYear, setAppreciationPerYear] = useState([]);
   const [viewDetail, setViewDetail] = useState(false);
@@ -156,8 +156,8 @@ const Calculator = () => {
           </div>
         </div>
       </div>
-      <div className="py-8">
-        <small>Para el cálculo de renta se considera una estimación de la inflación promedio del 4% por año</small>
+      <div className="flex flex-col gap-2 py-8">
+        <small>Para el cálculo de renta se considera una estimación de la inflación promedio del 5% por año</small>
         <small className="opacity-70 leading-relaxed">Los rendimientos son ilustrativos y no debe interpretarse como garantía de resultados futuros. Los valores y tendencias del mercado inmobiliario pueden variar y están sujetos a cambios imprevistos que pueden afectar los resultados proyectados</small>
       </div>
     </div>
