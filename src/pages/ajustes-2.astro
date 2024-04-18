@@ -6,10 +6,9 @@ import projects from '../../data/projects.json'
 import Property from '../components/Property.astro'
 
 const STEPS = [
-	'Inicia sesión o crea tu cuenta en briq.mx',
 	'Elige el desarrollo de tu interés y selecciona el número de metros que deseas comprar',
 	'Completa el proceso de pago y recibe tu certificado de compra',
-  'Empieza a recibir rentas mensuales por tus metros'
+  'Comienza a recibir rentas mensuales por tus metros'
 ]
 
 
@@ -43,9 +42,8 @@ const allProjects = projects
 		<header class="border-b bg-navy pt-8 md:py-16">
 			<div class="container-max flex gap-8 items-center md:items-stretch flex-col md:flex-row">
 				<div class="w-full max-w-xl flex flex-col gap-4 items-center md:items-start text-center md:text-left">
-					<h1 class="text-2xl font-display font-bold text-balance text-white">Descubre la nueva forma de invertir en depas y hacer crecer tu patrimonio… metro a metro.</h1>
-					<p class="text-white/70 text-base">Sumametros by Be Grand® es la única plataforma que te permite comprar desde 1m² en grandes proyectos residenciales ya rentados.</p>
-					<p class="text-white/70 text-base">Invierte de forma inteligente, fácil, segura y generando rendimientos inmediatos por rentas mensuales + plusvalía.</p>
+					<h1 class="text-3xl font-display font-bold  text-white">La nueva forma de invertir en depas y hacer crecer tu patrimonio. Metro a metro.</h1>
+					<p class="text-white/70 text-base">Compra desde 1m² en grandes proyectos residenciales ya rentados y genera rendimientos por rentas más plusvalía.</p>
 					<a href="#propiedades" class="button button--action w-full">Invierte ahora</a>
 					<div class="flex gap-4 items-center w-full">
 						<div class="w-full h-px bg-white/10"></div>
@@ -61,17 +59,16 @@ const allProjects = projects
 
 					<div class="py-4 grid grid-cols-1 gap-2">
 						<div class="flex flex-col gap-4 items-center md:items-start justify-between border-t border-white/10 text-white text-sm py-4">
+              <h3 class="font-display font-bold">Operado por:</h3>
 							<div class="flex items-center gap-6">
 								<figure class="bg-white py-3 px-1">
                   <img src="/begrand-logo-black.png" alt="Logo" class="h-16" />
                 </figure>
 								<img src="/logo-emblema-briq-white.svg" alt="Logo" class="w-24" />
 							</div>
-							<h3 class="font-display font-bold">Sumametros es operado por Be Grand® y briq.mx</h3>
 							<p class="text-white/70 leading-relaxed">
-								Be Grand®, una empresa líder con 20 años de experiencia en desarrollo de proyectos residenciales de lujo en México y España.
-								<br />
-								briq.mx, una plataforma tecnológica regulada por la CNBV y líder en inversiones en bienes raíces.
+								Be Grand® líder en desarrollo de proyectos inmobiliarios de lujo en México y España con 20 años de experiencia;
+								y briq.mx la plataforma líder de financiamiento colectivo inmobiliario, regulada por la CNBV.
 							</p>
 							<a href="#quienes" class="underline">Conoce más</a>
 						</div>
@@ -95,7 +92,7 @@ const allProjects = projects
 					<div>
 						<p class="font-display font-bold text-primary">¿Cómo funciona?</p>
 						<h2 class="font-display text-2xl md:text-4xl font-bold text-pretty">
-							Invertir en m² nunca ha sido tan fácil:
+							Invertir en m² nunca ha sido tan fácil
 						</h2>
 					</div>
 					<article class="w-full">
@@ -152,7 +149,7 @@ const allProjects = projects
 						</div>
 					</div>
 					<div class="border p-2 rounded-xl w-full flex gap-8 bg-beige flex-col md:flex-row  items-center">
-						<button class="video-button flex flex-col gap-2 border rounded-xl bg-white h-32 aspect-video" data-video="/video-2.mp4">
+						<button class="video-button flex flex-col gap-2 border rounded-xl bg-white h-24 aspect-video" data-video="/video-2.mp4">
 							<figure class="relative rounded-md overflow-hidden w-full h-full">
 								<video
 									class="absolute inset-0 h-full w-full object-cover"
@@ -176,7 +173,7 @@ const allProjects = projects
 			<div class="mx-auto w-full max-w-screen-lg px-4">
 				<div class="flex flex-col gap-4 mb-16">
 					<p class="font-display font-bold text-primary">Propiedades disponibles</p>
-					<h2 class="font-display text-2xl font-bold md:text-4xl">Conoce las propiedades en las que puedes comprar metros</h2>
+					<h2 class="font-display text-2xl font-bold md:text-4xl">Conoce las propiedades en las que puedes comprar</h2>
 				</div>
 				<div class="mb-4 grid grid-cols-1 gap-12" id="propertyLists">
 					{
@@ -190,8 +187,7 @@ const allProjects = projects
 				</div>
 				<div>
 					<p class="text-sm">
-						* Para el cálculo de renta se considera una estimación de la inflación promedio del 5% por año.
-						Los rendimientos son ilustrativos y no debe interpretarse como garantía de resultados futuros. Los valores y tendencias del mercado inmobiliario pueden variar y están sujetos a cambios imprevistos que pueden afectar los resultados proyectados
+						* Plusvalía histórica con base en el precio de los departamentos en la zona. La ganancia estimada considera las rentas recibidas con un 5% anual de inflación, más la plusvalía estimada. Los rendimientos son ilustrativos y no debe interpretarse como garantía de resultados futuros.
 					</p>
 				</div>
 			</div>
@@ -202,7 +198,7 @@ const allProjects = projects
 				<div class="grid grid-cols-1 md:grid-cols-3 gap-4">
 					<article class="bg-beige p-4 rounded-lg border">
 						<div class="flex flex-col gap-4 items-start w-full justify-between h-full">
-							<h3 class="text-lg md:text-2xl font-display font-bold text-balance">Conserva tus metros y <span class="highlight">recibe rentas mensuales</span></h3>
+							<h3 class="text-lg md:text-2xl font-display font-bold text-balance">Conserva tus metros y <span class="highlight">recibe rentas</span></h3>
 							<p class="leading-relaxed text-pretty">Recibe rentas mensualmente por cada metro que tengas, sin preocuparte de nada más.</p>
 						</div>
 					</article>
@@ -215,8 +211,8 @@ const allProjects = projects
 					</article>
 					<article class="bg-beige p-4 rounded-lg border">
 						<div class="flex flex-col gap-4 items-start w-full justify-between h-full">
-							<h3 class="text-lg md:text-2xl font-display font-bold text-balance">Canjea tus metros para <span  class="highlight">comprar un departamento</span></h3>
-							<p class="leading-relaxed text-pretty">Si lo deseas, podrás usar tus metros como enganche para comprar un nuevo departamento. Incluso, si cuentas con los metros suficientes, podrás cambiarlos por un depa completo.</p>
+							<h3 class="text-lg md:text-2xl font-display font-bold text-balance">Canjea tus metros por <span  class="highlight">un departamento</span></h3>
+							<p class="leading-relaxed text-pretty">Usa tus metros como enganche para comprar un nuevo departamento.</p>
 						</div>
 					</article>
 				</div>
@@ -266,7 +262,7 @@ const allProjects = projects
 			<div class="mx-auto w-full max-w-screen-lg px-4">
 				<div class="bg-navy px-4 py-16 rounded-lg border text-white flex items-center justify-center">
 					<div class="max-w-2xl text-center flex flex-col gap-4 items-center">
-						<h2 class="text-xl md:text-4xl font-bold font-display">¿Estás list@ para hacer crecer tu patrimonio metro a metro?</h2>
+						<h2 class="text-xl md:text-4xl font-bold font-display">¿Quieres comenzar a crecer tu patrimonio metro a metro?</h2>
 						<p class="text-xl opacity-80">Comienza a invertir y conviértete en dueño de m² en grandes proyectos residenciales ya rentados</p>
 						<a href="#propiedades" class="button button--action w-auto">Invierte ahora</a>
 					</div>

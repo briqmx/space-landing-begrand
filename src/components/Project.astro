@@ -62,7 +62,7 @@ const formatNumber = (number) => {
           <h2 class="text-3xl font-display font-bold">{ project.title }</h2>
           <p class="text-sm text-black/60 flex items-center gap-1">
             <Icon name="tabler:trending-up" class="text-navy" />
-            { numberToCurrency(project.rentPerMeter) } mxn de renta estimada al mes/m2
+            { numberToCurrency(project.rentPerMeter) } mxn de renta estimada al mes/m²
           </p>
           <p class="text-sm mb-4 text-black/60 flex items-center gap-1">
             <Icon name="tabler:home-move" class="text-navy" />
@@ -72,7 +72,7 @@ const formatNumber = (number) => {
             <p class="text-black/60 text-sm" set:html={project.description} />
           </div>
         </div>
-        <p class="text-black/60"><strong class="text-black text-lg">{ numberToCurrency(project.price) }</strong> / m2</p>
+        <p class="text-black/60"><strong class="text-black text-lg">{ numberToCurrency(project.price) }</strong> / m²</p>
         <div class="btn">Conocer más</div>
       </div>
     </article>

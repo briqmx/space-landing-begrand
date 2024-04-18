@@ -38,15 +38,15 @@ const numberToCurrency = (number) => {
       <div class="flex flex-col text-base md:text-lg gap-3">
         <p class="flex items-center gap-2">
           <Icon name="tabler:currency-dollar" class="text-navy" />
-          <span>Costo por m2: <strong class="inline">{numberToCurrency(project.price)}</strong>.</span>
+          <span>Costo por m²: <strong class="inline">{numberToCurrency(project.price)}</strong></span>
         </p>
         <p class="flex items-center gap-2">
           <Icon name="tabler:trending-up" class="text-navy" />
-          <span><strong class="inline">{ project.appreciation }% </strong>de plusvalia estimada al año*.</span>
+          <span><strong class="inline">{ project.appreciation }% </strong>de plusvalia estimada al año*</span>
         </p>
         <p class="flex items-center gap-2">
           <Icon name="tabler:home-move" class="text-navy" />
-          <span>Ganancia estimada a 10 años de <strong class="inline">{numberToCurrency(totalEarnings)}</strong>.</span>
+          <span>Ganancia estimada a 10 años de <strong class="inline">{numberToCurrency(totalEarnings)}</strong>*</span>
         </p>
       </div>
       <a target="_blank" href={project.url} class="button button--action w-full md:w-auto">Conoce más</a>
