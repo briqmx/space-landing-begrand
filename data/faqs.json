@@ -8,6 +8,14 @@
     "answer": "No, realmente adquieres una participación de un grupo de departamentos. Así no te tienes que preocupar si el tuyo es el que no se renta. Cada grupo de departamentos tiene un número determinado de m² y a todas las personas que compren esos m² se les reparten las ganancias proporcionalmente."
   },
   {
+    "question": "¿Cómo se calculan los rendimientos y plusvalía?",
+    "answer": "Los rendimientos se calculan con base en la renta mensual de los departamentos, que se reparte entre los propietarios de los m². La plusvalía se calcula con base en el valor de los departamentos, que se revalúan anualmente."
+  },
+  {
+    "question": "¿Puedo cambiar mis m² por un departamento?",
+    "answer": "Sí, puedes cambiar tus m² por un departamento en el que estén ubicados. El precio del departamento se calcula con base en el valor de los m² que tienes."
+  },
+  {
     "question": "¿Qué respalda legalmente mi compra?",
     "answer": "Cada metro es una participación en un fideicomiso que es propietario de un grupo de departamentos. Al comprar, adquieres una participación en ese fideicomiso a través de briq.mx, que te representa como inversionista en el mismo. "
   },

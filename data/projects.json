@@ -1,7 +1,7 @@
 [
   {
     "title" : "Be Grand® Reforma",
-    "description" : "Be Grand® Reforma ubicado en la Fragua a unos metros de la avenida más importante de México: Paseo de la Reforma. Este desarrollo ofrece una gran variedad de departamentos con acabados de lujo y un gran estilo de vida, gracias a su gran ubicación y exclusivas amenidades diseñadas para brindar confort y bienestar.",
+    "description" : "Junto al Monumento a la Revolución.",
     "image" : "https://www.briq.mx/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBc1FDIiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--6768ff155389ea8bd48cef114b445bd74dc901c1/BG%20Reforma-min.jpg",
     "location" : "Ciudad de México, México",
     "price" : 112500,
@@ -13,7 +13,7 @@
   },
   {
     "title" : "Vitant® Del Valle",
-    "description" : "Localizado dentro del complejo Mitikah, con acceso directo a uno de los mayores centros comerciales de México, Vitant ® Del Valle permite disfrutar de restaurantes, cine, cafeterías e increíbles amenidades a tan solo unos pasos de distancia.",
+    "description" : "Junto al centro comercial Mitikah.",
     "image" : "/proyectos/del-valle.jpeg",
     "location" : "Ciudad de México, México",
     "isNew" : true,
@@ -29,7 +29,7 @@
   },
   {
     "title" : "Vitant® Polanco",
-    "description" : "A tan solo unos minutos de una de las zonas más dinámicas de la Ciudad de México, Vitant ® Polanco está rodeado de los principales centros culturales, gastronómicos y sociales de la ciudad. Además, cuenta con increíbles amenidades diseñadas por Be Grand ®, como alberca, sports bar, terraza y muchas más.",
+    "description" : "A minutos de Masaryk.",
     "image" : "/proyectos/polanco.jpeg",
     "location" : "Ciudad de México, México",
     "isNew" : true,
@@ -45,7 +45,7 @@
   },
   {
     "title" : "Vitant® Santa Fe",
-    "description" : "Con una ubicación exclusiva junto al Parque La Mexicana, Vitant Santa Fe, ofrece lo mejor de la naturaleza y modernidad de uno de los principales centros de negocios de la Ciudad de México. Rodeado de centros comerciales, restaurantes de lujo, vistas increíbles y las mejores amenidades, Vitant ® Santa Fe lo tiene todo.",
+    "description" : "Junto al parque La Mexicana.",
     "image" : "https://www.briq.mx/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBbGtDIiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--0f7cc7191b5ed16eb0d139302a4c74097fd14378/cover.jpeg",
     "location" : "Ciudad de México, México",
     "isNew" : true,
@@ -61,7 +61,7 @@
   },
   {
     "title" : "Vitant® San Pedro",
-    "description" : "Ubicado en la exclusiva zona de Valle Oriente (en San Pedro Garza García), Vitant® San Pedro se encuentra rodeado de centros comerciales, parques y los mejores restaurantes. Este desarrollo cuenta con impresionantes vistas, interiores modernos y amenidades únicas, como sports bar, alberca, gimnasio, lounge, entre otras.",
+    "description" : "En la exclusiva zona de Valle Oriente.",
     "image" : "/proyectos/san-pedro.jpeg",
     "location" : "San Pedro Garza García, Nuevo León",
     "isNew" : true,
@@ -77,7 +77,7 @@
   },
   {
     "title" : "Vitant® Santa Lucía",
-    "description" : "Con una ubicación estratégica, junto al icónico Paseo Santa Lucía y a solo unos minutos del Parque Fundidora y el Centro Histórico, Vitant ® Santa Lucía ofrece la mejor conexión a las principales avenidas de Monterrey. Además, cuenta con increíbles amenidades by Be Grand® como: alberca, terraza, salón de eventos y muchas más; por lo que representa una gran oportunidad de inversión.",
+    "description" : "Junto al Paseo Santa Lucía.",
     "image" : "https://www.briq.mx/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBbDhDIiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--e1bb51bccb33a57827c6238c1fe534c71828ceed/cover.jpeg",
     "location" : "Monterrey, Nuevo León",
     "isNew" : true,
