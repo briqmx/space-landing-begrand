@@ -3,11 +3,19 @@ import { Icon } from 'astro-icon/components'
 const { project } = Astro.props;
 
 // To calculate the total earnings in 10 years, we multiply the project.price by the project.appreciation and divide it by 100 to get the percentage. Then we multiply it by 10 to get the total earnings in 10 years.
-const appreciation = project.appreciation / 100;
-const price_appretiation = project.price * Math.pow(1 + appreciation, 10);
-const rent_appretiation = (project.rentPerMeter * 12) * Math.pow(1 + 0.05, 10);
+const appreciation = project.appreciation / 100; // Convert percentage to decimal
+const price_appreciation = project.price * Math.pow(1 + appreciation, 10);
 
-const totalEarnings = (price_appretiation - project.price) + rent_appretiation;
+const annualRentIncreaseRate = 0.05; // 5% increase per year
+let accumulatedRent = 0;
+let currentAnnualRent = project.rentPerMeter * 12; // Calculate the annual rent for the first year
+
+for (let year = 1; year <= 10; year++) {
+  accumulatedRent += currentAnnualRent; // Add the current year's rent to the total
+  currentAnnualRent *= (1 + annualRentIncreaseRate); // Increase rent by 5% for the next year
+}
+
+const totalEarnings = (price_appreciation - project.price) + accumulatedRent;
 
 const numberToCurrency = (number) => {
   return new Intl.NumberFormat('es-MX', { style: 'currency', currency: 'MXN' }).format(number);
