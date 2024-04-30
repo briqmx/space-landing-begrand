@@ -1,30 +1,30 @@
 [
   {
     "question": "¿Cuántos m² puedo comprar?",
-    "answer": "Mínimo uno y máximo los m² que se encuentren disponibles al momento en cada uno de los edificios."
+    "answer": "Mínimo uno y máximo los m² que se encuentren disponibles en el momento de compra para cada uno de los edificios."
   },
   {
     "question": "¿Tengo que elegir algún m² específico de un departamento?",
-    "answer": "No, realmente adquieres una participación de un grupo de departamentos. Así no te tienes que preocupar si el tuyo es el que no se renta. Cada grupo de departamentos tiene un número determinado de m² y a todas las personas que compren esos m² se les repartirán las ganancias proporcionalmente."
+    "answer": "No, realmente adquieres una participación de un grupo de departamentos que ya están construidos. Así no te tienes que preocupar si el tuyo es el que no se renta. Cada grupo de departamentos tiene un número determinado de m² y a todas las personas que hayan comprado esos m² se les repartirán las ganancias de manera proporcional a lo pagado."
   },
   {
     "question": "¿Cómo se calculan los rendimientos y plusvalía?",
-    "answer": "Los rendimientos se calculan con base en la renta mensual (menos los gastos operativos relacionados con la operación y operación) de los departamentos de cada edificio, la cual se reparte entre los diferentes propietarios de los m². La plusvalía estimada es un cálculo derivado de los resultados de plusvalía acumulada histórica de CDMX y MTY en estudios especializados de la compañía de consultoría inmobiliaria Tinsa (www.tinsamexico.mx)."
+    "answer": "Los rendimientos se calculan con base en la renta mensual (menos los gastos operativos relacionados con la operación y los inmuebles) de los departamentos de cada edificio, la cual se reparte entre los diferentes propietarios de los m². La plusvalía es un cálculo aproximado que derivan de los resultados de plusvalía acumulada histórica de CDMX y MTY en estudios especializados de la compañía de consultoría inmobiliaria Tinsa (www.tinsamexico.mx)."
   },
   {
     "question" : "¿Puedo vender mis m²?",
-    "answer" : "Sí, en Sumametros contarás con un mercado secundario donde podrás vender tus metros. Semestralmente, un especialista realizará un avaluó para determinar el precio al que podrás vender tus metros cuadrados en la plataforma."
+    "answer" : "Sí, en Sumametros la idea principal es que, a través de la plataforma y en apoyo a un mercado secundario, puedas vender tus metros. Semestralmente, un especialista realizará un avaluó para determinar el precio al que podrás vender tus metros cuadrados en la plataforma. "
   },
   {
     "question" : "¿Qué pasa si no logro vender mis m² en la plataforma?",
-    "answer" : "Si por alguna razón no pudieras vender tus metros en la plataforma, Sumametros pondrá a la venta uno de los departamentos de la propiedad y repartirá el valor de cada metro a los interesados en vender. La mecánica y condiciones las podrás consultar en el contrato."
+    "answer" : "Si por alguna razón no pudieras vender tus metros en la plataforma, Sumametros pondrá a la venta uno de los departamentos de la propiedad y repartirá el valor de cada metro a los interesados en vender."
   },
   {
     "question": "¿Puedo cambiar mis m² por un departamento?",
-    "answer": "Si lo deseas, puedes canjear tus m² y utilizarlos como enganche para la compra de un departamento disponible del inventario de Be Grand<sup>®</sup>. Tomaremos el valor de tus metros en cuenta como pago del departamento que te interese. Incluso, si cuentas con los metros suficientes, podrás cambiarlos por un depa completo. La mecánica y condiciones las podrás consultar en el contrato."
+    "answer": "Si lo deseas, puedes canjear tus m² y utilizarlos como enganche para la compra de un departamento disponible del inventario de Be Grand®. Tomaremos el valor de tus metros en cuenta como pago del departamento que te interese. Incluso, si cuentas con los metros suficientes, podrás cambiarlos por un departamento completo y escriturarlo a tu nombre."
   },
   {
     "question": "¿Qué respalda legalmente mi compra?",
-    "answer": "Cada metro es una participación en un fideicomiso que es propietario de un grupo de departamentos. Al comprar, adquieres una participación en ese fideicomiso a través de briq.mx, que te representa como inversionista en el mismo. Al realizar tu compra, recibirás por correo un certificado que avala tu inversión."
+    "answer": "Cada metro es una participación en un fideicomiso que es propietario de un grupo de departamentos. Al comprar, adquieres el derecho sobre el m2 a través de briq.mx, que te representa como inversionista en el mismo. Al realizar tu compra, recibirás por correo el titulo o la constancia respecto a la participación que avala tu inversión."
   }
 ]

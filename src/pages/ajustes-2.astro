@@ -50,7 +50,6 @@ const allProjects = projects
 						<span class="text-white/50">o</span>
 						<div class="w-full h-px bg-white/10"></div>
 					</div>
-					
 					<a id="liveagent_button_online_573Qm0000006FM9" href="javascript://Chat" class="button button--ghost w-full" onclick="liveagent.startChat('573Qm0000006FM9')">
 						<figure class="size-6 rounded-full overflow-hidden relative border border-white/10">
 							<img src="/avatar.png" alt="Logo" class="object-cover w-full h-full absolute inset-0" />
@@ -68,8 +67,8 @@ const allProjects = projects
 						<div class="flex flex-col gap-4 items-start justify-between border-t border-white/10 text-white text-sm py-4">
               <h3 class="font-display font-bold">Operado por:</h3>
 							<div class="flex items-center gap-6">
-								<figure class="bg-white rounded-md overflow-hidden">
-                  <img src="/logo-begrand-horizontal.png" alt="Logo" class="h-12" />
+								<figure class="bg-white rounded-md overflow-hidden p-3">
+                  <img src="/logo-begrand-horizontal.png" alt="Logo" class="h-8" />
                 </figure>
 								<img src="/logo-emblema-briq-white.svg" alt="Logo" class="w-24" />
 							</div>
@@ -236,7 +235,7 @@ const allProjects = projects
 							<div class="flex flex-col gap-2 items-start justify-between text-base">
 								<div>
 									<figure class="h-20 flex items-center">
-										<img src="/logo-begrand-horizontal.png" alt="Logo" class="h-16" />
+										<img src="/logo-begrand-horizontal.png" alt="Logo" class="h-10" />
 									</figure>
 									<p>Empresa mexicana, con 20 años de experiencia en el desarrollo y comercialización de proyectos inmobiliarios de alta calidad en zonas AAA en México y España.</p>
 								</div>
@@ -405,7 +404,7 @@ const allProjects = projects
 
 		
 	</main>
-		<script type='text/javascript' src='https://service.force.com/embeddedservice/5.0/esw.min.js' is:inline></script>
+		<script type='text/javascript' src='https://service.force.com/embeddedservice/5.0/esw.min.js' is:inline ></script>
 		<script type='text/javascript' is:inline>
 			var initESW = function(gslbBaseURL) {
 			embedded_svc.settings.displayHelpButton = true; //O falso
@@ -415,7 +414,7 @@ const allProjects = projects
 			//embedded_svc.settings.disabledMinimizedText = '...'; //(Toma como valor predeterminado Agente sin conexión)
 
 			//embedded_svc.settings.loadingText = ''; //(Toma como valor predeterminado Cargando)
-			embedded_svc.settings.storageDomain = 'localhost'; //(Establece el dominio para su desarrollo de modo que los visitantes puedan navegar por subdominios durante una sesión de chat)
+			embedded_svc.settings.storageDomain = 'sumametros.briq.mx'; //Especifica el dominio de almacenamiento para las cookies
 
 			// Configuración para Plática
 			//embedded_svc.settings.directToButtonRouting = function(prechatFormData) {
@@ -458,13 +457,15 @@ const allProjects = projects
 			}
 		</script>
 
-	<script type="text/javascript" is:inline>
-		if (!window._laq) { window._laq = []; }
-		console.log(window._laq)
-			window._laq.push(function(){liveagent.showWhenOnline('573Qm0000006FM9', document.getElementById('liveagent_button_online_573Qm0000006FM9'));
-			liveagent.showWhenOffline('573Qm0000006FM9', document.getElementById('liveagent_button_offline_573Qm0000006FM9'));
-		});
-	</script>
+		<script type="text/javascript" is:inline>
+			if (!window._laq) {
+				window._laq = [];
+				window._laq.push(function() {
+					liveagent.showWhenOnline('573Qm0000006FM9', document.getElementById('liveagent_button_online_573Qm0000006FM9'));
+					liveagent.showWhenOffline('573Qm0000006FM9', document.getElementById('liveagent_button_offline_573Qm0000006FM9'));
+				});
+			}
+		</script>
 
 	<script is:inline>
 		const playVideoButtons = document.querySelectorAll('.video-button')
