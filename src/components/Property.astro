@@ -2,20 +2,20 @@
 import { Icon } from 'astro-icon/components'
 const { project } = Astro.props;
 
-// To calculate the total earnings in 15 years, we multiply the project.price by the project.appreciation and divide it by 100 to get the percentage. Then we multiply it by 10 to get the total earnings in 15 years.
 const appreciation = project.appreciation / 100; // Convert percentage to decimal
+// Use the future value formula to calculate the price appreciation after 15 years
 const price_appreciation = project.price * Math.pow(1 + appreciation, 15);
 
 const annualRentIncreaseRate = 0.05; // 5% increase per year
 let accumulatedRent = 0;
 let currentAnnualRent = project.rentPerMeter * 12; // Calculate the annual rent for the first year
 
-for (let year = 1; year <= 10; year++) {
+for (let year = 1; year <= 15; year++) {
   accumulatedRent += currentAnnualRent; // Add the current year's rent to the total
   currentAnnualRent *= (1 + annualRentIncreaseRate); // Increase rent by 5% for the next year
 }
 
-const totalEarnings = (price_appreciation - project.price) + accumulatedRent;
+const totalEarnings = price_appreciation + accumulatedRent;
 
 const numberToCurrency = (number) => {
   return new Intl.NumberFormat('es-MX', { style: 'currency', currency: 'MXN' }).format(number);
@@ -54,7 +54,7 @@ const numberToCurrency = (number) => {
         </p>
         <p class="flex items-center gap-2">
           <Icon name="tabler:home-move" class="text-navy" />
-          <span>Ganancia estimada a 15 años de <strong class="inline">{numberToCurrency(totalEarnings)}</strong>*</span>
+          <span>Valor del m² estimado a 15 años de <strong class="inline">{numberToCurrency(totalEarnings)}</strong>*</span>
         </p>
       </div>
       <a target="_blank" href={project.url} class="button button--action w-full md:w-auto">Conoce más</a>

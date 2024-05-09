@@ -9,7 +9,7 @@
     "isFeatured" : true,
     "goal": 60,
     "rentPerMeter": 260,
-    "appreciation" : 12
+    "appreciation" : 4.0
   },
   {
     "title" : "Vitant® Del Valle",
@@ -25,7 +25,7 @@
     "isFeatured" : false,
     "goal": 60,
     "rentPerMeter": 223,
-    "appreciation" : 8
+    "appreciation" : 4.0
   },
   {
     "title" : "Vitant® Polanco",
@@ -41,7 +41,7 @@
     "isFeatured" : false,
     "goal": 60,
     "rentPerMeter": 211,
-    "appreciation" : 3
+    "appreciation" : 4.0
   },
   {
     "title" : "Vitant® Santa Fe",
@@ -57,7 +57,7 @@
     "isFeatured" : false,
     "goal": 60,
     "rentPerMeter": 220,
-    "appreciation" : 7
+    "appreciation" : 4.0
   },
   {
     "title" : "Vitant® San Pedro",
@@ -73,7 +73,7 @@
     "isFeatured" : false,
     "goal": 60,
     "rentPerMeter": 226,
-    "appreciation" : 7
+    "appreciation" : 7.6
   },
   {
     "title" : "Vitant® Santa Lucía",
@@ -89,6 +89,6 @@
     "isFeatured" : false,
     "goal": 60,
     "rentPerMeter": 240,
-    "appreciation" : 8
+    "appreciation" : 7.6
   }
 ]
