@@ -2,9 +2,9 @@
 import { Icon } from 'astro-icon/components'
 const { project } = Astro.props;
 
-// To calculate the total earnings in 10 years, we multiply the project.price by the project.appreciation and divide it by 100 to get the percentage. Then we multiply it by 10 to get the total earnings in 10 years.
+// To calculate the total earnings in 15 years, we multiply the project.price by the project.appreciation and divide it by 100 to get the percentage. Then we multiply it by 10 to get the total earnings in 15 years.
 const appreciation = project.appreciation / 100; // Convert percentage to decimal
-const price_appreciation = project.price * Math.pow(1 + appreciation, 10);
+const price_appreciation = project.price * Math.pow(1 + appreciation, 15);
 
 const annualRentIncreaseRate = 0.05; // 5% increase per year
 let accumulatedRent = 0;
@@ -54,7 +54,7 @@ const numberToCurrency = (number) => {
         </p>
         <p class="flex items-center gap-2">
           <Icon name="tabler:home-move" class="text-navy" />
-          <span>Ganancia estimada a 10 años de <strong class="inline">{numberToCurrency(totalEarnings)}</strong>*</span>
+          <span>Ganancia estimada a 15 años de <strong class="inline">{numberToCurrency(totalEarnings)}</strong>*</span>
         </p>
       </div>
       <a target="_blank" href={project.url} class="button button--action w-full md:w-auto">Conoce más</a>
