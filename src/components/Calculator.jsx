@@ -1,6 +1,57 @@
 import { useState, useEffect } from 'react';
 
+const PROPERTIES = [
+  {
+    slug: 'be-grand-reforma',
+    name: 'Be Grand® Reforma',
+    price: 11250000,
+    appreciation: 4.0,
+    rentPerMonth: 26000
+  },
+  {
+    slug: 'vitant-del-valle',
+    name: 'Vitant® Del Valle',
+    price: 7125000,
+    appreciation: 4.0,
+    rentPerMonth: 22300
+  },
+  {
+    slug: 'vitant-polanco',
+    name: 'Vitant® Polanco',
+    price: 7225000,
+    appreciation: 4.0,
+    rentPerMonth: 21100
+  },
+  {
+    slug: 'vitant-santa-fe',
+    name: 'Vitant® Santa Fe',
+    price: 8175000,
+    appreciation: 4.0,
+    rentPerMonth: 22000
+  },
+  {
+    slug: 'vitant-san-pedro',
+    name: 'Vitant® San Pedro',
+    price: 7875000, 
+    appreciation: 7.6,
+    rentPerMonth: 22600
+  },
+  {
+    slug: 'vitant-santa-lucia',
+    name: 'Vitant® Santa Lucía',
+    price: 6250000,
+    appreciation: 4.0,
+    rentPerMonth: 24000
+  }
+]
+
 const Calculator = () => {
+
+  const queryParams = new URLSearchParams(window.location.search);
+  const propertySlug = queryParams.get('property');
+
+  const [property, setProperty] = useState(PROPERTIES.find(p => p.slug === propertySlug) || PROPERTIES[0]);
+
   const [meters, setMeters] = useState(1);
   const [years, setYears] = useState(15);
   const [price, setPrice] = useState(7125000);
@@ -71,13 +122,24 @@ const Calculator = () => {
     calculateRentPerYears();
   }, [years, meters]);
 
+  useEffect(() => {
+    setPrice(property.price);
+    setAppreciation(property.appreciation);
+    setRentPerMonth(property.rentPerMonth);
+  }, [property]);
+
   return (
-    <div>
+    <div className="flex flex-col">
       <div className="gap-4 md:gap-8 grid grid-cols-1 md:grid-cols-2">
         <div className="flex flex-col items-start gap-8">
-          <img src="/logo-nav.png" alt="Logo" className="w-auto h-5 md:h-8" />
+          <a className="flex items-center gap-1 text-primary text-sm" href={`https://www.briq.mx/sumametros/proyectos/${property.slug}`}>
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5 8.25 12l7.5-7.5" />
+            </svg>
+            Regresar
+          </a>
           <div>
-            <h1 className="text-xl md:text-2xl">Conoce cuanto puede crecer tu patrimonio si inviertes en <strong>Vitant® Del Valle</strong></h1>
+            <h1 className="text-xl md:text-2xl">Conoce cuanto puede crecer tu patrimonio si inviertes en <strong className="block">{property.name}</strong></h1>
           </div>
           <div className="flex flex-col gap-4 w-full">
             <p className="text-balance text-sm md:text-lg">¿Cuántos m² quieres comprar?</p>
@@ -172,13 +234,7 @@ const Calculator = () => {
             </div>
           </div>
           <div className="flex flex-col gap-4">
-            <a className="flex justify-center items-center gap-1 bg-primary p-3 border text-white" href="#">Comenzar a invertir</a>
-            <div className='flex justify-center items-center gap-4'>
-              <div className='bg-black/10 w-full h-px'></div>
-              <span>o</span>
-              <div className='bg-black/10 w-full h-px'></div>
-            </div>
-            <a className="flex justify-center items-center gap-1 bg-white p-3 border text-primary" href="#">Hablar con un asesor</a>
+            <a className="flex justify-center items-center gap-1 bg-primary p-3 border text-white" href="https://www.briq.mx/users/sign_up?landing=true">Comenzar a invertir</a>
           </div>
         </div>
       </div>

@@ -409,13 +409,13 @@ const allProjects = projects
 	<script type='text/javascript' is:inline>
 		var initESW = function(gslbBaseURL) {
 		embedded_svc.settings.displayHelpButton = true; //O falso
-		embedded_svc.settings.language = ''; //Por ejemplo, ingrese 'en' o 'en-US'
+		// embedded_svc.settings.language = 'es-MX';
 		
 		//embedded_svc.settings.defaultMinimizedText = '...'; //(Toma como valor predeterminado Sesión de chat con un experto)
 		//embedded_svc.settings.disabledMinimizedText = '...'; //(Toma como valor predeterminado Agente sin conexión)
 		
 		//embedded_svc.settings.loadingText = ''; //(Toma como valor predeterminado Cargando)
-		embedded_svc.settings.storageDomain = 'sumametros.briq.mx';
+		// embedded_svc.settings.storageDomain = 'sumametros.briq.mx';
 		// embedded_svc.settings.storageDomain = 'localhost';
 		
 		// Configuración para Plática
@@ -460,10 +460,16 @@ const allProjects = projects
 	</script>
 
 	<script type="text/javascript" is:inline>
-		if (!window._laq) { window._laq = []; }
-		window._laq.push(function(){liveagent.showWhenOnline('573Qm0000006FM9', document.getElementById('liveagent_button_online_573Qm0000006FM9'));
-		liveagent.showWhenOffline('573Qm0000006FM9', document.getElementById('liveagent_button_offline_573Qm0000006FM9'));
-		});
+		if (!window._laq) {
+			window._laq = [];
+			window._laq.push(
+				function(){
+					liveagent.showWhenOnline('573Qm0000006FM9',
+					document.getElementById('liveagent_button_online_573Qm0000006FM9'));
+					liveagent.showWhenOffline('573Qm0000006FM9', document.getElementById('liveagent_button_offline_573Qm0000006FM9'));
+				}
+			);
+		}
 	</script>	
 
 	<script is:inline>
