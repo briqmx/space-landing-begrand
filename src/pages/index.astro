@@ -50,7 +50,7 @@ const allProjects = projects
 						<span class="text-white/50">o</span>
 						<div class="w-full h-px bg-white/10"></div>
 					</div>
-					<a id="liveagent_button_online_573Qm0000006FM9" href="javascript://Chat" class="button button--ghost w-full" onclick="liveagent.startChat('573Qm0000006FM9')">
+					<a href="#" class="button button--ghost w-full button-help">
 						<figure class="size-6 rounded-full overflow-hidden relative border border-white/10">
 							<img src="/avatar.png" alt="Logo" class="object-cover w-full h-full absolute inset-0" />
 						</figure>
@@ -458,11 +458,19 @@ const allProjects = projects
 		}
 	</script>
 
-<script type="text/javascript">
-	if (!window._laq) { window._laq = []; }
-	window._laq.push(function(){liveagent.showWhenOnline('573Qm0000006FM9', document.getElementById('liveagent_button_online_573Qm0000006FM9'));
-	liveagent.showWhenOffline('573Qm0000006FM9', document.getElementById('liveagent_button_offline_573Qm0000006FM9'));
-	});</script>	
+	<script is:inline>
+		// Wait until the DOM is ready and the .helpButton is rendered
+		document.addEventListener('DOMContentLoaded', () => {
+			const helpButton = document.querySelector('.button-help')
+
+			if (helpButton) {
+				helpButton.addEventListener('click', () => {
+					// Open the chat
+					document.querySelector('.helpButtonEnabled').click()
+				})
+			}
+		})
+	</script>
 
 	<script is:inline>
 		const playVideoButtons = document.querySelectorAll('.video-button')
