@@ -20,7 +20,7 @@ const allProjects = projects
 <Layout title="Inicio | Construye tu patrimonio metro a metro.">
 	<main class="font-body text-lg text-navy antialiased bg-navy">
 		<!-- Menu -->
-		<nav class="sticky top-0 z-20 py-2 container-max">
+		<nav class="sticky top-0 z-10 py-2 container-max">
 			<div class="border shadow-sm bg-white px-5 py-2 rounded-full">
 				<div class="flex items-center justify-between">
 					<a href="/v3">
@@ -50,18 +50,12 @@ const allProjects = projects
 						<span class="text-white/50">o</span>
 						<div class="w-full h-px bg-white/10"></div>
 					</div>
-					<a href="#" class="button button--ghost w-full button-help">
+					<button class="button button--ghost w-full" onclick="document.getElementById('contactModal').showModal()">
 						<figure class="size-6 rounded-full overflow-hidden relative border border-white/10">
 							<img src="/avatar.png" alt="Logo" class="object-cover w-full h-full absolute inset-0" />
 						</figure>
 						<span>Habla con un asesor</span>
-					</a>
-					<div id="liveagent_button_offline_573Qm0000006FM9" style="display: none;">
-						<figure class="size-6 rounded-full overflow-hidden relative border border-white/10">
-							<img src="/avatar.png" alt="Logo" class="object-cover w-full h-full absolute inset-0" />
-						</figure>
-						<span>Habla con un asesor</span>
-					</div>
+					</button>
 
 					<div class="py-4 grid grid-cols-1 gap-2">
 						<div class="flex flex-col gap-4 items-start justify-between border-t border-white/10 text-white text-sm py-4">
@@ -402,6 +396,26 @@ const allProjects = projects
 				</div>
 			</div>
 		</footer>
+
+
+		<dialog id="contactModal" open>
+			<div class="bg-black/80 fixed inset-0 flex items-start md:items-center justify-center z-20">
+				<div class="bg-white max-w-md w-full p-6 border rounded-t-2xl shadow-2xl absolute bottom-0 md:bottom-auto h-[90vh] md:h-auto md:rounded-b-2xl">
+					<div class="flex flex-col gap-4">
+						<div class="flex justify-between gap-4">
+							<h2 class="text-2xl font-display font-bold">Habla con uno de nuestros asesores</h2>
+							<button class="text-2xl shrink-0 bg-zinc-100 size-8 rounded-full border border-zinc-200" onclick="document.getElementById('contactModal').close()">×</button>
+						</div>
+						<p>Comunícate con nosotros al siguiente número de telefóno y uno de nuestros asesores te ayudará a resolver tus dudas.</p>
+						<a href="tel:525511001136" class="button button--action w-full flex md:hidden">
+							<span>Llamar ahora</span>
+							<i class="fa-solid fa-phone"></i>
+						</a>
+						<p class="hidden md:block text-center md:text-left p-2 bg-beige border rounded-lg">Llama al <a href="tel:525511001136" class="text-primary font-semibold text-center">+52 55 1100 1136</a></p>
+					</div>
+				</div>
+			</div>
+		</dialog>
 
 		
 	</main>
