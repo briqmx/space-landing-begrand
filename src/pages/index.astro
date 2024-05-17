@@ -425,10 +425,13 @@ const allProjects = projects
 	<script type='text/javascript'>
 		var initESW = function(gslbBaseURL) {
 			embedded_svc.settings.displayHelpButton = true; //O falso
-			embedded_svc.settings.language = ''; //Por ejemplo, ingrese 'en' o 'en-US'
+			embedded_svc.settings.language = 'es-MX';
 
 			//embedded_svc.settings.defaultMinimizedText = '...'; //(Toma como valor predeterminado Sesión de chat con un experto)
 			//embedded_svc.settings.disabledMinimizedText = '...'; //(Toma como valor predeterminado Agente sin conexión)
+
+			embedded_svc.settings.defaultMinimizedText = 'CHATEA CON UN EXPERTO';
+			embedded_svc.settings.loadingText = 'Conectando...'; 
 
 			//embedded_svc.settings.loadingText = ''; //(Toma como valor predeterminado Cargando)
 			//embedded_svc.settings.storageDomain = 'yourdomain.com'; //(Establece el dominio para su desarrollo de modo que los visitantes puedan navegar por subdominios durante una sesión de chat)
@@ -536,11 +539,14 @@ const allProjects = projects
 <style is:global>
 
 	.embeddedServiceHelpButton .helpButton .uiButton {
-		background-color: #005290;
-		font-family: "Arial", sans-serif;
+			background-color: #19A2E6;
+			font-family: "Arial", sans-serif;
 	}
 	.embeddedServiceHelpButton .helpButton .uiButton:focus {
-		outline: 1px solid #005290;
+			outline: 1px solid #19A2E6;
+	}
+	.chatHeaderBranding{
+			background-color: #19A2E6!important;
 	}
 
 	.container-max {
