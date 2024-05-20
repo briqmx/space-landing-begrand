@@ -188,7 +188,7 @@ const NewCalculator = () => {
               <strong className="shrink-0">{centsToCurrency(price*meters)}</strong>
             </div>
             <div className="flex items-center gap-2 w-full text-xs">
-              <p className="font-medium shrink-0">Renta mensual anual</p>
+              <p className="font-medium shrink-0">Renta anual</p>
               <div className="border-b border-dashed w-full"></div>
               <strong className="shrink-0">{centsToCurrency((rentPerMonth * meters)*12)}</strong>
             </div>
