@@ -12,7 +12,7 @@
     "appreciation" : 7.0
   },
   {
-    "title" : "Vitant® Del Valle",
+    "title" : "Vitant® Del Valle by Be Grand ®",
     "description" : "Junto al centro comercial Mitikah.",
     "image" : "/proyectos/del-valle.jpeg",
     "location" : "Ciudad de México, México",
@@ -28,7 +28,7 @@
     "appreciation" : 7.0
   },
   {
-    "title" : "Vitant® Polanco",
+    "title" : "Vitant® Polanco by Be Grand ®",
     "description" : "A minutos de Masaryk.",
     "image" : "/proyectos/polanco.jpeg",
     "location" : "Ciudad de México, México",
@@ -44,7 +44,7 @@
     "appreciation" : 7.0
   },
   {
-    "title" : "Vitant® Santa Fe",
+    "title" : "Vitant® Santa Fe by Be Grand ®",
     "description" : "Junto al parque La Mexicana.",
     "image" : "https://www.briq.mx/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBbGtDIiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--0f7cc7191b5ed16eb0d139302a4c74097fd14378/cover.jpeg",
     "location" : "Ciudad de México, México",
@@ -60,7 +60,7 @@
     "appreciation" : 7.0
   },
   {
-    "title" : "Vitant® San Pedro",
+    "title" : "Vitant® San Pedro by Be Grand ®",
     "description" : "En la exclusiva zona de Valle Oriente.",
     "image" : "/proyectos/san-pedro.jpeg",
     "location" : "San Pedro Garza García, Nuevo León",
@@ -76,7 +76,7 @@
     "appreciation" : 14.0
   },
   {
-    "title" : "Vitant® Santa Lucía",
+    "title" : "Vitant® Santa Lucía by Be Grand ®",
     "description" : "Junto al Paseo Santa Lucía.",
     "image" : "https://www.briq.mx/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBbDhDIiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--e1bb51bccb33a57827c6238c1fe534c71828ceed/cover.jpeg",
     "location" : "Monterrey, Nuevo León",
