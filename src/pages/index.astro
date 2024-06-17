@@ -89,8 +89,8 @@ const allProjects = projects
 			<div class="mx-auto w-full max-w-screen-lg px-4">
 				<div class="flex flex-col gap-8 items-start">
 					<div>
-						<p class="font-display font-bold text-primary">¿Cómo funciona?</p>
-						<h2 class="font-display text-2xl md:text-4xl font-bold text-pretty">
+						<p class="font-display font-bold text-primary text-xl">¿Cómo funciona?</p>
+						<h2 class="font-display text-2xl md:text-3xl font-bold text-pretty">
 							Invertir en m² nunca ha sido tan fácil
 						</h2>
 					</div>
@@ -148,7 +148,7 @@ const allProjects = projects
 						</div>
 					</div>
 					<button class="border py-8 md:py-2 px-2 rounded-xl w-full flex gap-8 bg-navy hover:saturate-150 transition-all text-white flex-col md:flex-row  items-center video-button" data-video="/video-general.mp4">
-						<div class="flex flex-col gap-2 rounded-xl bg-navy h-24 aspect-video">
+						<div class="flex flex-col gap-2 rounded-xl bg-navy h-32 aspect-video">
 							<figure class="relative rounded-md overflow-hidden w-full h-full">
 								<video
 									class="absolute inset-0 h-full w-full object-cover"
@@ -164,8 +164,11 @@ const allProjects = projects
 							</figure>
 						</div>
 						<div class="flex gap-2 flex-col md:flex-row items-center">
-							<p class="font-bold text-balance text-center md:text-left text-xl">El experto financiero Moris Dieck te explica las ventajas de invertir con Sumametros</p>
-							<div class="shrink-0 px-3 opacity-50">Ver video</div>
+							<p class="font-semibold text-balance text-center md:text-left text-2xl">El experto financiero Moris Dieck te explica las ventajas de invertir con Sumametros</p>
+							<div class="shrink-0 px-4 flex items-center gap-4">
+								<span>Ver video</span>
+								<i class="fa-solid fa-play text-primary text-lg"></i>
+							</div>
 						</div>
 					</button>
 				</div>
@@ -173,9 +176,9 @@ const allProjects = projects
 		</section>
 		<section class="border-y bg-beige py-24" id="propiedades">
 			<div class="mx-auto w-full max-w-screen-lg px-4">
-				<div class="flex flex-col gap-4 mb-16">
-					<p class="font-display font-bold text-primary">Propiedades disponibles</p>
-					<h2 class="font-display text-2xl font-bold md:text-4xl">Conoce las propiedades en las que puedes comprar desde 1m²</h2>
+				<div class="flex flex-col mb-16">
+					<p class="font-display font-bold text-primary text-xl">Propiedades disponibles</p>
+					<h2 class="font-display text-2xl font-bold md:text-3xl">Conoce las propiedades en las que puedes comprar desde 1m²</h2>
 				</div>
 				<div class="mb-4 grid grid-cols-1 gap-12" id="propertyLists">
 					{
@@ -196,7 +199,7 @@ const allProjects = projects
 		</section>
 		<section class="py-12 bg-white">
 			<div class="mx-auto w-full max-w-screen-lg px-4">
-				<h2 class="mb-8 font-display text-3xl md:text-4xl font-bold text-center md:text-left">¿Cómo puedo utilizar mis metros?</h2>
+				<h2 class="mb-8 font-display text-2xl md:text-3xl font-bold text-center md:text-left">¿Cómo puedo utilizar mis metros?</h2>
 				<div class="grid grid-cols-1 md:grid-cols-3 gap-4">
 					<article class="bg-beige p-4 rounded-lg border">
 						<div class="flex flex-col gap-4 items-start w-full justify-between h-full">
@@ -223,7 +226,7 @@ const allProjects = projects
 		
 		<section class="border-t bg-beige py-16" id="faqs">
 			<div class="mx-auto w-full max-w-screen-lg px-4">
-				<h2 class="mb-16 font-display text-3xl md:text-4xl font-bold">Preguntas frecuentes</h2>
+				<h2 class="mb-16 font-display text-3xl md:text-3xl font-bold">Preguntas frecuentes</h2>
 				<div class="grid grid-cols-1 gap-4">
 					<div class="flex w-full flex-col gap-4 rounded-lg border bg-white p-8" id="quienes">
 						<h2 class="font-display text-2xl font-bold">¿Quiénes administran Sumametros by Be Grand®?</h2>
@@ -245,7 +248,7 @@ const allProjects = projects
 									</figure>
 									<p>Plataforma líder de financiamiento colectivo inmobiliario, regulada por las autoridades financieras (CNBV, CONDUSEF, Banxico y SHCP)</p>
 								</div>
-								<a class="underline" href="htps://briq.mx" target="_blank">Conoce más</a>
+								<a class="underline" href="https://www.briq.mx" target="_blank">Conoce más</a>
 							</div>
 						</div>
 					</div>
@@ -277,18 +280,18 @@ const allProjects = projects
 					<span class="text-sm">Para conocer más sobre Sumametros</span>
 					<a
 						href="https://www.instagram.com/sumametros_"
-						class="flex items-center gap-1 border p-2 font-display text-sm font-bold md:p-3"
+						class="flex items-center gap-1 border p-2 font-display text-sm font-bold md:p-3 text-primary"
 						target="_blank"
 					>
-						<Icon name="bxl:instagram" class="h-6 w-6 text-navy opacity-50" />
+						<Icon name="bxl:instagram" class="h-6 w-6" />
 						<span>@sumametros_</span>
 					</a>
 					<a
 						href="https://www.facebook.com/profile.php?id=61551645088385&sk=about&locale=es_LA"
-						class="flex items-center gap-1 border p-2 font-display text-sm font-bold md:p-3"
+						class="flex items-center gap-1 border p-2 font-display text-sm font-bold md:p-3 text-primary"
 						target="_blank"
 					>
-						<Icon name="bxl:facebook" class="h-6 w-6 text-navy opacity-50" />
+						<Icon name="bxl:facebook" class="h-6 w-6" />
 						<span>Suma Metros</span>
 					</a>
 				</div>
@@ -296,74 +299,25 @@ const allProjects = projects
 		</footer>
 		<footer class="bg-navy py-12 text-sm text-white">
 			<div class="mx-auto flex w-full max-w-screen-lg flex-col gap-8 px-4">
-				<div class="grid grid-cols-1 gap-2 md:grid-cols-4">
-					<div class="col-span-2 flex flex-col items-start gap-4">
+				<div class="flex items-center justify-between gap-2">
+					<div class="col-span-2 flex items-center gap-4">
 						<img src="/logo-emblema-briq-white.svg" alt="Logo" class="w-32" />
-						<p class="inline-block rounded-md border border-white/5 bg-white/10 px-2 py-1 text-sm">
+						<p class="text-sm text-white/70">
 							Empresa regulada por la CNBV
 						</p>
-						<nav class="flex gap-2">
-							<a
-								class="flex h-8 w-8 items-center justify-center rounded-full border border-white"
-								href="https://www.facebook.com/briqmx"
-								target="_blank"
-							>
-								<i class="fa-brands fa-facebook-f"></i>
-							</a>
-							<a
-								class="flex h-8 w-8 items-center justify-center rounded-full border border-white"
-								href="https://twitter.com/BriqMx"
-								target="_blank"
-							>
-								<i class="fa-brands fa-x-twitter"></i>
-							</a>
-							<a
-								class="flex h-8 w-8 items-center justify-center rounded-full border border-white"
-								href="https://www.youtube.com/channel/UC5gSLYFILbOPSXDd9Oax4AA"
-								target="_blank"
-							>
-								<i class="fa-brands fa-youtube"></i>
-							</a>
-							<a
-								class="flex h-8 w-8 items-center justify-center rounded-full border border-white"
-								href="https://www.linkedin.com/company/briq-mx"
-								target="_blank"
-							>
-								<i class="fa-brands fa-linkedin-in"></i>
-							</a>
-							<a
-								class="flex h-8 w-8 items-center justify-center rounded-full border border-white"
-								href="https://www.instagram.com/briqmx"
-								target="_blank"
-							>
-								<i class="fa-brands fa-instagram"></i>
-								</a>
-							<a
-								class="flex h-8 w-8 items-center justify-center rounded-full border border-white"
-								href="https://www.tiktok.com/@briqmx"
-								target="_blank"
-							>
-								<i class="fa-brands fa-tiktok"></i>
-							</a>
-						</nav>
 					</div>
-					<div class="flex flex-col gap-2 text-white/80">
-						<h3 class="mb-4 font-bold uppercase text-white">¿Quíenes somos?</h3>
-						<a href="https://www.briq.mx/nosotros">Sobre nosotros</a>
-						<a href="https://www.briq.mx/medios">Medios y prensa</a>
-						<a href="https://www.briq.mx/sostenibilidad">Sostenibilidad</a>
-						<a href="https://www.briq.mx/regulacion">Regulación</a>
+					<div class="flex items-center gap-2 text-white/70 underline">
+						<a href="https://www.briq.mx/regulacion/une">Unidad especializada (UNE)</a>
+						<a href="https://www.briq.mx/regulacion/buro-de-entidades-financieras">Buró de entidades financieras</a>
+						<a href="https://files.briq.mx/regulacion/REDECO.pdf">Despachos de cobranza</a>
+					</div>
+				</div>
+				<div class="flex items-center gap-2 justify-between text-white/70 underline">
+					<div class="flex items-center gap-2">
 						<a href="https://www.briq.mx/avisoprivacidad">Aviso de privacidad</a>
 						<a href="https://www.briq.mx/tyc">Términos y condiciones</a>
 					</div>
-					<div class="flex flex-col gap-2 text-white/80">
-						<h3 class="mb-4 font-bold uppercase text-white">Más información</h3>
-						<a href="https://ayuda.briq.mx/">Contacto y ayuda</a>
-						<a href="https://www.briq.mx/glosario">Glosario de términos</a>
-						<a href="https://www.briq.mx/regulacion/une">Unidad especializada (UNE)</a>
-						<a href="https://novedades.briq.mx/">Cambios y mejoras</a>
-						<a href="https://www.briq.mx/recursos">Recursos</a>
-					</div>
+					<a href="https://www.briq.mx/regulacion/comisiones">Consulta los Costos y las Comisiones de nuestros productos</a>
 				</div>
 				<div class="flex flex-col gap-2 text-white/50">
 					<p>
