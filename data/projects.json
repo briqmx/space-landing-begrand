@@ -2,7 +2,7 @@
   {
     "title" : "Be Grand® Reforma",
     "description" : "Junto al Monumento a la Revolución.",
-    "image" : "https://www.briq.mx/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBc1FDIiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--6768ff155389ea8bd48cef114b445bd74dc901c1/BG%20Reforma-min.jpg",
+    "image" : "/proyectos/reforma.jpeg",
     "location" : "Ciudad de México, México",
     "price" : 112500,
     "url" : "https://www.briq.mx/sumametros/proyectos/be-grand-reforma",
