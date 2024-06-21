@@ -5,7 +5,7 @@
     "image" : "/proyectos/reforma.jpeg",
     "location" : "Ciudad de México, México",
     "price" : 112500,
-    "url" : "https://www.briq.mx/sumametros/proyectos/be-grand-reforma",
+    "url" : "https://www.briq.mx/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBbGtDIiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--d3c58a9efc713af2088389db38b519bfb3d1fcff/cover.jpeg",
     "isFeatured" : true,
     "goal": 60,
     "rentPerMeter": 260,
@@ -78,7 +78,7 @@
   {
     "title" : "Vitant® Santa Lucía by Be Grand ®",
     "description" : "Junto al Paseo Santa Lucía.",
-    "image" : "https://www.briq.mx/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBbDhDIiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--e1bb51bccb33a57827c6238c1fe534c71828ceed/cover.jpeg",
+    "image" : "https://www.briq.mx/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBbDhDIiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--cceb6541f2bee3723ac2d0197f42d38c17d96742/cover.jpeg",
     "location" : "Monterrey, Nuevo León",
     "isNew" : true,
     "status" : "active",
