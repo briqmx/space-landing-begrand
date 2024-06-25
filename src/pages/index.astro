@@ -44,13 +44,13 @@ const allProjects = projects
 				<div class="w-full max-w-xl flex flex-col gap-4 items-center md:items-start">
 					<h1 class="text-2xl font-display font-bold  text-white">La nueva forma de invertir en depas y hacer crecer tu patrimonio, metro a metro.</h1>
 					<p class="text-white/70 text-base">Compra desde 1m² en grandes proyectos residenciales ya rentados y genera rendimientos por rentas más plusvalía.</p>
-					<a href="#propiedades" class="button button--action w-full">Invierte ahora</a>
+					<a href="#propiedades" class="button button--action w-full" id="hero_button_cta">Invierte ahora</a>
 					<div class="flex gap-4 items-center w-full">
 						<div class="w-full h-px bg-white/10"></div>
 						<span class="text-white/50">o</span>
 						<div class="w-full h-px bg-white/10"></div>
 					</div>
-					<button class="button button--ghost w-full" onclick="document.getElementById('contactModal').showModal()">
+					<button class="button button--ghost w-full" onclick="document.getElementById('contactModal').showModal()" id="hero_assistant_cta">
 						<figure class="size-6 rounded-full overflow-hidden relative border border-white/10">
 							<img src="/avatar.png" alt="Logo" class="object-cover w-full h-full absolute inset-0" />
 						</figure>
@@ -118,7 +118,7 @@ const allProjects = projects
 							
 						</div>
 					</article>
-					<a href="#propiedades" class="button button--action w-full md:w-auto">
+					<a href="#propiedades" class="button button--action w-full md:w-auto" id="works_button_cta">
 						Empieza a invertir
 					</a>
 					<div class="flex gap-4 text-base md:text-lg flex-col md:flex-row">
@@ -151,7 +151,7 @@ const allProjects = projects
 							<p class="text-sm">Usa tus metros como enganche o cámbialos por un departamento.</p>
 						</div>
 					</div>
-					<button class="border py-8 md:py-2 px-2 rounded-xl w-full flex gap-8 bg-navy hover:saturate-150 transition-all text-white flex-col md:flex-row  items-center video-button" data-video="/video-general.mp4">
+					<button class="border py-8 md:py-2 px-2 rounded-xl w-full flex gap-8 bg-navy hover:saturate-150 transition-all text-white flex-col md:flex-row  items-center video-button" data-video="/video-general.mp4" id="works_button_video">
 						<div class="flex flex-col gap-2 rounded-xl bg-navy h-32 aspect-video">
 							<figure class="relative rounded-md overflow-hidden w-full h-full">
 								<video
@@ -273,7 +273,7 @@ const allProjects = projects
 					<div class="max-w-2xl text-center flex flex-col gap-4 items-center">
 						<h2 class="text-xl md:text-4xl font-bold font-display">¿Quieres comenzar a crecer tu patrimonio metro a metro?</h2>
 						<p class="text-xl opacity-80">Conviértete en dueño de m² en grandes proyectos residenciales ya rentados</p>
-						<a href="#propiedades" class="button button--action w-auto">Invierte ahora</a>
+						<a href="#propiedades" class="button button--action w-auto" id="footer_button_cta">Invierte ahora</a>
 					</div>
 				</div>
 			</div>
