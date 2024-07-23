@@ -1,0 +1,293 @@
+---
+import projects from '../../data/projects.json'
+import faqs from '../../data/faqs.json'
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+</head>
+<body class="antialiased flex flex-col text-lg bg-[#F8F8F4] text-navy">
+  <nav class="py-2 border-b shadow-sm bg-[#F8F8F4]">
+    <div class="w-full max-w-screen-xl mx-auto px-4">
+      <div class="flex items-center justify-between gap-2">
+        <a href="#">
+          <img src="/logo-nav.png" alt="Logo" class="h-12" />
+        </a>
+        <div>
+          <button class="flex md:hidden">Menu</button>
+          <div class="hidden md:flex items-center gap-4 font-medium">
+            <a href="#propiedades">Propiedades</a>
+            <a href="#preguntas-frecuentes">Preguntas frecuentes</a>
+            <a href="#">Contacta un asesor</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+  <header class="py-16">
+    <div class="w-full max-w-screen-xl mx-auto px-4">
+      <div class="flex flex-col gap-4 items-center justify-center text-center max-w-3xl mx-auto">
+        <h1 class="text-2xl md:text-5xl font-semibold text-balance font-brand">Compra departamentos poco a poco, sin costos de escrituración y recibe rentas por cada metro comprado.</h1>
+        <p class="leading-relaxed text-balance ">Compra desde 1m² en grandes proyectos residenciales ya rentados y genera rendimientos por rentas más plusvalía al vender.</p>
+        <a class="bg-navy text-base text-white py-4 px-8 rounded-full inline-flex items-center justify-center font-semibold uppercase tracking-wider" href="#">Explorar propiedades</a>
+        <figure class="aspect-video w-full bg-navy relative overflow-hidden shadow-xl rounded-2xl flex items-center justify-center">
+          <img
+              src="/hero-cover.jpeg"
+              alt="Hero"
+              class="absolute inset-0 w-full h-full object-cover"
+            />
+            <button class="bg-navy text-white w-16 h-10 absolute flex items-center justify-center">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="size-5">
+                <path d="M6.3 2.84A1.5 1.5 0 0 0 4 4.11v11.78a1.5 1.5 0 0 0 2.3 1.27l9.344-5.891a1.5 1.5 0 0 0 0-2.538L6.3 2.841Z" />
+              </svg>              
+            </button>
+        </figure>
+        <div class="flex items-baseline justify-center gap-2 text-sm md:text-base">
+          <p>Un proyecto de</p>
+          <div class="h-5 md:h-8 flex-shrink-0">
+            <img src="/logo-begrand-horizontal.png" alt="Begrand Logo" class="w-full h-full" />
+          </div>
+          <p>con ayuda de</p>
+          <div class="h-4 md:h-7 flex-shrink-0">
+            <img src="/logo-briq.svg" alt="Briq Logo" class="w-full h-full" />
+          </div>
+        </div>
+        <a class="underline" href="#">Conoce más sobre la alianza aquí</a>
+      </div>
+    </div>
+  </header>
+  <div class="bg-navy py-4">
+    <div class="w-full max-w-screen-xl mx-auto px-4">
+      <div class="flex items-center gap-8 text-white justify-center flex-wrap">
+        <div class="flex items-center gap-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="size-5">
+            <path fill-rule="evenodd" d="M10 18a8 8 0 1 0 0-16 8 8 0 0 0 0 16Zm3.857-9.809a.75.75 0 0 0-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 1 0-1.06 1.061l2.5 2.5a.75.75 0 0 0 1.137-.089l4-5.5Z" clip-rule="evenodd" />
+          </svg>
+          <p>Sin créditos</p>
+        </div>
+        <div class="flex items-center gap-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="size-5">
+            <path fill-rule="evenodd" d="M10 18a8 8 0 1 0 0-16 8 8 0 0 0 0 16Zm3.857-9.809a.75.75 0 0 0-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 1 0-1.06 1.061l2.5 2.5a.75.75 0 0 0 1.137-.089l4-5.5Z" clip-rule="evenodd" />
+          </svg>
+          <p>Desde 1m²</p>
+        </div>
+        <div class="flex items-center gap-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="size-5">
+            <path fill-rule="evenodd" d="M10 18a8 8 0 1 0 0-16 8 8 0 0 0 0 16Zm3.857-9.809a.75.75 0 0 0-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 1 0-1.06 1.061l2.5 2.5a.75.75 0 0 0 1.137-.089l4-5.5Z" clip-rule="evenodd" />
+          </svg>
+          <p>Sin escrituración</p>
+        </div>
+        <div class="flex items-center gap-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="size-5">
+            <path fill-rule="evenodd" d="M10 18a8 8 0 1 0 0-16 8 8 0 0 0 0 16Zm3.857-9.809a.75.75 0 0 0-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 1 0-1.06 1.061l2.5 2.5a.75.75 0 0 0 1.137-.089l4-5.5Z" clip-rule="evenodd" />
+          </svg>
+          <p>Supervisado por la CNBV</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <section class="py-16">
+    <div class="w-full max-w-screen-xl mx-auto px-4">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4 items-center">
+        <div class="w-full items-start flex-col">
+          <div class="mb-4">
+            <h2 class="font-medium text-sky-600">¿Cómo funciona Sumametros?</h2>
+            <h3 class="text-2xl md:text-4xl font-bold font-brand">Comprar un departamento nunca ha sido tan fácil</h3>
+          </div>
+          <div class="flex items-start gap-2 py-4">
+            <figure class="size-8 bg-black text-white rounded-full flex items-center justify-center font-semibold flex-shrink-0"><span>1</span></figure>
+            <p>Elige el desarrollo de tu interés y selecciona el número de metros que deseas comprar.</p>
+          </div>
+          <div class="flex items-start gap-2 py-4">
+            <figure class="size-8 bg-black text-white rounded-full flex items-center justify-center font-semibold flex-shrink-0"><span>2</span></figure>
+            <p>Completa el proceso de pago y recibe tu certificado de compra.</p>
+          </div>
+          <div class="flex items-start gap-2 py-4">
+            <figure class="size-8 bg-black text-white rounded-full flex items-center justify-center font-semibold flex-shrink-0"><span>3</span></figure>
+            <p>Comienza a recibir rentas mensuales por tus metros hasta que los vendas.</p>
+          </div>
+          <a class="bg-navy text-white py-4 px-8 rounded-full inline-flex items-center justify-center font-semibold uppercase tracking-wider text-base w-full md:w-auto" href="#">Explorar propiedades</a>
+        </div>
+        <div class="w-full">
+          <img src="/how-works.png" class="rotate-3">
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="py-16 border-t border-black/10" id="propiedades">
+    <div class="w-full max-w-screen-xl mx-auto px-4">
+      <div class="mb-4 w-full md:w-1/2">
+        <h2 class="font-medium text-sky-600">Propiedades disponibles</h2>
+        <h3 class="text-2xl md:text-4xl font-bold font-brand">Conoce las propiedades en las que puedes comenzar a ser dueño y recibir rentas.</h3>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-3 md:grid-cols-4 gap-8">
+        {projects.map((project, index) => (
+          <article class="aspect-square md:aspect-[3/4] flex flex-col justify-between gap-4 relative p-3 overflow-hidden">
+            <figure class="bg-black rounded-xl absolute overflow-hidden border inset-0">
+              <img
+                src={project.image}
+                alt={project.title}
+                class="absolute inset-0 w-full h-full object-cover"
+              />
+            </figure>
+            <div class="inset-0 bg-zinc-900 opacity-20 absolute rounded-xl"></div>
+            <div class="top-0 left-0 p-2 z-10 flex items-center gap-1">
+              {project.isFeatured && <span class="bg-primary text-white font-medium text-sm px-2 py-1">Destacado</span>}
+              <div class="bg-white flex items-center justify-center font-medium text-sm px-2 py-1 gap-1">
+                <div class="size-2 bg-lime-500 rounded-full animate-pulse"></div>
+                <span>Operando</span>
+              </div>
+            </div>
+            <div class="flex flex-col gap-2 absolute bottom-0 left-0 w-full bg-gradient-to-t from-black via-black to-transparent px-4 py-6 z-10 text-white rounded-xl">
+              <div>
+                <h2 class="font-brand font-semibold text-xl text-balance">{project.title}</h2>
+                <p class="text-sm">{project.location}</p>
+              </div>
+              <p>Plusvalia del {project.appreciation}%</p>
+              <a class="border border-white py-2 text-base uppercase font-semibold tracking-wide rounded-full flex items-center justify-center" href="#">Ver más</a>
+            </div>
+          </article>
+        ))}
+        <article class="bg-navy col-span-full md:col-span-2 rounded-xl flex items-center justify-center flex-col gap-4 text-white p-6 text-center">
+          <p class="font-brand font-semibold text-xl">¿No sabes cuál elegir?</p>
+          <p>Habla con un asesor y te ayudará a elegir la mejor opción para ti.</p>
+          <a class="bg-white py-2 rounded-full text-navy px-6 font-medium" href="#">Hablar con un asesor</a>
+        </article>
+      </div>
+    </div>
+  </section>
+  <section class="py-16 border-t border-black/10">
+    <div class="w-full max-w-screen-xl mx-auto px-4">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4 items-center">
+        <div class="w-full">
+          <div class="mb-4">
+            <h2 class="font-medium text-sky-600">¿Para que sirve Sumametros?</h2>
+            <h3 class="text-2xl md:text-4xl font-bold font-brand">¿Cómo puedo utilizar mis metros?</h3>
+          </div>
+          <div class="flex flex-col items-start gap-4 py-4">
+            <article class="p-4 md:p-6 border-l-4 border-navy flex-col gap-4 flex">
+              <h3 class="text-2xl font-brand font-semibold">Conserva tus metros y recibe rentas</h3>
+              <p>Recibe rentas mensualmente por cada metro que tengas, sin preocuparte de nada más.</p>
+            </article>
+            <article class="p-4 md:p-6 border-l-4 border-navy flex-col gap-4 flex">
+              <h3 class="text-2xl font-brand font-semibold">Vende tus metros y obtén plusvalía</h3>
+              <p>Vende tus metros en la plataforma y captura la plusvalía acumulada desde que compraste.</p>
+            </article>
+            <article class="p-4 md:p-6 border-l-4 border-navy flex-col gap-4 flex">
+              <h3 class="text-2xl font-brand font-semibold">Canjea tus metros por un departamento</h3>
+              <p>Usa tus metros como enganche para comprar un nuevo departamento.</p>
+            </article>
+          </div>
+        </div>
+        <div class="w-full">
+          <img src="/how-works.png" class="rotate-3">
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="py-16">
+    <div class="w-full max-w-screen-xl mx-auto px-4">
+      <div class="text-center flex flex-col gap-4 items-center bg-blend-hard-light bg-amber-900/5 p-4 md:p-16 rounded-2xl">
+        <img src="/cnbv.jpg" alt="cmbv" class="w-32 mix-blend-multiply mx-auto" />
+        <div>
+          <h2 class="font-medium text-sky-600">Seguridad y confianza</h3>
+          <h3 class="text-2xl md:text-4xl font-bold font-brand">Sumametros® es una plataforma segura y confiable</h2>
+        </div>
+        <p class="max-w-md">Tu compra e inversión en Sumametros está protegida por la Comisión Nacional Bancaria y de Valores (CNBV) lo que garantiza la seguridad de tu inversión.</p>
+      </div>
+    </div>
+  </section>
+  <section class="py-16 border-t border-black/10 bg-blend-hard-light bg-amber-900/5" id="preguntas-frecuentes">
+    <div class="w-full max-w-screen-xl mx-auto px-4">
+      <div class="mb-4">
+        <h2 class="font-medium text-sky-600">Preguntas frecuentes</h2>
+        <h3 class="text-2x md:text-4xl font-bold font-brand">Resuelve tus dudas sobre Sumametros</h3>
+      </div>
+      <div>
+        {faqs.map((faq, index) => (
+          <article class="border-b border-black/10 py-8 flex-col gap-2 flex">
+            <h3 class="text-2xl font-brand font-semibold">{faq.question}</h3>
+            <p>{faq.answer}</p>
+          </article>
+        ))}
+      </div>
+      <div>
+        <div class="bg-navy py-16 px-2 text-white rounded-2xl flex flex-col items-center justify-center gap-4 text-center">
+          <p class="font-brand font-semibold text-2xl">¿Tienes más dudas?</p>
+          <p>Habla con un asesor y te ayudará a aclarar todas tus dudas sin ningún compromiso.</p>
+          <a class="bg-white py-3 rounded-full text-navy px-6 font-medium" href="#">Hablar con un asesor</a>
+        </div>
+      </div>
+    </div>
+  </section>
+  <footer class="bg-navy py-12 text-sm text-white">
+    <div class="w-full max-w-screen-xl mx-auto px-4 flex flex-col gap-8">
+      <div class="flex items-center justify-between gap-2">
+        <div class="col-span-2 flex items-center gap-4">
+          <img src="/logo-emblema-briq-white.svg" alt="Logo" class="w-32" />
+          <p class="text-sm text-white/70">
+            Empresa regulada por la CNBV
+          </p>
+        </div>
+        <div class="flex items-center gap-2 text-white/70 underline">
+          <a href="https://www.briq.mx/regulacion/une">Unidad especializada (UNE)</a>
+          <a href="https://www.briq.mx/regulacion/buro-de-entidades-financieras">Buró de entidades financieras</a>
+          <a href="https://files.briq.mx/regulacion/REDECO.pdf">Despachos de cobranza</a>
+        </div>
+      </div>
+      <div class="flex items-center gap-2 justify-between text-white/70 underline">
+        <div class="flex items-center gap-2">
+          <a href="https://www.briq.mx/avisoprivacidad">Aviso de privacidad</a>
+          <a href="https://www.briq.mx/tyc">Términos y condiciones</a>
+        </div>
+        <a href="https://www.briq.mx/regulacion/comisiones">Consulta los Costos y las Comisiones de nuestros productos</a>
+      </div>
+      <div class="flex flex-col gap-2 text-white/50">
+        <p>
+          BRIQ FUND, S.A.P.I. de C.V., Institución de Financiamiento Colectivo, en términos de la
+          Ley para Regular las Instituciones de Tecnología Financiera, es una sociedad autorizada,
+          regulada y supervisada por las autoridades financieras. <a target="_blank" class="text-white underline" href="https://www.dof.gob.mx/nota_detalle.php?codigo=5712432&fecha=26/12/2023#gsc.tab=0">Autorización P116/2021</a>
+        </p>
+        <p>
+          Ni el Gobierno Federal ni las entidades de la administración pública paraestatal podrán
+          responsabilizarse o garantizar los recursos de los Clientes que sean utilizados en las
+          Operaciones que celebren con las ITF (en este caso briq.mx) o frente a otros, así como
+          tampoco asumir alguna responsabilidad por las obligaciones contraídas por las ITF (en
+          este caso briq.mx) o por algún Cliente frente a otro, en virtud de las Operaciones que
+          celebren.
+        </p>
+      </div>
+    </div>
+    <div
+      class="fixed inset-0 z-20 hidden items-center justify-center bg-black/90"
+      id="video-modal"
+    >
+      <div
+        class="relative aspect-video w-full bg-white shadow-xl md:h-[80vh] md:w-auto"
+        id="video-container"
+      >
+        <video controls class="absolute inset-0 h-full w-full" id="video">
+          <source src="/video-general.mp4" type="video/mp4" />
+        </video>
+        <button class="absolute right-0 top-0 bg-white p-4 text-black" id="close-video">
+          Cerrar
+        </button>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
+
+<style>
+  .font-brand {
+    font-family: 'Inter Tight', sans-serif;
+  }
+</style>
