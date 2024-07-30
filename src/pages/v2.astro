@@ -8,35 +8,44 @@ import faqs from '../../data/faqs.json'
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+  <title>Sumametros</title>
+  <script src="https://kit.fontawesome.com/dd626c8ac3.js" crossorigin="anonymous"></script>
 </head>
 <body class="antialiased flex flex-col text-lg bg-[#F8F8F4] text-navy">
-  <nav class="py-2 border-b shadow-sm bg-[#F8F8F4]">
-    <div class="w-full max-w-screen-xl mx-auto px-4">
-      <div class="flex items-center justify-between gap-2">
-        <a href="#">
-          <img src="/logo-nav.png" alt="Logo" class="h-12" />
-        </a>
-        <div>
-          <button class="flex md:hidden">Menu</button>
-          <div class="hidden md:flex items-center gap-4 font-medium">
-            <a href="#propiedades">Propiedades</a>
-            <a href="#preguntas-frecuentes">Preguntas frecuentes</a>
-            <a href="#">Contacta un asesor</a>
+  <div class="sticky top-0 z-20 bg-[#F8F8F4]">
+    <nav class="py-2 border-b shadow-sm bg-[#F8F8F4]">
+      <div class="w-full max-w-screen-xl mx-auto px-4">
+        <div class="flex items-center justify-between gap-2">
+          <a href="#">
+            <img src="/logo-nav.png" alt="Logo" class="h-12" />
+          </a>
+          <div>
+            <button class="px-4 bg-white uppercase tracking-wide font-semibold text-sm py-2 rounded-full border inline-flex gap-2 items-center justify-center">
+              Solicitar información
+              <i class="fa-regular fa-comment"></i>
+            </button>
           </div>
         </div>
       </div>
-    </div>
-  </nav>
+    </nav>
+    <nav class="border-b shadow-sm bg-[#F8F8F4]">
+      <div class="w-full max-w-screen-xl mx-auto px-4">
+        <div class="flex items-center justify-center gap-2">
+          <button class="flex md:hidden">Menu</button>
+          <div class="hidden md:flex items-center gap-4 font-medium">
+            <a class="py-2 px-3 border-b-2 border-transparent hover:border-b-primary" href="#como-funciona" data-nav-link>¿Cómo funciona?</a>
+            <a class="py-2 px-3 border-b-2 border-transparent hover:border-b-primary" href="#propiedades" data-nav-link>Propiedades</a>
+            <a class="py-2 px-3 border-b-2 border-transparent hover:border-b-primary" href="#preguntas-frecuentes" data-nav-link>Preguntas frecuentes</a>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </div>
   <header class="py-16">
     <div class="w-full max-w-screen-xl mx-auto px-4">
       <div class="flex flex-col gap-4 items-center justify-center text-center max-w-3xl mx-auto">
-        <h1 class="text-2xl md:text-5xl font-semibold text-balance font-brand">Compra departamentos poco a poco, sin costos de escrituración y recibe rentas por cada metro comprado.</h1>
-        <p class="leading-relaxed text-balance ">Compra desde 1m² en grandes proyectos residenciales ya rentados y genera rendimientos por rentas más plusvalía al vender.</p>
+        <h1 class="text-2xl md:text-5xl font-semibold text-balance font-brand">Compra tu departamento poco a poco, generá rentas y plusvalía en el proceso.</h1>
+        <p class="leading-relaxed text-balance ">Comienza a comprar tu departamento desde 1m² y cambialo por un departamento completo cuando quieras mientras obtienes rentas mensuales por tus metros.</p>
         <a class="bg-navy text-base text-white py-4 px-8 rounded-full inline-flex items-center justify-center font-semibold uppercase tracking-wider" href="#">Explorar propiedades</a>
         <figure class="aspect-video w-full bg-navy relative overflow-hidden shadow-xl rounded-2xl flex items-center justify-center">
           <img
@@ -71,19 +80,19 @@ import faqs from '../../data/faqs.json'
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="size-5">
             <path fill-rule="evenodd" d="M10 18a8 8 0 1 0 0-16 8 8 0 0 0 0 16Zm3.857-9.809a.75.75 0 0 0-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 1 0-1.06 1.061l2.5 2.5a.75.75 0 0 0 1.137-.089l4-5.5Z" clip-rule="evenodd" />
           </svg>
-          <p>Sin créditos</p>
+          <p>Sin buró de crédito</p>
         </div>
         <div class="flex items-center gap-1">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="size-5">
             <path fill-rule="evenodd" d="M10 18a8 8 0 1 0 0-16 8 8 0 0 0 0 16Zm3.857-9.809a.75.75 0 0 0-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 1 0-1.06 1.061l2.5 2.5a.75.75 0 0 0 1.137-.089l4-5.5Z" clip-rule="evenodd" />
           </svg>
-          <p>Desde 1m²</p>
+          <p>Hasta 14% de plusvalía</p>
         </div>
         <div class="flex items-center gap-1">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="size-5">
             <path fill-rule="evenodd" d="M10 18a8 8 0 1 0 0-16 8 8 0 0 0 0 16Zm3.857-9.809a.75.75 0 0 0-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 1 0-1.06 1.061l2.5 2.5a.75.75 0 0 0 1.137-.089l4-5.5Z" clip-rule="evenodd" />
           </svg>
-          <p>Sin escrituración</p>
+          <p>100% en línea</p>
         </div>
         <div class="flex items-center gap-1">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="size-5">
@@ -94,7 +103,7 @@ import faqs from '../../data/faqs.json'
       </div>
     </div>
   </div>
-  <section class="py-16">
+  <section class="py-16" id="como-funciona">
     <div class="w-full max-w-screen-xl mx-auto px-4">
       <div class="grid grid-cols-1 md:grid-cols-2 gap-4 items-center">
         <div class="w-full items-start flex-col">
@@ -112,7 +121,7 @@ import faqs from '../../data/faqs.json'
           </div>
           <div class="flex items-start gap-2 py-4">
             <figure class="size-8 bg-black text-white rounded-full flex items-center justify-center font-semibold flex-shrink-0"><span>3</span></figure>
-            <p>Comienza a recibir rentas mensuales por tus metros hasta que los vendas.</p>
+            <p>Comienza a recibir rentas mensuales por tus m2 hasta que decidas venderlos o canjearlos por un departamento completo.</p>
           </div>
           <a class="bg-navy text-white py-4 px-8 rounded-full inline-flex items-center justify-center font-semibold uppercase tracking-wider text-base w-full md:w-auto" href="#">Explorar propiedades</a>
         </div>
@@ -126,40 +135,40 @@ import faqs from '../../data/faqs.json'
     <div class="w-full max-w-screen-xl mx-auto px-4">
       <div class="mb-4 w-full md:w-1/2">
         <h2 class="font-medium text-sky-600">Propiedades disponibles</h2>
-        <h3 class="text-2xl md:text-4xl font-bold font-brand">Conoce las propiedades en las que puedes comenzar a ser dueño y recibir rentas.</h3>
+        <h3 class="text-2xl md:text-4xl font-bold font-brand">Conoce tu próximo departamento y comienza a recibir rentas.</h3>
       </div>
       <div class="grid grid-cols-1 sm:grid-cols-3 md:grid-cols-4 gap-8">
         {projects.map((project, index) => (
-          <article class="aspect-square md:aspect-[3/4] flex flex-col justify-between gap-4 relative p-3 overflow-hidden">
-            <figure class="bg-black rounded-xl absolute overflow-hidden border inset-0">
+          <article class="aspect-square md:aspect-[3/4] flex flex-col justify-between gap-4 relative p-3 overflow-hidden group rounded-xl">
+            <figure class="bg-black absolute border inset-0 group-hover:scale-125 transition-transform">
               <img
                 src={project.image}
                 alt={project.title}
                 class="absolute inset-0 w-full h-full object-cover"
               />
             </figure>
-            <div class="inset-0 bg-zinc-900 opacity-20 absolute rounded-xl"></div>
+            <div class="inset-0 bg-zinc-900 bg-opacity-20 absolute group-hover:bg-opacity-40"></div>
             <div class="top-0 left-0 p-2 z-10 flex items-center gap-1">
-              {project.isFeatured && <span class="bg-primary text-white font-medium text-sm px-2 py-1">Destacado</span>}
-              <div class="bg-white flex items-center justify-center font-medium text-sm px-2 py-1 gap-1">
+              {project.isFeatured && <span class="bg-primary text-white font-medium text-sm px-2 py-1 rounded-md">Destacado</span>}
+              <div class="bg-white flex items-center justify-center font-medium text-sm px-2 py-1 gap-1 rounded-md">
                 <div class="size-2 bg-lime-500 rounded-full animate-pulse"></div>
-                <span>Operando</span>
+                <span>Generando rentas</span>
               </div>
             </div>
-            <div class="flex flex-col gap-2 absolute bottom-0 left-0 w-full bg-gradient-to-t from-black via-black to-transparent px-4 py-6 z-10 text-white rounded-xl">
+            <div class="flex flex-col gap-2 absolute bottom-0 left-0 w-full bg-gradient-to-t from-black via-black to-transparent px-4 py-6 z-10 text-white">
               <div>
                 <h2 class="font-brand font-semibold text-xl text-balance">{project.title}</h2>
-                <p class="text-sm">{project.location}</p>
+                <p class="text-sm font-medium">{project.location}</p>
               </div>
-              <p>Plusvalia del {project.appreciation}%</p>
-              <a class="border border-white py-2 text-base uppercase font-semibold tracking-wide rounded-full flex items-center justify-center" href="#">Ver más</a>
+              <p>{project.appreciation}% de plusvalía</p>
+              <a class="border border-white/50 py-2 text-base uppercase font-semibold tracking-wide rounded-full flex items-center justify-center hover:bg-white hover:text-black" href="#">Ver más</a>
             </div>
           </article>
         ))}
         <article class="bg-navy col-span-full md:col-span-2 rounded-xl flex items-center justify-center flex-col gap-4 text-white p-6 text-center">
           <p class="font-brand font-semibold text-xl">¿No sabes cuál elegir?</p>
           <p>Habla con un asesor y te ayudará a elegir la mejor opción para ti.</p>
-          <a class="bg-white py-2 rounded-full text-navy px-6 font-medium" href="#">Hablar con un asesor</a>
+          <a class="bg-white py-2.5 rounded-full text-navy px-6 uppercase font-semibold tracking-wide text-base" href="#">Hablar con un asesor</a>
         </article>
       </div>
     </div>
@@ -174,16 +183,16 @@ import faqs from '../../data/faqs.json'
           </div>
           <div class="flex flex-col items-start gap-4 py-4">
             <article class="p-4 md:p-6 border-l-4 border-navy flex-col gap-4 flex">
+              <h3 class="text-2xl font-brand font-semibold">Canjea tus metros por un departamento</h3>
+              <p>Usa tus metros como enganche o pago total de un departamento completo una vez que hayas acumulado los suficientes.</p>
+            </article>
+            <article class="p-4 md:p-6 border-l-4 border-navy flex-col gap-4 flex">
               <h3 class="text-2xl font-brand font-semibold">Conserva tus metros y recibe rentas</h3>
-              <p>Recibe rentas mensualmente por cada metro que tengas, sin preocuparte de nada más.</p>
+              <p>Recibe rentas mensualmente por cada metro que tengas, sin preocuparte de nada más, nosotros nos encargamos de todo.</p>
             </article>
             <article class="p-4 md:p-6 border-l-4 border-navy flex-col gap-4 flex">
               <h3 class="text-2xl font-brand font-semibold">Vende tus metros y obtén plusvalía</h3>
-              <p>Vende tus metros en la plataforma y captura la plusvalía acumulada desde que compraste.</p>
-            </article>
-            <article class="p-4 md:p-6 border-l-4 border-navy flex-col gap-4 flex">
-              <h3 class="text-2xl font-brand font-semibold">Canjea tus metros por un departamento</h3>
-              <p>Usa tus metros como enganche para comprar un nuevo departamento.</p>
+              <p>Vende tus metros en la plataforma y obtén la plusvalía acumulada desde que compraste.</p>
             </article>
           </div>
         </div>
@@ -286,8 +295,42 @@ import faqs from '../../data/faqs.json'
 </body>
 </html>
 
-<style>
+<style is:inline>
   .font-brand {
     font-family: 'Inter Tight', sans-serif;
   }
+
+  html {
+    /* smooth scroll */
+    scroll-behavior: smooth;
+  }
 </style>
+
+<script is:inline>
+  document.addEventListener('DOMContentLoaded', () => {
+    const sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('[data-nav-link]');
+
+    function highlightActiveSection() {
+      let scrollY = window.pageYOffset;
+
+      sections.forEach(current => {
+        const sectionHeight = current.offsetHeight;
+        const sectionTop = current.offsetTop - 100; // Adjust this value to change when the highlight activates
+        const sectionId = current.getAttribute('id');
+
+        if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
+          navLinks.forEach(link => {
+            link.classList.remove('border-b-primary');
+            if (link.getAttribute('href') === `#${sectionId}`) {
+              link.classList.add('border-b-primary');
+            }
+          });
+        }
+      });
+    }
+
+    window.addEventListener('scroll', highlightActiveSection);
+    highlightActiveSection(); // Call once on load to set initial state
+  });
+</script>
