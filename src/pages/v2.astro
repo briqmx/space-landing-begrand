@@ -1,6 +1,17 @@
 ---
 import projects from '../../data/projects.json'
 import faqs from '../../data/faqs.json'
+
+const site_url = Astro.site
+let base_ulr = ''
+
+// Get the process environment
+if (process.env.NODE_ENV === 'development') {
+	base_ulr = 'http://localhost:4321'
+} else {
+	base_ulr = site_url.href + ''
+}
+---
 ---
 
 <!DOCTYPE html>
@@ -8,8 +19,42 @@ import faqs from '../../data/faqs.json'
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sumametros</title>
+  <title>Sumametros® | La nueva forma de invertir en depas y hacer crecer tu patrimonio, metro a metro.</title>
+  <meta
+    name="description"
+    content="Compra desde 1m² en grandes proyectos residenciales ya rentados y genera rendimientos por rentas más plusvalía."
+  />
+  <meta
+    name="og:title"
+    content="Sumametros® | La nueva forma de invertir en depas y hacer crecer tu patrimonio, metro a metro."
+  />
+  <meta
+    name="og:description"
+    content="Compra desde 1m² en grandes proyectos residenciales ya rentados y genera rendimientos por rentas más plusvalía."
+  />
+
+  <meta name="og:image" content={base_ulr + '/og.jpg'} />
+  <link rel="icon" href={base_ulr + '/favicon.png'} type="image/png" />
   <script src="https://kit.fontawesome.com/dd626c8ac3.js" crossorigin="anonymous"></script>
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-H8JTC0Y322"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-H8JTC0Y322');
+  </script>
+
+  <!-- Clarity tracking code -->
+  <script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "ku6s4q2wzr");
+  </script>
 </head>
 <body class="antialiased flex flex-col text-lg bg-[#F8F8F4] text-navy">
   <div class="sticky top-0 z-20 bg-[#F8F8F4]">
@@ -274,9 +319,9 @@ import faqs from '../../data/faqs.json'
           <img src="/logo-nav-white.png" alt="Logo" class="h-16" />
         </div>
         <div class="flex items-center gap-2 text-white">
-          <a href="tel:8004790634" target="_blank" class="flex items-center gap-2 border border-white/10 py-2 px-4 rounded-full">
+          <a href="tel:8004793103" target="_blank" class="flex items-center gap-2 border border-white/10 py-2 px-4 rounded-full">
             <i class="fa-solid fa-phone"></i>
-            <span>800 479 0634</span>
+            <span>800 479 3103</span>
          </a>
           <a href="https://www.instagram.com/sumametros_" target="_blank" class="flex items-center gap-2 border border-white/10 py-2 px-4 rounded-full">
              <i class="fa-brands fa-instagram"></i>
@@ -312,13 +357,13 @@ import faqs from '../../data/faqs.json'
             </button>
           </div>
           <p>Comunícate con nosotros al siguiente número de telefóno y uno de nuestros asesores te ayudará a resolver tus dudas.</p>
-          <a href="tel:8004790634" class="button button--action w-full flex md:hidden">
+          <a href="tel:8004793103" class="button button--action w-full flex md:hidden">
             <span>Llamar ahora</span>
             <i class="fa-solid fa-phone"></i>
           </a>
           <p class="hidden md:flex text-center md:text-left p-2 bg-beige border rounded-lg items-center gap-2">
             <i class="fa-solid fa-phone text-primary "></i>
-            Llama al <a href="tel:8004790634" class="text-primary font-semibold text-center">800 479 0634</a>
+            Llama al <a href="tel:8004793103" class="text-primary font-semibold text-center">800 479 3103</a>
           </p>
         </div>
       </div>
@@ -336,6 +381,23 @@ import faqs from '../../data/faqs.json'
     /* smooth scroll */
     scroll-behavior: smooth;
   }
+
+  .embeddedServiceHelpButton .helpButton .uiButton {
+		background-color: #19A2E6 !important;
+	}
+
+	.embeddedServiceHelpButton .helpButton .uiButton:focus {
+		outline: 1px solid #19A2E6;
+	}
+
+	.chatHeaderBranding{
+		background-color: #19A2E6!important;
+	}
+
+	.embeddedServiceHelpButton .uiButton {
+		min-width: 18em !important;
+	}
+  
 </style>
 
 <script is:inline>
@@ -386,3 +448,59 @@ import faqs from '../../data/faqs.json'
 
   const contactModal = document.getElementById('contactModal');
 </script>
+
+<script type='text/javascript' src='https://service.force.com/embeddedservice/5.0/esw.min.js'></script>
+	<script type='text/javascript'>
+		var initESW = function(gslbBaseURL) {
+			embedded_svc.settings.displayHelpButton = true; //O falso
+			embedded_svc.settings.language = 'es-MX';
+
+			//embedded_svc.settings.defaultMinimizedText = '...'; //(Toma como valor predeterminado Sesión de chat con un experto)
+			//embedded_svc.settings.disabledMinimizedText = '...'; //(Toma como valor predeterminado Agente sin conexión)
+
+			embedded_svc.settings.defaultMinimizedText = 'CHATEA CON UN EXPERTO';
+			embedded_svc.settings.loadingText = 'Conectando...'; 
+
+			//embedded_svc.settings.loadingText = ''; //(Toma como valor predeterminado Cargando)
+			//embedded_svc.settings.storageDomain = 'yourdomain.com'; //(Establece el dominio para su desarrollo de modo que los visitantes puedan navegar por subdominios durante una sesión de chat)
+
+			// Configuración para Plática
+			//embedded_svc.settings.directToButtonRouting = function(prechatFormData) {
+				// Dynamically changes the button ID based on what the visitor enters in the pre-chat form.
+				// Returns a valid button ID.
+			//};
+			//embedded_svc.settings.prepopulatedPrechatFields = {}; //Establece el relleno automático de los campos del formulario previo al chat
+			//embedded_svc.settings.fallbackRouting = []; //Una matriz de identificadores de botones, de usuario o userId_buttonId
+			//embedded_svc.settings.offlineSupportMinimizedText = '...'; //(Toma como valor predeterminado la opción Contacto)
+
+			embedded_svc.settings.enabledFeatures = ['LiveAgent'];
+			embedded_svc.settings.entryFeature = 'LiveAgent';
+
+			embedded_svc.init(
+				'https://begrand.my.salesforce.com',
+				'https://begrand.my.site.com/begrandfrontdesk',
+				gslbBaseURL,
+				'00Df20000019tKD',
+				'Live_Agent_SumaMetros',
+				{
+					baseLiveAgentContentURL: 'https://c.la3-core1.sfdc-lywfpd.salesforceliveagent.com/content',
+					deploymentId: '572f2000000fy7G',
+					buttonId: '573Qm0000006FM9',
+					baseLiveAgentURL: 'https://d.la3-core1.sfdc-lywfpd.salesforceliveagent.com/chat',
+					eswLiveAgentDevName: 'EmbeddedServiceLiveAgent_Parent04IQm0000002bujMAA_18f08b0b089',
+					isOfflineSupportEnabled: false
+				}
+			);
+		};
+
+		if (!window.embedded_svc) {
+			var s = document.createElement('script');
+			s.setAttribute('src', 'https://begrand.my.salesforce.com/embeddedservice/5.0/esw.min.js');
+			s.onload = function() {
+				initESW(null);
+			};
+			document.body.appendChild(s);
+		} else {
+			initESW('https://service.force.com');
+		}
+	</script>
