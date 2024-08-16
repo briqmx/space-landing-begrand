@@ -12,7 +12,6 @@ if (process.env.NODE_ENV === 'development') {
 	base_ulr = site_url.href + ''
 }
 ---
----
 
 <!DOCTYPE html>
 <html lang="en">
@@ -90,7 +89,7 @@ if (process.env.NODE_ENV === 'development') {
     <div class="w-full max-w-screen-xl mx-auto px-4">
       <div class="flex flex-col gap-4 items-center justify-center text-center max-w-3xl mx-auto">
         <h1 class="text-2xl md:text-5xl font-semibold text-balance font-brand">Compra tu departamento poco a poco, generá rentas y plusvalía en el proceso.</h1>
-        <p class="leading-relaxed text-balance ">Comienza desde 1m2 y recibe rentas desde el primer mes. Cuando juntes los metros deseados, podrás utilizarlos como enganche o seguir acumulando para cambiarlos por un departamento.</p>
+        <p class="leading-relaxed text-balance ">Comienza desde 1m² y recibe rentas desde el primer mes. Ve comprando metro a metro, a tu propio ritmo, y cuando juntes los metros deseados, podrás utilizarlos como enganche o hasta cambiarlos por un departamento.</p>
         <a class="bg-navy text-base text-white py-4 px-8 rounded-full inline-flex items-center justify-center font-semibold uppercase tracking-wider" href="#propiedades">Explorar propiedades</a>
         <button class="aspect-video appearance-none w-full bg-navy relative overflow-hidden shadow-xl rounded-2xl flex items-center justify-center hover:-translate-y-1 transition-all" id="open-video">
           <img
@@ -205,7 +204,7 @@ if (process.env.NODE_ENV === 'development') {
                 <h2 class="font-brand font-semibold text-xl text-balance">{project.title}</h2>
                 <p class="text-sm font-medium">{project.location}</p>
               </div>
-              <p>{project.appreciation}% de plusvalía</p>
+              {/* <p>{project.appreciation}% de plusvalía</p> */}
               <a class="border border-white/50 py-2 text-base uppercase font-semibold tracking-wide rounded-full flex items-center justify-center hover:bg-white hover:text-black" href={project.url} target="_blank" rel="noopener">
                 Ver más
               </a>
