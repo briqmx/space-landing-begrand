@@ -1,385 +1,454 @@
 ---
-import Layout from '../layouts/Layout.astro'
-import { Icon } from 'astro-icon/components'
-import faqs from '../../data/faqs.json'
 import projects from '../../data/projects.json'
-import Property from '../components/Property.astro'
+import faqs from '../../data/faqs.json'
 
-const STEPS = [
-	'Elige el desarrollo de tu interés y selecciona el número de metros que deseas comprar',
-	'Completa el proceso de pago y recibe tu certificado de compra',
-  'Comienza a recibir rentas mensuales por tus metros'
-]
+const site_url = Astro.site
+let base_ulr = ''
 
-
-// const nonFeaturedProjects = projects.filter((project) => !project.isFeatured)
-// const featuredProjects = projects.filter((project) => project.isFeatured)
-const allProjects = projects
+// Get the process environment
+if (process.env.NODE_ENV === 'development') {
+	base_ulr = 'http://localhost:4321'
+} else {
+	base_ulr = site_url.href + ''
+}
 ---
 
-<Layout title="Inicio | Construye tu patrimonio metro a metro.">
-	<main class="font-body text-lg text-navy antialiased bg-navy">
-		<!-- Menu -->
-		<nav class="sticky top-0 z-10 py-2 container-max">
-			<div class="border shadow-sm bg-white px-5 py-2 rounded-full">
-				<div class="flex items-center justify-between">
-					<a href="/">
-						<img src="/logo-nav.png" alt="Logo" class="h-10" />
-					</a>
-					<div class="flex gap-2 items-center">
-						<a class="hidden md:inline-flex nav-item" href="#como">¿Cómo funciona?</a>
-						<a class="hidden md:inline-flex nav-item" href="#propiedades">Ver propiedades </a>
-						<a class="hidden md:inline-flex nav-item" href="#faqs">Preguntas frecuentes</a>
-						<a class="inline-flex nav-item border border-navy/10 rounded-full" href="https://www.briq.mx/users/sign_in">
-							<i class="fa-kit fa-briq-logo"></i>
-							Iniciar sesión
-						</a>
-					</div>
-				</div>
-			</div>
-		</nav>
-		<!-- Hero -->
-		<header class="border-b bg-navy pt-8 md:py-16">
-			<div class="container-max flex gap-8 items-center md:items-stretch flex-col md:flex-row">
-				<div class="w-full max-w-xl flex flex-col gap-4 items-center md:items-start">
-					<h1 class="text-2xl font-display font-bold  text-white">La nueva forma de invertir en depas y hacer crecer tu patrimonio, metro a metro.</h1>
-					<p class="text-white/70 text-base">Compra desde 1m² en grandes proyectos residenciales ya rentados y genera rendimientos por rentas más plusvalía.</p>
-					<a href="#propiedades" class="button button--action w-full" id="hero_button_cta">Invierte ahora</a>
-					<div class="flex gap-4 items-center w-full">
-						<div class="w-full h-px bg-white/10"></div>
-						<span class="text-white/50">o</span>
-						<div class="w-full h-px bg-white/10"></div>
-					</div>
-					<button class="button button--ghost w-full" onclick="document.getElementById('contactModal').showModal()" id="hero_assistant_cta">
-						<figure class="size-6 rounded-full overflow-hidden relative border border-white/10">
-							<img src="/avatar.png" alt="Logo" class="object-cover w-full h-full absolute inset-0" />
-						</figure>
-						<span>Habla con un asesor</span>
-					</button>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sumametros® | La nueva forma de invertir en depas y hacer crecer tu patrimonio, metro a metro.</title>
+  <meta
+    name="description"
+    content="Compra desde 1m² en grandes proyectos residenciales ya rentados y genera rendimientos por rentas más plusvalía."
+  />
+  <meta
+    name="og:title"
+    content="Sumametros® | La nueva forma de invertir en depas y hacer crecer tu patrimonio, metro a metro."
+  />
+  <meta
+    name="og:description"
+    content="Compra desde 1m² en grandes proyectos residenciales ya rentados y genera rendimientos por rentas más plusvalía."
+  />
 
-					<div class="py-4 grid grid-cols-1 gap-2">
-						<div class="flex flex-col gap-4 items-start justify-between border-t border-white/10 text-white text-sm py-4">
-              <h3 class="font-display font-bold">Operado por:</h3>
-							<div class="flex items-center gap-6">
-								<a href="https://begrand.mx" target="_blank" rel="noopener">
-									<figure class="bg-white rounded-md overflow-hidden p-3">
-										<img src="/logo-begrand-horizontal.png" alt="Begrand Logo" class="h-8" />
-									</figure>
-								</a>
-								<a href="https://briq.mx" target="_blank" rel="noopener">
-									<img src="/logo-emblema-briq-white.svg" alt="Briq Logo" class="w-24" />
-								</a>
-							</div>
-							<p class="text-white/70 leading-relaxed">
-								Be Grand<sup>®</sup>, líder con 20 años de experiencia en desarrollo de proyectos residenciales de lujo en México y España; y briq.mx, la plataforma líder de financiamiento colectivo inmobiliario, regulada por la CNBV.
-							</p>
-							<a href="#quienes" class="underline">Conoce más</a>
-						</div>
-					</div>
+  <meta name="og:image" content={base_ulr + '/og.jpg'} />
+  <link rel="icon" href={base_ulr + '/favicon.png'} type="image/png" />
+  <script src="https://kit.fontawesome.com/dd626c8ac3.js" crossorigin="anonymous"></script>
 
-				</div>
-				<div class="w-full flex">
-					<figure class="relative h-full w-full border border-white/10 rounded-xl overflow-hidden shadow-xl">
-						<img
-								src="/hero-cover.jpeg"
-								alt="Hero"
-								class="absolute inset-0 w-full h-full object-cover"
-							/>
-					</figure>
-				</div>
-			</div>
-		</header>
-		<section class="bg-white pb-16 pt-24 border-b" id="como">
-			<div class="mx-auto w-full max-w-screen-lg px-4">
-				<div class="flex flex-col gap-8 items-start">
-					<div>
-						<p class="font-display font-bold text-primary text-xl">¿Cómo funciona?</p>
-						<h2 class="font-display text-2xl md:text-3xl font-bold text-pretty">
-							Invertir en m² nunca ha sido tan fácil
-						</h2>
-					</div>
-					<article class="w-full">
-						<div class="flex flex-col items-start">
-							{
-								STEPS.map((step, index) => (
-									<article class="flex items-stretch gap-4">
-										<div class="flex flex-col items-center">
-											<div class="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-navy font-display font-bold text-white">
-												{index + 1}
-											</div>
-											{index !== STEPS.length - 1 && <div class="h-full w-1 bg-navy" />}
-										</div>
-										<div class="flex flex-col items-start gap-4" style={ index === STEPS.length - 1 ? '' : 'padding-bottom: 30px;' }>
-											<p class="font-display text-base md:text-xl font-semibold text-balance">{step}</p>
-										</div>
-									</article>
-								))
-							}
-							
-						</div>
-					</article>
-					<a href="#propiedades" class="button button--action w-full md:w-auto" id="works_button_cta">
-						Empieza a invertir
-					</a>
-					<div class="flex gap-4 text-base md:text-lg flex-col md:flex-row">
-						<div class="flex flex-col gap-1">
-							<div class="flex items-center gap-2">
-								<i class="fa-solid fa-circle-check text-primary"></i>
-								<h3 class="font-bold">Suma</h3>
-							</div>
-							<p class="text-sm">Comienza desde 1m² y ve sumando a tu propio ritmo.</p>
-						</div>
-						<div class="flex flex-col gap-1">
-							<div class="flex items-center gap-2">
-								<i class="fa-solid fa-circle-check text-primary"></i>
-								<h3 class="font-bold">Diversifica</h3>
-							</div>
-							<p class="text-sm">Invierte en diferentes propiedades y ubicaciones.</p>
-						</div>
-						<div class="flex flex-col gap-1">
-							<div class="flex items-center gap-2">
-								<i class="fa-solid fa-circle-check text-primary"></i>
-								<h3 class="font-bold">Despreocúpate</h3>
-							</div>
-							<p class="text-sm">Nosotros nos encargamos de la operación y mantenimiento.</p>
-						</div>
-						<div class="flex flex-col gap-1">
-							<div class="flex items-center gap-2">
-								<i class="fa-solid fa-circle-check text-primary"></i>
-								<h3 class="font-bold">Canjea</h3>
-							</div>
-							<p class="text-sm">Usa tus metros como enganche o cámbialos por un departamento.</p>
-						</div>
-					</div>
-					<button class="border py-8 md:py-2 px-2 rounded-xl w-full flex gap-8 bg-navy hover:saturate-150 transition-all text-white flex-col md:flex-row  items-center video-button" data-video="/video-general.mp4" id="works_button_video">
-						<div class="flex flex-col gap-2 rounded-xl bg-navy h-32 aspect-video">
-							<figure class="relative rounded-md overflow-hidden w-full h-full">
-								<video
-									class="absolute inset-0 h-full w-full object-cover"
-									poster="/video-cover.png"
-									src="/video-general.mp4"
-								/>
-								<div class="absolute inset-0 bg-black/20 flex items-center justify-center">
-									<div class="bg-primary w-8 h-6 flex items-center justify-center">
-										<i class="fa-solid fa-play text-white text-xs"></i>
-									</div>
-								</div>
-								<div class="absolute inset-0 border border-white/30 rounded-xl pointer-events-none"></div>
-							</figure>
-						</div>
-						<div class="flex gap-2 flex-col md:flex-row items-center">
-							<p class="font-semibold text-balance text-center md:text-left text-2xl">El experto financiero Moris Dieck te explica las ventajas de invertir con Sumametros</p>
-							<div class="shrink-0 px-4 flex items-center gap-4">
-								<span>Ver video</span>
-								<i class="fa-solid fa-play text-primary text-lg"></i>
-							</div>
-						</div>
-					</button>
-				</div>
-			</div>
-		</section>
-		<section class="border-y bg-beige py-24" id="propiedades">
-			<div class="mx-auto w-full max-w-screen-lg px-4">
-				<div class="flex flex-col mb-16">
-					<p class="font-display font-bold text-primary text-xl">Propiedades disponibles</p>
-					<h2 class="font-display text-2xl font-bold md:text-3xl">Conoce las propiedades en las que puedes comprar desde 1m²</h2>
-				</div>
-				<div class="mb-4 grid grid-cols-1 gap-12" id="propertyLists">
-					{
-						allProjects.map((project, index) => (
-							<Property project={project} key={index} />
-						))
-					}
-				</div>
-				<div class="flex items-center justify-center mb-4">
-					<button class="button button--light w-auto" id="viewMoreButton" >Ver más propiedades</button>
-				</div>
-				<div>
-					<p class="text-sm">
-						* El valor estimado indica el valor futuro de los metros que adquieras más la plusvalía estimada y retorno de rentas recibidas con un 5% anual de inflación. Plusvalía histórica con base en el precio de los departamentos en la zona. Los rendimientos son ilustrativos y no debe interpretarse como garantía de resultados futuros.
-					</p>
-				</div>
-			</div>
-		</section>
-		<section class="py-12 bg-white">
-			<div class="mx-auto w-full max-w-screen-lg px-4">
-				<h2 class="mb-8 font-display text-2xl md:text-3xl font-bold text-center md:text-left">¿Cómo puedo utilizar mis metros?</h2>
-				<div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-					<article class="bg-beige p-4 rounded-lg border">
-						<div class="flex flex-col gap-4 items-start w-full justify-between h-full">
-							<h3 class="text-lg md:text-2xl font-display font-bold text-balance">Conserva tus metros y <br class="block md:hidden" /><span  class="inline-block px-1 bg-primary text-white">recibe rentas</span></h3>
-							<p class="leading-relaxed text-pretty">Recibe rentas mensualmente por cada metro que tengas, sin preocuparte de nada más.</p>
-						</div>
-					</article>
-					<article class="bg-beige p-4 rounded-lg border">
-						<div class="flex flex-col gap-4 items-start w-full justify-between h-full">
-							<h3 class="text-lg md:text-2xl font-display font-bold text-balance">Vende tus metros y <br class="block md:hidden" /><span  class="inline-block px-1 bg-primary text-white">obtén plusvalía</span></h3>
-							<p class="leading-relaxed text-pretty">Vende tus metros en la plataforma y captura la plusvalía acumulada desde que compraste.</p>
-							
-						</div>
-					</article>
-					<article class="bg-beige p-4 rounded-lg border">
-						<div class="flex flex-col gap-4 items-start w-full justify-between h-full">
-							<h3 class="text-lg md:text-2xl font-display font-bold text-balance">Canjea tus metros por <br class="block md:hidden" /><span  class="inline-block px-1 bg-primary text-white">un departamento</span></h3>
-							<p class="leading-relaxed text-pretty">Usa tus metros como enganche para comprar un nuevo departamento.</p>
-						</div>
-					</article>
-				</div>
-			</div>
-		</section>
-		
-		<section class="border-t bg-beige py-16" id="faqs">
-			<div class="mx-auto w-full max-w-screen-lg px-4">
-				<h2 class="mb-16 font-display text-3xl md:text-3xl font-bold">Preguntas frecuentes</h2>
-				<div class="grid grid-cols-1 gap-4">
-					<div class="flex w-full flex-col gap-4 rounded-lg border bg-white p-8" id="quienes">
-						<h2 class="font-display text-2xl font-bold">¿Quiénes administran Sumametros by Be Grand®?</h2>
-						<p>Sumametros es un proyecto operado por Be Grand<sup>®</sup> con la tecnología y respaldo de briq.mx.</p>
-						<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-							<div class="flex flex-col gap-2 items-start justify-between text-base">
-								<div>
-									<figure class="h-20 flex items-center">
-										<img src="/logo-begrand-horizontal.png" alt="Logo" class="h-10" />
-									</figure>
-									<p>Empresa mexicana, con 20 años de experiencia en el desarrollo y comercialización de proyectos inmobiliarios de alta calidad en zonas AAA en México y España.</p>
-								</div>
-								<a class="underline" href="https://begrand.mx" target="_blank">Conoce más</a>
-							</div>
-							<div class="flex flex-col gap-2 items-start justify-between text-base">
-								<div>
-									<figure class="h-20 flex items-center">
-										<img src="/logo-briq.svg" alt="Logo" class="h-10" />
-									</figure>
-									<p>Plataforma líder de financiamiento colectivo inmobiliario, regulada por las autoridades financieras (CNBV, CONDUSEF, Banxico y SHCP)</p>
-								</div>
-								<a class="underline" href="https://www.briq.mx" target="_blank">Conoce más</a>
-							</div>
-						</div>
-					</div>
-					{
-						faqs.map((faq) => (
-							<div class="flex w-full flex-col gap-4 rounded-lg border bg-white p-8">
-								<h2 class="font-display text-2xl font-bold">{faq.question}</h2>
-								<p class="text-lg">{faq.answer}</p>
-							</div>
-						))
-					}
-				</div>
-			</div>
-		</section>
-		<section class="py-t8 pb-16 bg-beige">
-			<div class="mx-auto w-full max-w-screen-lg px-4">
-				<div class="bg-navy px-4 py-16 rounded-lg border text-white flex items-center justify-center">
-					<div class="max-w-2xl text-center flex flex-col gap-4 items-center">
-						<h2 class="text-xl md:text-4xl font-bold font-display">¿Quieres comenzar a crecer tu patrimonio metro a metro?</h2>
-						<p class="text-xl opacity-80">Conviértete en dueño de m² en grandes proyectos residenciales ya rentados</p>
-						<a href="#propiedades" class="button button--action w-auto" id="footer_button_cta">Invierte ahora</a>
-					</div>
-				</div>
-			</div>
-		</section>
-		<footer class="border-y py-4 bg-white">
-			<div class="mx-auto w-full max-w-screen-lg px-4">
-				<div class="flex items-center justify-center gap-4">
-					<span class="text-sm">Para conocer más sobre Sumametros</span>
-					<a
-						href="https://www.instagram.com/sumametros_"
-						class="flex items-center gap-1 border p-2 font-display text-sm font-bold md:p-3 text-primary"
-						target="_blank"
-					>
-						<Icon name="bxl:instagram" class="h-6 w-6" />
-						<span>@sumametros_</span>
-					</a>
-					<a
-						href="https://www.facebook.com/profile.php?id=61551645088385&sk=about&locale=es_LA"
-						class="flex items-center gap-1 border p-2 font-display text-sm font-bold md:p-3 text-primary"
-						target="_blank"
-					>
-						<Icon name="bxl:facebook" class="h-6 w-6" />
-						<span>Suma Metros</span>
-					</a>
-				</div>
-			</div>
-		</footer>
-		<footer class="bg-navy py-12 text-sm text-white">
-			<div class="mx-auto flex w-full max-w-screen-lg flex-col gap-8 px-4">
-				<div class="flex items-center justify-between gap-2">
-					<div class="col-span-2 flex items-center gap-4">
-						<img src="/logo-emblema-briq-white.svg" alt="Logo" class="w-32" />
-						<p class="text-sm text-white/70">
-							Empresa regulada por la CNBV
-						</p>
-					</div>
-					<div class="flex items-center gap-2 text-white/70 underline">
-						<a href="https://www.briq.mx/regulacion/une">Unidad especializada (UNE)</a>
-						<a href="https://www.briq.mx/regulacion/buro-de-entidades-financieras">Buró de entidades financieras</a>
-						<a href="https://files.briq.mx/regulacion/REDECO.pdf">Despachos de cobranza</a>
-					</div>
-				</div>
-				<div class="flex items-center gap-2 justify-between text-white/70 underline">
-					<div class="flex items-center gap-2">
-						<a href="https://www.briq.mx/avisoprivacidad">Aviso de privacidad</a>
-						<a href="https://www.briq.mx/tyc">Términos y condiciones</a>
-					</div>
-					<a href="https://www.briq.mx/regulacion/comisiones">Consulta los Costos y las Comisiones de nuestros productos</a>
-				</div>
-				<div class="flex flex-col gap-2 text-white/50">
-					<p>
-						BRIQ FUND, S.A.P.I. de C.V., Institución de Financiamiento Colectivo, en términos de la
-						Ley para Regular las Instituciones de Tecnología Financiera, es una sociedad autorizada,
-						regulada y supervisada por las autoridades financieras. <a target="_blank" class="text-white underline" href="https://www.dof.gob.mx/nota_detalle.php?codigo=5712432&fecha=26/12/2023#gsc.tab=0">Autorización P116/2021</a>
-					</p>
-					<p>
-						Ni el Gobierno Federal ni las entidades de la administración pública paraestatal podrán
-						responsabilizarse o garantizar los recursos de los Clientes que sean utilizados en las
-						Operaciones que celebren con las ITF (en este caso briq.mx) o frente a otros, así como
-						tampoco asumir alguna responsabilidad por las obligaciones contraídas por las ITF (en
-						este caso briq.mx) o por algún Cliente frente a otro, en virtud de las Operaciones que
-						celebren.
-					</p>
-				</div>
-			</div>
-			<div
-				class="fixed inset-0 z-20 hidden items-center justify-center bg-black/90"
-				id="video-modal"
-			>
-				<div
-					class="relative aspect-video w-full bg-white shadow-xl md:h-[80vh] md:w-auto"
-					id="video-container"
-				>
-					<video controls class="absolute inset-0 h-full w-full" id="video">
-						<source src="/video-general.mp4" type="video/mp4" />
-					</video>
-					<button class="absolute right-0 top-0 bg-white p-4 text-black" id="close-video">
-						Cerrar
-					</button>
-				</div>
-			</div>
-		</footer>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-H8JTC0Y322"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
 
+    gtag('config', 'G-H8JTC0Y322');
+  </script>
 
-		<dialog id="contactModal">
-			<div class="bg-black/80 fixed inset-0 flex items-start md:items-center justify-center z-20">
-				<div class="bg-white max-w-md w-full p-6 border rounded-t-2xl shadow-2xl absolute bottom-0 md:bottom-auto h-[90vh] md:h-auto md:rounded-b-2xl">
-					<div class="flex flex-col gap-4">
-						<div class="flex justify-between gap-4">
-							<h2 class="text-2xl font-display font-bold">Habla con uno de nuestros asesores</h2>
-							<button class="text-2xl shrink-0 bg-zinc-100 size-8 rounded-full border border-zinc-200" onclick="document.getElementById('contactModal').close()">×</button>
-						</div>
-						<p>Comunícate con nosotros al siguiente número de telefóno y uno de nuestros asesores te ayudará a resolver tus dudas.</p>
-						<a href="tel:525511001136" class="button button--action w-full flex md:hidden">
-							<span>Llamar ahora</span>
-							<i class="fa-solid fa-phone"></i>
-						</a>
-						<p class="hidden md:block text-center md:text-left p-2 bg-beige border rounded-lg">Llama al <a href="tel:525511001136" class="text-primary font-semibold text-center">+52 55 1100 1136</a></p>
-					</div>
-				</div>
-			</div>
-		</dialog>
+  <!-- Clarity tracking code -->
+  <script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "ku6s4q2wzr");
+  </script>
+</head>
+<body class="antialiased flex flex-col text-lg bg-[#F8F8F4] text-navy">
+  <div class="sticky top-0 z-20 bg-[#F8F8F4]">
+    <nav class="py-4 md:py-2 border-b shadow-sm bg-[#F8F8F4]">
+      <div class="w-full max-w-screen-xl mx-auto px-4">
+        <div class="flex items-center justify-between gap-2">
+          <a href="/v2" class="flex-shrink-0">
+            <img src="/logo-nav.png" alt="Logo" class="h-9 md:h-12" />
+          </a>
+          <div>
+            <button class="px-4 bg-white uppercase tracking-wide font-semibold text-xs md:text-sm py-2 rounded-full border inline-flex gap-2 items-center justify-center" onclick="document.getElementById('contactModal').showModal()">
+              Solicitar información
+              <i class="fa-regular fa-comment"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <nav class="border-b shadow-sm bg-[#F8F8F4]">
+      <div class="w-full max-w-screen-xl mx-auto px-4">
+        <div class="flex items-center justify-center gap-2">
+          <!-- <button class="flex md:hidden">Menu</button> -->
+          <div class="hidden md:flex items-center gap-4 font-medium">
+            <a class="py-2 px-3 border-b-2 border-transparent hover:border-b-primary" href="#como-funciona" data-nav-link>¿Cómo funciona?</a>
+            <a class="py-2 px-3 border-b-2 border-transparent hover:border-b-primary" href="#propiedades" data-nav-link>Propiedades</a>
+            <a class="py-2 px-3 border-b-2 border-transparent hover:border-b-primary" href="#preguntas-frecuentes" data-nav-link>Preguntas frecuentes</a>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </div>
+  <header class="py-16">
+    <div class="w-full max-w-screen-xl mx-auto px-4">
+      <div class="flex flex-col gap-4 items-center justify-center text-center max-w-3xl mx-auto">
+        <h1 class="text-2xl md:text-5xl font-semibold text-balance font-brand">Compra tu departamento poco a poco, generá rentas y plusvalía en el proceso.</h1>
+        <p class="leading-relaxed text-balance ">Comienza desde 1m² y recibe rentas desde el primer mes. Ve comprando metro a metro, a tu propio ritmo, y cuando juntes los metros deseados, podrás utilizarlos como enganche o hasta cambiarlos por un departamento.</p>
+        <a class="bg-navy text-base text-white py-4 px-8 rounded-full inline-flex items-center justify-center font-semibold uppercase tracking-wider" href="#propiedades">Explorar propiedades</a>
+        <button class="aspect-video appearance-none w-full bg-navy relative overflow-hidden shadow-xl rounded-2xl flex items-center justify-center hover:-translate-y-1 transition-all" id="open-video">
+          <img
+              src="/hero-cover.jpeg"
+              alt="Hero"
+              class="absolute inset-0 w-full h-full object-cover"
+            />
+          <div class="bg-navy text-white w-16 h-10 absolute flex items-center justify-center">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="size-5">
+              <path d="M6.3 2.84A1.5 1.5 0 0 0 4 4.11v11.78a1.5 1.5 0 0 0 2.3 1.27l9.344-5.891a1.5 1.5 0 0 0 0-2.538L6.3 2.841Z" />
+            </svg>              
+          </div>
+        </button>
+        <div class="flex items-baseline justify-center gap-2 text-sm md:text-base">
+          <p>Operado por</p>
+          <a class="h-5 md:h-8 flex-shrink-0 inline-block" href="https://begrand.mx" target="_blank">
+            <img src="/logo-begrand-horizontal.png" alt="Begrand Logo" class="w-full h-full" />
+          </a>
+          <p> a través de</p>
+          <a class="h-4 md:h-7 flex-shrink-0 inline-block" href="https://briq.mx" target="_blank">
+            <img src="/logo-briq.svg" alt="Briq Logo" class="w-full h-full" />
+          </a>
+        </div>
+        <a class="underline" href="#quienes">Conoce más sobre la alianza aquí</a>
+      </div>
+    </div>
+  </header>
+  <div class="bg-navy py-4 text-xl">
+    <div class="w-full max-w-screen-xl mx-auto px-4">
+      <div class="flex items-center gap-8 text-white justify-center flex-wrap">
+        <div class="flex items-center gap-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="size-5">
+            <path fill-rule="evenodd" d="M10 18a8 8 0 1 0 0-16 8 8 0 0 0 0 16Zm3.857-9.809a.75.75 0 0 0-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 1 0-1.06 1.061l2.5 2.5a.75.75 0 0 0 1.137-.089l4-5.5Z" clip-rule="evenodd" />
+          </svg>
+          <p>Sin buró de crédito</p>
+        </div>
+        <div class="flex items-center gap-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="size-5">
+            <path fill-rule="evenodd" d="M10 18a8 8 0 1 0 0-16 8 8 0 0 0 0 16Zm3.857-9.809a.75.75 0 0 0-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 1 0-1.06 1.061l2.5 2.5a.75.75 0 0 0 1.137-.089l4-5.5Z" clip-rule="evenodd" />
+          </svg>
+          <p>Hasta 14% de plusvalía</p>
+        </div>
+        <div class="flex items-center gap-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="size-5">
+            <path fill-rule="evenodd" d="M10 18a8 8 0 1 0 0-16 8 8 0 0 0 0 16Zm3.857-9.809a.75.75 0 0 0-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 1 0-1.06 1.061l2.5 2.5a.75.75 0 0 0 1.137-.089l4-5.5Z" clip-rule="evenodd" />
+          </svg>
+          <p>100% en línea</p>
+        </div>
+        <div class="flex items-center gap-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="size-5">
+            <path fill-rule="evenodd" d="M10 18a8 8 0 1 0 0-16 8 8 0 0 0 0 16Zm3.857-9.809a.75.75 0 0 0-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 1 0-1.06 1.061l2.5 2.5a.75.75 0 0 0 1.137-.089l4-5.5Z" clip-rule="evenodd" />
+          </svg>
+          <p>Regulado por la CNBV</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <section class="py-16" id="como-funciona">
+    <div class="w-full max-w-screen-xl mx-auto px-4">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4 items-center">
+        <div class="w-full items-start flex-col">
+          <div class="mb-4">
+            <h2 class="font-medium text-sky-600">¿Cómo funciona Sumametros?</h2>
+            <h3 class="text-2xl md:text-4xl font-bold font-brand">Comprar un departamento nunca ha sido tan fácil</h3>
+          </div>
+          <div class="flex items-start gap-2 py-4">
+            <figure class="size-8 bg-black text-white rounded-full flex items-center justify-center font-semibold flex-shrink-0"><span>1</span></figure>
+            <p>Elige el desarrollo de tu interés y selecciona el número de metros que deseas comprar.</p>
+          </div>
+          <div class="flex items-start gap-2 py-4">
+            <figure class="size-8 bg-black text-white rounded-full flex items-center justify-center font-semibold flex-shrink-0"><span>2</span></figure>
+            <p>Completa el proceso de pago y recibe tu certificado de compra.</p>
+          </div>
+          <div class="flex items-start gap-2 py-4">
+            <figure class="size-8 bg-black text-white rounded-full flex items-center justify-center font-semibold flex-shrink-0"><span>3</span></figure>
+            <p>Comienza a recibir rentas mensuales por tus m² hasta que decidas venderlos o canjearlos por un departamento completo.</p>
+          </div>
+          <a class="bg-navy text-white py-4 px-8 rounded-full inline-flex items-center justify-center font-semibold uppercase tracking-wider text-base w-full md:w-auto" href="#propiedades">Explorar propiedades</a>
+        </div>
+        <div class="w-full">
+          <img src="/how-works.png" class="rotate-3">
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="py-16 border-t border-black/10" id="propiedades">
+    <div class="w-full max-w-screen-xl mx-auto px-4">
+      <div class="mb-4 w-full md:w-1/2">
+        <h2 class="font-medium text-sky-600">Propiedades disponibles</h2>
+        <h3 class="text-2xl md:text-4xl font-bold font-brand">Conoce tu próximo departamento y comienza a recibir rentas.</h3>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-3 md:grid-cols-4 gap-8">
+        {projects.map((project, index) => (
+          <article class="aspect-square md:aspect-[3/4] flex flex-col justify-between gap-4 relative p-3 overflow-hidden group rounded-xl">
+            <figure class="bg-black absolute border inset-0 group-hover:scale-125 transition-transform">
+              <img
+                src={project.image}
+                alt={project.title}
+                class="absolute inset-0 w-full h-full object-cover"
+              />
+            </figure>
+            <div class="inset-0 bg-zinc-900 bg-opacity-20 absolute group-hover:bg-opacity-40"></div>
+            <div class="top-0 left-0 p-2 z-10 flex items-center gap-1">
+              {project.isFeatured && <span class="bg-primary text-white font-medium text-sm px-2 py-1 rounded-md">Destacado</span>}
+              <div class="bg-white flex items-center justify-center font-medium text-sm px-2 py-1 gap-1 rounded-md">
+                <div class="size-2 bg-lime-500 rounded-full animate-pulse"></div>
+                <span>Generando rentas</span>
+              </div>
+            </div>
+            <div class="flex flex-col gap-2 absolute bottom-0 left-0 w-full bg-gradient-to-t from-black via-black to-transparent px-4 py-6 z-10 text-white">
+              <div>
+                <h2 class="font-brand font-semibold text-xl text-balance">{project.title}</h2>
+                <p class="text-sm font-medium">{project.location}</p>
+              </div>
+              {/* <p>{project.appreciation}% de plusvalía</p> */}
+              <a class="border border-white/50 py-2 text-base uppercase font-semibold tracking-wide rounded-full flex items-center justify-center hover:bg-white hover:text-black" href={project.url} target="_blank" rel="noopener">
+                Ver más
+              </a>
+            </div>
+          </article>
+        ))}
+        <article class="bg-navy col-span-full md:col-span-2 rounded-xl flex items-center justify-center flex-col gap-4 text-white p-6 text-center">
+          <p class="font-brand font-semibold text-xl">¿No sabes cuál elegir?</p>
+          <p>Habla con un asesor y te ayudará a elegir la mejor opción para ti.</p>
+          <button class="bg-white py-2.5 rounded-full text-navy px-6 uppercase font-semibold tracking-wide text-base" onclick="document.getElementById('contactModal').showModal()">
+            Hablar con un asesor
+          </button>
+        </article>
+      </div>
+    </div>
+  </section>
+  <section class="py-16 border-t border-black/10">
+    <div class="w-full max-w-screen-xl mx-auto px-4">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4 items-center">
+        <div class="w-full">
+          <div class="mb-4">
+            <h2 class="font-medium text-sky-600">Ventajas de invertir en Sumametros</h2>
+            <h3 class="text-2xl md:text-4xl font-bold font-brand">¿Cómo puedo utilizar mis metros?</h3>
+          </div>
+          <div class="flex flex-col items-start gap-4 py-4">
+            <article class="p-4 md:p-6 border-l-4 border-navy flex-col gap-4 flex">
+              <h3 class="text-2xl font-brand font-semibold">Canjea tus metros por un departamento</h3>
+              <p>Usa tus metros como enganche o pago total de un departamento completo una vez que hayas acumulado los suficientes.</p>
+            </article>
+            <article class="p-4 md:p-6 border-l-4 border-navy flex-col gap-4 flex">
+              <h3 class="text-2xl font-brand font-semibold">Conserva tus metros y recibe rentas</h3>
+              <p>Recibe rentas mensualmente por cada metro que tengas, sin preocuparte de nada más, nosotros nos encargamos de todo.</p>
+            </article>
+            <article class="p-4 md:p-6 border-l-4 border-navy flex-col gap-4 flex">
+              <h3 class="text-2xl font-brand font-semibold">Vende tus metros y obtén plusvalía</h3>
+              <p>Vende tus metros en la plataforma y obtén la plusvalía acumulada desde que compraste.</p>
+            </article>
+          </div>
+        </div>
+        <div class="w-full">
+          <img src="/how-works.png" class="rotate-3">
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="py-16">
+    <div class="w-full max-w-screen-xl mx-auto px-4">
+      <div class="text-center flex flex-col gap-4 items-center bg-blend-hard-light bg-amber-900/5 p-4 md:p-16 rounded-2xl">
+        <div class="mx-auto flex items-center gap-6 flex-wrap justify-center">
+          <img src="/cnbv.jpg" alt="cmbv" class="w-32 mix-blend-multiply" />
+          <img src="/shcp.svg" alt="shcp" class="w-32 mix-blend-multiply" />
+          <img src="/banco-mexico.svg" alt="cmbv" class="h-12 mix-blend-multiply" />
+          <img src="/condusef.jpg" alt="cmbv" class="w-32 mix-blend-multiply" />
+        </div>
+        <div>
+          <h2 class="text-2xl md:text-4xl font-bold font-brand">Sumametros® es una plataforma segura y confiable</h2>
+        </div>
+        <p class="max-w-md">Tu compra e inversión en Sumametros se realiza a través de briq.mx, plataforma regulada por la Comisión Nacional Bancaria y de Valores (CNBV), lo que garantiza la legalidad de tu inversión.</p>
+      </div>
+    </div>
+  </section>
+  <section class="py-16 border-t border-black/10 bg-blend-hard-light bg-amber-900/5" id="preguntas-frecuentes">
+    <div class="w-full max-w-screen-xl mx-auto px-4">
+      <div class="mb-4">
+        <h2 class="font-medium text-sky-600">Preguntas frecuentes</h2>
+        <h3 class="text-2x md:text-4xl font-bold font-brand">Resuelve tus dudas sobre Sumametros</h3>
+      </div>
+      <div>
+        <article class="border-b border-black/10 py-8 flex-col gap-2 flex" id="quienes">
+          <h3 class="text-2xl font-brand font-semibold">¿Quiénes administran Sumametros by Be Grand®?</h3>
+          <p>Sumametros es un proyecto operado por Be Grand<sup>®</sup> con la tecnología y respaldo de briq.mx.</p>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div class="flex flex-col gap-2">
+              <figure class="h-20 flex items-center">
+                <img src="/logo-begrand-horizontal.png" alt="Logo" class="h-10" />
+              </figure>
+              <p>Empresa mexicana, con 20 años de experiencia en el desarrollo y comercialización de proyectos inmobiliarios de alta calidad en zonas AAA en México y España.</p>
+              <a class="underline" href="https://begrand.mx" target="_blank">Conoce más</a>
+            </div>
+            <div class="flex flex-col gap-2">
+              <figure class="h-20 flex items-center">
+                <img src="/logo-briq.svg" alt="Logo" class="h-10" />
+              </figure>
+              <p>Plataforma líder de financiamiento colectivo inmobiliario, regulada por las autoridades financieras (CNBV, CONDUSEF, Banxico y SHCP)</p>
+              <a class="underline" href="https://www.briq.mx?referral_code=sumametros" target="_blank">Conoce más</a>
+            </div>
+          </div>
+        </article>
+        {faqs.map((faq, index) => (
+          <article class="border-b border-black/10 py-8 flex-col gap-2 flex">
+            <h3 class="text-2xl font-brand font-semibold">{faq.question}</h3>
+            <p>{faq.answer}</p>
+          </article>
+        ))}
+      </div>
+      <div>
+        <div class="bg-navy py-16 px-2 text-white rounded-2xl flex flex-col items-center justify-center gap-4 text-center">
+          <p class="font-brand font-semibold text-2xl">¿Tienes más dudas?</p>
+          <p class="text-xl">Habla con un asesor y te ayudará a aclarar todas tus dudas sin ningún compromiso.</p>
+          <button class="bg-white py-2.5 rounded-full text-navy px-6 uppercase font-semibold tracking-wide text-base" onclick="document.getElementById('contactModal').showModal()">
+            Hablar con un asesor
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+  <footer class="bg-navy py-12 text-white">
+    <div class="w-full max-w-screen-xl mx-auto px-4 flex flex-col gap-8">
+      <div class="flex items-center justify-between gap-2 flex-col md:flex-row">
+        <div class="col-span-2 flex items-center gap-4">
+          <img src="/logo-nav-white.png" alt="Logo" class="h-16" />
+        </div>
+        <div class="flex items-center gap-2 text-white flex-col md:flex-row">
+          <a href="tel:8004793103" target="_blank" class="flex items-center gap-2 border border-white/10 py-2 px-4 rounded-full">
+            <i class="fa-solid fa-phone"></i>
+            <span>800 479 3103</span>
+         </a>
+          <a href="https://www.instagram.com/sumametros_" target="_blank" class="flex items-center gap-2 border border-white/10 py-2 px-4 rounded-full">
+             <i class="fa-brands fa-instagram"></i>
+             <span>@sumametros_</span>
+          </a>
+          <a href="https://www.facebook.com/profile.php?id=61551645088385&sk=about&locale=es_LA" target="_blank" class="flex items-center gap-2 border border-white/10 py-2 px-4 rounded-full">
+            <i class="fa-brands fa-facebook"></i>
+            <span>Suma Metros</span>
+         </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <div class="fixed inset-0 z-20 items-center justify-center bg-black/90" id="video-modal" style="display: none;">
+    <div class="relative aspect-video w-full bg-white shadow-xl md:h-[80vh] md:w-auto" id="video-container">
+      <video controls class="absolute inset-0 h-full w-full" id="video">
+        <source src="/video-general.mp4" type="video/mp4" />
+      </video>
+      <button class="absolute right-0 top-0 bg-white p-4 text-black" id="close-video">
+        Cerrar
+      </button>
+    </div>
+  </div>
 
-		
-	</main>
-	<script type='text/javascript' src='https://service.force.com/embeddedservice/5.0/esw.min.js'></script>
+  <dialog id="contactModal">
+    <div class="bg-black/80 fixed inset-0 flex items-start md:items-center justify-center z-20">
+      <div class="bg-white max-w-md w-full p-6 border rounded-t-2xl shadow-2xl absolute bottom-0 md:bottom-auto h-[90vh] md:h-auto md:rounded-b-2xl">
+        <div class="flex flex-col gap-4">
+          <div class="flex justify-between gap-4">
+            <h2 class="text-2xl font-brand font-bold">Habla con uno de nuestros asesores</h2>
+            <button class="text-md shrink-0 bg-zinc-100 size-8 rounded-full border border-zinc-200 flex items-center justify-center" onclick="document.getElementById('contactModal').close()">
+              <i class="fa-solid fa-times"></i>
+            </button>
+          </div>
+          <p>Comunícate con nosotros al siguiente número de telefóno y uno de nuestros asesores te ayudará a resolver tus dudas.</p>
+          <a href="tel:8004793103" class="button button--action w-full flex md:hidden">
+            <span>Llamar ahora</span>
+            <i class="fa-solid fa-phone"></i>
+          </a>
+          <p class="hidden md:flex text-center md:text-left p-2 bg-beige border rounded-lg items-center gap-2">
+            <i class="fa-solid fa-phone text-primary "></i>
+            Llama al <a href="tel:8004793103" class="text-primary font-semibold text-center">800 479 3103</a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </dialog>
+</body>
+</html>
+
+<style is:inline>
+  .font-brand {
+    font-family: 'Inter Tight', sans-serif;
+  }
+
+  html {
+    /* smooth scroll */
+    scroll-behavior: smooth;
+  }
+
+  .embeddedServiceHelpButton .helpButton .uiButton {
+		background-color: #19A2E6 !important;
+	}
+
+	.embeddedServiceHelpButton .helpButton .uiButton:focus {
+		outline: 1px solid #19A2E6;
+	}
+
+	.chatHeaderBranding{
+		background-color: #19A2E6!important;
+	}
+
+	.embeddedServiceHelpButton .uiButton {
+		min-width: 18em !important;
+	}
+  
+</style>
+
+<script is:inline>
+  document.addEventListener('DOMContentLoaded', () => {
+    const sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('[data-nav-link]');
+
+    function highlightActiveSection() {
+      let scrollY = window.pageYOffset;
+
+      sections.forEach(current => {
+        const sectionHeight = current.offsetHeight;
+        const sectionTop = current.offsetTop - 100; // Adjust this value to change when the highlight activates
+        const sectionId = current.getAttribute('id');
+
+        if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
+          navLinks.forEach(link => {
+            link.classList.remove('border-b-primary');
+            if (link.getAttribute('href') === `#${sectionId}`) {
+              link.classList.add('border-b-primary');
+            }
+          });
+        }
+      });
+    }
+
+    window.addEventListener('scroll', highlightActiveSection);
+    highlightActiveSection(); // Call once on load to set initial state
+  });
+
+  const openVideo = document.getElementById('open-video');
+  const videoModal = document.getElementById('video-modal');
+  const closeVideo = document.getElementById('close-video');
+
+  openVideo.addEventListener('click', () => {
+    videoModal.style.display = 'flex';
+    // Play video
+    const video = document.getElementById('video');
+    video.play();
+  });
+
+  closeVideo.addEventListener('click', () => {
+    videoModal.style.display = 'none';
+    // Pause video
+    const video = document.getElementById('video');
+    video.pause();
+  });
+
+  const contactModal = document.getElementById('contactModal');
+</script>
+
+<script type='text/javascript' src='https://service.force.com/embeddedservice/5.0/esw.min.js'></script>
 	<script type='text/javascript'>
 		var initESW = function(gslbBaseURL) {
 			embedded_svc.settings.displayHelpButton = true; //O falso
@@ -434,134 +503,3 @@ const allProjects = projects
 			initESW('https://service.force.com');
 		}
 	</script>
-
-	<script is:inline>
-		// Wait until the DOM is ready and the .helpButton is rendered
-		document.addEventListener('DOMContentLoaded', () => {
-			const helpButton = document.querySelector('.button-help')
-
-			if (helpButton) {
-				helpButton.addEventListener('click', () => {
-					// Open the chat
-					document.querySelector('.helpButtonEnabled').click()
-				})
-			}
-		})
-	</script>
-
-	<script is:inline>
-		const playVideoButtons = document.querySelectorAll('.video-button')
-		const videoModal = document.getElementById('video-modal')
-		const closeVideo = document.getElementById('close-video')
-		const videoContainer = document.getElementById('video-container')
-
-		// Detect a click on any of the play buttons
-		playVideoButtons.forEach((button) => {
-			button.addEventListener('click', (event) => {
-				const video = document.getElementById('video')
-				const videoSrc = event.currentTarget.dataset.video // Use currentTarget instead of target
-
-				// Set the video source
-				video.src = `${videoSrc}`
-				console.log(videoSrc)
-
-				// Show the modal
-				videoModal.classList.remove('hidden')
-				videoModal.classList.add('flex')
-
-				// Play the video
-				video.play()
-			})
-		})
-
-		// Close the modal
-		closeVideo.addEventListener('click', () => {
-			const video = document.getElementById('video')
-
-			videoModal.classList.remove('flex')
-			videoModal.classList.add('hidden')
-			video.pause()
-		})
-
-		//If I click outside the video-container, close the modal
-		videoModal.addEventListener('click', (event) => {
-			if (event.target.id === 'video-modal') {
-				videoModal.classList.remove('flex')
-				videoModal.classList.add('hidden')
-				video.pause()
-			}
-		})
-	</script>
-</Layout>
-
-<style is:global>
-
-	.embeddedServiceHelpButton .helpButton .uiButton {
-		background-color: #19A2E6 !important;
-	}
-
-	.embeddedServiceHelpButton .helpButton .uiButton:focus {
-		outline: 1px solid #19A2E6;
-	}
-
-	.chatHeaderBranding{
-		background-color: #19A2E6!important;
-	}
-
-	.embeddedServiceHelpButton .uiButton {
-		min-width: 18em !important;
-	}
-
-	.container-max {
-		@apply mx-auto  max-w-screen-lg px-4 w-full
-	}
-
-	.button {
-		@apply px-6 py-3 rounded-full font-semibold border font-display flex items-center justify-center gap-2;
-	}
-
-	.button--light {
-		@apply bg-white text-navy border-navy/20 shadow-sm hover:bg-navy/5;
-	}
-
-	.button--ghost {
-		@apply bg-white/10 text-white border-white/50 hover:bg-white/20;
-	}
-
-	.button--action {
-		@apply bg-primary text-white border-white/20 hover:saturate-150;
-	}
-
-	.nav-item {
-		@apply border border-white bg-white px-3 py-3 font-display text-xs font-medium text-navy;
-	}
-
-  .btn {
-    @apply bg-primary text-white inline-flex items-center justify-center text-center gap-2 text-base font-display px-8 py-3 rounded-sm font-semibold;
-  }
-
-	.highlight {
-		@apply bg-primary text-white px-2 py-1 rounded-sm;
-	}
-
-</style>
-
-<script is:inline>
-	// Gett all the articles inside the #propertyLists
-	const propertyLists = document.querySelectorAll('#propertyLists article')
-	const viewMoreButton = document.querySelector('#viewMoreButton')
-	// Hide the last two articles
-	propertyLists.forEach((article, index) => {
-		if (index > 2) {
-			article.classList.add('hidden')
-		}
-	})
-
-	// If I click the view more button, show the hidden articles
-	viewMoreButton.addEventListener('click', () => {
-		propertyLists.forEach((article, index) => {
-			article.classList.remove('hidden')
-		})
-		viewMoreButton.classList.add('hidden')
-	})
-</script>

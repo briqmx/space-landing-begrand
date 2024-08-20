@@ -6,32 +6,28 @@ import projects from '../../data/projects.json'
 import Property from '../components/Property.astro'
 
 const STEPS = [
-	'Inicia sesión o crea tu cuenta en briq.mx',
 	'Elige el desarrollo de tu interés y selecciona el número de metros que deseas comprar',
 	'Completa el proceso de pago y recibe tu certificado de compra',
-  'Empieza a recibir rentas mensuales por tus metros'
+  'Comienza a recibir rentas mensuales por tus metros'
 ]
 
-
-// const nonFeaturedProjects = projects.filter((project) => !project.isFeatured)
-// const featuredProjects = projects.filter((project) => project.isFeatured)
 const allProjects = projects
 ---
 
 <Layout title="Inicio | Construye tu patrimonio metro a metro.">
 	<main class="font-body text-lg text-navy antialiased bg-navy">
 		<!-- Menu -->
-		<nav class="sticky top-0 z-20 py-2 container-max">
+		<nav class="sticky top-0 z-10 py-2 container-max">
 			<div class="border shadow-sm bg-white px-5 py-2 rounded-full">
 				<div class="flex items-center justify-between">
-					<a href="/v3">
-						<img src="/logo-nav.png" alt="Logo" class="h-8 md:h-10" />
+					<a href="/">
+						<img src="/logo-nav.png" alt="Logo" class="h-10" />
 					</a>
 					<div class="flex gap-2 items-center">
 						<a class="hidden md:inline-flex nav-item" href="#como">¿Cómo funciona?</a>
 						<a class="hidden md:inline-flex nav-item" href="#propiedades">Ver propiedades </a>
 						<a class="hidden md:inline-flex nav-item" href="#faqs">Preguntas frecuentes</a>
-						<a class="inline-flex nav-item border border-navy/10 rounded-full" href="https://www.briq.mx/users/sign_in">
+						<a class="inline-flex nav-item border border-navy/10 rounded-full" href="https://www.briq.mx/users/sign_in?referral_code=sumametros">
 							<i class="fa-kit fa-briq-logo"></i>
 							Iniciar sesión
 						</a>
@@ -42,36 +38,37 @@ const allProjects = projects
 		<!-- Hero -->
 		<header class="border-b bg-navy pt-8 md:py-16">
 			<div class="container-max flex gap-8 items-center md:items-stretch flex-col md:flex-row">
-				<div class="w-full max-w-xl flex flex-col gap-4 items-center md:items-start text-center md:text-left">
-					<h1 class="text-2xl font-display font-bold text-balance text-white">Descubre la nueva forma de invertir en depas y hacer crecer tu patrimonio… metro a metro.</h1>
-					<p class="text-white/70 text-base">Sumametros by Be Grand® es la única plataforma que te permite comprar desde 1m² en grandes proyectos residenciales ya rentados.</p>
-					<p class="text-white/70 text-base">Invierte de forma inteligente, fácil, segura y generando rendimientos inmediatos por rentas mensuales + plusvalía.</p>
-					<a href="#propiedades" class="button button--action w-full">Invierte ahora</a>
+				<div class="w-full max-w-xl flex flex-col gap-4 items-center md:items-start">
+					<h1 class="text-2xl font-display font-bold  text-white">La nueva forma de invertir en depas y hacer crecer tu patrimonio, metro a metro.</h1>
+					<p class="text-white/70 text-base">Compra desde 1m² en grandes proyectos residenciales ya rentados y genera rendimientos por rentas más plusvalía.</p>
+					<a href="#propiedades" class="button button--action w-full" id="hero_button_cta">Invierte ahora</a>
 					<div class="flex gap-4 items-center w-full">
 						<div class="w-full h-px bg-white/10"></div>
 						<span class="text-white/50">o</span>
 						<div class="w-full h-px bg-white/10"></div>
 					</div>
-					<a href="#propiedades" class="button button--ghost w-full">
+					<button class="button button--ghost w-full" onclick="document.getElementById('contactModal').showModal()" id="hero_assistant_cta">
 						<figure class="size-6 rounded-full overflow-hidden relative border border-white/10">
 							<img src="/avatar.png" alt="Logo" class="object-cover w-full h-full absolute inset-0" />
 						</figure>
 						<span>Habla con un asesor</span>
-					</a>
+					</button>
 
 					<div class="py-4 grid grid-cols-1 gap-2">
-						<div class="flex flex-col gap-4 items-center md:items-start justify-between border-t border-white/10 text-white text-sm py-4">
+						<div class="flex flex-col gap-4 items-start justify-between border-t border-white/10 text-white text-sm py-4">
+              <h3 class="font-display font-bold">Operado por:</h3>
 							<div class="flex items-center gap-6">
-								<figure class="bg-white py-3 px-1">
-                  <img src="/begrand-logo-black.png" alt="Logo" class="h-16" />
-                </figure>
-								<img src="/logo-emblema-briq-white.svg" alt="Logo" class="w-24" />
+								<a href="https://begrand.mx?referral_code=sumametros" target="_blank" rel="noopener">
+									<figure class="bg-white rounded-md overflow-hidden p-3">
+										<img src="/logo-begrand-horizontal.png" alt="Begrand Logo" class="h-8" />
+									</figure>
+								</a>
+								<a href="https://briq.mx?referral_code=sumametros" target="_blank" rel="noopener">
+									<img src="/logo-emblema-briq-white.svg" alt="Briq Logo" class="w-24" />
+								</a>
 							</div>
-							<h3 class="font-display font-bold">Sumametros es operado por Be Grand® y briq.mx</h3>
 							<p class="text-white/70 leading-relaxed">
-								Be Grand®, una empresa líder con 20 años de experiencia en desarrollo de proyectos residenciales de lujo en México y España.
-								<br />
-								briq.mx, una plataforma tecnológica regulada por la CNBV y líder en inversiones en bienes raíces.
+								Be Grand<sup>®</sup>, líder con 20 años de experiencia en desarrollo de proyectos residenciales de lujo en México y España; y briq.mx, la plataforma líder de financiamiento colectivo inmobiliario, regulada por la CNBV.
 							</p>
 							<a href="#quienes" class="underline">Conoce más</a>
 						</div>
@@ -93,9 +90,9 @@ const allProjects = projects
 			<div class="mx-auto w-full max-w-screen-lg px-4">
 				<div class="flex flex-col gap-8 items-start">
 					<div>
-						<p class="font-display font-bold text-primary">¿Cómo funciona?</p>
-						<h2 class="font-display text-2xl md:text-4xl font-bold text-pretty">
-							Invertir en m² nunca ha sido tan fácil:
+						<p class="font-display font-bold text-primary text-xl">¿Cómo funciona?</p>
+						<h2 class="font-display text-2xl md:text-3xl font-bold text-pretty">
+							Invertir en m² nunca ha sido tan fácil
 						</h2>
 					</div>
 					<article class="w-full">
@@ -118,7 +115,7 @@ const allProjects = projects
 							
 						</div>
 					</article>
-					<a href="#propiedades" class="button button--action w-full md:w-auto">
+					<a href="#propiedades" class="button button--action w-full md:w-auto" id="works_button_cta">
 						Empieza a invertir
 					</a>
 					<div class="flex gap-4 text-base md:text-lg flex-col md:flex-row">
@@ -151,32 +148,38 @@ const allProjects = projects
 							<p class="text-sm">Usa tus metros como enganche o cámbialos por un departamento.</p>
 						</div>
 					</div>
-					<div class="border p-2 rounded-xl w-full flex gap-8 bg-beige flex-col md:flex-row  items-center">
-						<button class="video-button flex flex-col gap-2 border rounded-xl bg-white h-32 aspect-video" data-video="/video-2.mp4">
+					<button class="border py-8 md:py-2 px-2 rounded-xl w-full flex gap-8 bg-navy hover:saturate-150 transition-all text-white flex-col md:flex-row  items-center video-button" data-video="/video-general.mp4" id="works_button_video">
+						<div class="flex flex-col gap-2 rounded-xl bg-navy h-32 aspect-video">
 							<figure class="relative rounded-md overflow-hidden w-full h-full">
 								<video
 									class="absolute inset-0 h-full w-full object-cover"
-									src="/video-1.mp4#t=0.001"
+									poster="/video-cover.png"
+									src="/video-general.mp4"
 								/>
 								<div class="absolute inset-0 bg-black/20 flex items-center justify-center">
 									<div class="bg-primary w-8 h-6 flex items-center justify-center">
 										<i class="fa-solid fa-play text-white text-xs"></i>
 									</div>
 								</div>
+								<div class="absolute inset-0 border border-white/30 rounded-xl pointer-events-none"></div>
 							</figure>
-						</button>
-						<div class="flex flex-col gap-2 items-start">
-							<p class="font-bold text-balance text-center md:text-left text-xl">El experto financiero Moris Dieck te explica las ventajas de invertir con Sumametros</p>
 						</div>
-					</div>
+						<div class="flex gap-2 flex-col md:flex-row items-center">
+							<p class="font-semibold text-balance text-center md:text-left text-2xl">El experto financiero Moris Dieck te explica las ventajas de invertir con Sumametros</p>
+							<div class="shrink-0 px-4 flex items-center gap-4">
+								<span>Ver video</span>
+								<i class="fa-solid fa-play text-primary text-lg"></i>
+							</div>
+						</div>
+					</button>
 				</div>
 			</div>
 		</section>
 		<section class="border-y bg-beige py-24" id="propiedades">
 			<div class="mx-auto w-full max-w-screen-lg px-4">
-				<div class="flex flex-col gap-4 mb-16">
-					<p class="font-display font-bold text-primary">Propiedades disponibles</p>
-					<h2 class="font-display text-2xl font-bold md:text-4xl">Conoce las propiedades en las que puedes comprar metros</h2>
+				<div class="flex flex-col mb-16">
+					<p class="font-display font-bold text-primary text-xl">Propiedades disponibles</p>
+					<h2 class="font-display text-2xl font-bold md:text-3xl">Conoce las propiedades en las que puedes comprar desde 1m²</h2>
 				</div>
 				<div class="mb-4 grid grid-cols-1 gap-12" id="propertyLists">
 					{
@@ -190,33 +193,32 @@ const allProjects = projects
 				</div>
 				<div>
 					<p class="text-sm">
-						* Para el cálculo de renta se considera una estimación de la inflación promedio del 5% por año.
-						Los rendimientos son ilustrativos y no debe interpretarse como garantía de resultados futuros. Los valores y tendencias del mercado inmobiliario pueden variar y están sujetos a cambios imprevistos que pueden afectar los resultados proyectados
+						* El valor estimado indica el valor futuro de los metros que adquieras más la plusvalía estimada y retorno de rentas recibidas con un 5% anual de inflación. Plusvalía histórica con base en el precio de los departamentos en la zona. Los rendimientos son ilustrativos y no debe interpretarse como garantía de resultados futuros.
 					</p>
 				</div>
 			</div>
 		</section>
 		<section class="py-12 bg-white">
 			<div class="mx-auto w-full max-w-screen-lg px-4">
-				<h2 class="mb-8 font-display text-3xl md:text-4xl font-bold text-center md:text-left">¿Cómo puedo utilizar mis metros?</h2>
+				<h2 class="mb-8 font-display text-2xl md:text-3xl font-bold text-center md:text-left">¿Cómo puedo utilizar mis metros?</h2>
 				<div class="grid grid-cols-1 md:grid-cols-3 gap-4">
 					<article class="bg-beige p-4 rounded-lg border">
 						<div class="flex flex-col gap-4 items-start w-full justify-between h-full">
-							<h3 class="text-lg md:text-2xl font-display font-bold text-balance">Conserva tus metros y <span class="highlight">recibe rentas mensuales</span></h3>
+							<h3 class="text-lg md:text-2xl font-display font-bold text-balance">Conserva tus metros y <br class="block md:hidden" /><span  class="inline-block px-1 bg-primary text-white">recibe rentas</span></h3>
 							<p class="leading-relaxed text-pretty">Recibe rentas mensualmente por cada metro que tengas, sin preocuparte de nada más.</p>
 						</div>
 					</article>
 					<article class="bg-beige p-4 rounded-lg border">
 						<div class="flex flex-col gap-4 items-start w-full justify-between h-full">
-							<h3 class="text-lg md:text-2xl font-display font-bold text-balance">Vende tus metros y <span class="highlight">obtén plusvalía</span></h3>
+							<h3 class="text-lg md:text-2xl font-display font-bold text-balance">Vende tus metros y <br class="block md:hidden" /><span  class="inline-block px-1 bg-primary text-white">obtén plusvalía</span></h3>
 							<p class="leading-relaxed text-pretty">Vende tus metros en la plataforma y captura la plusvalía acumulada desde que compraste.</p>
 							
 						</div>
 					</article>
 					<article class="bg-beige p-4 rounded-lg border">
 						<div class="flex flex-col gap-4 items-start w-full justify-between h-full">
-							<h3 class="text-lg md:text-2xl font-display font-bold text-balance">Canjea tus metros para <span  class="highlight">comprar un departamento</span></h3>
-							<p class="leading-relaxed text-pretty">Si lo deseas, podrás usar tus metros como enganche para comprar un nuevo departamento. Incluso, si cuentas con los metros suficientes, podrás cambiarlos por un depa completo.</p>
+							<h3 class="text-lg md:text-2xl font-display font-bold text-balance">Canjea tus metros por <br class="block md:hidden" /><span  class="inline-block px-1 bg-primary text-white">un departamento</span></h3>
+							<p class="leading-relaxed text-pretty">Usa tus metros como enganche para comprar un nuevo departamento.</p>
 						</div>
 					</article>
 				</div>
@@ -225,7 +227,7 @@ const allProjects = projects
 		
 		<section class="border-t bg-beige py-16" id="faqs">
 			<div class="mx-auto w-full max-w-screen-lg px-4">
-				<h2 class="mb-16 font-display text-3xl md:text-4xl font-bold">Preguntas frecuentes</h2>
+				<h2 class="mb-16 font-display text-3xl md:text-3xl font-bold">Preguntas frecuentes</h2>
 				<div class="grid grid-cols-1 gap-4">
 					<div class="flex w-full flex-col gap-4 rounded-lg border bg-white p-8" id="quienes">
 						<h2 class="font-display text-2xl font-bold">¿Quiénes administran Sumametros by Be Grand®?</h2>
@@ -234,7 +236,7 @@ const allProjects = projects
 							<div class="flex flex-col gap-2 items-start justify-between text-base">
 								<div>
 									<figure class="h-20 flex items-center">
-										<img src="/begrand-logo-black.png" alt="Logo" class="h-16" />
+										<img src="/logo-begrand-horizontal.png" alt="Logo" class="h-10" />
 									</figure>
 									<p>Empresa mexicana, con 20 años de experiencia en el desarrollo y comercialización de proyectos inmobiliarios de alta calidad en zonas AAA en México y España.</p>
 								</div>
@@ -247,7 +249,7 @@ const allProjects = projects
 									</figure>
 									<p>Plataforma líder de financiamiento colectivo inmobiliario, regulada por las autoridades financieras (CNBV, CONDUSEF, Banxico y SHCP)</p>
 								</div>
-								<a class="underline" href="htps://briq.mx" target="_blank">Conoce más</a>
+								<a class="underline" href="https://www.briq.mx?referral_code=sumametros" target="_blank">Conoce más</a>
 							</div>
 						</div>
 					</div>
@@ -266,9 +268,9 @@ const allProjects = projects
 			<div class="mx-auto w-full max-w-screen-lg px-4">
 				<div class="bg-navy px-4 py-16 rounded-lg border text-white flex items-center justify-center">
 					<div class="max-w-2xl text-center flex flex-col gap-4 items-center">
-						<h2 class="text-xl md:text-4xl font-bold font-display">¿Estás list@ para hacer crecer tu patrimonio metro a metro?</h2>
-						<p class="text-xl opacity-80">Comienza a invertir y conviértete en dueño de m² en grandes proyectos residenciales ya rentados</p>
-						<a href="#propiedades" class="button button--action w-auto">Invierte ahora</a>
+						<h2 class="text-xl md:text-4xl font-bold font-display">¿Quieres comenzar a crecer tu patrimonio metro a metro?</h2>
+						<p class="text-xl opacity-80">Conviértete en dueño de m² en grandes proyectos residenciales ya rentados</p>
+						<a href="#propiedades" class="button button--action w-auto" id="footer_button_cta">Invierte ahora</a>
 					</div>
 				</div>
 			</div>
@@ -279,18 +281,18 @@ const allProjects = projects
 					<span class="text-sm">Para conocer más sobre Sumametros</span>
 					<a
 						href="https://www.instagram.com/sumametros_"
-						class="flex items-center gap-1 border p-2 font-display text-sm font-bold md:p-3"
+						class="flex items-center gap-1 border p-2 font-display text-sm font-bold md:p-3 text-primary"
 						target="_blank"
 					>
-						<Icon name="bxl:instagram" class="h-6 w-6 text-navy opacity-50" />
+						<Icon name="bxl:instagram" class="h-6 w-6" />
 						<span>@sumametros_</span>
 					</a>
 					<a
 						href="https://www.facebook.com/profile.php?id=61551645088385&sk=about&locale=es_LA"
-						class="flex items-center gap-1 border p-2 font-display text-sm font-bold md:p-3"
+						class="flex items-center gap-1 border p-2 font-display text-sm font-bold md:p-3 text-primary"
 						target="_blank"
 					>
-						<Icon name="bxl:facebook" class="h-6 w-6 text-navy opacity-50" />
+						<Icon name="bxl:facebook" class="h-6 w-6" />
 						<span>Suma Metros</span>
 					</a>
 				</div>
@@ -298,74 +300,25 @@ const allProjects = projects
 		</footer>
 		<footer class="bg-navy py-12 text-sm text-white">
 			<div class="mx-auto flex w-full max-w-screen-lg flex-col gap-8 px-4">
-				<div class="grid grid-cols-1 gap-2 md:grid-cols-4">
-					<div class="col-span-2 flex flex-col items-start gap-4">
+				<div class="flex items-center justify-between gap-2">
+					<div class="col-span-2 flex items-center gap-4">
 						<img src="/logo-emblema-briq-white.svg" alt="Logo" class="w-32" />
-						<p class="inline-block rounded-md border border-white/5 bg-white/10 px-2 py-1 text-sm">
+						<p class="text-sm text-white/70">
 							Empresa regulada por la CNBV
 						</p>
-						<nav class="flex gap-2">
-							<a
-								class="flex h-8 w-8 items-center justify-center rounded-full border border-white"
-								href="https://www.facebook.com/briqmx"
-								target="_blank"
-							>
-								<i class="fa-brands fa-facebook-f"></i>
-							</a>
-							<a
-								class="flex h-8 w-8 items-center justify-center rounded-full border border-white"
-								href="https://twitter.com/BriqMx"
-								target="_blank"
-							>
-								<i class="fa-brands fa-x-twitter"></i>
-							</a>
-							<a
-								class="flex h-8 w-8 items-center justify-center rounded-full border border-white"
-								href="https://www.youtube.com/channel/UC5gSLYFILbOPSXDd9Oax4AA"
-								target="_blank"
-							>
-								<i class="fa-brands fa-youtube"></i>
-							</a>
-							<a
-								class="flex h-8 w-8 items-center justify-center rounded-full border border-white"
-								href="https://www.linkedin.com/company/briq-mx"
-								target="_blank"
-							>
-								<i class="fa-brands fa-linkedin-in"></i>
-							</a>
-							<a
-								class="flex h-8 w-8 items-center justify-center rounded-full border border-white"
-								href="https://www.instagram.com/briqmx"
-								target="_blank"
-							>
-								<i class="fa-brands fa-instagram"></i>
-								</a>
-							<a
-								class="flex h-8 w-8 items-center justify-center rounded-full border border-white"
-								href="https://www.tiktok.com/@briqmx"
-								target="_blank"
-							>
-								<i class="fa-brands fa-tiktok"></i>
-							</a>
-						</nav>
 					</div>
-					<div class="flex flex-col gap-2 text-white/80">
-						<h3 class="mb-4 font-bold uppercase text-white">¿Quíenes somos?</h3>
-						<a href="https://www.briq.mx/nosotros">Sobre nosotros</a>
-						<a href="https://www.briq.mx/medios">Medios y prensa</a>
-						<a href="https://www.briq.mx/sostenibilidad">Sostenibilidad</a>
-						<a href="https://www.briq.mx/regulacion">Regulación</a>
-						<a href="https://www.briq.mx/avisoprivacidad">Aviso de privacidad</a>
+					<div class="flex items-center gap-2 text-white/70 underline">
+						<a href="https://www.briq.mx/regulacion/une?referral_code=sumametros">Unidad especializada (UNE)</a>
+						<a href="https://www.briq.mx/regulacion/buro-de-entidades-financieras?referral_code=sumametros">Buró de entidades financieras</a>
+						<a href="https://files.briq.mx/regulacion/REDECO.pdf">Despachos de cobranza</a>
+					</div>
+				</div>
+				<div class="flex items-center gap-2 justify-between text-white/70 underline">
+					<div class="flex items-center gap-2">
+						<a href="https://www.briq.mx/avisoprivacidad?referral_code=sumametros">Aviso de privacidad</a>
 						<a href="https://www.briq.mx/tyc">Términos y condiciones</a>
 					</div>
-					<div class="flex flex-col gap-2 text-white/80">
-						<h3 class="mb-4 font-bold uppercase text-white">Más información</h3>
-						<a href="https://ayuda.briq.mx/">Contacto y ayuda</a>
-						<a href="https://www.briq.mx/glosario">Glosario de términos</a>
-						<a href="https://www.briq.mx/regulacion/une">Unidad especializada (UNE)</a>
-						<a href="https://novedades.briq.mx/">Cambios y mejoras</a>
-						<a href="https://www.briq.mx/recursos">Recursos</a>
-					</div>
+					<a href="https://www.briq.mx/regulacion/comisiones?referral_code=sumametros">Consulta los Costos y las Comisiones de nuestros productos</a>
 				</div>
 				<div class="flex flex-col gap-2 text-white/50">
 					<p>
@@ -401,19 +354,96 @@ const allProjects = projects
 			</div>
 		</footer>
 
-		<div class="fixed right-0 bottom-0 p-4 z-20 flex items-center gap-2 cursor-pointer">
-			<a id="liveagent_button_online_573Qm0000006FM9" href="javascript://Chat" style="display: none;" onclick="liveagent.startChat('573Qm0000006FM9')">
-			</a>
-			<div id="liveagent_button_offline_573Qm0000006FM9" style="display: none;">
-			</div>
-		</div>
-	</main>
 
-	<script type="text/javascript" is:inline>
-		if (!window._laq) { window._laq = []; }
-		window._laq.push(function(){liveagent.showWhenOnline('573Qm0000006FM9', document.getElementById('liveagent_button_online_573Qm0000006FM9'));
-		liveagent.showWhenOffline('573Qm0000006FM9', document.getElementById('liveagent_button_offline_573Qm0000006FM9'));
-		});
+		<dialog id="contactModal">
+			<div class="bg-black/80 fixed inset-0 flex items-start md:items-center justify-center z-20">
+				<div class="bg-white max-w-md w-full p-6 border rounded-t-2xl shadow-2xl absolute bottom-0 md:bottom-auto h-[90vh] md:h-auto md:rounded-b-2xl">
+					<div class="flex flex-col gap-4">
+						<div class="flex justify-between gap-4">
+							<h2 class="text-2xl font-display font-bold">Habla con uno de nuestros asesores</h2>
+							<button class="text-2xl shrink-0 bg-zinc-100 size-8 rounded-full border border-zinc-200" onclick="document.getElementById('contactModal').close()">×</button>
+						</div>
+						<p>Comunícate con nosotros al siguiente número de telefóno y uno de nuestros asesores te ayudará a resolver tus dudas.</p>
+						<a href="tel:8004793103" class="button button--action w-full flex md:hidden">
+							<span>Llamar ahora</span>
+							<i class="fa-solid fa-phone"></i>
+						</a>
+						<p class="hidden md:block text-center md:text-left p-2 bg-beige border rounded-lg">Llama al <a href="tel:8004793103" class="text-primary font-semibold text-center">800 479 3103</a></p>
+					</div>
+				</div>
+			</div>
+		</dialog>
+
+		
+	</main>
+	<script type='text/javascript' src='https://service.force.com/embeddedservice/5.0/esw.min.js'></script>
+	<script type='text/javascript'>
+		var initESW = function(gslbBaseURL) {
+			embedded_svc.settings.displayHelpButton = true; //O falso
+			embedded_svc.settings.language = 'es-MX';
+
+			//embedded_svc.settings.defaultMinimizedText = '...'; //(Toma como valor predeterminado Sesión de chat con un experto)
+			//embedded_svc.settings.disabledMinimizedText = '...'; //(Toma como valor predeterminado Agente sin conexión)
+
+			embedded_svc.settings.defaultMinimizedText = 'CHATEA CON UN EXPERTO';
+			embedded_svc.settings.loadingText = 'Conectando...'; 
+
+			//embedded_svc.settings.loadingText = ''; //(Toma como valor predeterminado Cargando)
+			//embedded_svc.settings.storageDomain = 'yourdomain.com'; //(Establece el dominio para su desarrollo de modo que los visitantes puedan navegar por subdominios durante una sesión de chat)
+
+			// Configuración para Plática
+			//embedded_svc.settings.directToButtonRouting = function(prechatFormData) {
+				// Dynamically changes the button ID based on what the visitor enters in the pre-chat form.
+				// Returns a valid button ID.
+			//};
+			//embedded_svc.settings.prepopulatedPrechatFields = {}; //Establece el relleno automático de los campos del formulario previo al chat
+			//embedded_svc.settings.fallbackRouting = []; //Una matriz de identificadores de botones, de usuario o userId_buttonId
+			//embedded_svc.settings.offlineSupportMinimizedText = '...'; //(Toma como valor predeterminado la opción Contacto)
+
+			embedded_svc.settings.enabledFeatures = ['LiveAgent'];
+			embedded_svc.settings.entryFeature = 'LiveAgent';
+
+			embedded_svc.init(
+				'https://begrand.my.salesforce.com',
+				'https://begrand.my.site.com/begrandfrontdesk',
+				gslbBaseURL,
+				'00Df20000019tKD',
+				'Live_Agent_SumaMetros',
+				{
+					baseLiveAgentContentURL: 'https://c.la3-core1.sfdc-lywfpd.salesforceliveagent.com/content',
+					deploymentId: '572f2000000fy7G',
+					buttonId: '573Qm0000006FM9',
+					baseLiveAgentURL: 'https://d.la3-core1.sfdc-lywfpd.salesforceliveagent.com/chat',
+					eswLiveAgentDevName: 'EmbeddedServiceLiveAgent_Parent04IQm0000002bujMAA_18f08b0b089',
+					isOfflineSupportEnabled: false
+				}
+			);
+		};
+
+		if (!window.embedded_svc) {
+			var s = document.createElement('script');
+			s.setAttribute('src', 'https://begrand.my.salesforce.com/embeddedservice/5.0/esw.min.js');
+			s.onload = function() {
+				initESW(null);
+			};
+			document.body.appendChild(s);
+		} else {
+			initESW('https://service.force.com');
+		}
+	</script>
+
+	<script is:inline>
+		// Wait until the DOM is ready and the .helpButton is rendered
+		document.addEventListener('DOMContentLoaded', () => {
+			const helpButton = document.querySelector('.button-help')
+
+			if (helpButton) {
+				helpButton.addEventListener('click', () => {
+					// Open the chat
+					document.querySelector('.helpButtonEnabled').click()
+				})
+			}
+		})
 	</script>
 
 	<script is:inline>
@@ -459,67 +489,24 @@ const allProjects = projects
 			}
 		})
 	</script>
-	<script type='text/javascript' src='https://service.force.com/embeddedservice/5.0/esw.min.js' is:inline></script>
-	<script type='text/javascript' is:inline>
-		var initESW = function(gslbBaseURL) {
-		embedded_svc.settings.displayHelpButton = true; //O falso
-		embedded_svc.settings.language = 'es-MX'; //Por ejemplo, ingrese 'en' o 'en-US'
-
-		//embedded_svc.settings.defaultMinimizedText = '...'; //(Toma como valor predeterminado Sesión de chat con un experto)
-		//embedded_svc.settings.disabledMinimizedText = '...'; //(Toma como valor predeterminado Agente sin conexión)
-
-		//embedded_svc.settings.loadingText = ''; //(Toma como valor predeterminado Cargando)
-		embedded_svc.settings.storageDomain = 'localhost'; //(Establece el dominio para su desarrollo de modo que los visitantes puedan navegar por subdominios durante una sesión de chat)
-
-		// Configuración para Plática
-		//embedded_svc.settings.directToButtonRouting = function(prechatFormData) {
-		// Dynamically changes the button ID based on what the visitor enters in the pre-chat form.
-		// Returns a valid button ID.
-		//};
-		//embedded_svc.settings.prepopulatedPrechatFields = {}; //Establece el relleno automático de los campos del formulario previo al chat
-		//embedded_svc.settings.fallbackRouting = []; //Una matriz de identificadores de botones, de usuario o userId_buttonId
-		//embedded_svc.settings.offlineSupportMinimizedText = '...'; //(Toma como valor predeterminado la opción Contacto)
-
-		embedded_svc.settings.enabledFeatures = ['LiveAgent'];
-		embedded_svc.settings.entryFeature = 'LiveAgent';
-
-		embedded_svc.init(
-		'https://begrand.my.salesforce.com',
-		'https://begrand.my.site.com/begrandfrontdesk',
-		gslbBaseURL,
-		'00Df20000019tKD',
-		'Live_Agent_SumaMetros',
-		{
-		baseLiveAgentContentURL: 'https://c.la1-core1.sfdc-lywfpd.salesforceliveagent.com/content',
-		deploymentId: '572f2000000fy7G',
-		buttonId: '573Qm0000006FM9',
-		baseLiveAgentURL: 'https://d.la1-core1.sfdc-lywfpd.salesforceliveagent.com/chat',
-		eswLiveAgentDevName: 'EmbeddedServiceLiveAgent_Parent04IQm0000002bujMAA_18f08b0b089',
-		isOfflineSupportEnabled: false
-		}
-		);
-		};
-
-		if (!window.embedded_svc) {
-		var s = document.createElement('script');
-		s.setAttribute('src', 'https://begrand.my.salesforce.com/embeddedservice/5.0/esw.min.js');
-		s.onload = function() {
-		initESW(null);
-		};
-		document.body.appendChild(s);
-		} else {
-		initESW('https://service.force.com');
-		}
-	</script>
 </Layout>
 
 <style is:global>
+
 	.embeddedServiceHelpButton .helpButton .uiButton {
-	background-color: #005290;
-	font-family: "Arial", sans-serif;
+		background-color: #19A2E6 !important;
 	}
+
 	.embeddedServiceHelpButton .helpButton .uiButton:focus {
-	outline: 1px solid #005290;
+		outline: 1px solid #19A2E6;
+	}
+
+	.chatHeaderBranding{
+		background-color: #19A2E6!important;
+	}
+
+	.embeddedServiceHelpButton .uiButton {
+		min-width: 18em !important;
 	}
 
 	.container-max {
