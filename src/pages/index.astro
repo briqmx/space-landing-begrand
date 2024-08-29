@@ -1,7 +1,7 @@
 ---
 import projects from '../../data/projects.json'
 import faqs from '../../data/faqs.json'
-
+import Footer from '../components/landing/Footer.astro'
 const site_url = Astro.site
 let base_ulr = ''
 
@@ -60,13 +60,13 @@ if (process.env.NODE_ENV === 'development') {
     <nav class="py-4 md:py-2 border-b shadow-sm bg-[#F8F8F4]">
       <div class="w-full max-w-screen-xl mx-auto px-4">
         <div class="flex items-center justify-between gap-2">
-          <a href="/v2" class="flex-shrink-0">
+          <a href="/" class="flex-shrink-0 hover:opacity-80">
             <img src="/logo-nav.png" alt="Logo" class="h-9 md:h-12" />
           </a>
           <div>
-            <button class="px-4 bg-white uppercase tracking-wide font-semibold text-xs md:text-sm py-2 rounded-full border inline-flex gap-2 items-center justify-center" onclick="document.getElementById('contactModal').showModal()">
+            <button class="px-4 bg-white uppercase tracking-wide font-semibold text-xs md:text-sm py-2 rounded-full border inline-flex gap-2 items-center justify-center group hover:bg-navy hover:text-white transition-all" onclick="document.getElementById('contactModal').showModal()">
               Solicitar información
-              <i class="fa-regular fa-comment"></i>
+              <i class="fa-regular fa-comment group-hover:rotate-12 transition-transform"></i>
             </button>
           </div>
         </div>
@@ -90,7 +90,10 @@ if (process.env.NODE_ENV === 'development') {
       <div class="flex flex-col gap-4 items-center justify-center text-center max-w-3xl mx-auto">
         <h1 class="text-2xl md:text-5xl font-semibold text-balance font-brand">Compra tu departamento poco a poco y genera rentas + plusvalía en el proceso.</h1>
         <p class="leading-relaxed text-balance ">Empieza con tan solo 1 m² y recibe rentas desde el primer mes. Adquiere metros a tu propio ritmo y, cuando acumules la cantidad deseada, podrás usarlos como enganche o incluso intercambiarlos por un departamento.</p>
-        <a class="bg-navy text-base text-white py-4 px-8 rounded-full inline-flex items-center justify-center font-semibold uppercase tracking-wider" href="#propiedades">Explorar propiedades</a>
+        <a class="bg-navy text-base text-white py-4 px-8 rounded-full inline-flex items-center justify-center font-semibold uppercase tracking-wider group gap-2 group hover:scale-105 transition-all" href="#propiedades">
+          <span>Explorar propiedades</span>
+          <i class="fa-solid fa-search group-hover:rotate-12 transition-transform"></i>
+        </a>
         <button class="aspect-video appearance-none w-full bg-navy relative overflow-hidden shadow-xl rounded-2xl flex items-center justify-center hover:-translate-y-1 transition-all" id="open-video">
           <img
               src="/hero-cover.jpeg"
@@ -200,21 +203,31 @@ if (process.env.NODE_ENV === 'development') {
               </div>
             </div>
             <div class="flex flex-col gap-2 absolute bottom-0 left-0 w-full bg-gradient-to-t from-black via-black to-transparent px-4 py-6 z-10 text-white">
-              <div>
+              <div class="flex flex-col gap-1">
                 <h2 class="font-brand font-semibold text-xl text-balance">{project.title}</h2>
-                <p class="text-sm font-medium">{project.location}</p>
+                <div class="text-sm font-medium flex items-center gap-1">
+                  <i class="fa-solid fa-location-dot text-white/50"></i>
+                  <span>{project.location}</span>
+                </div>
               </div>
               {/* <p>{project.appreciation}% de plusvalía</p> */}
-              <a class="border border-white/50 py-2 text-base uppercase font-semibold tracking-wide rounded-full flex items-center justify-center hover:bg-white hover:text-black" href={project.url} target="_blank" rel="noopener">
-                Ver más
+              <a class="border border-white/50 py-2 text-base uppercase gap-2 font-semibold tracking-wide rounded-full flex items-center justify-center hover:bg-white hover:text-black" href={project.url} target="_blank" rel="noopener">
+                <span>Ver más</span>
+                <i class="fa-solid fa-arrow-right"></i>
               </a>
             </div>
           </article>
         ))}
         <article class="bg-navy col-span-full md:col-span-2 rounded-xl flex items-center justify-center flex-col gap-4 text-white p-6 text-center">
+          <div class="relative">
+            <figure class="size-10 bg-white/10 rounded-full flex items-center justify-center overflow-hidden relative border border-white/10">
+              <img src="/avatar.png" alt="Asesor" class="absolute inset-0 w-full h-full object-cover">
+            </figure>
+            <div class="size-2 rounded-full bg-lime-400 absolute bottom-0 right-0 animate-pulse"></div>
+          </div>
           <p class="font-brand font-semibold text-xl">¿No sabes cuál elegir?</p>
           <p>Habla con un asesor y te ayudará a elegir la mejor opción para ti.</p>
-          <button class="bg-white py-2.5 rounded-full text-navy px-6 uppercase font-semibold tracking-wide text-base" onclick="document.getElementById('contactModal').showModal()">
+          <button class="py-2.5 rounded-full bg-transparent text-white hover:bg-white hover:text-navy px-6 uppercase font-semibold tracking-wide text-base transition-all border border-white" onclick="document.getElementById('contactModal').showModal()">
             Hablar con un asesor
           </button>
         </article>
@@ -223,29 +236,33 @@ if (process.env.NODE_ENV === 'development') {
   </section>
   <section class="py-16 border-t border-black/10">
     <div class="w-full max-w-screen-xl mx-auto px-4">
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-4 items-center">
-        <div class="w-full">
-          <div class="mb-4">
-            <h2 class="font-medium text-sky-600">Ventajas de invertir en Sumametros</h2>
-            <h3 class="text-2xl md:text-4xl font-bold font-brand">¿Cómo puedo utilizar mis metros?</h3>
-          </div>
-          <div class="flex flex-col items-start gap-4 py-4">
-            <article class="p-4 md:p-6 border-l-4 border-navy flex-col gap-4 flex">
-              <h3 class="text-2xl font-brand font-semibold">Canjea tus metros por un departamento</h3>
-              <p>Usa tus metros como enganche o pago total de un departamento completo una vez que hayas acumulado los suficientes.</p>
-            </article>
-            <article class="p-4 md:p-6 border-l-4 border-navy flex-col gap-4 flex">
-              <h3 class="text-2xl font-brand font-semibold">Conserva tus metros y recibe rentas</h3>
-              <p>Recibe rentas mensualmente por cada metro que tengas, sin preocuparte de nada más, nosotros nos encargamos de todo.</p>
-            </article>
-            <article class="p-4 md:p-6 border-l-4 border-navy flex-col gap-4 flex">
-              <h3 class="text-2xl font-brand font-semibold">Vende tus metros y obtén plusvalía</h3>
-              <p>Vende tus metros en la plataforma y obtén la plusvalía acumulada desde que compraste.</p>
-            </article>
-          </div>
+      <div class="w-full">
+        <div class="mb-4">
+          <h2 class="font-medium text-sky-600">Ventajas de invertir en Sumametros</h2>
+          <h3 class="text-2xl md:text-4xl font-bold font-brand">¿Cómo puedo utilizar mis metros?</h3>
         </div>
-        <div class="w-full">
-          <img src="/how-works.png" class="rotate-3">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <article class="flex-col gap-4 flex justify-between items-start py-6 md:py-12">
+            <i class="fa-duotone fa-solid fa-rotate-reverse text-2xl text-navy"></i>
+            <div class="flex-1 flex flex-col gap-2">
+              <h3 class="text-2xl text-balance font-brand font-semibold">Canjealos por un departamento</h3>
+              <p>Usa tus metros como enganche o pago total de un departamento completo una vez que hayas acumulado los suficientes.</p>
+            </div>
+          </article>
+          <article class="flex-col gap-4 flex justify-between items-start py-6 md:py-12">
+            <i class="fa-duotone fa-solid fa-money-from-bracket text-2xl text-navy"></i>
+            <div class="flex-1 flex flex-col gap-2">
+              <h3 class="text-2xl text-balance font-brand font-semibold">Conservalos y recibe rentas</h3>
+              <p>Recibe rentas mensualmente por cada metro que tengas, sin preocuparte de nada más, nosotros nos encargamos de todo.</p>
+            </div>
+          </article>
+          <article class="flex-col gap-4 flex justify-between items-start py-6 md:py-12">
+            <i class="fa-duotone fa-solid fa-chart-mixed-up-circle-dollar text-2xl text-navy"></i>
+            <div class="flex-1 flex flex-col gap-2">
+              <h3 class="text-2xl text-balance font-brand font-semibold">Vendelos y obtén plusvalía</h3>
+              <p>Vende tus metros en la plataforma y obtén la plusvalía acumulada desde que compraste.</p>
+            </div>
+          </article>
         </div>
       </div>
     </div>
@@ -302,38 +319,23 @@ if (process.env.NODE_ENV === 'development') {
       </div>
       <div>
         <div class="bg-navy py-16 px-2 text-white rounded-2xl flex flex-col items-center justify-center gap-4 text-center">
+          <div class="relative">
+            <figure class="size-10 bg-white/10 rounded-full flex items-center justify-center overflow-hidden relative border border-white/10">
+              <img src="/avatar.png" alt="Asesor" class="absolute inset-0 w-full h-full object-cover">
+            </figure>
+            <div class="size-2 rounded-full bg-lime-400 absolute bottom-0 right-0 animate-pulse"></div>
+          </div>
           <p class="font-brand font-semibold text-2xl">¿Tienes más dudas?</p>
-          <p class="text-xl">Habla con un asesor y te ayudará a aclarar todas tus dudas sin ningún compromiso.</p>
-          <button class="bg-white py-2.5 rounded-full text-navy px-6 uppercase font-semibold tracking-wide text-base" onclick="document.getElementById('contactModal').showModal()">
-            Hablar con un asesor
+          <p class="text-xl text-balance max-w-md">Habla con un asesor y te ayudará a aclarar todas tus dudas sin ningún compromiso.</p>
+          <button class="bg-white py-2.5 rounded-full text-navy px-6 uppercase font-semibold tracking-wide text-base flex items-center gap-2 hover:bg-white/90 transition-all" onclick="document.getElementById('contactModal').showModal()">
+            <span>Hablar con un asesor</span>
+            <i class="fa-solid fa-phone"></i>
           </button>
         </div>
       </div>
     </div>
   </section>
-  <footer class="bg-navy py-12 text-white">
-    <div class="w-full max-w-screen-xl mx-auto px-4 flex flex-col gap-8">
-      <div class="flex items-center justify-between gap-2 flex-col md:flex-row">
-        <div class="col-span-2 flex items-center gap-4">
-          <img src="/logo-nav-white.png" alt="Logo" class="h-16" />
-        </div>
-        <div class="flex items-center gap-2 text-white flex-col md:flex-row">
-          <a href="tel:8004793103" target="_blank" class="flex items-center gap-2 border border-white/10 py-2 px-4 rounded-full">
-            <i class="fa-solid fa-phone"></i>
-            <span>800 479 3103</span>
-         </a>
-          <a href="https://www.instagram.com/sumametros_" target="_blank" class="flex items-center gap-2 border border-white/10 py-2 px-4 rounded-full">
-             <i class="fa-brands fa-instagram"></i>
-             <span>@sumametros_</span>
-          </a>
-          <a href="https://www.facebook.com/profile.php?id=61551645088385&sk=about&locale=es_LA" target="_blank" class="flex items-center gap-2 border border-white/10 py-2 px-4 rounded-full">
-            <i class="fa-brands fa-facebook"></i>
-            <span>Suma Metros</span>
-         </a>
-        </div>
-      </div>
-    </div>
-  </footer>
+  <Footer />
   <div class="fixed inset-0 z-20 items-center justify-center bg-black/90" id="video-modal" style="display: none;">
     <div class="relative aspect-video w-full bg-white shadow-xl md:h-[80vh] md:w-auto" id="video-container">
       <video controls class="absolute inset-0 h-full w-full" id="video">
@@ -355,15 +357,26 @@ if (process.env.NODE_ENV === 'development') {
               <i class="fa-solid fa-times"></i>
             </button>
           </div>
-          <p>Comunícate con nosotros al siguiente número de telefóno y uno de nuestros asesores te ayudará a resolver tus dudas.</p>
-          <a href="tel:8004793103" class="button button--action w-full flex md:hidden">
-            <span>Llamar ahora</span>
-            <i class="fa-solid fa-phone"></i>
-          </a>
-          <p class="hidden md:flex text-center md:text-left p-2 bg-beige border rounded-lg items-center gap-2">
-            <i class="fa-solid fa-phone text-primary "></i>
-            Llama al <a href="tel:8004793103" class="text-primary font-semibold text-center">800 479 3103</a>
-          </p>
+          <p>Comunícate con nosotros uno de nuestros asesores te ayudará a resolver tus dudas.</p>
+          <div class="flex flex-col gap-2 p-2 bg-beige border rounded-lg items-center">
+            <p>Llamada a un asesor:</p>
+            <a href="tel:8004793103" class="bg-primary text-white py-2 px-4 rounded-full inline-flex  w-full  justify-center gap-2 font-semibold">
+              <i class="fa-solid fa-phone"></i>
+              <span>800 479 3103</span>
+            </a>
+          </div>
+          <div class="flex items-center gap-2">
+            <div class="h-px w-full bg-black/10"></div>
+            <span>o</span>
+            <div class="h-px w-full bg-black/10"></div>
+          </div>
+          <div class="flex flex-col gap-2 p-2 bg-beige border rounded-lg items-center">
+            <p>Habla con un asesor por WhatsApp</p>
+            <a href="https://wa.me/525536414807" class="bg-green-600 text-white py-2 px-4 rounded-full inline-flex  w-full items-center justify-center gap-2 font-semibold">
+              <i class="fa-brands fa-whatsapp"></i>
+              <span>55 3641 4807</span>
+            </a>
+          </div>
         </div>
       </div>
     </div>
@@ -380,6 +393,7 @@ if (process.env.NODE_ENV === 'development') {
     /* smooth scroll */
     scroll-behavior: smooth;
   }
+  
 
   .embeddedServiceHelpButton .helpButton .uiButton {
 		background-color: #19A2E6 !important;
@@ -403,13 +417,14 @@ if (process.env.NODE_ENV === 'development') {
   document.addEventListener('DOMContentLoaded', () => {
     const sections = document.querySelectorAll('section[id]');
     const navLinks = document.querySelectorAll('[data-nav-link]');
+    const offset = 100; // Define offset here so it's consistent across functions
 
     function highlightActiveSection() {
       let scrollY = window.pageYOffset;
 
       sections.forEach(current => {
         const sectionHeight = current.offsetHeight;
-        const sectionTop = current.offsetTop - 100; // Adjust this value to change when the highlight activates
+        const sectionTop = current.offsetTop - offset - 50; // Subtract offset and a little extra
         const sectionId = current.getAttribute('id');
 
         if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
@@ -425,6 +440,29 @@ if (process.env.NODE_ENV === 'development') {
 
     window.addEventListener('scroll', highlightActiveSection);
     highlightActiveSection(); // Call once on load to set initial state
+
+    // Function to handle smooth scrolling with offset
+    function smoothScrollToSection(e) {
+      e.preventDefault();
+      const targetId = this.getAttribute('href').substring(1);
+      const targetSection = document.getElementById(targetId);
+      if (targetSection) {
+        const targetPosition = targetSection.getBoundingClientRect().top + window.pageYOffset - offset;
+        
+        window.scrollTo({
+          top: targetPosition,
+          behavior: 'smooth'
+        });
+      }
+    }
+
+    // Apply smooth scrolling to all links that point to section IDs
+    document.querySelectorAll('a[href^="#"]').forEach(link => {
+      const targetId = link.getAttribute('href').substring(1);
+      if (document.getElementById(targetId)) {
+        link.addEventListener('click', smoothScrollToSection);
+      }
+    });
   });
 
   const openVideo = document.getElementById('open-video');
@@ -448,58 +486,5 @@ if (process.env.NODE_ENV === 'development') {
   const contactModal = document.getElementById('contactModal');
 </script>
 
-<script type='text/javascript' src='https://service.force.com/embeddedservice/5.0/esw.min.js'></script>
-	<script type='text/javascript'>
-		var initESW = function(gslbBaseURL) {
-			embedded_svc.settings.displayHelpButton = true; //O falso
-			embedded_svc.settings.language = 'es-MX';
-
-			//embedded_svc.settings.defaultMinimizedText = '...'; //(Toma como valor predeterminado Sesión de chat con un experto)
-			//embedded_svc.settings.disabledMinimizedText = '...'; //(Toma como valor predeterminado Agente sin conexión)
-
-			embedded_svc.settings.defaultMinimizedText = 'CHATEA CON UN EXPERTO';
-			embedded_svc.settings.loadingText = 'Conectando...'; 
-
-			//embedded_svc.settings.loadingText = ''; //(Toma como valor predeterminado Cargando)
-			//embedded_svc.settings.storageDomain = 'yourdomain.com'; //(Establece el dominio para su desarrollo de modo que los visitantes puedan navegar por subdominios durante una sesión de chat)
-
-			// Configuración para Plática
-			//embedded_svc.settings.directToButtonRouting = function(prechatFormData) {
-				// Dynamically changes the button ID based on what the visitor enters in the pre-chat form.
-				// Returns a valid button ID.
-			//};
-			//embedded_svc.settings.prepopulatedPrechatFields = {}; //Establece el relleno automático de los campos del formulario previo al chat
-			//embedded_svc.settings.fallbackRouting = []; //Una matriz de identificadores de botones, de usuario o userId_buttonId
-			//embedded_svc.settings.offlineSupportMinimizedText = '...'; //(Toma como valor predeterminado la opción Contacto)
-
-			embedded_svc.settings.enabledFeatures = ['LiveAgent'];
-			embedded_svc.settings.entryFeature = 'LiveAgent';
-
-			embedded_svc.init(
-				'https://begrand.my.salesforce.com',
-				'https://begrand.my.site.com/begrandfrontdesk',
-				gslbBaseURL,
-				'00Df20000019tKD',
-				'Live_Agent_SumaMetros',
-				{
-					baseLiveAgentContentURL: 'https://c.la3-core1.sfdc-lywfpd.salesforceliveagent.com/content',
-					deploymentId: '572f2000000fy7G',
-					buttonId: '573Qm0000006FM9',
-					baseLiveAgentURL: 'https://d.la3-core1.sfdc-lywfpd.salesforceliveagent.com/chat',
-					eswLiveAgentDevName: 'EmbeddedServiceLiveAgent_Parent04IQm0000002bujMAA_18f08b0b089',
-					isOfflineSupportEnabled: false
-				}
-			);
-		};
-
-		if (!window.embedded_svc) {
-			var s = document.createElement('script');
-			s.setAttribute('src', 'https://begrand.my.salesforce.com/embeddedservice/5.0/esw.min.js');
-			s.onload = function() {
-				initESW(null);
-			};
-			document.body.appendChild(s);
-		} else {
-			initESW('https://service.force.com');
-		}
-	</script>
+<script type='text/javascript' src='https://service.force.com/embeddedservice/5.0/esw.min.js' is:inline></script>
+<script src='../utils/chat.js'></script>
