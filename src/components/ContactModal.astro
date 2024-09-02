@@ -1,0 +1,34 @@
+<dialog id="contactModal">
+  <div class="bg-black/80 fixed inset-0 flex items-start md:items-center justify-center z-20">
+    <div class="bg-white max-w-md w-full p-6 border rounded-t-2xl shadow-2xl absolute bottom-0 md:bottom-auto h-[90vh] md:h-auto md:rounded-b-2xl">
+      <div class="flex flex-col gap-4">
+        <div class="flex justify-between gap-4">
+          <h2 class="text-2xl font-brand font-bold">Habla con uno de nuestros asesores</h2>
+          <button class="text-md shrink-0 bg-zinc-100 size-8 rounded-full border border-zinc-200 flex items-center justify-center" onclick="document.getElementById('contactModal').close()">
+            <i class="fa-solid fa-times"></i>
+          </button>
+        </div>
+        <p>Comunícate con nosotros uno de nuestros asesores te ayudará a resolver tus dudas.</p>
+        <div class="flex flex-col gap-2 p-2 bg-beige border rounded-lg items-center">
+          <p>Llamada a un asesor:</p>
+          <a href="tel:8004793103" class="bg-primary text-white py-2 px-4 rounded-full inline-flex  w-full  justify-center gap-2 font-semibold">
+            <i class="fa-solid fa-phone"></i>
+            <span>800 479 3103</span>
+          </a>
+        </div>
+        <div class="flex items-center gap-2">
+          <div class="h-px w-full bg-black/10"></div>
+          <span>o</span>
+          <div class="h-px w-full bg-black/10"></div>
+        </div>
+        <div class="flex flex-col gap-2 p-2 bg-beige border rounded-lg items-center">
+          <p>Habla con un asesor por WhatsApp</p>
+          <a href="https://wa.me/525536414807" class="bg-green-600 text-white py-2 px-4 rounded-full inline-flex  w-full items-center justify-center gap-2 font-semibold">
+            <i class="fa-brands fa-whatsapp"></i>
+            <span>55 3641 4807</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</dialog>
