@@ -35,8 +35,8 @@ if (process.env.NODE_ENV === 'development') {
       <div class="w-full grid grid-cols-1 md:grid-cols-3 gap-8">
         <div class="flex flex-col gap-4 items-start md:col-span-2 text-center md:text-left justify-between">
           <div class="flex flex-col gap-4">
-            <h1 class="text-4xl font-bold">Invierte en edificios de BeGrand desde 1 m², genera plusvalía y rentas desde el primer mes.</h1>
-            <p class="text-lg">Empieza con tan solo 1 m² y recibe rentas desde el primer mes. Adquiere metros a tu propio ritmo y, cuando acumules la cantidad deseada, podrás usarlos como enganche o incluso intercambiarlos por un departamento.</p>
+            <h1 class="text-4xl font-bold">Invierte en edificios de BeGrand desde 1 m², genera plusvalía y rentas.</h1>
+            <p class="text-lg">Empieza con tan solo 1 m² y recibe rentas. Adquiere metros a tu propio ritmo y, cuando acumules la cantidad deseada, podrás usarlos como enganche o incluso intercambiarlos por un departamento.</p>
             <div class="flex items-center gap-4 flex-col md:flex-row space-y-4 md:space-y-0">
               <a class="bg-white text-base text-navy py-4 px-8 rounded-full inline-flex items-center justify-center font-semibold uppercase tracking-wider group gap-2 group hover:scale-105 transition-all" href="#propiedades">
                 <span>Explorar opciones de inversión</span>
@@ -83,7 +83,7 @@ if (process.env.NODE_ENV === 'development') {
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="size-5">
             <path fill-rule="evenodd" d="M10 18a8 8 0 1 0 0-16 8 8 0 0 0 0 16Zm3.857-9.809a.75.75 0 0 0-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 1 0-1.06 1.061l2.5 2.5a.75.75 0 0 0 1.137-.089l4-5.5Z" clip-rule="evenodd" />
           </svg>
-          <p>Hasta 14% de plusvalía</p>
+          <p>Grandes plusvalías</p>
         </div>
         <div class="flex items-center gap-1">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="size-5">
@@ -119,7 +119,7 @@ if (process.env.NODE_ENV === 'development') {
             <i class="fa-duotone fa-solid fa-smile-wink text-2xl text-navy"></i>
             <div class="flex-1 flex flex-col gap-2">
               <h3 class="text-2xl text-balance font-brand font-semibold">No tienes que preocuparte por nada más</h3>
-              <p>Nosotros nos encargamos de todo, desde la gestión del edificio hasta la venta y el canje de los departamentos.</p>
+              <p>Nosotros nos encargamos de toda la operación y mantenimiento.</p>
             </div>
           </article>
           <article class="flex-col gap-4 flex justify-between items-start py-6 md:py-12">
@@ -165,9 +165,9 @@ if (process.env.NODE_ENV === 'development') {
                   <span>{project.location}</span>
                 </div>
               </div>
-              <div>
+              {/* <div>
                 <p class="text-base font-medium bg-white/10 rounded-full px-4 border border-white/10 py-1 inline-flex items-center gap-1">{project.appreciation}% de plusvalía</p>
-              </div>
+              </div> */}
               <a class="border border-white/50 py-2 text-base uppercase gap-2 font-semibold tracking-wide rounded-full flex items-center justify-center hover:bg-white hover:text-black" href={project.url} target="_blank" rel="noopener">
                 <span>Calcular inversión</span>
               </a>
