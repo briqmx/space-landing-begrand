@@ -1,4 +1,9 @@
 ---
+interface Props {
+	title: string
+}
+
+const { title } = Astro.props
 const site_url = Astro.site
 let base_ulr = ''
 // Get the process environment
@@ -12,7 +17,7 @@ if (process.env.NODE_ENV === 'development') {
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sumametros® | La nueva forma de invertir en depas y hacer crecer tu patrimonio, metro a metro.</title>
+  <title>{title}</title>
   <meta
     name="description"
     content="Compra desde 1m² en grandes proyectos residenciales ya rentados y genera rendimientos por rentas más plusvalía."
