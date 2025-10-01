@@ -107,20 +107,20 @@ import faqs from '../../data/faqs.json'
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-        <article class="bg-blue text-white p-8 rounded-xl flex flex-col gap-2 aspect-[4/3] relative">
-          <div class="relatice z-1">
-            <figure class="size-30 bg-white rounded-xl mb-4"></figure>
+        <article class="bg-blue text-white p-8 md:p-16 rounded-xl flex flex-col gap-2 aspect-[4/3] relative justify-end">
+          <div class="relatice z-1 flex flex-col gap-4 items-start">
+            <img src="feature-image-1.svg" alt="Canjealos por un departamento." class="h-32" />
             <h3 class="font-bold text-2xl">Canjealos por un departamento.</h3>
-            <p>Usa tus metros como enganche o pago total de un departamento completo, una vez que hayas acumulado los suficientes.</p>
+            <p class="text-pretty text-lg">Usa tus metros como enganche o pago total de un departamento completo, una vez que hayas acumulado los suficientes.</p>
           </div>
 
           <img src="/cta-piece-top.svg" alt="Arrow right" class="absolute top-2 left-2 opacity-0 md:opacity-10" />
         </article>
-        <article class="bg-orange text-white p-8 rounded-xl flex flex-col gap-2 aspect-[4/3] relative">
-          <div class="relatice z-1">
-            <figure class="size-30 bg-white rounded-xl mb-4"></figure>
+        <article class="bg-orange text-white p-8 md:p-16 rounded-xl flex flex-col gap-2 aspect-[4/3] relative justify-end">
+          <div class="relatice z-1 flex flex-col gap-4 items-start">
+            <img src="feature-image-2.svg" alt="Consérvalos y recibe rentas." class="h-32" />
             <h3 class="font-bold text-2xl">Consérvalos y recibe rentas.</h3>
-            <p>Vende tus metros en la plataforma y obtén la plusvalía acumulada desde que compraste.</p>
+            <p class="text-pretty text-lg">Vende tus metros en la plataforma y obtén la plusvalía acumulada desde que compraste.</p>
           </div>
           <img src="/cta-piece-bottom.svg" alt="Arrow right" class="absolute bottom-2 right-2 opacity-0 md:opacity-10" />
         </article>
@@ -151,6 +151,26 @@ import faqs from '../../data/faqs.json'
         <h2 class="font-bold text-blue">Preguntas frecuentes</h2>
         <p class="text-2xl font-bold">Resuelve tus dudas sobre Sumametros</p>
       </div>
+      <article class="flex flex-col gap-2 p-8 rounded-xl bg-gray mb-8">
+        <h3 class="font-bold">¿Quiénes administran Sumametros by Be Grand®?</h3>
+        <p class="leading-relaxed">Sumametros es un proyecto operado por Be Grand<sup>®</sup> con la tecnología y respaldo de briq.mx.</p>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-4">
+          <div class="flex flex-col gap-2">
+            <figure class="h-20 flex items-center">
+              <img src="/logo-begrand-horizontal.png" alt="Logo" class="h-10" />
+            </figure>
+            <p>Empresa mexicana, con 20 años de experiencia en el desarrollo y comercialización de proyectos inmobiliarios de alta calidad en zonas AAA en México y España.</p>
+            <a class="underline" href="https://begrand.mx" target="_blank">Conoce más</a>
+          </div>
+          <div class="flex flex-col gap-2">
+            <figure class="h-20 flex items-center">
+              <img src="/logo-briq.svg" alt="Logo" class="h-10" />
+            </figure>
+            <p>Plataforma líder de financiamiento colectivo inmobiliario, regulada por las autoridades financieras (CNBV, CONDUSEF, Banxico y SHCP)</p>
+            <a class="underline" href="https://www.briq.mx?referral_code=sumametros" target="_blank">Conoce más</a>
+          </div>
+        </div>
+      </article>
       <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
         {faqs.map((faq, index) => (
           <article class="flex flex-col gap-2 p-8 rounded-xl bg-gray">
