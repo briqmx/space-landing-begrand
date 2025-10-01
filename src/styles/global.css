@@ -19,7 +19,7 @@ a,button {
 
 @layer components {
   .container {
-    @apply max-w-screen-xl mx-auto px-4;
+    @apply max-w-7xl mx-auto px-4;
   }
 
   .button {
