@@ -1,9 +1,5 @@
 ---
-interface Props {
-	title: string
-}
-
-const { title } = Astro.props
+import '../styles/global.css'
 const site_url = Astro.site
 let base_ulr = ''
 
@@ -13,120 +9,134 @@ if (process.env.NODE_ENV === 'development') {
 } else {
 	base_ulr = site_url.href + ''
 }
+
+const { title } = Astro.props
 ---
 
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta
-			name="description"
-			content="Sumametros® | La nueva forma de invertir en depas y hacer crecer tu patrimonio, metro a metro."
-		/>
-		<meta
-			name="og:title"
-			content="Sumametros® | La nueva forma de invertir en depas y hacer crecer tu patrimonio, metro a metro."
-		/>
-		<meta
-			name="og:description"
-			content="Compra desde 1m² en grandes proyectos residenciales ya rentados y genera rendimientos por rentas más plusvalía."
-		/>
-		<meta name="og:image" content={base_ulr + '/og.jpg'} />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" href={base_ulr + '/favicon.png'} type="image/png" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Sumametros® | {title}</title>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{ title }</title>
+  <meta
+    name="description"
+    content="Compra desde 1m² en grandes proyectos residenciales ya rentados y genera rendimientos por rentas más plusvalía."
+  />
+  <meta
+    name="og:title"
+    content="{{ title }}"
+  />
+  <meta
+    name="og:description"
+    content="Compra desde 1m² en grandes proyectos residenciales ya rentados y genera rendimientos por rentas más plusvalía."
+  />
 
-		<link rel="preconnect" href="https://fonts.googleapis.com" />
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-		<link
-			href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,500;0,700;1,400&family=Outfit:wght@500&display=swap"
-			rel="stylesheet"
-		/>
-		<script src="https://kit.fontawesome.com/dd626c8ac3.js" crossorigin="anonymous"></script>
-		<!-- Google tag (gtag.js) -->
-		<script async src="https://www.googletagmanager.com/gtag/js?id=G-H8JTC0Y322"></script>
-		<script>
-			window.dataLayer = window.dataLayer || [];
-			function gtag(){dataLayer.push(arguments);}
-			gtag('js', new Date());
+  <meta name="og:image" content={base_ulr + '/og.jpg'} />
+  <link rel="icon" href={base_ulr + '/favicon.png'} type="image/png" />
+  <script src="https://kit.fontawesome.com/dd626c8ac3.js" crossorigin="anonymous"></script>
 
-			gtag('config', 'G-H8JTC0Y322');
-		</script>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-H8JTC0Y322"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
 
-		<!-- Clarity tracking code -->
-		<script type="text/javascript">
-			(function(c,l,a,r,i,t,y){
-					c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-					t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-					y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-			})(window, document, "clarity", "script", "ku6s4q2wzr");
-		</script>
+    gtag('config', 'G-H8JTC0Y322');
+  </script>
 
-		<!-- Google Tag Manager -->
-		<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-		new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-		j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-		'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-		})(window,document,'script','dataLayer','GTM-N9GK9XRQ');</script>
-		<!-- End Google Tag Manager -->
-	</head>
-	<body class="flex min-h-screen flex-col text-blue-950 antialiased">
-		<slot />
-
-		<!-- Google Tag Manager (noscript) -->
-		<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-N9GK9XRQ"
-		height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-		<!-- End Google Tag Manager (noscript) -->
-	</body>
+  <!-- Clarity tracking code -->
+  <script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "ku6s4q2wzr");
+  </script>
+</head>
+<body class="antialiased flex flex-col font-body min-h-screen text-sm">
+	<slot />
+</body>
 </html>
 
-<style>
-	@font-face {
-		font-family: 'Archia';
-		src: url('/fonts/archia-thin-webfont.woff') format('woff');
-		font-weight: 100;
-		font-style: normal;
-		font-display: swap;
+<style is:inline>
+
+  html {
+    /* smooth scroll */
+    scroll-behavior: smooth;
+  }
+
+  .embeddedServiceHelpButton .helpButton .uiButton {
+		background-color: #19A2E6 !important;
 	}
 
-	@font-face {
-		font-family: 'Archia';
-		src: url('/fonts/archia-light-webfont.woff') format('woff');
-		font-weight: 300;
-		font-style: normal;
-		font-display: swap;
+	.embeddedServiceHelpButton .helpButton .uiButton:focus {
+		outline: 1px solid #19A2E6;
 	}
 
-	@font-face {
-		font-family: 'Archia';
-		src: url('/fonts/archia-regular-webfont.woff') format('woff');
-		font-weight: 400;
-		font-style: normal;
-		font-display: swap;
+	.chatHeaderBranding{
+		background-color: #19A2E6!important;
 	}
 
-	@font-face {
-		font-family: 'Archia';
-		src: url('/fonts/archia-medium-webfont.woff') format('woff');
-		font-weight: 500;
-		font-style: normal;
-		font-display: swap;
+	.embeddedServiceHelpButton .uiButton {
+		min-width: 18em !important;
 	}
-
-	@font-face {
-		font-family: 'Archia';
-		src: url('/fonts/archia-semibold-webfont.woff') format('woff');
-		font-weight: 600;
-		font-style: normal;
-		font-display: swap;
-	}
-
-	@font-face {
-		font-family: 'Archia';
-		src: url('/fonts/archia-bold-webfont.woff') format('woff');
-		font-weight: 700;
-		font-style: normal;
-		font-display: swap;
-	}
+  
 </style>
+
+<script type='text/javascript' src='https://service.force.com/embeddedservice/5.0/esw.min.js'></script>
+	<script type='text/javascript'>
+		var initESW = function(gslbBaseURL) {
+			embedded_svc.settings.displayHelpButton = true; //O falso
+			embedded_svc.settings.language = 'es-MX';
+
+			//embedded_svc.settings.defaultMinimizedText = '...'; //(Toma como valor predeterminado Sesión de chat con un experto)
+			//embedded_svc.settings.disabledMinimizedText = '...'; //(Toma como valor predeterminado Agente sin conexión)
+
+			embedded_svc.settings.defaultMinimizedText = 'CHATEA CON UN EXPERTO';
+			embedded_svc.settings.loadingText = 'Conectando...'; 
+
+			//embedded_svc.settings.loadingText = ''; //(Toma como valor predeterminado Cargando)
+			//embedded_svc.settings.storageDomain = 'yourdomain.com'; //(Establece el dominio para su desarrollo de modo que los visitantes puedan navegar por subdominios durante una sesión de chat)
+
+			// Configuración para Plática
+			//embedded_svc.settings.directToButtonRouting = function(prechatFormData) {
+				// Dynamically changes the button ID based on what the visitor enters in the pre-chat form.
+				// Returns a valid button ID.
+			//};
+			//embedded_svc.settings.prepopulatedPrechatFields = {}; //Establece el relleno automático de los campos del formulario previo al chat
+			//embedded_svc.settings.fallbackRouting = []; //Una matriz de identificadores de botones, de usuario o userId_buttonId
+			//embedded_svc.settings.offlineSupportMinimizedText = '...'; //(Toma como valor predeterminado la opción Contacto)
+
+			embedded_svc.settings.enabledFeatures = ['LiveAgent'];
+			embedded_svc.settings.entryFeature = 'LiveAgent';
+
+			embedded_svc.init(
+				'https://begrand.my.salesforce.com',
+				'https://begrand.my.site.com/begrandfrontdesk',
+				gslbBaseURL,
+				'00Df20000019tKD',
+				'Live_Agent_SumaMetros',
+				{
+					baseLiveAgentContentURL: 'https://c.la3-core1.sfdc-lywfpd.salesforceliveagent.com/content',
+					deploymentId: '572f2000000fy7G',
+					buttonId: '573Qm0000006FM9',
+					baseLiveAgentURL: 'https://d.la3-core1.sfdc-lywfpd.salesforceliveagent.com/chat',
+					eswLiveAgentDevName: 'EmbeddedServiceLiveAgent_Parent04IQm0000002bujMAA_18f08b0b089',
+					isOfflineSupportEnabled: false
+				}
+			);
+		};
+
+		if (!window.embedded_svc) {
+			var s = document.createElement('script');
+			s.setAttribute('src', 'https://begrand.my.salesforce.com/embeddedservice/5.0/esw.min.js');
+			s.onload = function() {
+				initESW(null);
+			};
+			document.body.appendChild(s);
+		} else {
+			initESW('https://service.force.com');
+		}
+	</script>

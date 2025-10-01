@@ -1,9 +1,8 @@
 ---
+
 import projects from '../../data/projects.json'
 import faqs from '../../data/faqs.json'
-import VideoModal from '../components/VideoModal.astro'
-import ContactModal from '../components/ContactModal.astro'
-import Base from '../layouts/Base.astro'
+
 const site_url = Astro.site
 let base_ulr = ''
 
@@ -13,47 +12,46 @@ if (process.env.NODE_ENV === 'development') {
 } else {
 	base_ulr = site_url.href + ''
 }
+
+import Layout from '../layouts/Layout.astro'
 ---
 
-<Base title="Sumametros® | La nueva forma de invertir en depas y hacer crecer tu patrimonio, metro a metro.">
+<Layout title="Sumametros® | Compra tu departamento poco a poco y genera rentas + plusvalía en el proceso.">
   <div class="sticky top-0 z-20 bg-[#F8F8F4]">
-    <nav class="py-4 md:py-2 border-b shadow-sm bg-[#F8F8F4]">
-      <div class="w-full max-w-screen-xl mx-auto px-4">
+    <nav class="py-4 md:py-2 border-b shadow-sm bg-[#F8F8F4] border-black/10">
+      <div class="w-full max-w-7xl mx-auto px-4">
         <div class="flex items-center justify-between gap-2">
-          <a href="/" class="flex-shrink-0 hover:opacity-80">
+          <a href="/v2" class="flex-shrink-0">
             <img src="/logo-nav.png" alt="Logo" class="h-9 md:h-12" />
           </a>
           <div>
-            <button class="px-4 bg-white uppercase tracking-wide font-semibold text-xs md:text-sm py-2 rounded-full border inline-flex gap-2 items-center justify-center group hover:bg-navy hover:text-white transition-all" onclick="document.getElementById('contactModal').showModal()">
+            <button class="px-4 bg-white uppercase tracking-wide font-semibold text-xs md:text-sm py-2 rounded-full border inline-flex gap-2 items-center justify-center border-black/10" onclick="document.getElementById('contactModal').showModal()">
               Solicitar información
-              <i class="fa-regular fa-comment group-hover:rotate-12 transition-transform"></i>
+              <i class="fa-regular fa-comment"></i>
             </button>
           </div>
         </div>
       </div>
     </nav>
-    <nav class="border-b shadow-sm bg-[#F8F8F4]">
-      <div class="w-full max-w-screen-xl mx-auto px-4">
+    <nav class="border-b shadow-sm bg-[#F8F8F4] border-black/10">
+      <div class="w-full max-w-7xl mx-auto px-4">
         <div class="flex items-center justify-center gap-2">
           <!-- <button class="flex md:hidden">Menu</button> -->
-          <div class="hidden md:flex items-center gap-4 font-medium">
-            <a class="py-2 px-3 border-b-2 border-transparent hover:border-b-primary" href="#como-funciona" data-nav-link>¿Cómo funciona?</a>
-            <a class="py-2 px-3 border-b-2 border-transparent hover:border-b-primary" href="#propiedades" data-nav-link>Propiedades</a>
-            <a class="py-2 px-3 border-b-2 border-transparent hover:border-b-primary" href="#preguntas-frecuentes" data-nav-link>Preguntas frecuentes</a>
+          <div class="hidden md:flex items-center gap-4 font-medium text-base">
+            <a class="py-2 px-3 border-b-2 border-transparent hover:border-b-blue" href="#como-funciona" data-nav-link>¿Cómo funciona?</a>
+            <a class="py-2 px-3 border-b-2 border-transparent hover:border-b-blue" href="#propiedades" data-nav-link>Propiedades</a>
+            <a class="py-2 px-3 border-b-2 border-transparent hover:border-b-blue" href="#preguntas-frecuentes" data-nav-link>Preguntas frecuentes</a>
           </div>
         </div>
       </div>
     </nav>
   </div>
-  <header class="py-16">
-    <div class="w-full max-w-screen-xl mx-auto px-4">
+  <header class="py-16 bg-beige">
+    <div class="w-full max-w-7xl mx-auto px-4">
       <div class="flex flex-col gap-4 items-center justify-center text-center max-w-3xl mx-auto">
         <h1 class="text-2xl md:text-5xl font-semibold text-balance font-brand">Compra tu departamento poco a poco y genera rentas + plusvalía en el proceso.</h1>
-        <p class="leading-relaxed text-balance ">Empieza con tan solo 1 m² y recibe rentas desde el primer mes. Adquiere metros a tu propio ritmo y, cuando acumules la cantidad deseada, podrás usarlos como enganche o incluso intercambiarlos por un departamento.</p>
-        <a class="bg-navy text-base text-white py-4 px-8 rounded-full inline-flex items-center justify-center font-semibold uppercase tracking-wider group gap-2 group hover:scale-105 transition-all" href="#propiedades">
-          <span>Explorar propiedades</span>
-          <i class="fa-solid fa-search group-hover:rotate-12 transition-transform"></i>
-        </a>
+        <p class="leading-relaxed text-balance text-base">Empieza con tan solo 1 m² y recibe rentas desde el primer mes. Adquiere metros a tu propio ritmo y, cuando acumules la cantidad deseada, podrás usarlos como enganche o incluso intercambiarlos por un departamento.</p>
+        <a class="bg-navy text-base text-white py-4 px-8 rounded-full inline-flex items-center justify-center font-semibold uppercase tracking-wider" href="#propiedades">Explorar propiedades</a>
         <button class="aspect-video appearance-none w-full bg-navy relative overflow-hidden shadow-xl rounded-2xl flex items-center justify-center hover:-translate-y-1 transition-all" id="open-video">
           <img
               src="/hero-cover.jpeg"
@@ -69,20 +67,20 @@ if (process.env.NODE_ENV === 'development') {
         <div class="flex items-baseline justify-center gap-2 text-sm md:text-base">
           <p>Operado por</p>
           <a class="h-5 md:h-8 flex-shrink-0 inline-block" href="https://begrand.mx" target="_blank">
-            <img src="/logo-begrand-horizontal.png" alt="Begrand Logo" class="h-full" />
+            <img src="/logo-begrand-horizontal.png" alt="Begrand Logo" class="w-full h-full" />
           </a>
           <p> a través de</p>
           <a class="h-4 md:h-7 flex-shrink-0 inline-block" href="https://briq.mx" target="_blank">
-            <img src="/logo-briq.svg" alt="Briq Logo" class="h-full" />
+            <img src="/logo-briq.svg" alt="Briq Logo" class="w-full h-full" />
           </a>
         </div>
-        <a class="underline" href="#quienes">Conoce más sobre la alianza aquí</a>
+        <a class="underline text-base" href="#quienes">Conoce más sobre la alianza aquí</a>
       </div>
     </div>
   </header>
-  <section class="bg-navy py-4 text-xl">
-    <div class="w-full max-w-screen-xl mx-auto px-4">
-      <div class="flex items-center gap-8 text-white justify-center flex-wrap">
+  <div class="bg-navy py-4 text-xl">
+    <div class="w-full max-w-7xl mx-auto px-4">
+      <div class="flex items-center gap-8 text-white justify-center flex-wrap text-base">
         <div class="flex items-center gap-1">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="size-5">
             <path fill-rule="evenodd" d="M10 18a8 8 0 1 0 0-16 8 8 0 0 0 0 16Zm3.857-9.809a.75.75 0 0 0-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 1 0-1.06 1.061l2.5 2.5a.75.75 0 0 0 1.137-.089l4-5.5Z" clip-rule="evenodd" />
@@ -109,9 +107,9 @@ if (process.env.NODE_ENV === 'development') {
         </div>
       </div>
     </div>
-  </section>
-  <section class="py-16" id="como-funciona">
-    <div class="w-full max-w-screen-xl mx-auto px-4">
+  </div>
+  <section class="py-16 text-base bg-beige" id="como-funciona">
+    <div class="w-full max-w-7xl mx-auto px-4">
       <div class="grid grid-cols-1 md:grid-cols-2 gap-4 items-center">
         <div class="w-full items-start flex-col">
           <div class="mb-4">
@@ -138,8 +136,8 @@ if (process.env.NODE_ENV === 'development') {
       </div>
     </div>
   </section>
-  <section class="py-16 border-t border-black/10" id="propiedades">
-    <div class="w-full max-w-screen-xl mx-auto px-4">
+  <section class="py-16 border-t border-black/10 bg-beige" id="propiedades">
+    <div class="w-full max-w-7xl mx-auto px-4">
       <div class="mb-4 w-full md:w-1/2">
         <h2 class="font-medium text-sky-600">Propiedades disponibles</h2>
         <h3 class="text-2xl md:text-4xl font-bold font-brand">Conoce tu próximo departamento y comienza a recibir rentas.</h3>
@@ -147,88 +145,74 @@ if (process.env.NODE_ENV === 'development') {
       <div class="grid grid-cols-1 sm:grid-cols-3 md:grid-cols-4 gap-8">
         {projects.map((project, index) => (
           <article class="aspect-square md:aspect-[3/4] flex flex-col justify-between gap-4 relative p-3 overflow-hidden group rounded-xl">
-            <figure class="bg-black absolute border inset-0 group-hover:scale-125 transition-transform">
+            <figure class="absolute border border-black/20 inset-0 group-hover:scale-125 transition-transform">
               <img
                 src={project.image}
                 alt={project.title}
                 class="absolute inset-0 w-full h-full object-cover"
               />
             </figure>
-            <div class="inset-0 bg-zinc-900 bg-opacity-20 absolute group-hover:bg-opacity-40"></div>
+            <div class="inset-0 bg-black/20 absolute group-hover:bg-opacity-40"></div>
             <div class="top-0 left-0 p-2 z-10 flex items-center gap-1">
-              {project.isFeatured && <span class="bg-primary text-white font-medium text-sm px-2 py-1 rounded-md">Destacado</span>}
-              <div class="bg-white flex items-center justify-center font-medium text-sm px-2 py-1 gap-1 rounded-md">
+              {project.isFeatured && <span class="bg-primary text-white font-medium text-xs px-2 py-1 rounded-md">Destacado</span>}
+              <div class="bg-white flex items-center justify-center font-medium text-xs px-2 py-1 gap-1 rounded-md">
                 <div class="size-2 bg-lime-500 rounded-full animate-pulse"></div>
                 <span>Generando rentas</span>
               </div>
             </div>
             <div class="flex flex-col gap-2 absolute bottom-0 left-0 w-full bg-gradient-to-t from-black via-black to-transparent px-4 py-6 z-10 text-white">
-              <div class="flex flex-col gap-1">
+              <div>
                 <h2 class="font-brand font-semibold text-xl text-balance">{project.title}</h2>
-                <div class="text-sm font-medium flex items-center gap-1">
-                  <i class="fa-solid fa-location-dot text-white/50"></i>
-                  <span>{project.location}</span>
-                </div>
+                <p class="text-sm font-medium">{project.location}</p>
               </div>
               {/* <p>{project.appreciation}% de plusvalía</p> */}
-              <a class="border border-white/50 py-2 text-base uppercase gap-2 font-semibold tracking-wide rounded-full flex items-center justify-center hover:bg-white hover:text-black" href={project.url} target="_blank" rel="noopener">
-                <span>Ver más</span>
-                <i class="fa-solid fa-arrow-right"></i>
+              <a class="border border-white/50 py-2 text-base uppercase font-semibold tracking-wide rounded-full flex items-center justify-center hover:bg-white hover:text-black" href={project.url} target="_blank" rel="noopener">
+                Ver más
               </a>
             </div>
           </article>
         ))}
-        <article class="bg-navy col-span-full md:col-span-2 rounded-xl flex items-center justify-center flex-col gap-4 text-white p-6 text-center">
-          <div class="relative">
-            <figure class="size-10 bg-white/10 rounded-full flex items-center justify-center overflow-hidden relative border border-white/10">
-              <img src="/avatar.png" alt="Asesor" class="absolute inset-0 w-full h-full object-cover">
-            </figure>
-            <div class="size-2 rounded-full bg-lime-400 absolute bottom-0 right-0 animate-pulse"></div>
-          </div>
+        <article class="bg-navy col-span-full md:col-span-2 rounded-xl flex items-center justify-center flex-col gap-4 text-white p-6 text-center text-base">
           <p class="font-brand font-semibold text-xl">¿No sabes cuál elegir?</p>
           <p>Habla con un asesor y te ayudará a elegir la mejor opción para ti.</p>
-          <button class="py-2.5 rounded-full bg-transparent text-white hover:bg-white hover:text-navy px-6 uppercase font-semibold tracking-wide text-base transition-all border border-white" onclick="document.getElementById('contactModal').showModal()">
+          <button class="bg-white py-2.5 rounded-full text-navy px-6 uppercase font-semibold tracking-wide text-base" onclick="document.getElementById('contactModal').showModal()">
             Hablar con un asesor
           </button>
         </article>
       </div>
     </div>
   </section>
-  <section class="py-16 border-t border-black/10">
-    <div class="w-full max-w-screen-xl mx-auto px-4">
-      <div class="w-full">
-        <div class="mb-4">
-          <h2 class="font-medium text-sky-600">Ventajas de invertir en Sumametros</h2>
-          <h3 class="text-2xl md:text-4xl font-bold font-brand">¿Cómo puedo utilizar mis metros?</h3>
+  <section class="py-16 border-t border-black/10 bg-beige">
+    <div class="w-full max-w-7xl mx-auto px-4">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4 items-center">
+        <div class="w-full">
+          <div class="mb-4">
+            <h2 class="font-medium text-sky-600">Ventajas de invertir en Sumametros</h2>
+            <h3 class="text-2xl md:text-4xl font-bold font-brand">¿Cómo puedo utilizar mis metros?</h3>
+          </div>
+          <div class="flex flex-col items-start gap-4 py-4">
+            <article class="p-4 md:p-6 border-l-4 border-navy flex-col gap-4 flex">
+              <h3 class="text-2xl font-brand font-semibold">Canjea tus metros por un departamento</h3>
+              <p class="text-base">Usa tus metros como enganche o pago total de un departamento completo una vez que hayas acumulado los suficientes.</p>
+            </article>
+            <article class="p-4 md:p-6 border-l-4 border-navy flex-col gap-4 flex">
+              <h3 class="text-2xl font-brand font-semibold">Conserva tus metros y recibe rentas</h3>
+              <p class="text-base">Recibe rentas mensualmente por cada metro que tengas, sin preocuparte de nada más, nosotros nos encargamos de todo.</p>
+            </article>
+            <article class="p-4 md:p-6 border-l-4 border-navy flex-col gap-4 flex">
+              <h3 class="text-2xl font-brand font-semibold">Vende tus metros y obtén plusvalía</h3>
+              <p class="text-base">Vende tus metros en la plataforma y obtén la plusvalía acumulada desde que compraste.</p>
+            </article>
+          </div>
         </div>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-          <article class="flex-col gap-4 flex justify-between items-start py-6 md:py-12">
-            <i class="fa-duotone fa-solid fa-rotate-reverse text-2xl text-navy"></i>
-            <div class="flex-1 flex flex-col gap-2">
-              <h3 class="text-2xl text-balance font-brand font-semibold">Canjéalos por un departamento.</h3>
-              <p>Usa tus metros como enganche o pago total de un departamento completo, una vez que hayas acumulado los suficientes.</p>
-            </div>
-          </article>
-          <article class="flex-col gap-4 flex justify-between items-start py-6 md:py-12">
-            <i class="fa-duotone fa-solid fa-money-from-bracket text-2xl text-navy"></i>
-            <div class="flex-1 flex flex-col gap-2">
-              <h3 class="text-2xl text-balance font-brand font-semibold">Consérvalos y recibe rentas.</h3>
-              <p>Recibes rentas mensualmente por cada metro que tengas, sin preocuparte de nada más, nosotros nos encargamos de todo.</p>
-            </div>
-          </article>
-          <article class="flex-col gap-4 flex justify-between items-start py-6 md:py-12">
-            <i class="fa-duotone fa-solid fa-chart-mixed-up-circle-dollar text-2xl text-navy"></i>
-            <div class="flex-1 flex flex-col gap-2">
-              <h3 class="text-2xl text-balance font-brand font-semibold">Véndelos y obtén una plusvalía.</h3>
-              <p>Vende tus metros en la plataforma y obtén la plusvalía acumulada desde que compraste.</p>
-            </div>
-          </article>
+        <div class="w-full">
+          <img src="/how-works.png" class="rotate-3">
         </div>
       </div>
     </div>
   </section>
   <section class="py-16">
-    <div class="w-full max-w-screen-xl mx-auto px-4">
+    <div class="w-full max-w-7xl mx-auto px-4">
       <div class="text-center flex flex-col gap-4 items-center bg-blend-hard-light bg-amber-900/5 p-4 md:p-16 rounded-2xl">
         <div class="mx-auto flex items-center gap-6 flex-wrap justify-center">
           <img src="/cnbv.jpg" alt="cmbv" class="w-32 mix-blend-multiply" />
@@ -237,22 +221,22 @@ if (process.env.NODE_ENV === 'development') {
           <img src="/condusef.jpg" alt="cmbv" class="w-32 mix-blend-multiply" />
         </div>
         <div>
-          <h2 class="text-2xl md:text-4xl font-bold font-brand">Sumametros es una opción segura y confiable</h2>
+          <h2 class="text-2xl md:text-4xl font-bold font-brand">Sumametros<sup>®</sup> es una opción segura y confiable</h2>
         </div>
-        <p class="max-w-md">Tu compra e inversión en Sumametros se realiza a través de briq.mx, plataforma regulada por la Comisión Nacional Bancaria y de Valores (CNBV), lo que garantiza la legalidad de tu inversión.</p>
+        <p class="max-w-md text-base">Tu compra e inversión en Sumametros se realiza a través de briq.mx, plataforma regulada por la Comisión Nacional Bancaria y de Valores (CNBV), lo que garantiza la legalidad de tu inversión.</p>
       </div>
     </div>
   </section>
-  <section class="py-16 border-t border-black/10 bg-blend-hard-light bg-amber-900/5" id="preguntas-frecuentes">
-    <div class="w-full max-w-screen-xl mx-auto px-4">
+  <section class="py-16 border-t border-black/10 bg-blend-hard-light bg-amber-900/5 text-base" id="preguntas-frecuentes">
+    <div class="w-full max-w-7xl mx-auto px-4">
       <div class="mb-4">
         <h2 class="font-medium text-sky-600">Preguntas frecuentes</h2>
         <h3 class="text-2x md:text-4xl font-bold font-brand">Resuelve tus dudas sobre Sumametros</h3>
       </div>
       <div>
         <article class="border-b border-black/10 py-8 flex-col gap-2 flex" id="quienes">
-          <h3 class="text-2xl font-brand font-semibold">¿Quiénes administran Sumametros by Be Grand?</h3>
-          <p>Sumametros es un proyecto operado por Be Grand con la tecnología y respaldo de briq.mx.</p>
+          <h3 class="text-2xl font-brand font-semibold">¿Quiénes administran Sumametros by Be Grand<sup>®</sup>?</h3>
+          <p>Sumametros es un proyecto operado por Be Grand<sup>®</sup> con la tecnología y respaldo de briq.mx.</p>
           <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div class="flex flex-col gap-2">
               <figure class="h-20 flex items-center">
@@ -279,23 +263,165 @@ if (process.env.NODE_ENV === 'development') {
       </div>
       <div>
         <div class="bg-navy py-16 px-2 text-white rounded-2xl flex flex-col items-center justify-center gap-4 text-center">
-          <div class="relative">
-            <figure class="size-10 bg-white/10 rounded-full flex items-center justify-center overflow-hidden relative border border-white/10">
-              <img src="/avatar.png" alt="Asesor" class="absolute inset-0 w-full h-full object-cover">
-            </figure>
-            <div class="size-2 rounded-full bg-lime-400 absolute bottom-0 right-0 animate-pulse"></div>
-          </div>
           <p class="font-brand font-semibold text-2xl">¿Tienes más dudas?</p>
-          <p class="text-xl text-balance max-w-md">Habla con un asesor y te ayudará a aclararlas sin compromiso.</p>
-          <button class="bg-white py-2.5 rounded-full text-navy px-6 uppercase font-semibold tracking-wide text-base flex items-center gap-2 hover:bg-white/90 transition-all" onclick="document.getElementById('contactModal').showModal()">
-            <span>Hablar con un asesor</span>
-            <i class="fa-solid fa-phone"></i>
+          <p class="text-xl">Habla con un asesor y te ayudará a aclarar todas tus dudas sin ningún compromiso.</p>
+          <button class="bg-white py-2.5 rounded-full text-navy px-6 uppercase font-semibold tracking-wide text-base" onclick="document.getElementById('contactModal').showModal()">
+            Hablar con un asesor
           </button>
         </div>
       </div>
     </div>
   </section>
+  <footer class="bg-navy py-12 text-white">
+    <div class="w-full max-w-7xl mx-auto px-4 flex flex-col gap-8">
+      <div class="flex items-center justify-between gap-2 flex-col md:flex-row">
+        <div class="col-span-2 flex items-center gap-4">
+          <img src="/logo-nav-white.png" alt="Logo" class="h-16" />
+        </div>
+        <div class="flex items-center gap-2 text-white flex-col md:flex-row">
+          <a href="tel:8004793103" target="_blank" class="flex items-center gap-2 border border-white/10 py-2 px-4 rounded-full">
+            <i class="fa-solid fa-phone"></i>
+            <span>800 479 3103</span>
+         </a>
+          <a href="https://www.instagram.com/sumametros_" target="_blank" class="flex items-center gap-2 border border-white/10 py-2 px-4 rounded-full">
+             <i class="fa-brands fa-instagram"></i>
+             <span>@sumametros_</span>
+          </a>
+          <a href="https://www.facebook.com/profile.php?id=61551645088385&sk=about&locale=es_LA" target="_blank" class="flex items-center gap-2 border border-white/10 py-2 px-4 rounded-full">
+            <i class="fa-brands fa-facebook"></i>
+            <span>Suma Metros</span>
+         </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <div class="fixed inset-0 z-20 items-center justify-center bg-black/90" id="video-modal" style="display: none;">
+    <div class="relative aspect-video w-full bg-white shadow-xl md:h-[80vh] md:w-auto" id="video-container">
+      <video controls class="absolute inset-0 h-full w-full" id="video">
+        <source src="/video-general.mp4" type="video/mp4" />
+      </video>
+      <button class="absolute right-0 top-0 bg-white p-4 text-black" id="close-video">
+        Cerrar
+      </button>
+    </div>
+  </div>
 
-  <VideoModal />
-  <ContactModal />
-</Base>
+  <dialog id="contactModal">
+    <div class="bg-black/80 fixed inset-0 flex items-start md:items-center justify-center z-20">
+      <div class="bg-white max-w-md w-full p-6 border rounded-t-2xl shadow-2xl absolute bottom-0 md:bottom-auto h-[90vh] md:h-auto md:rounded-b-2xl" id="contactModalContent">
+        <div class="flex flex-col gap-4">
+          <div class="flex justify-between gap-4">
+            <h2 class="text-2xl font-brand font-bold">Habla con uno de nuestros asesores</h2>
+            <button class="text-md shrink-0 bg-zinc-100 size-8 rounded-full border border-zinc-200 flex items-center justify-center" onclick="document.getElementById('contactModal').close()">
+              <i class="fa-solid fa-times"></i>
+            </button>
+          </div>
+          <p>Comunícate con nosotros uno de nuestros asesores te ayudará a resolver tus dudas.</p>
+          <div class="bg-gray rounded-xl divide-y divide-black/10">
+            <div class="p-4 flex items-center gap-2 justify-between">
+              <p>Llama al</p>
+              <a href="tel:8004793103" class="button flex-shrink-0 text-sm flex items-center gap-2" target="_blank">
+                <i class="fa-solid fa-phone text-xs"></i>
+                <span>800 479 3103</span>
+              </a>
+            </div>
+            <div class="p-4 flex items-center gap-2 justify-between">
+              <p>Envía un mensaje a WhatsApp</p>
+              <a href="https://wa.me/528123456789" class="button flex-shrink-0 text-sm bg-green-600 flex items-center gap-2" target="_blank">
+                <i class="fa-brands fa-whatsapp"></i>
+                <span>Enviar mensaje</span>
+              </a>
+            </div>
+          </div>
+      </div>
+    </div>
+  </dialog>
+</Layout>
+<style is:inline>
+  .font-brand {
+    font-family: 'Inter Tight', sans-serif;
+  }
+
+  html {
+    /* smooth scroll */
+    scroll-behavior: smooth;
+  }
+
+  .embeddedServiceHelpButton .helpButton .uiButton {
+		background-color: #19A2E6 !important;
+	}
+
+	.embeddedServiceHelpButton .helpButton .uiButton:focus {
+		outline: 1px solid #19A2E6;
+	}
+
+	.chatHeaderBranding{
+		background-color: #19A2E6!important;
+	}
+
+	.embeddedServiceHelpButton .uiButton {
+		min-width: 18em !important;
+	}
+  
+</style>
+
+<script is:inline>
+  document.addEventListener('DOMContentLoaded', () => {
+    const sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('[data-nav-link]');
+
+    function highlightActiveSection() {
+      let scrollY = window.pageYOffset;
+
+      sections.forEach(current => {
+        const sectionHeight = current.offsetHeight;
+        const sectionTop = current.offsetTop - 100; // Adjust this value to change when the highlight activates
+        const sectionId = current.getAttribute('id');
+
+        if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
+          navLinks.forEach(link => {
+            link.classList.remove('border-b-navy');
+            if (link.getAttribute('href') === `#${sectionId}`) {
+              link.classList.add('border-b-navy');
+            }
+          });
+        }
+      });
+    }
+
+    window.addEventListener('scroll', highlightActiveSection);
+    highlightActiveSection(); // Call once on load to set initial state
+  });
+
+  const openVideo = document.getElementById('open-video');
+  const videoModal = document.getElementById('video-modal');
+  const closeVideo = document.getElementById('close-video');
+
+  openVideo.addEventListener('click', () => {
+    videoModal.style.display = 'flex';
+    // Play video
+    const video = document.getElementById('video');
+    video.play();
+  });
+
+  closeVideo.addEventListener('click', () => {
+    videoModal.style.display = 'none';
+    // Pause video
+    const video = document.getElementById('video');
+    video.pause();
+  });
+
+  const contactModal = document.getElementById('contactModal');
+  
+  // Close the modal when the user clicks outside of it
+  if (contactModal) {
+    contactModal.addEventListener('click', (event) => {
+      // Get the modal content div (the white container)
+      const modalContent = contactModal.querySelector('.bg-white');
+      // Check if the click was outside the modal content
+      if (modalContent && !modalContent.contains(event.target)) {
+        contactModal.close();
+      }
+    });
+  }
+</script>

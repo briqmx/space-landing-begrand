@@ -87,7 +87,7 @@ const allProjects = projects
 			</div>
 		</header>
 		<section class="bg-white pb-16 pt-24 border-b" id="como">
-			<div class="mx-auto w-full max-w-screen-lg px-4">
+			<div class="mx-auto w-full max-w-5xl px-4">
 				<div class="flex flex-col gap-8 items-start">
 					<div>
 						<p class="font-display font-bold text-primary text-xl">¿Cómo funciona?</p>
@@ -176,7 +176,7 @@ const allProjects = projects
 			</div>
 		</section>
 		<section class="border-y bg-beige py-24" id="propiedades">
-			<div class="mx-auto w-full max-w-screen-lg px-4">
+			<div class="mx-auto w-full max-w-5xl px-4">
 				<div class="flex flex-col mb-16">
 					<p class="font-display font-bold text-primary text-xl">Propiedades disponibles</p>
 					<h2 class="font-display text-2xl font-bold md:text-3xl">Conoce las propiedades en las que puedes comprar desde 1m²</h2>
@@ -199,7 +199,7 @@ const allProjects = projects
 			</div>
 		</section>
 		<section class="py-12 bg-white">
-			<div class="mx-auto w-full max-w-screen-lg px-4">
+			<div class="mx-auto w-full max-w-5xl px-4">
 				<h2 class="mb-8 font-display text-2xl md:text-3xl font-bold text-center md:text-left">¿Cómo puedo utilizar mis metros?</h2>
 				<div class="grid grid-cols-1 md:grid-cols-3 gap-4">
 					<article class="bg-beige p-4 rounded-lg border">
@@ -226,7 +226,7 @@ const allProjects = projects
 		</section>
 		
 		<section class="border-t bg-beige py-16" id="faqs">
-			<div class="mx-auto w-full max-w-screen-lg px-4">
+			<div class="mx-auto w-full max-w-5xl px-4">
 				<h2 class="mb-16 font-display text-3xl md:text-3xl font-bold">Preguntas frecuentes</h2>
 				<div class="grid grid-cols-1 gap-4">
 					<div class="flex w-full flex-col gap-4 rounded-lg border bg-white p-8" id="quienes">
@@ -265,7 +265,7 @@ const allProjects = projects
 			</div>
 		</section>
 		<section class="py-t8 pb-16 bg-beige">
-			<div class="mx-auto w-full max-w-screen-lg px-4">
+			<div class="mx-auto w-full max-w-5xl px-4">
 				<div class="bg-navy px-4 py-16 rounded-lg border text-white flex items-center justify-center">
 					<div class="max-w-2xl text-center flex flex-col gap-4 items-center">
 						<h2 class="text-xl md:text-4xl font-bold font-display">¿Quieres comenzar a crecer tu patrimonio metro a metro?</h2>
@@ -276,7 +276,7 @@ const allProjects = projects
 			</div>
 		</section>
 		<footer class="border-y py-4 bg-white">
-			<div class="mx-auto w-full max-w-screen-lg px-4">
+			<div class="mx-auto w-full max-w-5xl px-4">
 				<div class="flex items-center justify-center gap-4">
 					<span class="text-sm">Para conocer más sobre Sumametros</span>
 					<a
@@ -299,7 +299,7 @@ const allProjects = projects
 			</div>
 		</footer>
 		<footer class="bg-navy py-12 text-sm text-white">
-			<div class="mx-auto flex w-full max-w-screen-lg flex-col gap-8 px-4">
+			<div class="mx-auto flex w-full max-w-5xl flex-col gap-8 px-4">
 				<div class="flex items-center justify-between gap-2">
 					<div class="col-span-2 flex items-center gap-4">
 						<img src="/logo-emblema-briq-white.svg" alt="Logo" class="w-32" />
@@ -492,7 +492,6 @@ const allProjects = projects
 </Layout>
 
 <style is:global>
-
 	.embeddedServiceHelpButton .helpButton .uiButton {
 		background-color: #19A2E6 !important;
 	}
@@ -510,35 +509,102 @@ const allProjects = projects
 	}
 
 	.container-max {
-		@apply mx-auto  max-w-screen-lg px-4 w-full
+		margin-left: auto;
+		margin-right: auto;
+		max-width: 64rem;
+		padding-left: 1rem;
+		padding-right: 1rem;
+		width: 100%;
 	}
 
 	.button {
-		@apply px-6 py-3 rounded-full font-semibold border font-display flex items-center justify-center gap-2;
+		padding-left: 1.5rem;
+		padding-right: 1.5rem;
+		padding-top: 0.75rem;
+		padding-bottom: 0.75rem;
+		border-radius: 9999px;
+		font-weight: 600;
+		border-width: 1px;
+		font-family: var(--font-body, 'Reflow Sans', sans-serif);
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		gap: 0.5rem;
 	}
 
 	.button--light {
-		@apply bg-white text-navy border-navy/20 shadow-sm hover:bg-navy/5;
+		background-color: white;
+		color: #001D2D;
+		border-color: rgb(0 29 45 / 0.2);
+		box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+	}
+
+	.button--light:hover {
+		background-color: rgb(0 29 45 / 0.05);
 	}
 
 	.button--ghost {
-		@apply bg-white/10 text-white border-white/50 hover:bg-white/20;
+		background-color: rgb(255 255 255 / 0.1);
+		color: white;
+		border-color: rgb(255 255 255 / 0.5);
+	}
+
+	.button--ghost:hover {
+		background-color: rgb(255 255 255 / 0.2);
 	}
 
 	.button--action {
-		@apply bg-primary text-white border-white/20 hover:saturate-150;
+		background-color: var(--color-blue, #3366FF);
+		color: white;
+		border-color: rgb(255 255 255 / 0.2);
+	}
+
+	.button--action:hover {
+		filter: saturate(1.5);
 	}
 
 	.nav-item {
-		@apply border border-white bg-white px-3 py-3 font-display text-xs font-medium text-navy;
+		border-width: 1px;
+		border-color: white;
+		background-color: white;
+		padding-left: 0.75rem;
+		padding-right: 0.75rem;
+		padding-top: 0.75rem;
+		padding-bottom: 0.75rem;
+		font-family: var(--font-body, 'Reflow Sans', sans-serif);
+		font-size: 0.75rem;
+		line-height: 1rem;
+		font-weight: 500;
+		color: #001D2D;
 	}
 
   .btn {
-    @apply bg-primary text-white inline-flex items-center justify-center text-center gap-2 text-base font-display px-8 py-3 rounded-sm font-semibold;
+		background-color: var(--color-blue, #3366FF);
+		color: white;
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		text-align: center;
+		gap: 0.5rem;
+		font-size: 1rem;
+		line-height: 1.5rem;
+		font-family: var(--font-body, 'Reflow Sans', sans-serif);
+		padding-left: 2rem;
+		padding-right: 2rem;
+		padding-top: 0.75rem;
+		padding-bottom: 0.75rem;
+		border-radius: 0.125rem;
+		font-weight: 600;
   }
 
 	.highlight {
-		@apply bg-primary text-white px-2 py-1 rounded-sm;
+		background-color: var(--color-blue, #3366FF);
+		color: white;
+		padding-left: 0.5rem;
+		padding-right: 0.5rem;
+		padding-top: 0.25rem;
+		padding-bottom: 0.25rem;
+		border-radius: 0.125rem;
 	}
 
 </style>

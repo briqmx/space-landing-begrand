@@ -11,17 +11,17 @@
   },
   "dependencies": {
     "@astrojs/react": "^3.0.4",
-    "@astrojs/tailwind": "^5.0.0",
     "@iconify-json/bxl": "^1.1.7",
     "@iconify-json/tabler": "^1.1.92",
+    "@tailwindcss/vite": "^4.1.13",
     "@uidotdev/usehooks": "^2.4.1",
-    "astro": "^3.1.4",
+    "astro": "^5.13.5",
     "astro-analytics": "^2.7.0",
     "astro-icon": "^1.0.0-next.2",
     "chart.js": "^4.4.3",
     "prettier-plugin-tailwindcss": "^0.5.4",
     "react-chartjs-2": "^5.2.0",
-    "tailwindcss": "^3.4.1"
+    "tailwindcss": "^4.1.13"
   },
   "devDependencies": {
     "prettier": "^3.0.3",
