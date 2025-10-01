@@ -1,0 +1,159 @@
+---
+import Head from '../components/Head.astro'
+import Footer from '../components/landing/Footer.astro'
+
+interface Props {
+	title: string
+}
+
+const { title } = Astro.props
+const site_url = Astro.site
+let base_ulr = ''
+
+// Get the process environment
+if (process.env.NODE_ENV === 'development') {
+	base_ulr = 'http://localhost:4321'
+} else {
+	base_ulr = site_url.href + ''
+}
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<Head title={title} />
+<body class="antialiased flex flex-col text-lg bg-[#F8F8F4] text-navy">
+  <slot />
+  <Footer />
+</body>
+</html>
+
+<style is:inline>
+  .font-brand {
+    font-family: 'Inter Tight', sans-serif;
+  }
+
+  html {
+    /* smooth scroll */
+    scroll-behavior: smooth;
+  }
+  
+
+  .embeddedServiceHelpButton .helpButton .uiButton {
+		background-color: #19A2E6 !important;
+	}
+
+	.embeddedServiceHelpButton .helpButton .uiButton:focus {
+		outline: 1px solid #19A2E6;
+	}
+
+	.chatHeaderBranding{
+		background-color: #19A2E6!important;
+	}
+
+	.embeddedServiceHelpButton .uiButton {
+		min-width: 18em !important;
+	}
+  
+</style>
+
+<script is:inline>
+  document.addEventListener('DOMContentLoaded', () => {
+    const sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('[data-nav-link]');
+    const offset = 100; // Define offset here so it's consistent across functions
+
+    function highlightActiveSection() {
+      let scrollY = window.pageYOffset;
+
+      sections.forEach(current => {
+        const sectionHeight = current.offsetHeight;
+        const sectionTop = current.offsetTop - offset - 50; // Subtract offset and a little extra
+        const sectionId = current.getAttribute('id');
+
+        if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
+          navLinks.forEach(link => {
+            link.classList.remove('border-b-primary');
+            if (link.getAttribute('href') === `#${sectionId}`) {
+              link.classList.add('border-b-primary');
+            }
+          });
+        }
+      });
+    }
+
+    window.addEventListener('scroll', highlightActiveSection);
+    highlightActiveSection(); // Call once on load to set initial state
+
+    // Function to handle smooth scrolling with offset
+    function smoothScrollToSection(e) {
+      e.preventDefault();
+      const targetId = this.getAttribute('href').substring(1);
+      const targetSection = document.getElementById(targetId);
+      if (targetSection) {
+        const targetPosition = targetSection.getBoundingClientRect().top + window.pageYOffset - offset;
+        
+        window.scrollTo({
+          top: targetPosition,
+          behavior: 'smooth'
+        });
+      }
+    }
+
+    // Apply smooth scrolling to all links that point to section IDs
+    document.querySelectorAll('a[href^="#"]').forEach(link => {
+      const targetId = link.getAttribute('href').substring(1);
+      if (document.getElementById(targetId)) {
+        link.addEventListener('click', smoothScrollToSection);
+      }
+    });
+
+    const openVideo = document.getElementById('open-video');
+    const videoModal = document.getElementById('video-modal');
+    const closeVideo = document.getElementById('close-video');
+    const video = document.getElementById('video');
+
+    function closeVideoModal() {
+      videoModal.style.display = 'none';
+      video.pause();
+    }
+
+    openVideo.addEventListener('click', () => {
+      videoModal.style.display = 'flex';
+      video.play();
+    });
+
+    closeVideo.addEventListener('click', closeVideoModal);
+
+    // Add event listener for the Escape key
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape' && videoModal.style.display === 'flex') {
+        closeVideoModal();
+      }
+    });
+
+    const contactModal = document.getElementById('contactModal');
+  });
+
+  const openVideo = document.getElementById('open-video');
+  const videoModal = document.getElementById('video-modal');
+  const closeVideo = document.getElementById('close-video');
+
+  openVideo.addEventListener('click', () => {
+    videoModal.style.display = 'flex';
+    // Play video
+    const video = document.getElementById('video');
+    video.play();
+  });
+
+  closeVideo.addEventListener('click', () => {
+    videoModal.style.display = 'none';
+    // Pause video
+    const video = document.getElementById('video');
+    video.pause();
+  });
+
+  const contactModal = document.getElementById('contactModal');
+</script>
+
+<script type='text/javascript' src='https://service.force.com/embeddedservice/5.0/esw.min.js' is:inline></script>
+<script src='../utils/chat.js'></script>
