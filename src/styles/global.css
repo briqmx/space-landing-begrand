@@ -1,0 +1,65 @@
+@import "tailwindcss";
+
+@theme {
+  --font-body: 'Reflow Sans', sans-serif;
+
+  --color-blue: #3366FF;
+  --color-orange: #FE572A;
+  --color-gray: #F4F4F4;
+
+  --color-navy: #001D2D;
+  --color-beige: #F8F8F4;
+}
+
+/* Tailwind Components */
+
+a,button {
+  cursor: pointer;
+}
+
+@layer components {
+  .container {
+    @apply max-w-screen-xl mx-auto px-4;
+  }
+
+  .button {
+    @apply bg-blue text-white px-4 pt-2 pb-2.5 rounded-xl inline-flex items-center justify-center font-medium hover:bg-blue/90 transition-all;
+  }
+
+  .button--secondary {
+    @apply bg-white text-blue px-4 pt-2 pb-2.5 rounded-xl inline-flex items-center justify-center font-medium hover:bg-zinc-100 transition-all;
+  }
+}
+
+/* Font Face for Reflow Sans */
+@font-face {
+  font-family: 'Reflow Sans';
+  src: url('/fonts/ReflowSans-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Reflow Sans';
+  src: url('/fonts/ReflowSans-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Reflow Sans';
+  src: url('/fonts/ReflowSans-SemiBold.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Reflow Sans';
+  src: url('/fonts/ReflowSans-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}

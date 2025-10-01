@@ -1,0 +1,232 @@
+---
+const index = 0;
+---
+
+
+<div class="bg-gray p-8 md:p-16 flex flex-col gap-8 rounded-xl">
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+    <div>
+      <p id="step-number" class="text-blue text-xl md:text-2xl font-semibold">01</p>
+      <p id="step-title" class="text-balance text-xl md:text-3xl">Elige el desarrollo de tu interés y selecciona el número de metros que deseas comprar.</p>
+    </div>
+    <div class="aspect-[4/3] w-full bg-black relative overflow-hidden">
+      <img id="step-image" src="example-product-image.png" alt="Elige el desarrollo" class="w-full h-full object-cover absolute inset-0" />
+    </div>
+  </div>
+  <nav class="flex flex-col md:flex-row items-center gap-4">
+    <button class="py-4 w-full font-medium text-left cursor-pointer step relative active" data-step="0">01 — Elige el desarrollo</button>
+    <button class="py-4 w-full font-medium text-left cursor-pointer step relative" data-step="1">02 — Realiza tu inversión</button>
+    <button class="py-4 w-full font-medium text-left cursor-pointer step relative" data-step="2">03 — Recibe rentas</button>
+    <button class="py-4 w-full font-medium text-left cursor-pointer step relative" data-step="3">04 — Cambia tus m2</button>
+  </nav>
+</div>
+
+<style is:inline>
+  .step {
+    position: relative;
+  }
+
+  .step:before {
+    content: '';
+    position: absolute;
+    top: 2px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: rgba(0,0,0,0.1);
+    z-index: 1;
+  }
+
+  .step:after {
+    content: '';
+    position: absolute;
+    top: 2px;
+    left: 0;
+    width: 0%;
+    height: 2px;
+    background-color: #3366FF;
+    z-index: 2;
+    transition: width 0.05s linear;
+  }
+
+  .step.active:after {
+    width: var(--progress-width, 0%);
+  }
+
+  .entrance {
+    animation: entrance 0.5s ease-in-out forwards;
+  }
+
+  @keyframes entrance {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+</style>
+
+<script is:inline>
+  const STEPS = [
+    {
+      label: 'Elige el desarrollo',
+      title: 'Elige el desarrollo de tu interés y selecciona el número de metros que deseas comprar.',
+      image: 'image-slide-1.png'
+    },
+    {
+      label: 'Realiza tu inversión',
+      title: 'Completa el proceso de pago y recibe tu certificado de compra.',
+      image: 'image-slide-2.png'
+    },
+    {
+      label: 'Recibe rentas',
+      title: 'Comienza a recibir rentas mensuales por tus metros.',
+      image: 'image-slide-3.png'
+    },
+    {
+      label: 'Cambia tus m2',
+      title: 'Cambia tus metros por un departamento completo.',
+      image: 'image-slide-4.png'
+    }
+  ];
+
+  // Configuration
+  const STEP_DURATION = 3000; // 3 seconds per step
+  let currentStepIndex = 0;
+  let autoAdvanceInterval = null;
+  let progressInterval = null;
+  let progressStartTime = 0;
+  let pausedTime = 0;
+  let isPaused = false;
+
+  function updateStepContent(stepIndex) {
+    const step = STEPS[stepIndex];
+    const stepNumber = document.querySelector('#step-number');
+    const stepTitle = document.querySelector('#step-title');
+    const stepImage = document.querySelector('#step-image');
+    
+    // Remove entrance class and force reflow to reset animation
+    stepNumber.classList.remove('entrance');
+    stepTitle.classList.remove('entrance');
+    
+    // Force reflow to ensure class removal is processed
+    stepNumber.offsetHeight;
+    stepTitle.offsetHeight;
+    
+    // Update content
+    stepNumber.textContent = String(stepIndex + 1).padStart(2, '0');
+    stepTitle.textContent = step.title;
+    stepImage.src = step.image;
+    stepImage.alt = step.label;
+    
+    // Use requestAnimationFrame to ensure the DOM updates are processed
+    requestAnimationFrame(() => {
+      stepNumber.classList.add('entrance');
+      stepTitle.classList.add('entrance');
+    });
+  }
+
+  function setActiveStep(stepIndex) {
+    // Clear any existing progress animation
+    if (progressInterval) {
+      clearInterval(progressInterval);
+      progressInterval = null;
+    }
+    
+    // Remove active class from all steps and reset their progress
+    document.querySelectorAll('.step').forEach(step => {
+      step.classList.remove('active');
+      step.style.setProperty('--progress-width', '0%');
+    });
+    
+    // Add active class to clicked step
+    const activeStep = document.querySelector(`[data-step="${stepIndex}"]`);
+    activeStep.classList.add('active');
+    
+    // Start progress animation immediately
+    startProgressAnimation(activeStep);
+  }
+
+  function startProgressAnimation(stepElement) {
+    // Clear any existing animation
+    if (progressInterval) {
+      clearInterval(progressInterval);
+    }
+    
+    // Reset progress immediately
+    stepElement.style.setProperty('--progress-width', '0%');
+    
+    // Record start time
+    progressStartTime = Date.now();
+    pausedTime = 0;
+    
+    // Start animation with high frequency for smoothness
+    progressInterval = setInterval(() => {
+      if (isPaused) {
+        return; // Don't update progress while paused
+      }
+      
+      const elapsed = Date.now() - progressStartTime - pausedTime;
+      const progress = Math.min(elapsed / STEP_DURATION, 1) * 100;
+      
+      stepElement.style.setProperty('--progress-width', progress + '%');
+      
+      if (progress >= 100) {
+        clearInterval(progressInterval);
+        progressInterval = null;
+      }
+    }, 8); // High frequency for smooth animation (~120fps)
+  }
+
+  function goToNextStep() {
+    currentStepIndex = (currentStepIndex + 1) % STEPS.length;
+    updateStepContent(currentStepIndex);
+    setActiveStep(currentStepIndex);
+  }
+
+  function startAutoAdvance() {
+    if (autoAdvanceInterval) {
+      clearInterval(autoAdvanceInterval);
+    }
+    
+    autoAdvanceInterval = setInterval(() => {
+      if (!isPaused) {
+        goToNextStep();
+      }
+    }, STEP_DURATION);
+  }
+
+  function pauseAutoAdvance() {
+    isPaused = true;
+  }
+
+  function resumeAutoAdvance() {
+    isPaused = false;
+  }
+
+  // Initialize
+  updateStepContent(currentStepIndex);
+  setActiveStep(currentStepIndex);
+  startAutoAdvance();
+
+  // Add click event listeners to all step buttons
+  document.querySelectorAll('.step').forEach((stepButton, index) => {
+    stepButton.addEventListener('click', () => {
+      // Clear any existing interval immediately
+      if (autoAdvanceInterval) {
+        clearInterval(autoAdvanceInterval);
+        autoAdvanceInterval = null;
+      }
+      
+      currentStepIndex = index;
+      updateStepContent(currentStepIndex);
+      setActiveStep(currentStepIndex);
+      
+      // Restart auto-advance from current step immediately
+      startAutoAdvance();
+    });
+  });
+</script>
