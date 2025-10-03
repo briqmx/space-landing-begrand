@@ -26,7 +26,7 @@ import faqs from '../../data/faqs.json'
 
         <h1 class="text-xl md:text-3xl font-bold text-balance">Compra tu departamento poco a poco y genera rentas + plusvalía en el proceso.</h1>
         <p class="text-balance leading-relaxed">Empieza con 1 m² y recibe rentas inmediatas. Acumula metros a tu ritmo para usarlos como enganche o intercambiar por un departamento.</p>
-        <a class="button" href="#">Explorar propiedades</a>
+        <a class="button" href="#propiedades">Explorar opciones</a>
 
         <div class="flex items-center gap-2 text-xs md:text-sm">
           <p>Operado por</p>
@@ -68,7 +68,7 @@ import faqs from '../../data/faqs.json'
     <div class="container">
       <div class="md:max-w-[50%] w-full text-balance mb-8">
         <h2 class="font-bold text-blue">Propiedades disponibles</h2>
-        <p class="text-2xl font-bold">Conoce tu próximo departamento y comienza a recibir rentas.</p>
+        <p class="text-2xl font-bold">Explora dónde comprar tu primer m² y comienza a recibir rentas. Cambia a un departamento cuando estés listo.</p>
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
@@ -82,14 +82,14 @@ import faqs from '../../data/faqs.json'
               <h3 class="font-bold">{project.title}</h3>
               <p class="text-sm">{project.location}</p>
             </div>
-            <p class="font-bold">Desde {project.price} mxn/m²</p>
+            <p class="font-bold">Desde ${project.price.toLocaleString('es-MX')} mxn/m²</p>
             <a href={project.url} class="button">Ver detalles</a>
           </article>
         ))}
         <div class="bg-blue text-white w-full h-full  md:col-span-2 rounded-xl flex flex-col gap-2 items-center justify-center p-8 relative">
-          <div class="flex flex-col gap-2 items-center justify-center relative z-10">
+          <div class="flex flex-col gap-2 items-center justify-center relative z-10 text-center">
             <p class="font-bold">¿No sabes cuál elegir?</p>
-            <p>Habla con un asesor y te ayudará a elegir la mejor opción para ti.</p>
+            <p>No tienes que decidir ahora: tus m² son flexibles y podrás elegir en qué departamento usarlos cuando estés listo para dar el siguiente paso.</p>
             <button class="button--secondary" onclick="document.getElementById('contactModal').showModal()">Hablar con un asesor</button>
           </div>
           <img src="/cta-piece-top.svg" alt="Arrow right" class="absolute top-2 left-2 opacity-0 md:opacity-10 pointer-events-none" />
@@ -131,11 +131,11 @@ import faqs from '../../data/faqs.json'
   <section class="py-16">
     <div class="container">
       <div class="bg-gray p-10 md:p-16 rounded-xl flex flex-col gap-4 text-center">
-        <div class="md:max-w-[50%] w-full mx-auto text-pretty flex flex-col gap-4">
-          <div class="flex items-center gap-8 md:gap-16 justify-center flex-wrap">
+        <div class="md:max-w-[100%] lg:max-w-[60%] w-full mx-auto text-pretty flex flex-col gap-4">
+          <div class="flex items-center gap-8 md:gap-16 justify-center flex-wrap w-full">
             <img src="/cnbv.jpg" alt="cnbv" class="h-12 md:h-24 mix-blend-multiply" />
-            <img src="/shcp.svg" alt="shcp" class="h-8 md:h-12 mix-blend-multiply" />
-            <img src="/banco-mexico.svg" alt="banco-mexico" class="h-8 md:h-12 mix-blend-multiply" />
+            <img src="/shcp.svg" alt="shcp" class="h-5 md:h-12 mix-blend-multiply" />
+            <img src="/banco-mexico.svg" alt="banco-mexico" class="h-4 md:h-12 mix-blend-multiply" />
             <img src="/condusef.jpg" alt="condusef" class="h-8 md:h-12 mix-blend-multiply" />
           </div>
           <h3 class="font-bold text-2xl">Sumametros es una opción segura y confiable</h3>
