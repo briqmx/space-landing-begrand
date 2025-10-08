@@ -7,17 +7,17 @@ const index = 0;
   <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
     <div>
       <p id="step-number" class="text-blue text-xl md:text-2xl font-semibold">01</p>
-      <p id="step-title" class="text-balance text-xl md:text-3xl">Elige el desarrollo de tu interés y selecciona el número de metros que deseas comprar.</p>
+      <p id="step-title" class="text-balance text-xl md:text-3xl">Conoce los desarrollos y selecciona el número de metros que deseas comprar. Puedes elegir metros de varios desarrollos.</p>
     </div>
     <div class="aspect-[4/3] w-full bg-black relative overflow-hidden">
       <img id="step-image" src="/example-product-image.png" alt="Elige el desarrollo" class="w-full h-full object-cover absolute inset-0" />
     </div>
   </div>
   <nav class="flex flex-col md:flex-row items-center gap-4">
-    <button class="py-4 w-full font-medium text-left cursor-pointer step relative active" data-step="0">01 — Elige el desarrollo</button>
-    <button class="py-4 w-full font-medium text-left cursor-pointer step relative" data-step="1">02 — Realiza tu inversión</button>
-    <button class="py-4 w-full font-medium text-left cursor-pointer step relative" data-step="2">03 — Recibe rentas</button>
-    <button class="py-4 w-full font-medium text-left cursor-pointer step relative" data-step="3">04 — Cambia tus m2</button>
+    <button class="py-4 w-full font-medium text-left cursor-pointer step relative active" data-step="0">01 - Elige cuántos m²</button>
+    <button class="py-4 w-full font-medium text-left cursor-pointer step relative" data-step="1">02 - Realiza tu inversión</button>
+    <button class="py-4 w-full font-medium text-left cursor-pointer step relative" data-step="2">03 - Recibe rentas</button>
+    <button class="py-4 w-full font-medium text-left cursor-pointer step relative" data-step="3">04 - Cambia tus m²</button>
   </nav>
 </div>
 
@@ -72,8 +72,8 @@ const index = 0;
 <script is:inline>
   const STEPS = [
     {
-      label: 'Elige el desarrollo',
-      title: 'Elige el desarrollo de tu interés y selecciona el número de metros que deseas comprar.',
+      label: 'Elige cuántos m²',
+      title: 'Conoce los desarrollos y selecciona el número de metros que deseas comprar. Puedes elegir metros de varios desarrollos.',
       image: '/image-slide-1.png'
     },
     {
