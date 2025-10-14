@@ -10,7 +10,7 @@ const isDevelopment = process.env.NODE_ENV !== 'production';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'http://sumametros.mx',
+  site: 'https://sumametros.mx',
 
   // base: '/space-landing-begrand',
   // base: '/',
