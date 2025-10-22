@@ -1,9 +1,8 @@
 ---
 import projects from'../../../data/projects.json'
 import faqs from '../../../data/faqs.json'
-import Base from '../../layouts/Base.astro'
-import ContactModal from '../../components/ContactModal.astro'
-import VideoModal from '../../components/VideoModal.astro'
+// import Base from '../../layouts/Base.astro'
+import Layout from '../../layouts/Layout.astro'
 const site_url = Astro.site
 let base_ulr = ''
 
@@ -14,8 +13,8 @@ if (process.env.NODE_ENV === 'development') {
 	base_ulr = site_url.href + ''
 }
 ---
-<Base title="Invierte en Sumametros® | La nueva forma de invertir en depas y hacer crecer tu patrimonio, metro a metro.">
-  <nav class="sticky top-0 z-20 bg-[#F8F8F4] py-4 border-b shadow-sm">
+<Layout title="Invierte en Sumametros® | La nueva forma de invertir en depas y hacer crecer tu patrimonio, metro a metro.">
+  <nav class="sticky top-0 z-20 bg-[#F8F8F4] py-4">
     <div class="w-full max-w-screen-xl mx-auto px-4">
       <div class="flex items-center justify-between gap-2">
         <a href="/">
@@ -41,7 +40,7 @@ if (process.env.NODE_ENV === 'development') {
               <a class="bg-white text-base text-navy py-4 px-8 rounded-full inline-flex items-center justify-center font-semibold uppercase tracking-wider group gap-2 group hover:scale-105 transition-all" href="#propiedades">
                 <span>Explorar opciones de inversión</span>
               </a>
-              <button id="open-video" class="text-base font-semibold tracking-wider text-white underline uppercase">¿Cómo funciona?</button>
+              <button id="play-video-btn" class="text-base font-semibold tracking-wider text-white underline uppercase">¿Cómo funciona?</button>
             </div>
           </div>
           <div class="flex flex-col gap-4 py-8 w-full">
@@ -144,15 +143,15 @@ if (process.env.NODE_ENV === 'development') {
           <article class="aspect-square md:aspect-[3/4] flex flex-col justify-between gap-4 relative p-3 overflow-hidden group rounded-xl">
             <figure class="bg-black absolute border inset-0 group-hover:scale-125 transition-transform">
               <img
-                src={project.image}
+                src={`${base_ulr}${project.image}`}
                 alt={project.title}
                 class="absolute inset-0 w-full h-full object-cover"
               />
             </figure>
-            <div class="inset-0 bg-zinc-900 bg-opacity-20 absolute group-hover:bg-opacity-40"></div>
+            <div class="inset-0 bg-zinc-900/20 absolute group-hover:bg-opacity-40"></div>
             <div class="top-0 left-0 p-2 z-10 flex items-center gap-1">
               {project.isFeatured && <span class="bg-primary text-white font-medium text-sm px-2 py-1 rounded-md">Destacado</span>}
-              <div class="bg-white flex items-center justify-center font-medium text-sm px-2 py-1 gap-1 rounded-md">
+              <div class="bg-white flex items-center justify-center font-medium text-sm px-2 py-1 gap-1 rounded-md shrink-0">
                 <div class="size-2 bg-lime-500 rounded-full animate-pulse"></div>
                 <span>Generando rentas</span>
               </div>
@@ -175,12 +174,6 @@ if (process.env.NODE_ENV === 'development') {
           </article>
         ))}
         <article class="bg-navy col-span-full md:col-span-2 rounded-xl flex items-center justify-center flex-col gap-4 text-white p-6 text-center">
-          <div class="relative">
-            <figure class="size-10 bg-white/10 rounded-full flex items-center justify-center overflow-hidden relative border border-white/10">
-              <img src="/avatar.png" alt="Asesor" class="absolute inset-0 w-full h-full object-cover">
-            </figure>
-            <div class="size-2 rounded-full bg-lime-400 absolute bottom-0 right-0 animate-pulse"></div>
-          </div>
           <p class="font-brand font-semibold text-xl">¿No sabes donde invertir?</p>
           <p>Habla con un asesor y te ayudará a elegir la mejor opción para ti.</p>
           <button class="py-2.5 rounded-full bg-transparent text-white hover:bg-white hover:text-navy px-6 uppercase font-semibold tracking-wide text-base transition-all border border-white" onclick="document.getElementById('contactModal').showModal()">
@@ -242,12 +235,6 @@ if (process.env.NODE_ENV === 'development') {
       </div>
       <div>
         <div class="bg-navy py-16 px-2 text-white rounded-2xl flex flex-col items-center justify-center gap-4 text-center">
-          <div class="relative">
-            <figure class="size-10 bg-white/10 rounded-full flex items-center justify-center overflow-hidden relative border border-white/10">
-              <img src="/avatar.png" alt="Asesor" class="absolute inset-0 w-full h-full object-cover">
-            </figure>
-            <div class="size-2 rounded-full bg-lime-400 absolute bottom-0 right-0 animate-pulse"></div>
-          </div>
           <p class="font-brand font-semibold text-2xl">¿Tienes más dudas?</p>
           <p class="text-xl text-balance max-w-md">Habla con un asesor y te ayudará a aclarar todas tus dudas sin ningún compromiso.</p>
           <button class="bg-white py-2.5 rounded-full text-navy px-6 uppercase font-semibold tracking-wide text-base flex items-center gap-2 hover:bg-white/90 transition-all" onclick="document.getElementById('contactModal').showModal()">
@@ -258,6 +245,101 @@ if (process.env.NODE_ENV === 'development') {
       </div>
     </div>
   </section>
-  <ContactModal />
-  <VideoModal />
-</Base>
+  <dialog id="contactModal">
+    <div class="bg-black/80 fixed inset-0 flex items-start md:items-center justify-center z-20">
+      <div class="bg-white max-w-md w-full p-6 border rounded-t-2xl shadow-2xl absolute bottom-0 md:bottom-auto h-[90vh] md:h-auto md:rounded-b-2xl" id="contactModalContent">
+        <div class="flex flex-col gap-4">
+          <div class="flex justify-between gap-4">
+            <h2 class="text-2xl font-brand font-bold">Habla con uno de nuestros asesores</h2>
+            <button class="text-md shrink-0 bg-zinc-100 size-8 rounded-full border border-zinc-200 flex items-center justify-center" onclick="document.getElementById('contactModal').close()">
+              <i class="fa-solid fa-times"></i>
+            </button>
+          </div>
+          <p>Comunícate con nosotros uno de nuestros asesores te ayudará a resolver tus dudas.</p>
+          <div class="bg-gray rounded-xl divide-y divide-black/10">
+            <div class="p-4 flex items-center gap-2 justify-between">
+              <p>Llama al</p>
+              <a href="tel:8004793103" class="button flex-shrink-0 text-sm flex items-center gap-2" target="_blank">
+                <i class="fa-solid fa-phone text-xs"></i>
+                <span>800 479 3103</span>
+              </a>
+            </div>
+            <div class="p-4 flex items-center gap-2 justify-between">
+              <p>Envía un mensaje a WhatsApp</p>
+              <a href="https://wa.me/528123456789" class="button flex-shrink-0 text-sm bg-green-600 flex items-center gap-2" target="_blank">
+                <i class="fa-brands fa-whatsapp"></i>
+                <span>Enviar mensaje</span>
+              </a>
+            </div>
+          </div>
+      </div>
+    </div>
+  </dialog>
+  <!-- Video Modal -->
+  <div class="fixed inset-0 z-20 items-center justify-center bg-black/90" id="video-modal" style="display: none;">
+    <div class="relative aspect-video w-full bg-white shadow-xl md:h-[80vh] md:w-auto" id="video-container">
+      <video controls class="absolute inset-0 h-full w-full" id="video">
+        <source src="/video-ugc.mp4" type="video/mp4" />
+      </video>
+      <button class="absolute right-0 top-0 bg-white p-4 text-black" id="close-video">
+        Cerrar
+      </button>
+    </div>
+  </div>
+</Layout>
+
+<script is:inline>
+  // Close the modal when the user clicks outside of it
+  document.addEventListener('DOMContentLoaded', () => {
+    const contactModal = document.getElementById('contactModal');
+    const contactModalContent = document.getElementById('contactModalContent');
+    
+    if (contactModal && contactModalContent) {
+      contactModal.addEventListener('click', (event) => {
+        // Check if the click was outside the modal content
+        if (!contactModalContent.contains(event.target)) {
+          contactModal.close();
+        }
+      });
+    }
+
+    // Video modal functionality
+    const openVideoButton = document.getElementById('play-video-btn');
+    const videoModal = document.getElementById('video-modal');
+    const closeVideoButton = document.getElementById('close-video');
+    const video = document.getElementById('video');
+
+    if (openVideoButton && videoModal && closeVideoButton && video) {
+      // Open video modal when play button is clicked
+      openVideoButton.addEventListener('click', () => {
+        videoModal.style.display = 'flex';
+        video.play();
+      });
+
+      // Close video modal when close button is clicked
+      closeVideoButton.addEventListener('click', () => {
+        videoModal.style.display = 'none';
+        video.pause();
+        video.currentTime = 0; // Reset video to beginning
+      });
+
+      // Close video modal when clicking outside the video container
+      videoModal.addEventListener('click', (event) => {
+        if (!event.target.closest('#video-container')) {
+          videoModal.style.display = 'none';
+          video.pause();
+          video.currentTime = 0;
+        }
+      });
+
+      // Close video modal with Escape key
+      document.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape' && videoModal.style.display === 'flex') {
+          videoModal.style.display = 'none';
+          video.pause();
+          video.currentTime = 0;
+        }
+      });
+    }
+  });
+</script>

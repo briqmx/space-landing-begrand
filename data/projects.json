@@ -46,7 +46,7 @@
   {
     "title" : "Vitant Santa Fe by Be Grand",
     "description" : "Junto al parque La Mexicana.",
-    "image" : "https://www.briq.mx/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBbGtDIiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--d3c58a9efc713af2088389db38b519bfb3d1fcff/cover.jpeg",
+    "image" : "/proyectos/santa-fe.jpeg",
     "location" : "Ciudad de México, México",
     "isNew" : true,
     "status" : "active",
@@ -78,7 +78,7 @@
   {
     "title" : "Vitant Santa Lucía by Be Grand",
     "description" : "Junto al Paseo Santa Lucía.",
-    "image" : "https://www.briq.mx/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBbDhDIiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--cceb6541f2bee3723ac2d0197f42d38c17d96742/cover.jpeg",
+    "image" : "/proyectos/santa-lucia.jpeg",
     "location" : "Monterrey, Nuevo León",
     "isNew" : true,
     "status" : "active",
