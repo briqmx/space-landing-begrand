@@ -28,22 +28,6 @@
     "appreciation" : 7.0
   },
   {
-    "title" : "Vitant Polanco by Be Grand",
-    "description" : "A minutos de Masaryk.",
-    "image" : "/proyectos/polanco.jpeg",
-    "location" : "Ciudad de México, México",
-    "isNew" : true,
-    "status" : "active",
-    "unitsTotal" : 6860,
-    "unitsAvailable" : 6860,
-    "price" : 72250,
-    "url" : "https://briq.mx/sumametros/proyectos/vitant-polanco?referral_code=sumametros",
-    "isFeatured" : false,
-    "goal": 60,
-    "rentPerMeter": 211,
-    "appreciation" : 7.0
-  },
-  {
     "title" : "Vitant Santa Fe by Be Grand",
     "description" : "Junto al parque La Mexicana.",
     "image" : "/proyectos/santa-fe.jpeg",
