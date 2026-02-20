@@ -1,250 +1,218 @@
 ---
-import projects from'../../../data/projects.json'
+import projects from '../../../data/projects.json'
 import faqs from '../../../data/faqs.json'
-// import Base from '../../layouts/Base.astro'
 import Layout from '../../layouts/Layout.astro'
-const site_url = Astro.site
-let base_ulr = ''
-
-// Get the process environment
-if (process.env.NODE_ENV === 'development') {
-	base_ulr = 'http://localhost:4321'
-} else {
-	base_ulr = site_url.href + ''
-}
+import Nav from '../../components/Nav.astro'
 ---
+
 <Layout title="Invierte en Sumametros® | La nueva forma de invertir en depas y hacer crecer tu patrimonio, metro a metro.">
-  <nav class="sticky top-0 z-20 bg-[#F8F8F4] py-4">
-    <div class="w-full max-w-screen-xl mx-auto px-4">
-      <div class="flex items-center justify-between gap-2">
-        <a href="/">
-          <img src="/logo-nav.png" alt="Logo" class="h-9 md:h-12" />
-        </a>
-        <div>
-          <button class="px-4 bg-white uppercase tracking-wide font-semibold text-xs md:text-sm py-2 rounded-full border inline-flex gap-2 items-center justify-center group hover:bg-navy hover:text-white transition-all" onclick="document.getElementById('contactModal').showModal()">
-            Solicitar información
-            <i class="fa-regular fa-comment group-hover:rotate-12 transition-transform"></i>
-          </button>
-        </div>
-      </div>
-    </div>
-  </nav>
-  <header class="py-16 bg-navy text-white">
-    <div class="w-full max-w-screen-xl mx-auto px-4">
-      <div class="w-full grid grid-cols-1 md:grid-cols-3 gap-8">
-        <div class="flex flex-col gap-4 items-start md:col-span-2 text-center md:text-left justify-between">
-          <div class="flex flex-col gap-4">
-            <h1 class="text-4xl font-bold">Invierte en edificios de Be Grand desde 1 m², genera plusvalía y rentas.</h1>
-            <p class="text-lg">Empieza con tan solo 1 m² y recibe rentas. Adquiere metros a tu propio ritmo y, cuando acumules la cantidad deseada, podrás usarlos como enganche o incluso intercambiarlos por un departamento.</p>
-            <div class="flex items-center gap-4 flex-col md:flex-row space-y-4 md:space-y-0">
-              <a class="bg-white text-base text-navy py-4 px-8 rounded-full inline-flex items-center justify-center font-semibold uppercase tracking-wider group gap-2 group hover:scale-105 transition-all" href="#propiedades">
-                <span>Explorar opciones de inversión</span>
-              </a>
-              <button id="play-video-btn" class="text-base font-semibold tracking-wider text-white underline uppercase">¿Cómo funciona?</button>
+
+  <div class="bg-blue text-white p-3 flex items-center justify-center gap-2 text-xs md:text-sm">
+    <p>Solicitar información al</p>
+    <a href="tel:8004793103" class="underline flex items-center gap-1">
+      <i class="fa-solid fa-phone text-xs mt-1"></i>
+      <span>800 479 3103</span>
+    </a>
+  </div>
+
+  <Nav />
+
+  <!-- Hero Section -->
+  <section class="py-8 md:py-12 relative border-b border-black/10">
+    <div class="container">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+        <div class="flex flex-col gap-5 items-start">
+          <h1 class="text-2xl md:text-4xl font-bold text-balance leading-tight">Invierte en edificios de Be Grand desde 1 m²</h1>
+          <p class="leading-relaxed text-balance">Empieza con tan solo 1 m² y recibe rentas. Adquiere metros a tu ritmo y, cuando acumules la cantidad deseada, úsalos como enganche o intercámbialos por un departamento.</p>
+          <div class="flex items-center gap-3 flex-wrap">
+            <a class="button" href="#propiedades">Explorar opciones de inversión</a>
+            <button id="play-video-btn" class="inline-flex items-center gap-2 font-medium hover:text-blue transition-colors">
+              <span class="size-10 rounded-full border-2 border-blue flex items-center justify-center shrink-0">
+                <i class="fa-solid fa-play text-blue text-xs ml-0.5"></i>
+              </span>
+              ¿Cómo funciona?
+            </button>
+          </div>
+          <div class="flex items-center gap-4 flex-wrap text-xs pt-2">
+            <div class="flex items-center gap-1.5">
+              <i class="fa-solid fa-circle-check text-blue"></i>
+              <span class="font-medium">Desde $62,500</span>
+            </div>
+            <div class="flex items-center gap-1.5">
+              <i class="fa-solid fa-circle-check text-blue"></i>
+              <span class="font-medium">Plusvalías atractivas</span>
+            </div>
+            <div class="flex items-center gap-1.5">
+              <i class="fa-solid fa-circle-check text-blue"></i>
+              <span class="font-medium">100% en línea</span>
+            </div>
+            <div class="flex items-center gap-1.5">
+              <i class="fa-solid fa-circle-check text-blue"></i>
+              <span class="font-medium">Regulado por la CNBV</span>
             </div>
           </div>
-          <div class="flex flex-col gap-4 py-8 w-full">
-            <div class="flex items-baseline justify-center gap-2 text-sm md:text-base md:justify-start">
-              <p>Operado por</p>
-              <a class="h-5 md:h-8 flex-shrink-0 inline-block" href="https://begrand.mx" target="_blank">
-                <img src="/logo-begrand-horizontal-white.png" alt="Begrand Logo" class="h-full" />
-              </a>
-              <p> a través de</p>
-              <a class="h-4 md:h-7 flex-shrink-0 inline-block invert" href="https://briq.mx" target="_blank">
-                <img src="/logo-briq.svg" alt="Briq Logo" class="h-full" />
-              </a>
-            </div>
-            <a class="underline" href="#quienes">Conoce más sobre la alianza aquí</a>
-          </div>
+          <a class="flex items-center gap-2 text-xs underline" href="#quienes">
+            <p>Operado por</p>
+            <img src="/logo-begrand-horizontal.png" alt="Be Grand" class="h-4" />
+            <p>a través de</p>
+            <img src="/logo-briq.svg" alt="briq.mx" class="h-4" />
+          </a>
         </div>
-        <div class="w-full md:col-span-1 flex items-center justify-center md:h-auto">
-          <figure class="aspect-square md:aspect-[3/4] relative overflow-hidden shadow-xl rounded-2xl w-full">
-            <img
-              src="/hero-cover.jpeg"
-              alt="Hero"
-              class="absolute inset-0 w-full h-full object-cover"
-            />
-          </figure>
-        </div>
+        <figure class="aspect-[4/3] bg-black relative rounded-xl overflow-hidden">
+          <img src="/hero-cover.jpeg" alt="Be Grand property" class="absolute inset-0 h-full w-full object-cover" />
+          <div class="absolute inset-0 rounded-xl border border-black/10"></div>
+        </figure>
       </div>
     </div>
-  </header>
-  <section class="bg-navy py-4 text-xl border-t border-white/10">
-    <div class="w-full max-w-screen-xl mx-auto px-4">
-      <div class="flex items-center gap-8 text-white justify-center flex-wrap">
-        <div class="flex items-center gap-1">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="size-5">
-            <path fill-rule="evenodd" d="M10 18a8 8 0 1 0 0-16 8 8 0 0 0 0 16Zm3.857-9.809a.75.75 0 0 0-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 1 0-1.06 1.061l2.5 2.5a.75.75 0 0 0 1.137-.089l4-5.5Z" clip-rule="evenodd" />
-          </svg>
-          <p>Desde $62,500</p>
-        </div>
-        <div class="flex items-center gap-1">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="size-5">
-            <path fill-rule="evenodd" d="M10 18a8 8 0 1 0 0-16 8 8 0 0 0 0 16Zm3.857-9.809a.75.75 0 0 0-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 1 0-1.06 1.061l2.5 2.5a.75.75 0 0 0 1.137-.089l4-5.5Z" clip-rule="evenodd" />
-          </svg>
-          <p>Plusvalías atractivas</p>
-        </div>
-        <div class="flex items-center gap-1">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="size-5">
-            <path fill-rule="evenodd" d="M10 18a8 8 0 1 0 0-16 8 8 0 0 0 0 16Zm3.857-9.809a.75.75 0 0 0-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 1 0-1.06 1.061l2.5 2.5a.75.75 0 0 0 1.137-.089l4-5.5Z" clip-rule="evenodd" />
-          </svg>
-          <p>100% en línea</p>
-        </div>
-        <div class="flex items-center gap-1">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="size-5">
-            <path fill-rule="evenodd" d="M10 18a8 8 0 1 0 0-16 8 8 0 0 0 0 16Zm3.857-9.809a.75.75 0 0 0-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 1 0-1.06 1.061l2.5 2.5a.75.75 0 0 0 1.137-.089l4-5.5Z" clip-rule="evenodd" />
-          </svg>
-          <p>Regulado por la CNBV</p>
-        </div>
-      </div>
-    </div>
+
+    <img src="/piece-1.svg" alt="Hero" class="absolute top-2 left-2 opacity-0 md:opacity-100 pointer-events-none" />
+    
+    <img src="/piece-4.svg" alt="Hero" class="absolute bottom-2 right-2 opacity-0 md:opacity-100 pointer-events-none" />
   </section>
-  <section class="py-16 border-t border-black/10">
-    <div class="w-full max-w-screen-xl mx-auto px-4">
-      <div class="w-full">
-        <div class="mb-4">
-          <h2 class="font-medium text-sky-600">Ventajas de invertir en Sumametros</h2>
-          <h3 class="text-2xl md:text-4xl font-bold font-brand">¿Por qué invertir en Sumametros?</h3>
-        </div>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-          <article class="flex-col gap-4 flex justify-between items-start py-6 md:py-12">
-            <i class="fa-duotone fa-solid fa-chart-mixed-up-circle-dollar text-2xl text-navy"></i>
-            <div class="flex-1 flex flex-col gap-2">
-              <h3 class="text-2xl text-balance font-brand font-semibold">Genera plusvalía y rentas mensuales</h3>
-              <p>Por cada m² que tengas invertido, recibirás rentas mensuales y plusvalía al momento de la venta.</p>
-            </div>
-          </article>
-          <article class="flex-col gap-4 flex justify-between items-start py-6 md:py-12">
-            <i class="fa-duotone fa-solid fa-smile-wink text-2xl text-navy"></i>
-            <div class="flex-1 flex flex-col gap-2">
-              <h3 class="text-2xl text-balance font-brand font-semibold">No tienes que preocuparte por nada más</h3>
-              <p>Nosotros nos encargamos de toda la operación y mantenimiento.</p>
-            </div>
-          </article>
-          <article class="flex-col gap-4 flex justify-between items-start py-6 md:py-12">
-            <i class="fa-duotone fa-solid fa-rotate-reverse text-2xl text-navy"></i>
-            <div class="flex-1 flex flex-col gap-2">
-              <h3 class="text-2xl text-balance font-brand font-semibold">Canjea tus metros por un departamento</h3>
-              <p>Usa tus metros como enganche o pago total de un departamento completo una vez que hayas acumulado los suficientes.</p>
-            </div>
-          </article>
-        </div>
-      </div>
-    </div>
-  </section>
-  <section class="py-16 border-t border-black/10" id="propiedades">
-    <div class="w-full max-w-screen-xl mx-auto px-4">
-      <div class="mb-4 w-full md:w-1/2">
-        <h2 class="font-medium text-sky-600">Propiedades disponibles</h2>
-        <h3 class="text-2xl md:text-4xl font-bold font-brand">Conoce nuestras propiedades disponibles para inversión</h3>
-      </div>
-      <div class="grid grid-cols-1 sm:grid-cols-3 md:grid-cols-4 gap-8">
-        {projects.map((project, index) => (
-          <article class="aspect-square md:aspect-[3/4] flex flex-col justify-between gap-4 relative p-3 overflow-hidden group rounded-xl">
-            <figure class="bg-black absolute border inset-0 group-hover:scale-125 transition-transform">
-              <img
-                src={`${base_ulr}${project.image}`}
-                alt={project.title}
-                class="absolute inset-0 w-full h-full object-cover"
-              />
-            </figure>
-            <div class="inset-0 bg-zinc-900/20 absolute group-hover:bg-opacity-40"></div>
-            <div class="top-0 left-0 p-2 z-10 flex items-center gap-1">
-              {project.isFeatured && <span class="bg-primary text-white font-medium text-sm px-2 py-1 rounded-md">Destacado</span>}
-              <div class="bg-white flex items-center justify-center font-medium text-sm px-2 py-1 gap-1 rounded-md shrink-0">
-                <div class="size-2 bg-lime-500 rounded-full animate-pulse"></div>
-                <span>Generando rentas</span>
-              </div>
-            </div>
-            <div class="flex flex-col gap-2 absolute bottom-0 left-0 w-full bg-gradient-to-t from-black via-black to-transparent px-4 py-6 z-10 text-white">
-              <div class="flex flex-col gap-1">
-                <h2 class="font-brand font-semibold text-xl text-balance">{project.title}</h2>
-                <div class="text-sm font-medium flex items-center gap-1">
-                  <i class="fa-solid fa-location-dot text-white/50"></i>
-                  <span>{project.location}</span>
-                </div>
-              </div>
-              {/* <div>
-                <p class="text-base font-medium bg-white/10 rounded-full px-4 border border-white/10 py-1 inline-flex items-center gap-1">{project.appreciation}% de plusvalía</p>
-              </div> */}
-              <a class="border border-white/50 py-2 text-base uppercase gap-2 font-semibold tracking-wide rounded-full flex items-center justify-center hover:bg-white hover:text-black" href={project.url} target="_blank" rel="noopener">
-                <span>Calcular inversión</span>
-              </a>
-            </div>
-          </article>
-        ))}
-        <article class="bg-navy col-span-full md:col-span-2 rounded-xl flex items-center justify-center flex-col gap-4 text-white p-6 text-center">
-          <p class="font-brand font-semibold text-xl">¿No sabes donde invertir?</p>
-          <p>Habla con un asesor y te ayudará a elegir la mejor opción para ti.</p>
-          <button class="py-2.5 rounded-full bg-transparent text-white hover:bg-white hover:text-navy px-6 uppercase font-semibold tracking-wide text-base transition-all border border-white" onclick="document.getElementById('contactModal').showModal()">
-            Hablar con un asesor
-          </button>
-        </article>
-      </div>
-    </div>
-  </section>
+
+  <!-- Advantages Section -->
   <section class="py-16">
-    <div class="w-full max-w-screen-xl mx-auto px-4">
-      <div class="text-center flex flex-col gap-4 items-center bg-blend-hard-light bg-amber-900/5 p-4 md:p-16 rounded-2xl">
-        <div class="mx-auto flex items-center gap-6 flex-wrap justify-center">
-          <img src="/cnbv.jpg" alt="cmbv" class="w-32 mix-blend-multiply" />
-          <img src="/shcp.svg" alt="shcp" class="w-32 mix-blend-multiply" />
-          <img src="/banco-mexico.svg" alt="cmbv" class="h-12 mix-blend-multiply" />
-          <img src="/condusef.jpg" alt="cmbv" class="w-32 mix-blend-multiply" />
-        </div>
-        <div>
-          <h2 class="text-2xl md:text-4xl font-bold font-brand">Sumametros<sup>®</sup> es una opción de inversión segura y confiable</h2>
-        </div>
-        <p class="max-w-md">Tu compra e inversión en Sumametros se realiza a través de briq.mx, plataforma regulada por la Comisión Nacional Bancaria y de Valores (CNBV), lo que garantiza la legalidad de tu inversión.</p>
+    <div class="container">
+      <div class="md:max-w-[50%] w-full text-balance mb-8">
+        <h2 class="font-bold text-blue">Ventajas de invertir en Sumametros</h2>
+        <p class="text-2xl font-bold">¿Por qué invertir en Sumametros?</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <article class="bg-gray p-8 rounded-xl flex flex-col gap-4 items-start">
+          <i class="fa-duotone fa-solid fa-chart-mixed-up-circle-dollar text-3xl text-blue"></i>
+          <h3 class="text-xl font-bold">Genera plusvalía y rentas mensuales</h3>
+          <p class="leading-relaxed">Por cada m² que tengas invertido, recibirás rentas mensuales y plusvalía al momento de la venta.</p>
+        </article>
+        <article class="bg-gray p-8 rounded-xl flex flex-col gap-4 items-start">
+          <i class="fa-duotone fa-solid fa-smile-wink text-3xl text-blue"></i>
+          <h3 class="text-xl font-bold">No tienes que preocuparte por nada más</h3>
+          <p class="leading-relaxed">Nosotros nos encargamos de toda la operación y mantenimiento.</p>
+        </article>
+        <article class="bg-gray p-8 rounded-xl flex flex-col gap-4 items-start">
+          <i class="fa-duotone fa-solid fa-rotate-reverse text-3xl text-blue"></i>
+          <h3 class="text-xl font-bold">Canjea tus metros por un departamento</h3>
+          <p class="leading-relaxed">Usa tus metros como enganche o pago total de un departamento completo una vez que hayas acumulado los suficientes.</p>
+        </article>
       </div>
     </div>
   </section>
-  <section class="py-16 border-t border-black/10 bg-blend-hard-light bg-amber-900/5" id="preguntas-frecuentes">
-    <div class="w-full max-w-screen-xl mx-auto px-4">
-      <div class="mb-4">
-        <h2 class="font-medium text-sky-600">Preguntas frecuentes</h2>
-        <h3 class="text-2x md:text-4xl font-bold font-brand">Resuelve tus dudas sobre Sumametros</h3>
+
+  <!-- Properties Section -->
+  <section class="py-16" id="propiedades">
+    <div class="container">
+      <div class="md:max-w-[50%] w-full text-balance mb-8">
+        <h2 class="font-bold text-blue">Propiedades disponibles</h2>
+        <p class="text-2xl font-bold">Conoce nuestras propiedades disponibles para inversión</p>
       </div>
-      <div>
-        <article class="border-b border-black/10 py-8 flex-col gap-2 flex" id="quienes">
-          <h3 class="text-2xl font-brand font-semibold">¿Quiénes administran Sumametros by Be Grand<sup>®</sup>?</h3>
-          <p>Sumametros es un proyecto operado por Be Grand<sup>®</sup> con la tecnología y respaldo de briq.mx.</p>
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div class="flex flex-col gap-2">
-              <figure class="h-20 flex items-center">
-                <img src="/logo-begrand-horizontal.png" alt="Logo" class="h-10" />
-              </figure>
-              <p>Empresa mexicana, con 20 años de experiencia en el desarrollo y comercialización de proyectos inmobiliarios de alta calidad en zonas AAA en México y España.</p>
-              <a class="underline" href="https://begrand.mx" target="_blank">Conoce más</a>
+
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+        {projects.map((project) => (
+          <article class="flex flex-col gap-2 items-start">
+            <figure class="aspect-[4/3] relative rounded-xl overflow-hidden w-full h-full">
+              <img src={project.image} alt={project.title} class="object-cover w-full h-full absolute inset-0" />
+              <div class="absolute inset-0 rounded-xl border border-black/20"></div>
+            </figure>
+            <div>
+              <h3 class="font-bold">{project.title}</h3>
+              <p class="text-sm">{project.location}</p>
             </div>
-            <div class="flex flex-col gap-2">
-              <figure class="h-20 flex items-center">
-                <img src="/logo-briq.svg" alt="Logo" class="h-10" />
-              </figure>
-              <p>Plataforma líder de financiamiento colectivo inmobiliario, regulada por las autoridades financieras (CNBV, CONDUSEF, Banxico y SHCP)</p>
-              <a class="underline" href="https://www.briq.mx?referral_code=sumametros" target="_blank">Conoce más</a>
-            </div>
+            <p class="font-bold">Desde ${project.price.toLocaleString('es-MX')} mxn/m²</p>
+            <a href={project.url} class="button" target="_blank" rel="noopener">Calcular inversión</a>
+          </article>
+        ))}
+        <div class="bg-blue text-white w-full h-full md:col-span-2 rounded-xl flex flex-col gap-2 items-center justify-center p-8 relative">
+          <div class="flex flex-col gap-2 items-center justify-center relative z-10 text-center">
+            <p class="font-bold">¿No sabes donde invertir?</p>
+            <p>Habla con un asesor y te ayudará a elegir la mejor opción para ti.</p>
+            <button class="button--secondary" onclick="document.getElementById('contactModal').showModal()">Hablar con un asesor</button>
           </div>
-        </article>
-        {faqs.map((faq, index) => (
-          <article class="border-b border-black/10 py-8 flex-col gap-2 flex">
-            <h3 class="text-2xl font-brand font-semibold">{faq.question}</h3>
-            <p>{faq.answer}</p>
+          <img src="/cta-piece-top.svg" alt="" class="absolute top-2 left-2 opacity-0 md:opacity-10 pointer-events-none" />
+          <img src="/cta-piece-bottom.svg" alt="" class="absolute bottom-2 right-2 opacity-0 md:opacity-10 pointer-events-none" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Regulatory Section -->
+  <section class="py-16">
+    <div class="container">
+      <div class="bg-gray p-10 md:p-16 rounded-xl flex flex-col gap-4 text-center">
+        <div class="md:max-w-[100%] lg:max-w-[60%] w-full mx-auto text-pretty flex flex-col gap-4">
+          <div class="flex items-center gap-8 md:gap-16 justify-center flex-wrap w-full">
+            <img src="/cnbv.jpg" alt="cnbv" class="h-12 md:h-24 mix-blend-multiply" />
+            <img src="/shcp.svg" alt="shcp" class="h-5 md:h-12 mix-blend-multiply" />
+            <img src="/banco-mexico.svg" alt="banco-mexico" class="h-4 md:h-12 mix-blend-multiply" />
+            <img src="/condusef.jpg" alt="condusef" class="h-8 md:h-12 mix-blend-multiply" />
+          </div>
+          <h3 class="font-bold text-2xl">Sumametros<sup>®</sup> es una opción segura y confiable</h3>
+          <p>Tu compra e inversión en Sumametros se realiza a través de briq.mx, plataforma regulada por la Comisión Nacional Bancaria y de Valores (CNBV), lo que garantiza la legalidad de tu inversión.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQs Section -->
+  <section class="py-16" id="preguntas-frecuentes">
+    <div class="container">
+      <div class="md:max-w-[50%] w-full text-balance mb-8">
+        <h2 class="font-bold text-blue">Preguntas frecuentes</h2>
+        <p class="text-2xl font-bold">Resuelve tus dudas sobre Sumametros</p>
+      </div>
+      <article class="flex flex-col gap-2 p-8 rounded-xl bg-gray mb-8" id="quienes">
+        <h3 class="font-bold">¿Quiénes administran Sumametros by Be Grand®?</h3>
+        <p class="leading-relaxed">Sumametros es un proyecto operado por Be Grand<sup>®</sup> con la tecnología y respaldo de briq.mx.</p>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-4">
+          <div class="flex flex-col gap-2">
+            <figure class="h-20 flex items-center">
+              <img src="/logo-begrand-horizontal.png" alt="Logo" class="h-10" />
+            </figure>
+            <p>Empresa mexicana, con 20 años de experiencia en el desarrollo y comercialización de proyectos inmobiliarios de alta calidad en zonas AAA en México y España.</p>
+            <a class="underline" href="https://begrand.mx" target="_blank">Conoce más</a>
+          </div>
+          <div class="flex flex-col gap-2">
+            <figure class="h-20 flex items-center">
+              <img src="/logo-briq.svg" alt="Logo" class="h-10" />
+            </figure>
+            <p>Plataforma líder de financiamiento colectivo inmobiliario, regulada por las autoridades financieras (CNBV, CONDUSEF, Banxico y SHCP)</p>
+            <a class="underline" href="https://www.briq.mx?referral_code=sumametros" target="_blank">Conoce más</a>
+          </div>
+        </div>
+      </article>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        {faqs.map((faq) => (
+          <article class="flex flex-col gap-2 p-8 rounded-xl bg-gray">
+            <h3 class="font-bold">{faq.question}</h3>
+            <p class="leading-relaxed">{faq.answer}</p>
           </article>
         ))}
       </div>
-      <div>
-        <div class="bg-navy py-16 px-2 text-white rounded-2xl flex flex-col items-center justify-center gap-4 text-center">
-          <p class="font-brand font-semibold text-2xl">¿Tienes más dudas?</p>
-          <p class="text-xl text-balance max-w-md">Habla con un asesor y te ayudará a aclarar todas tus dudas sin ningún compromiso.</p>
-          <button class="bg-white py-2.5 rounded-full text-navy px-6 uppercase font-semibold tracking-wide text-base flex items-center gap-2 hover:bg-white/90 transition-all" onclick="document.getElementById('contactModal').showModal()">
-            <span>Hablar con un asesor</span>
-            <i class="fa-solid fa-phone"></i>
-          </button>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="py-16 rounded-t-3xl bg-gray flex flex-col gap-8">
+    <div class="container">
+      <div class="flex items-center justify-between flex-col md:flex-row gap-4">
+        <img src="/logo-nav.png" alt="Logo" class="h-12" />
+        <div class="flex items-center gap-2">
+          <a href="tel:8004793103" class="bg-blue text-white px-4 py-2 rounded-full flex items-center gap-2 font-bold">
+            <i class="fa-solid fa-phone text-xs mt-1"></i>
+            <span>800 479 3103</span>
+          </a>
+          <a href="https://www.instagram.com/sumametros.mx" target="_blank" class="bg-blue text-white px-4 py-2 rounded-full flex items-center gap-2 font-bold">
+            <i class="fa-brands fa-instagram text-xs mt-1"></i>
+            <span>@sumametros.mx</span>
+          </a>
         </div>
       </div>
     </div>
-  </section>
+    <div class="container">
+      <p class="text-sm text-center">Be Grand, Sumametros y briq.mx son marcas registradas. Todos los derechos son reservados.</p>
+    </div>
+  </footer>
+
+  <!-- Contact Modal -->
   <dialog id="contactModal">
     <div class="bg-black/80 fixed inset-0 flex items-start md:items-center justify-center z-20">
       <div class="bg-white max-w-md w-full p-6 border rounded-t-2xl shadow-2xl absolute bottom-0 md:bottom-auto h-[90vh] md:h-auto md:rounded-b-2xl" id="contactModalContent">
@@ -275,6 +243,7 @@ if (process.env.NODE_ENV === 'development') {
       </div>
     </div>
   </dialog>
+
   <!-- Video Modal -->
   <div class="fixed inset-0 z-20 items-center justify-center bg-black/90" id="video-modal" style="display: none;">
     <div class="relative aspect-video w-full bg-white shadow-xl md:h-[80vh] md:w-auto" id="video-container">
@@ -289,41 +258,35 @@ if (process.env.NODE_ENV === 'development') {
 </Layout>
 
 <script is:inline>
-  // Close the modal when the user clicks outside of it
   document.addEventListener('DOMContentLoaded', () => {
     const contactModal = document.getElementById('contactModal');
     const contactModalContent = document.getElementById('contactModalContent');
     
     if (contactModal && contactModalContent) {
       contactModal.addEventListener('click', (event) => {
-        // Check if the click was outside the modal content
         if (!contactModalContent.contains(event.target)) {
           contactModal.close();
         }
       });
     }
 
-    // Video modal functionality
     const openVideoButton = document.getElementById('play-video-btn');
     const videoModal = document.getElementById('video-modal');
     const closeVideoButton = document.getElementById('close-video');
     const video = document.getElementById('video');
 
     if (openVideoButton && videoModal && closeVideoButton && video) {
-      // Open video modal when play button is clicked
       openVideoButton.addEventListener('click', () => {
         videoModal.style.display = 'flex';
         video.play();
       });
 
-      // Close video modal when close button is clicked
       closeVideoButton.addEventListener('click', () => {
         videoModal.style.display = 'none';
         video.pause();
-        video.currentTime = 0; // Reset video to beginning
+        video.currentTime = 0;
       });
 
-      // Close video modal when clicking outside the video container
       videoModal.addEventListener('click', (event) => {
         if (!event.target.closest('#video-container')) {
           videoModal.style.display = 'none';
@@ -332,7 +295,6 @@ if (process.env.NODE_ENV === 'development') {
         }
       });
 
-      // Close video modal with Escape key
       document.addEventListener('keydown', (event) => {
         if (event.key === 'Escape' && videoModal.style.display === 'flex') {
           videoModal.style.display = 'none';
