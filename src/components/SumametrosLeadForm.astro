@@ -1,0 +1,365 @@
+---
+/**
+ * Formulario de leads Sumametros (Salesforce POST).
+ * Misma estructura y clases que la landing original; estilos acotados con .sumametros-lead-form-root
+ * para no chocar con `.container` de Tailwind en index.
+ */
+interface Props {
+  /** Layout de página campaña (/formulario): más aire inferior sobre la imagen en móvil */
+  campaignLayout?: boolean
+  /** Dentro del layout 2 columnas (SumametrosLeadFormSplit): gradiente y fondo imagen en móvil */
+  splitLayout?: boolean
+}
+
+const { campaignLayout = false, splitLayout = false } = Astro.props
+---
+
+<div
+  class:list={[
+    'sumametros-lead-form-root',
+    campaignLayout && 'sumametros-lead-form-root--campaign',
+    splitLayout && 'sumametros-lead-form-root--split',
+  ]}
+>
+  <div class="content-section">
+    <p class="intro-text">
+      Completa el registro para recibir asesoría especializada
+    </p>
+
+    <p class="subtitle">Compra tu departamento metro a metro</p>
+
+    <div class="form-container">
+      <form action="https://cloud.campaigns.begrand.mx/Psum" method="post" autocomplete="off" novalidate>
+        <div class="form-group">
+          <label class="form-label" for="nombre">Nombre</label>
+          <input type="text" id="nombre" name="nombre" class="form-input" required autocomplete="given-name" placeholder="Nombre" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="apellido">Apellido</label>
+          <input type="text" id="apellido" name="apellido" class="form-input" required autocomplete="family-name" placeholder="Apellido" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="email">E-mail</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            class="form-input"
+            required
+            autocomplete="email"
+            autocapitalize="off"
+            spellcheck="false"
+            placeholder="E-mail"
+          />
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="telefono">Teléfono</label>
+          <div class="phone-container">
+            <div class="country-selector">
+              <select id="country" name="country" class="country-select" autocomplete="off">
+                <option value="+52">🇲🇽 México (+52)</option>
+                <option value="+1">🇺🇸 Estados Unidos (+1)</option>
+                <option value="+1">🇨🇦 Canadá (+1)</option>
+                <option value="+54">🇦🇷 Argentina (+54)</option>
+                <option value="+61">🇦🇺 Australia (+61)</option>
+                <option value="+43">🇦🇹 Austria (+43)</option>
+                <option value="+32">🇧🇪 Bélgica (+32)</option>
+                <option value="+55">🇧🇷 Brasil (+55)</option>
+                <option value="+56">🇨🇱 Chile (+56)</option>
+                <option value="+86">🇨🇳 China (+86)</option>
+                <option value="+57">🇨🇴 Colombia (+57)</option>
+                <option value="+506">🇨🇷 Costa Rica (+506)</option>
+                <option value="+45">🇩🇰 Dinamarca (+45)</option>
+                <option value="+593">🇪🇨 Ecuador (+593)</option>
+                <option value="+20">🇪🇬 Egipto (+20)</option>
+                <option value="+503">🇸🇻 El Salvador (+503)</option>
+                <option value="+34">🇪🇸 España (+34)</option>
+                <option value="+358">🇫🇮 Finlandia (+358)</option>
+                <option value="+33">🇫🇷 Francia (+33)</option>
+                <option value="+49">🇩🇪 Alemania (+49)</option>
+                <option value="+30">🇬🇷 Grecia (+30)</option>
+                <option value="+502">🇬🇹 Guatemala (+502)</option>
+                <option value="+31">🇳🇱 Holanda (+31)</option>
+                <option value="+504">🇭🇳 Honduras (+504)</option>
+                <option value="+852">🇭🇰 Hong Kong (+852)</option>
+                <option value="+36">🇭🇺 Hungría (+36)</option>
+                <option value="+91">🇮🇳 India (+91)</option>
+                <option value="+62">🇮🇩 Indonesia (+62)</option>
+                <option value="+353">🇮🇪 Irlanda (+353)</option>
+                <option value="+972">🇮🇱 Israel (+972)</option>
+                <option value="+39">🇮🇹 Italia (+39)</option>
+                <option value="+81">🇯🇵 Japón (+81)</option>
+                <option value="+82">🇰🇷 Corea del Sur (+82)</option>
+                <option value="+965">🇰🇼 Kuwait (+965)</option>
+                <option value="+961">🇱🇧 Líbano (+961)</option>
+                <option value="+60">🇲🇾 Malasia (+60)</option>
+                <option value="+212">🇲🇦 Marruecos (+212)</option>
+                <option value="+95">🇲🇲 Myanmar (+95)</option>
+                <option value="+977">🇳🇵 Nepal (+977)</option>
+                <option value="+64">🇳🇿 Nueva Zelanda (+64)</option>
+                <option value="+47">🇳🇴 Noruega (+47)</option>
+                <option value="+507">🇵🇦 Panamá (+507)</option>
+                <option value="+51">🇵🇪 Perú (+51)</option>
+                <option value="+63">🇵🇭 Filipinas (+63)</option>
+                <option value="+48">🇵🇱 Polonia (+48)</option>
+                <option value="+351">🇵🇹 Portugal (+351)</option>
+                <option value="+7">🇷🇺 Rusia (+7)</option>
+                <option value="+65">🇸🇬 Singapur (+65)</option>
+                <option value="+27">🇿🇦 Sudáfrica (+27)</option>
+                <option value="+46">🇸🇪 Suecia (+46)</option>
+                <option value="+41">🇨🇭 Suiza (+41)</option>
+                <option value="+886">🇹🇼 Taiwán (+886)</option>
+                <option value="+66">🇹🇭 Tailandia (+66)</option>
+                <option value="+90">🇹🇷 Turquía (+90)</option>
+                <option value="+380">🇺🇦 Ucrania (+380)</option>
+                <option value="+971">🇦🇪 Emiratos Árabes Unidos (+971)</option>
+                <option value="+44">🇬🇧 Reino Unido (+44)</option>
+                <option value="+58">🇻🇪 Venezuela (+58)</option>
+                <option value="+84">🇻🇳 Vietnam (+84)</option>
+              </select>
+            </div>
+
+            <div class="phone-input">
+              <input
+                type="tel"
+                id="telefono"
+                name="telefono"
+                class="form-input"
+                required
+                autocomplete="tel"
+                inputmode="numeric"
+                placeholder="Teléfono"
+              />
+            </div>
+          </div>
+        </div>
+
+        <button type="submit" class="button w-full p-4" id="submitBtn">Enviar Datos</button>
+      </form>
+    </div>
+  </div>
+</div>
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+  .sumametros-lead-form-root,
+  .sumametros-lead-form-root * {
+    box-sizing: border-box;
+  }
+
+  .sumametros-lead-form-root .content-section {
+    flex: 1;
+    padding: 60px 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+
+  .sumametros-lead-form-root .intro-text {
+    font-size: 18px;
+    color: #000;
+    margin-top: 10px;
+    margin-bottom: 28px;
+    max-width: 420px;
+    line-height: 1.5;
+    font-weight: 500;
+  }
+
+  .sumametros-lead-form-root .title {
+    font-size: 40px;
+    font-weight: 400;
+    text-transform: uppercase;
+    color: #000000;
+    margin-bottom: 16px;
+    letter-spacing: 4px;
+  }
+
+  .sumametros-lead-form-root .subtitle {
+    margin-bottom: 60px;
+    letter-spacing: 1px;
+  }
+
+  .sumametros-lead-form-root .form-container {
+    width: 100%;
+    max-width: 480px;
+  }
+
+  .sumametros-lead-form-root .form-group {
+    margin-bottom: 30px;
+    text-align: left;
+    width: 100%;
+  }
+
+  .sumametros-lead-form-root .form-label {
+    display: block;
+    font-size: 15px;
+    color: #585c5f;
+  }
+
+  .sumametros-lead-form-root .form-input {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border: none;
+    border-bottom: 1px solid #c6c6c6;
+    background: transparent;
+    padding: 10px 0;
+    color: #000000;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 15px;
+    width: 100%;
+    outline: none;
+  }
+
+  .sumametros-lead-form-root .form-input:focus {
+    border-bottom-color: #000000;
+  }
+
+  .sumametros-lead-form-root .phone-container {
+    display: flex;
+    gap: 16px;
+    align-items: flex-end;
+    width: 100%;
+  }
+
+  .sumametros-lead-form-root .country-selector {
+    position: relative;
+    width: 136px;
+  }
+
+  .sumametros-lead-form-root .country-select {
+    width: 100%;
+    border: 1px solid #c6c6c6;
+    background: #ffffff;
+    padding: 10px 30px 10px 10px;
+    font-size: 12px;
+    color: #000000;
+    outline: none;
+    cursor: pointer;
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='m6 8 4 4 4-4'/%3e%3c/svg%3e");
+    background-position: right 8px center;
+    background-repeat: no-repeat;
+    background-size: 16px;
+    font-family: 'Montserrat', sans-serif;
+  }
+
+  .sumametros-lead-form-root .country-select:focus {
+    border-color: #000000;
+  }
+
+  .sumametros-lead-form-root .phone-input {
+    flex: 1;
+  }
+
+  .sumametros-lead-form-root .submit-btn {
+    background-color: #000000;
+    color: #ffffff;
+    border: none;
+    padding: 10px 32px;
+    font-size: 15px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 20px;
+    font-family: 'Montserrat', sans-serif;
+    margin-left: auto;
+  }
+
+  .sumametros-lead-form-root .submit-btn:hover {
+    background-color: #333333;
+  }
+
+  @media (max-width: 991px) {
+    .sumametros-lead-form-root .content-section {
+      padding: 16px 20px;
+      flex: none;
+      justify-content: flex-start;
+    }
+
+    .sumametros-lead-form-root--split .content-section {
+      padding: 16px 20px 180px;
+      background: linear-gradient(
+        to bottom,
+        #ffffff 0%,
+        #ffffff 78%,
+        rgba(255, 255, 255, 0.88) 90%,
+        rgba(255, 255, 255, 0) 100%
+      );
+    }
+
+    .sumametros-lead-form-root--split.sumametros-lead-form-root--campaign .content-section {
+      padding-bottom: 220px;
+    }
+
+    .sumametros-lead-form-root .title {
+      font-size: 24px;
+      margin-bottom: 10px;
+      letter-spacing: 3px;
+    }
+
+    .sumametros-lead-form-root .intro-text {
+      font-size: 16px;
+      margin-top: 0;
+      margin-bottom: 18px;
+      line-height: 1.45;
+      max-width: 100%;
+    }
+
+    .sumametros-lead-form-root .subtitle {
+      font-size: 10px;
+      margin-bottom: 32px;
+      letter-spacing: 1.5px;
+    }
+
+    .sumametros-lead-form-root .form-container {
+      max-width: 100%;
+    }
+
+    .sumametros-lead-form-root .form-label {
+      font-size: 10px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .sumametros-lead-form-root br {
+      display: none;
+    }
+  }
+</style>
+
+<script is:inline>
+  document.addEventListener('DOMContentLoaded', function () {
+    document.querySelectorAll('.sumametros-lead-form-root').forEach(function (root) {
+      const form = root.querySelector('form')
+      const submitBtn = root.querySelector('#submitBtn')
+      const params = new URLSearchParams(window.location.search)
+      const utmKeys = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content']
+
+      if (!form) return
+
+      utmKeys.forEach(function (key) {
+        const value = params.get(key)
+        if (value) {
+          const hidden = document.createElement('input')
+          hidden.type = 'hidden'
+          hidden.name = key
+          hidden.value = value
+          form.appendChild(hidden)
+        }
+      })
+
+      form.addEventListener('submit', function () {
+        if (submitBtn) {
+          submitBtn.disabled = true
+          submitBtn.innerText = 'Enviando...'
+        }
+      })
+    })
+  })
+</script>

@@ -2,6 +2,7 @@
 import Layout from '../layouts/Layout.astro'
 import Nav from '../components/Nav.astro'
 import Steps from '../components/Steps.astro'
+import SumametrosLeadFormSplit from '../components/SumametrosLeadFormSplit.astro'
 
 import projects from '../../data/projects.json'
 import faqs from '../../data/faqs.json'
@@ -180,6 +181,10 @@ import faqs from '../../data/faqs.json'
         ))}
       </div>
     </div>
+  </section>
+
+  <section class="scroll-mt-24 border-t border-black/10 overflow-hidden border-b bg-white" id="registro">
+    <SumametrosLeadFormSplit />
   </section>
 
   <footer class="py-16 rounded-t-3xl bg-gray flex flex-col gap-8">

@@ -1,0 +1,80 @@
+---
+/**
+ * Layout original en dos columnas: imagen a la izquierda, formulario a la derecha.
+ * En móvil: imagen como fondo inferior del bloque (como la landing de campaña).
+ */
+import SumametrosLeadForm from './SumametrosLeadForm.astro'
+
+interface Props {
+  campaignLayout?: boolean
+}
+
+const { campaignLayout = false } = Astro.props
+
+const heroImage =
+  'https://image.campaigns.begrand.mx/lib/fe301570756405797c1379/m/1/44acb6df-12ad-4445-a930-6ee62b6504ee.png'
+---
+
+<div class="sumametros-form-split">
+  <div
+    class="sumametros-form-split__visual"
+    style={`background-image: url('${heroImage}')`}
+    aria-hidden="true"
+  >
+  </div>
+  <div class="sumametros-form-split__panel">
+    <SumametrosLeadForm campaignLayout={campaignLayout} splitLayout />
+  </div>
+</div>
+
+<style>
+  .sumametros-form-split {
+    display: flex;
+    min-height: min(70vh, 720px);
+    width: 100%;
+    color: #000000;
+  }
+
+  .sumametros-form-split__visual {
+    flex: 1;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    padding: 0 80px;
+  }
+
+  .sumametros-form-split__panel {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+
+  @media (max-width: 991px) {
+    .sumametros-form-split {
+      flex-direction: column;
+      min-height: auto;
+      background-image: url('https://image.campaigns.begrand.mx/lib/fe301570756405797c1379/m/1/44acb6df-12ad-4445-a930-6ee62b6504ee.png');
+      background-repeat: no-repeat;
+      background-position: center bottom;
+      background-size: 100% auto;
+    }
+
+    .sumametros-form-split__visual {
+      height: 0;
+      flex: none;
+      padding: 0;
+      background-image: none !important;
+    }
+
+    .sumametros-form-split__panel {
+      flex: none;
+      justify-content: flex-start;
+    }
+  }
+</style>

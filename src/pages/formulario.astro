@@ -1,0 +1,99 @@
+---
+import SumametrosLeadFormSplit from '../components/SumametrosLeadFormSplit.astro'
+---
+
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Be Grand® | Sumametros</title>
+    <meta
+      name="description"
+      content="Experimenta el máximo lujo y exclusividad en Sumametros. Desarrollo residencial de lujo con arquitectura moderna y espacios verdes integrados."
+    />
+    <meta
+      name="keywords"
+      content="Sumametrosy, Be Grand, desarrollo residencial, lujo, exclusividad, arquitectura moderna, espacios verdes"
+    />
+    <link rel="icon" type="image/png" href="https://www.begrand.mx/favicon.ico" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://www.begrand.mx/park-country" />
+    <meta property="og:title" content="Be Grand® | Sumametros" />
+    <meta
+      property="og:description"
+      content="Experimenta el máximo lujo y exclusividad en Sumametros. Desarrollo residencial de lujo con arquitectura moderna y espacios verdes integrados."
+    />
+    <meta property="og:image" content="assets/open-graph.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:site_name" content="Be Grand" />
+    <meta property="og:locale" content="es_MX" />
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://www.begrand.mx/park-country" />
+    <meta property="twitter:title" content="Be Grand® | Sumametros" />
+    <meta
+      property="twitter:description"
+      content="Experimenta el máximo lujo y exclusividad en Sumametros. Desarrollo residencial de lujo con arquitectura moderna y espacios verdes integrados."
+    />
+    <meta
+      property="twitter:image"
+      content="https://image.s10.sfmc-content.com/lib/fe301570756405797c1379/m/1/67d389b2-9cc9-4d61-9530-6274a157ceab.jpg"
+    />
+    <meta name="robots" content="index, follow" />
+    <meta name="author" content="Be Grand" />
+    <meta name="theme-color" content="#000000" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+
+    <style is:inline>
+      body {
+        margin: 0;
+        font-family: 'Montserrat', sans-serif;
+        background-color: #ffffff;
+        color: #000000;
+      }
+      .formulario-page__main {
+        min-height: calc(100vh - 184px);
+        display: flex;
+        flex-direction: column;
+      }
+      .formulario-page__main > .sumametros-form-split {
+        flex: 1;
+        min-height: 0;
+      }
+      .formulario-page__footer {
+        background-color: #000000;
+        color: #ffffff;
+        text-align: center;
+        padding: 48px 16px;
+        font-size: 15px;
+        line-height: 1.6;
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+      }
+      @media (max-width: 991px) {
+        .formulario-page__footer {
+          font-size: 12px;
+          background: transparent;
+          color: #000000;
+          padding: 20px 16px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="formulario-page__main">
+      <SumametrosLeadFormSplit campaignLayout />
+    </div>
+
+    <footer class="formulario-page__footer">
+      <br />
+    </footer>
+  </body>
+</html>
