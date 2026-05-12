@@ -7,9 +7,10 @@ import SumametrosLeadForm from './SumametrosLeadForm.astro'
 
 interface Props {
   campaignLayout?: boolean
+  formAction?: string
 }
 
-const { campaignLayout = false } = Astro.props
+const { campaignLayout = false, formAction } = Astro.props
 
 const heroImage =
   'https://image.campaigns.begrand.mx/lib/fe301570756405797c1379/m/1/44acb6df-12ad-4445-a930-6ee62b6504ee.png'
@@ -23,7 +24,7 @@ const heroImage =
   >
   </div>
   <div class="sumametros-form-split__panel">
-    <SumametrosLeadForm campaignLayout={campaignLayout} splitLayout />
+    <SumametrosLeadForm campaignLayout={campaignLayout} splitLayout formAction={formAction} />
   </div>
 </div>
 

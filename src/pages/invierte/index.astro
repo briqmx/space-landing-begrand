@@ -3,6 +3,7 @@ import projects from '../../../data/projects.json'
 import faqs from '../../../data/faqs.json'
 import Layout from '../../layouts/Layout.astro'
 import Nav from '../../components/Nav.astro'
+import SumametrosLeadFormSplit from '../../components/SumametrosLeadFormSplit.astro'
 ---
 
 <Layout title="Invierte en Sumametros® | La nueva forma de invertir en depas y hacer crecer tu patrimonio, metro a metro.">
@@ -188,6 +189,11 @@ import Nav from '../../components/Nav.astro'
         ))}
       </div>
     </div>
+  </section>
+
+  <!-- Lead Form -->
+  <section class="scroll-mt-24 border-t border-black/10 overflow-hidden border-b bg-white" id="registro">
+    <SumametrosLeadFormSplit formAction="https://cloud.campaigns.begrand.mx/Psumametros" />
   </section>
 
   <!-- Footer -->

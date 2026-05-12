@@ -9,9 +9,15 @@ interface Props {
   campaignLayout?: boolean
   /** Dentro del layout 2 columnas (SumametrosLeadFormSplit): gradiente y fondo imagen en móvil */
   splitLayout?: boolean
+  /** URL de destino del formulario POST */
+  formAction?: string
 }
 
-const { campaignLayout = false, splitLayout = false } = Astro.props
+const {
+  campaignLayout = false,
+  splitLayout = false,
+  formAction = 'https://cloud.campaigns.begrand.mx/Psum',
+} = Astro.props
 ---
 
 <div
@@ -29,7 +35,7 @@ const { campaignLayout = false, splitLayout = false } = Astro.props
     <p class="subtitle">Compra tu departamento metro a metro</p>
 
     <div class="form-container">
-      <form action="https://cloud.campaigns.begrand.mx/Psum" method="post" autocomplete="off" novalidate>
+      <form action={formAction} method="post" autocomplete="off" novalidate>
         <div class="form-group">
           <label class="form-label" for="nombre">Nombre</label>
           <input type="text" id="nombre" name="nombre" class="form-input" required autocomplete="given-name" placeholder="Nombre" />
