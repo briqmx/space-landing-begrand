@@ -11,13 +11,19 @@ interface Props {
   splitLayout?: boolean
   /** URL de destino del formulario POST */
   formAction?: string
+  /** Copy del bloque: Compra (index) vs Inv (/invierte), según plantilla Salesforce */
+  leadVariant?: 'compra' | 'invierte'
 }
 
 const {
   campaignLayout = false,
   splitLayout = false,
   formAction = 'https://cloud.campaigns.begrand.mx/Psum',
+  leadVariant = 'compra',
 } = Astro.props
+
+const showInvSubtitle = leadVariant === 'invierte'
+const invSubtitle = 'Gana rendimientos como si tuvieras tu propio depa'
 ---
 
 <div
@@ -28,22 +34,40 @@ const {
   ]}
 >
   <div class="content-section">
-    <p class="intro-text">
-      Completa el registro para recibir asesoría especializada
+    <h2 class="form-headline">Completa el registro para recibir asesoría especializada</h2>
+
+    <p class:list={['intro-text', !showInvSubtitle && 'intro-text--flush-form']}>
+      Compra tu departamento metro a metro
     </p>
 
-    <p class="subtitle">Compra tu departamento metro a metro</p>
+    {showInvSubtitle && <p class="subtitle">{invSubtitle}</p>}
 
     <div class="form-container">
-      <form action={formAction} method="post" autocomplete="off" novalidate>
+      <form action={formAction} method="post" novalidate>
         <div class="form-group">
           <label class="form-label" for="nombre">Nombre</label>
-          <input type="text" id="nombre" name="nombre" class="form-input" required autocomplete="given-name" placeholder="Nombre" />
+          <input
+            type="text"
+            id="nombre"
+            name="nombre"
+            class="form-input"
+            required
+            autocomplete="given-name"
+            placeholder="Nombre"
+          />
         </div>
 
         <div class="form-group">
           <label class="form-label" for="apellido">Apellido</label>
-          <input type="text" id="apellido" name="apellido" class="form-input" required autocomplete="family-name" placeholder="Apellido" />
+          <input
+            type="text"
+            id="apellido"
+            name="apellido"
+            class="form-input"
+            required
+            autocomplete="family-name"
+            placeholder="Apellido"
+          />
         </div>
 
         <div class="form-group">
@@ -65,7 +89,7 @@ const {
           <label class="form-label" for="telefono">Teléfono</label>
           <div class="phone-container">
             <div class="country-selector">
-              <select id="country" name="country" class="country-select" autocomplete="off">
+              <select id="country" name="country" class="country-select" autocomplete="tel-country-code">
                 <option value="+52">🇲🇽 México (+52)</option>
                 <option value="+1">🇺🇸 Estados Unidos (+1)</option>
                 <option value="+1">🇨🇦 Canadá (+1)</option>
@@ -135,7 +159,7 @@ const {
                 name="telefono"
                 class="form-input"
                 required
-                autocomplete="tel"
+                autocomplete="tel-national"
                 inputmode="numeric"
                 placeholder="Teléfono"
               />
@@ -167,6 +191,17 @@ const {
     text-align: center;
   }
 
+  .sumametros-lead-form-root .form-headline {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: #000;
+    margin: 0;
+    max-width: 420px;
+    line-height: 1.4;
+    text-wrap: balance;
+  }
+
   .sumametros-lead-form-root .intro-text {
     font-size: 18px;
     color: #000;
@@ -175,6 +210,10 @@ const {
     max-width: 420px;
     line-height: 1.5;
     font-weight: 500;
+  }
+
+  .sumametros-lead-form-root .intro-text--flush-form {
+    margin-bottom: 60px;
   }
 
   .sumametros-lead-form-root .title {
@@ -187,6 +226,9 @@ const {
   }
 
   .sumametros-lead-form-root .subtitle {
+    font-size: 14px;
+    color: #585c5f;
+    text-transform: uppercase;
     margin-bottom: 60px;
     letter-spacing: 1px;
   }
@@ -309,12 +351,21 @@ const {
       letter-spacing: 3px;
     }
 
+    .sumametros-lead-form-root .form-headline {
+      font-size: 1rem;
+      max-width: 100%;
+    }
+
     .sumametros-lead-form-root .intro-text {
       font-size: 16px;
       margin-top: 0;
       margin-bottom: 18px;
       line-height: 1.45;
       max-width: 100%;
+    }
+
+    .sumametros-lead-form-root .intro-text--flush-form {
+      margin-bottom: 32px;
     }
 
     .sumametros-lead-form-root .subtitle {
