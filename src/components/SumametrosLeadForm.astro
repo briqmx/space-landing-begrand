@@ -24,6 +24,8 @@ const {
 
 const showInvSubtitle = leadVariant === 'invierte'
 const invSubtitle = 'Gana rendimientos como si tuvieras tu propio depa'
+const origenValue =
+  leadVariant === 'invierte' ? 'Form Sumametros Inversión' : 'Form Sumametros Compra'
 ---
 
 <div
@@ -43,7 +45,7 @@ const invSubtitle = 'Gana rendimientos como si tuvieras tu propio depa'
     {showInvSubtitle && <p class="subtitle">{invSubtitle}</p>}
 
     <div class="form-container">
-      <form action={formAction} method="post" novalidate>
+      <form action={formAction} method="post" autocomplete="off" novalidate>
         <div class="form-group">
           <label class="form-label" for="nombre">Nombre</label>
           <input
@@ -159,14 +161,16 @@ const invSubtitle = 'Gana rendimientos como si tuvieras tu propio depa'
                 name="telefono"
                 class="form-input"
                 required
-                autocomplete="tel-national"
+                autocomplete="off"
                 inputmode="numeric"
                 placeholder="Teléfono"
+                {...(leadVariant === 'invierte' ? { pattern: '^\\+?[0-9]{8,16}$' } : {})}
               />
             </div>
           </div>
         </div>
 
+        <input type="hidden" name="origen" value={origenValue} />
         <button type="submit" class="button w-full p-4" id="submitBtn">Enviar Datos</button>
       </form>
     </div>
