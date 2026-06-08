@@ -1,5 +1,6 @@
 ---
 import SumametrosLeadFormSplit from '../components/SumametrosLeadFormSplit.astro'
+import GoogleAdsTag from '../components/GoogleAdsTag.astro'
 ---
 
 <!DOCTYPE html>
@@ -49,6 +50,17 @@ import SumametrosLeadFormSplit from '../components/SumametrosLeadFormSplit.astro
       href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
       rel="stylesheet"
     />
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-16684225014"></script>
+    <script is:inline>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'AW-16684225014');
+    </script>
+    <GoogleAdsTag />
 
     <style is:inline>
       body {

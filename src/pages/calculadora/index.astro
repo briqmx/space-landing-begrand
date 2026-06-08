@@ -1,5 +1,6 @@
 ---
 import NewCalculator from '../../components/NewCalculator';
+import GoogleAdsTag from '../../components/GoogleAdsTag.astro';
 ---
 
 <!DOCTYPE html>
@@ -8,6 +9,17 @@ import NewCalculator from '../../components/NewCalculator';
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Calcula cuánto puedes ganar invirtiendo en Sumametros®</title>
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-16684225014"></script>
+  <script is:inline>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'AW-16684225014');
+  </script>
+  <GoogleAdsTag />
 </head>
 <body>
   <main class="min-h-screen flex text-lg bg-beige font-display flex-col">

@@ -416,6 +416,10 @@ const origenValue =
       })
 
       form.addEventListener('submit', function () {
+        if (typeof gtag_report_lead_conversion === 'function') {
+          gtag_report_lead_conversion()
+        }
+
         if (submitBtn) {
           submitBtn.disabled = true
           submitBtn.innerText = 'Enviando...'

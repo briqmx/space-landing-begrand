@@ -1,0 +1,85 @@
+---
+/**
+ * Google Ads conversion tracking (AW-16684225014).
+ * Requires gtag to be initialized in the layout before this component is included.
+ */
+---
+
+<script is:inline>
+  function gtag_report_call_conversion(url) {
+    var callback = function () {
+      if (typeof url != 'undefined') {
+        window.location = url;
+      }
+    };
+    gtag('event', 'conversion', {
+      send_to: 'AW-16684225014/DaZtCK_4yrQcEPaj1JM-',
+      value: 1.0,
+      currency: 'MXN',
+      event_callback: callback,
+    });
+    return false;
+  }
+
+  function gtag_report_whatsapp_conversion(url, openInNewTab) {
+    var callback = function () {
+      if (typeof url != 'undefined') {
+        if (openInNewTab) {
+          window.open(url, '_blank', 'noopener,noreferrer');
+        } else {
+          window.location = url;
+        }
+      }
+    };
+    gtag('event', 'conversion', {
+      send_to: 'AW-16684225014/BoUbCLL4yrQcEPaj1JM-',
+      value: 1.0,
+      currency: 'MXN',
+      event_callback: callback,
+    });
+    return false;
+  }
+
+  function gtag_report_chat_conversion() {
+    gtag('event', 'conversion', {
+      send_to: 'AW-16684225014/9L_JCLX4yrQcEPaj1JM-',
+      value: 1.0,
+      currency: 'MXN',
+    });
+  }
+
+  function gtag_report_lead_conversion() {
+    gtag('event', 'conversion', {
+      send_to: 'AW-16684225014/FpYgCKz4yrQcEPaj1JM-',
+      value: 0.0,
+    });
+  }
+</script>
+
+<script is:inline>
+  document.addEventListener('click', function (event) {
+    var telLink = event.target.closest('a[href^="tel:"]');
+    if (telLink) {
+      event.preventDefault();
+      gtag_report_call_conversion(telLink.getAttribute('href'));
+      return;
+    }
+
+    var whatsappLink = event.target.closest('a[href*="wa.me"]');
+    if (whatsappLink) {
+      event.preventDefault();
+      gtag_report_whatsapp_conversion(
+        whatsappLink.getAttribute('href'),
+        whatsappLink.getAttribute('target') === '_blank'
+      );
+      return;
+    }
+
+    var chatButton = event.target.closest(
+      '.embeddedMessagingConversationButton, .embeddedMessagingHelpButton button, .helpButtonEnabled'
+    );
+    if (chatButton) {
+      gtag_report_chat_conversion();
+    }
+  });
+</script>
