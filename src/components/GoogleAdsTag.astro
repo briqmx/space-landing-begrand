@@ -48,11 +48,22 @@
     });
   }
 
-  function gtag_report_lead_conversion() {
+  function gtag_report_lead_conversion(callback) {
+    var called = false;
+    var done = function () {
+      if (called) return;
+      called = true;
+      if (typeof callback === 'function') {
+        callback();
+      }
+    };
     gtag('event', 'conversion', {
       send_to: 'AW-16684225014/FpYgCKz4yrQcEPaj1JM-',
-      value: 0.0,
+      value: 1.0,
+      currency: 'MXN',
+      event_callback: done,
     });
+    setTimeout(done, 2000);
   }
 </script>
 

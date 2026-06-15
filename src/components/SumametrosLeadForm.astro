@@ -400,7 +400,7 @@ const origenValue =
       const form = root.querySelector('form')
       const submitBtn = root.querySelector('#submitBtn')
       const params = new URLSearchParams(window.location.search)
-      const utmKeys = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content']
+      const utmKeys = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_audience', 'utm_content']
 
       if (!form) return
 
@@ -415,14 +415,43 @@ const origenValue =
         }
       })
 
-      form.addEventListener('submit', function () {
-        if (typeof gtag_report_lead_conversion === 'function') {
-          gtag_report_lead_conversion()
-        }
+      form.addEventListener('submit', function (event) {
+        event.preventDefault()
 
         if (submitBtn) {
           submitBtn.disabled = true
           submitBtn.innerText = 'Enviando...'
+        }
+
+        var emailInput = form.querySelector('#email')
+        var phoneInput = form.querySelector('#telefono')
+        var countrySelect = form.querySelector('#country')
+
+        if (typeof gtag === 'function') {
+          var userData = {}
+          if (emailInput && emailInput.value) {
+            userData.email = emailInput.value.trim()
+          }
+          if (phoneInput && phoneInput.value && countrySelect) {
+            var phone = phoneInput.value.trim().replace(/\s/g, '')
+            if (phone.charAt(0) !== '+') {
+              phone = countrySelect.value + phone
+            }
+            userData.phone_number = phone
+          }
+          if (Object.keys(userData).length) {
+            gtag('set', 'user_data', userData)
+          }
+        }
+
+        function submitForm() {
+          form.submit()
+        }
+
+        if (typeof gtag_report_lead_conversion === 'function') {
+          gtag_report_lead_conversion(submitForm)
+        } else {
+          submitForm()
         }
       })
     })
