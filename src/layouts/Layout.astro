@@ -11,26 +11,41 @@ if (process.env.NODE_ENV === 'development') {
 	base_ulr = site_url.href + ''
 }
 
-const { title } = Astro.props
+const {
+	title,
+	description = 'Compra desde 1m² en grandes proyectos residenciales ya rentados y genera rendimientos por rentas más plusvalía.',
+	noindex = false
+} = Astro.props
+const canonical = new URL(Astro.url.pathname, site_url).href
+const og_image = new URL('/og.jpg', site_url).href
+const organization = {
+	'@context': 'https://schema.org',
+	'@type': 'Organization',
+	name: 'Sumametros',
+	url: site_url.href,
+	logo: new URL('/logo.png', site_url).href,
+	telephone: '+52 800 479 3103'
+}
 ---
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es-MX">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{ title }</title>
-  <meta
-    name="description"
-    content="Compra desde 1m² en grandes proyectos residenciales ya rentados y genera rendimientos por rentas más plusvalía."
-  />
-  <meta name="og:title" content={ title } />
-  <meta
-    name="og:description"
-    content="Compra desde 1m² en grandes proyectos residenciales ya rentados y genera rendimientos por rentas más plusvalía."
-  />
-
-  <meta name="og:image" content={base_ulr + '/og.jpg'} />
+  <meta name="description" content={ description } />
+  <link rel="canonical" href={ canonical } />
+  {noindex && <meta name="robots" content="noindex, follow" />}
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="es_MX" />
+  <meta property="og:site_name" content="Sumametros" />
+  <meta property="og:url" content={ canonical } />
+  <meta property="og:title" content={ title } />
+  <meta property="og:description" content={ description } />
+  <meta property="og:image" content={ og_image } />
+  <meta name="twitter:card" content="summary_large_image" />
+  <script type="application/ld+json" set:html={JSON.stringify(organization)} />
   <link rel="icon" href="/favicon.png" type="image/png" />
   <script src="https://kit.fontawesome.com/dd626c8ac3.js" crossorigin="anonymous"></script>
 

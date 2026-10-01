@@ -4,11 +4,19 @@ import GoogleAdsTag from '../../components/GoogleAdsTag.astro';
 ---
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es-MX">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Calcula cuánto puedes ganar invirtiendo en Sumametros®</title>
+  <meta name="description" content="Simula tu inversión por m² en desarrollos Be Grand y Vitant: elige el proyecto, los metros y el plazo para estimar rentas y plusvalía." />
+  <link rel="canonical" href={new URL(Astro.url.pathname, Astro.site).href} />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="es_MX" />
+  <meta property="og:url" content={new URL(Astro.url.pathname, Astro.site).href} />
+  <meta property="og:title" content="Calcula cuánto puedes ganar invirtiendo en Sumametros®" />
+  <meta property="og:image" content={new URL('/og.jpg', Astro.site).href} />
+  <link rel="icon" href="/favicon.png" type="image/png" />
 
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=AW-16684225014"></script>
