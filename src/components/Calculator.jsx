@@ -4,42 +4,35 @@ const PROPERTIES = [
   {
     slug: 'be-grand-reforma',
     name: 'Be Grand® Reforma',
-    price: 11250000,
+    price: 11600000,
     appreciation: 4.0,
     rentPerMonth: 26000
   },
   {
     slug: 'vitant-del-valle',
     name: 'Vitant® Del Valle',
-    price: 7125000,
+    price: 7200000,
     appreciation: 4.0,
     rentPerMonth: 22300
   },
   {
-    slug: 'vitant-polanco',
-    name: 'Vitant® Polanco',
-    price: 7225000,
-    appreciation: 4.0,
-    rentPerMonth: 21100
-  },
-  {
     slug: 'vitant-santa-fe',
     name: 'Vitant® Santa Fe',
-    price: 8175000,
+    price: 8500000,
     appreciation: 4.0,
     rentPerMonth: 22000
   },
   {
     slug: 'vitant-san-pedro',
     name: 'Vitant® San Pedro',
-    price: 7875000, 
+    price: 8900000, 
     appreciation: 7.6,
     rentPerMonth: 22600
   },
   {
     slug: 'vitant-santa-lucia',
     name: 'Vitant® Santa Lucía',
-    price: 6250000,
+    price: 7100000,
     appreciation: 4.0,
     rentPerMonth: 24000
   }
@@ -54,7 +47,7 @@ const Calculator = () => {
 
   const [meters, setMeters] = useState(1);
   const [years, setYears] = useState(15);
-  const [price, setPrice] = useState(7125000);
+  const [price, setPrice] = useState(7200000);
   const [appreciation, setAppreciation] = useState(8.0);
   const [inflation, setInflation] = useState(5.0);
   const [rentPerMonth, setRentPerMonth] = useState(22300);
