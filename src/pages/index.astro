@@ -6,6 +6,16 @@ import SumametrosLeadFormSplit from '../components/SumametrosLeadFormSplit.astro
 
 import projects from '../../data/projects.json'
 import faqs from '../../data/faqs.json'
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faqs.map(faq => ({
+    '@type': 'Question',
+    name: faq.question,
+    acceptedAnswer: { '@type': 'Answer', text: faq.answer }
+  }))
+}
 ---
 
 <Layout title="Sumametros® | Invierte en bienes raíces desde 1 m²">
@@ -18,6 +28,7 @@ import faqs from '../../data/faqs.json'
     </a>
   </div>
 
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
   <Nav />
 
   <!-- Hero Section -->
@@ -31,9 +42,9 @@ import faqs from '../../data/faqs.json'
 
         <a class="flex items-center gap-2 text-xs md:text-sm underline" href="#quienes">
           <p>Operado por</p>
-          <img src="/logo-begrand-horizontal.png" alt="Sumametros" class="h-4 md:h-6" />
+          <img src="/logo-begrand-horizontal.png" alt="Be Grand" class="h-4 md:h-6" />
           <p>a través de</p>
-          <img src="/logo-briq.svg" alt="Sumametros" class="h-4 md:h-6" />
+          <img src="/logo-briq.svg" alt="briq.mx" class="h-4 md:h-6" />
         </a>
         
 
@@ -47,10 +58,10 @@ import faqs from '../../data/faqs.json'
       </div>
     </div>
 
-    <img src="/piece-1.svg" alt="Hero" class="absolute top-2 left-2 opacity-0 md:opacity-100 pointer-events-none" />
-    <img src="/piece-2.svg" alt="Hero" class="absolute top-2 right-2 opacity-0 md:opacity-100 pointer-events-none" />
-    <img src="/piece-3.svg" alt="Hero" class="absolute bottom-2 left-2 opacity-0 md:opacity-100 pointer-events-none" />
-    <img src="/piece-4.svg" alt="Hero" class="absolute bottom-2 right-2 opacity-0 md:opacity-100 pointer-events-none" />
+    <img src="/piece-1.svg" alt="" class="absolute top-2 left-2 opacity-0 md:opacity-100 pointer-events-none" />
+    <img src="/piece-2.svg" alt="" class="absolute top-2 right-2 opacity-0 md:opacity-100 pointer-events-none" />
+    <img src="/piece-3.svg" alt="" class="absolute bottom-2 left-2 opacity-0 md:opacity-100 pointer-events-none" />
+    <img src="/piece-4.svg" alt="" class="absolute bottom-2 right-2 opacity-0 md:opacity-100 pointer-events-none" />
   </section>
 
 
@@ -76,7 +87,7 @@ import faqs from '../../data/faqs.json'
         {projects.map((project, index) => (
           <article class="flex flex-col gap-2 items-start">
             <figure class="aspect-[4/3] relative rounded-xl overflow-hidden w-full h-full">
-              <img src={project.image} alt={project.title} class="object-cover w-full h-full absolute inset-0" />
+              <img loading="lazy" decoding="async" src={project.image} alt={project.title} class="object-cover w-full h-full absolute inset-0" />
               <div class="absolute inset-0 rounded-xl border border-black/20"></div>
             </figure>
             <div>
@@ -93,8 +104,8 @@ import faqs from '../../data/faqs.json'
             <p>No tienes que decidir ahora: tus m² son flexibles y podrás elegir en qué departamento usarlos cuando estés listo para dar el siguiente paso.</p>
             <button class="button--secondary" onclick="document.getElementById('contactModal').showModal()">Hablar con un asesor</button>
           </div>
-          <img src="/cta-piece-top.svg" alt="" class="absolute top-2 left-2 opacity-0 md:opacity-10 pointer-events-none" />
-          <img src="/cta-piece-bottom.svg" alt="" class="absolute bottom-2 right-2 opacity-0 md:opacity-10 pointer-events-none" />
+          <img loading="lazy" decoding="async" src="/cta-piece-top.svg" alt="" class="absolute top-2 left-2 opacity-0 md:opacity-10 pointer-events-none" />
+          <img loading="lazy" decoding="async" src="/cta-piece-bottom.svg" alt="" class="absolute bottom-2 right-2 opacity-0 md:opacity-10 pointer-events-none" />
         </div>
       </div>
     </div>
@@ -110,20 +121,20 @@ import faqs from '../../data/faqs.json'
       <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
         <article class="bg-blue text-white p-8 md:p-16 rounded-xl flex flex-col gap-2 aspect-[4/3] relative justify-end">
           <div class="relatice z-1 flex flex-col gap-4 items-start">
-            <img src="/feature-image-1.svg" alt="Canjealos por un departamento." class="h-32" />
+            <img loading="lazy" decoding="async" src="/feature-image-1.svg" alt="Canjealos por un departamento." class="h-32" />
             <h3 class="font-bold text-2xl">Canjealos por un departamento.</h3>
             <p class="text-pretty text-lg">Usa tus metros como enganche o pago total de un departamento completo, una vez que hayas acumulado los suficientes.</p>
           </div>
 
-          <img src="/cta-piece-top.svg" alt="" class="absolute top-2 left-2 opacity-0 md:opacity-10" />
+          <img loading="lazy" decoding="async" src="/cta-piece-top.svg" alt="" class="absolute top-2 left-2 opacity-0 md:opacity-10" />
         </article>
         <article class="bg-orange text-white p-8 md:p-16 rounded-xl flex flex-col gap-2 aspect-[4/3] relative justify-end">
           <div class="relatice z-1 flex flex-col gap-4 items-start">
-            <img src="/feature-image-2.svg" alt="Consérvalos y recibe rentas." class="h-32" />
+            <img loading="lazy" decoding="async" src="/feature-image-2.svg" alt="Consérvalos y recibe rentas." class="h-32" />
             <h3 class="font-bold text-2xl">Consérvalos y recibe rentas.</h3>
             <p class="text-pretty text-lg">Vende tus metros en la plataforma y obtén la plusvalía acumulada desde que compraste.</p>
           </div>
-          <img src="/cta-piece-bottom.svg" alt="" class="absolute bottom-2 right-2 opacity-0 md:opacity-10" />
+          <img loading="lazy" decoding="async" src="/cta-piece-bottom.svg" alt="" class="absolute bottom-2 right-2 opacity-0 md:opacity-10" />
         </article>
       </div>
     </div>
@@ -134,10 +145,10 @@ import faqs from '../../data/faqs.json'
       <div class="bg-gray p-10 md:p-16 rounded-xl flex flex-col gap-4 text-center">
         <div class="md:max-w-[100%] lg:max-w-[60%] w-full mx-auto text-pretty flex flex-col gap-4">
           <div class="flex items-center gap-8 md:gap-16 justify-center flex-wrap w-full">
-            <img src="/cnbv.jpg" alt="Comisión Nacional Bancaria y de Valores (CNBV)" class="h-12 md:h-24 mix-blend-multiply" />
-            <img src="/shcp.svg" alt="Secretaría de Hacienda y Crédito Público (SHCP)" class="h-5 md:h-12 mix-blend-multiply" />
-            <img src="/banco-mexico.svg" alt="Banco de México" class="h-4 md:h-12 mix-blend-multiply" />
-            <img src="/condusef.jpg" alt="CONDUSEF" class="h-8 md:h-12 mix-blend-multiply" />
+            <img loading="lazy" decoding="async" src="/cnbv.jpg" alt="Comisión Nacional Bancaria y de Valores (CNBV)" class="h-12 md:h-24 mix-blend-multiply" />
+            <img loading="lazy" decoding="async" src="/shcp.svg" alt="Secretaría de Hacienda y Crédito Público (SHCP)" class="h-5 md:h-12 mix-blend-multiply" />
+            <img loading="lazy" decoding="async" src="/banco-mexico.svg" alt="Banco de México" class="h-4 md:h-12 mix-blend-multiply" />
+            <img loading="lazy" decoding="async" src="/condusef.jpg" alt="CONDUSEF" class="h-8 md:h-12 mix-blend-multiply" />
           </div>
           <h3 class="font-bold text-2xl">Sumametros es una opción segura y confiable</h3>
           <p>Tu compra e inversión en Sumametros se realiza a través de briq.mx, plataforma regulada por la Comisión Nacional Bancaria y de Valores (CNBV), lo que garantiza la legalidad de tu inversión.</p>
@@ -158,14 +169,14 @@ import faqs from '../../data/faqs.json'
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-4">
           <div class="flex flex-col gap-2">
             <figure class="h-20 flex items-center">
-              <img src="/logo-begrand-horizontal.png" alt="Sumametros" class="h-10" />
+              <img loading="lazy" decoding="async" src="/logo-begrand-horizontal.png" alt="Be Grand" class="h-10" />
             </figure>
             <p>Empresa mexicana, con 20 años de experiencia en el desarrollo y comercialización de proyectos inmobiliarios de alta calidad en zonas AAA en México y España.</p>
             <a class="underline" href="https://begrand.mx" target="_blank">Conoce más</a>
           </div>
           <div class="flex flex-col gap-2">
             <figure class="h-20 flex items-center">
-              <img src="/logo-briq.svg" alt="Sumametros" class="h-10" />
+              <img loading="lazy" decoding="async" src="/logo-briq.svg" alt="briq.mx" class="h-10" />
             </figure>
             <p>Plataforma líder de financiamiento colectivo inmobiliario, regulada por las autoridades financieras (CNBV, CONDUSEF, Banxico y SHCP)</p>
             <a class="underline" href="https://www.briq.mx?referral_code=sumametros" target="_blank">Conoce más</a>
@@ -191,7 +202,7 @@ import faqs from '../../data/faqs.json'
   <footer class="py-16 rounded-t-3xl bg-gray flex flex-col gap-8">
     <div class="container">
       <div class="flex items-center justify-between flex-col md:flex-row gap-4">
-        <img src="/logo-nav.png" alt="Sumametros" class="h-12" />
+        <img loading="lazy" decoding="async" src="/logo-nav.png" alt="Sumametros" class="h-12" />
         <div class="flex items-center gap-2">
           <a href="tel:8004793103" class="bg-blue text-white px-4 py-2 rounded-full flex items-center gap-2 font-bold">
             <i class="fa-solid fa-phone text-xs mt-1"></i>
@@ -245,7 +256,7 @@ import faqs from '../../data/faqs.json'
   <!-- Video Modal -->
   <div class="fixed inset-0 z-20 items-center justify-center bg-black/90" id="video-modal" style="display: none;">
     <div class="relative aspect-video w-full bg-white shadow-xl md:h-[80vh] md:w-auto" id="video-container">
-      <video controls class="absolute inset-0 h-full w-full" id="video">
+      <video controls preload="none" class="absolute inset-0 h-full w-full" id="video">
         <source src="/video-ugc.mp4" type="video/mp4" />
       </video>
       <button class="absolute right-0 top-0 bg-white p-4 text-black" id="close-video">

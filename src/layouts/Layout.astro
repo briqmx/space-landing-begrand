@@ -24,7 +24,15 @@ const organization = {
 	name: 'Sumametros',
 	url: site_url.href,
 	logo: new URL('/logo.png', site_url).href,
-	telephone: '+52 800 479 3103'
+	telephone: '+52 800 479 3103',
+	sameAs: ['https://www.instagram.com/sumametros.mx']
+}
+const website = {
+	'@context': 'https://schema.org',
+	'@type': 'WebSite',
+	name: 'Sumametros',
+	url: site_url.href,
+	inLanguage: 'es-MX'
 }
 ---
 
@@ -46,6 +54,7 @@ const organization = {
   <meta property="og:image" content={ og_image } />
   <meta name="twitter:card" content="summary_large_image" />
   <script type="application/ld+json" set:html={JSON.stringify(organization)} />
+  <script type="application/ld+json" set:html={JSON.stringify(website)} />
   <link rel="icon" href="/favicon.png" type="image/png" />
   <script src="https://kit.fontawesome.com/dd626c8ac3.js" crossorigin="anonymous"></script>
 
