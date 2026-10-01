@@ -142,7 +142,7 @@ const NewCalculator = () => {
             Regresar
           </a>
           <div>
-            <h1 className="text-xl md:text-2xl">Conoce cuanto puede crecer tu patrimonio si inviertes en <strong className="block">{property.name}</strong></h1>
+            <h2 className="text-xl md:text-2xl">Conoce cuanto puede crecer tu patrimonio si inviertes en <strong className="block">{property.name}</strong></h2>
           </div>
           <div className="flex flex-col gap-4 w-full">
             <p className="text-balance text-sm md:text-lg">¿Cuántos m² quieres comprar?</p>
